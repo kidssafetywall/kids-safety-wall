@@ -67384,5 +67384,5348 @@
         "status": "captured"
       }
     ]
+  },
+  {
+    "id": "news-dd2f5ed55965ec6c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "性侵6幼童拍不雅片 「幼兒園長兒」毛畯珅判刑28年8月定讞 | 社會 | CTWANT",
+    "summary": "性侵6幼童拍不雅片 「幼兒園長兒」毛畯珅判刑28年8月定讞 | 社會 | CTWANT CTWANT",
+    "eventDate": "2025-05-02",
+    "importedAt": "2026-06-08T09:53:07.7414381Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "性侵6幼童拍不雅片 「幼兒園長兒」毛畯珅判刑28年8月定讞 | 社會 | CTWANT",
+        "publisher": "CTWANT",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4xYk81cGI0R0p0dVlmdEN2V2tuQ0gzOUx2REEyVTlRQ0xkWTY0emlhMFg3UnB5cWY4SzRIXzVrSVVBZGVkNGF6WF9BeWdPQUHSAVRBVV95cUxOX05vRE96ZC00VUE0RF9XakdwTW5DcG1tLXpFeTRRZzZoT3ZNNHYzSlhtUUE2MDZ4d21FaXVBWGtZZjhOUXVYdC1LWlYyQkFjSVd2YjM?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:53:05.1940852Z",
+        "snapshotPath": "archive/raw/news-fc94746631713576.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-3486f7824edade4f",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南女師讓國小女童餓到放學、不給上體育課 市府裁罰6萬",
+    "summary": "台南女師讓國小女童餓到放學、不給上體育課 市府裁罰6萬 UDN",
+    "eventDate": "2026-03-23",
+    "importedAt": "2026-06-08T09:53:22.7308370Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "台南女師讓國小女童餓到放學、不給上體育課 市府裁罰6萬",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5hMGJETURzTEQ4ZDJtMjJ5bWNVZF9Sd1psTWtOSXVCNVFGTm5EYVJKMVJfRG84NFdlcFdlbGRaSUJ1aTBjYXRxYUFsY0JnUy1I0gFWQVVfeXFMT3g1THRpZjhKY2hkUjBkS2dEeXYza29YYlZ4V0Zkc3RvZ1dwdFBBWG5wZTV2RU56Q1hxblVIMUp1M3lKQjBTeEp0dGsyLVpGOHZNRmNGTUE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:53:19.7845220Z",
+        "snapshotPath": "archive/raw/news-7c2f0d8aa8f94ea0.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-b389eeba71d4e26e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國小代課男老師緊抱強吻女童 判刑3年8月",
+    "summary": "國小代課男老師緊抱強吻女童 判刑3年8月 自由時報",
+    "eventDate": "2026-01-09",
+    "importedAt": "2026-06-08T09:53:36.5959867Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "國小代課男老師緊抱強吻女童 判刑3年8月",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBZZjJib2pTRWE1UDdjSDltaWM0S0xBOTBSa25xN3JpRi1LckdOb1AxaHlubFFBeXlDLU1RRDlKRWtBbFNadUNsSWVYRERFUGpPZzRRU3pydGpHWGMtNjZ2ektfdmVLNHMz0gFuQVVfeXFMUFhrcXllUnRWcXNBQ3pRd1FmZzNGOGQ1aHBUZHppbkJkV25OU2pBaWRQMW8yTjd0clhCbktfZ1VmY2JzVmVOYlAxVVBqSl9QdFVIY2MxY2REYWJRU3NNWWY2cWs5X3NfQUVMSGtOZEE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:53:33.8989784Z",
+        "snapshotPath": "archive/raw/news-7de68e0d4fce5523.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7420cb388567af57",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台東國小教師利用信任關係猥褻女童 判刑6月不得緩刑",
+    "summary": "台東國小教師利用信任關係猥褻女童 判刑6月不得緩刑 UDN",
+    "eventDate": "2026-03-25",
+    "importedAt": "2026-06-08T09:53:39.5358900Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "台東國小教師利用信任關係猥褻女童 判刑6月不得緩刑",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1LT3UyVml6MkNkQVpoQm1OWXlpRWFLeDJtUEVqMjJzTzFTOU43OHp4OTZ4TFNWM1R6emdEdFI4LXJyVy1VdllMUVdqTGMzVGpx0gFWQVVfeXFMTWs4MkNjTk5mSURiUFh0SXN5SEozZlNGbFdlM2dqb1MwTW5taF9jVlIzWW1jZllEZGs1b3ZGZkJ5UTZaXzhwNDBubnJlemdqM0ZaVjhNckE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:53:36.6057284Z",
+        "snapshotPath": "archive/raw/news-7d1ede85ebecd655.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7aa178a0840200da",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "狼師假藉贈禮為由親臉國小女學生 判刑3年8個月",
+    "summary": "狼師假藉贈禮為由親臉國小女學生 判刑3年8個月 UDN",
+    "eventDate": "2026-01-10",
+    "importedAt": "2026-06-08T09:53:45.0628424Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "狼師假藉贈禮為由親臉國小女學生 判刑3年8個月",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1BZFVXNWVoajlGeFRKYkFrX1Q5S1Q2cWlCaThIaUsydVVfVGJCVlMxNHNHQ0lhTUR3dDVPN1NTVmlnN3dxcEZzQ3NrNE12X3dF0gFWQVVfeXFMT2g2VXZxMWJQTGtHUVlKb1R1NC0zeXg4Skp2bXJBX25wZ01vSC0zcEtTaWhWZkE5dlh6UnZBdTlJZE56QXVGVDc4ZDQ2UnBPT0YwREhNdXc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:53:42.2548568Z",
+        "snapshotPath": "archive/raw/news-2aeb01b2ee2a754b.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-c3ff8634e4163d70",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國小狼師「明知女學生被父性侵」 竟要女童也為他口交 法官重判15年",
+    "summary": "國小狼師「明知女學生被父性侵」 竟要女童也為他口交 法官重判15年 UDN",
+    "eventDate": "2026-05-07",
+    "importedAt": "2026-06-08T09:54:07.0146136Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "國小狼師「明知女學生被父性侵」 竟要女童也為他口交 法官重判15年",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBGSmt1Z1FTRFJsTXg3dGNKelFfaHF1clRGNjlWczhTaVF6MWl2Q0dTY1ZmNWE0VVAxMFJaT3dIdGJDalF1TlBjc00wQWN6NndT0gFWQVVfeXFMUDc0LUhFYWpBUEc2UVRsWDNGRlp4c0laSW91cmNNYy1MLXJnYXdxLTFzWFhiQ0JocVd6STRhcVFYeHFGY1pyMm5zRjA0YW1ZU3pPek9xeEE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:54:04.3414274Z",
+        "snapshotPath": "archive/raw/news-6ae344806695d1c5.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-396ff156779d720f",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國小教練性侵41學童遭判刑 家長哭喊：你們知道他對小孩做了什麼嗎？",
+    "summary": "國小教練性侵41學童遭判刑 家長哭喊：你們知道他對小孩做了什麼嗎？ UDN",
+    "eventDate": "2025-11-26",
+    "importedAt": "2026-06-08T09:54:18.2582430Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "國小教練性侵41學童遭判刑 家長哭喊：你們知道他對小孩做了什麼嗎？",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9sa09xUlg3V3hzZ0xIcXNTYjYyWmtIbDd1Y0p0dkhKT1pIWFdKTjdpdThqSE1DN0F6WmNfTXR3NDE2MUExVWF5ODFld2tOcjEx0gFWQVVfeXFMUEpDenQwR3V2Q0gxeTlxZ29QRVRPaXpmbzRyVlZSVWdHd2JBQl9oUEJHSThuRjl0VExzdHMwUkY2aEMyTlpYMmN4RkRIWjFBRWRsamh4bWc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:54:15.6041056Z",
+        "snapshotPath": "archive/raw/news-1e079b543aa9056a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-1e278553bbb52ecc",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "拿公款買娃娃機獎勵學生？前國小校長王英明貪瀆案判刑2年確定…緩刑5年",
+    "summary": "拿公款買娃娃機獎勵學生？前國小校長王英明貪瀆案判刑2年確定…緩刑5年 Yahoo新聞",
+    "eventDate": "2025-10-16",
+    "importedAt": "2026-06-08T09:54:49.1044618Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "拿公款買娃娃機獎勵學生？前國小校長王英明貪瀆案判刑2年確定…緩刑5年",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMiwANBVV95cUxNWDZYUndYc0c4Ul8xR3dLcW1Rc19ZZ1lvWHZUWFFFREhMeWZYUGFQVS1xYUZEbnI4VGZWLW9VN3VEbEZNSDZZMWx5YW9mVzZWUkY3RUJEQTJ5VDNJYWszOUN3RVRnS0dEZFpZdFl4aXUyY2g5LUoxaGtlRDIwVDNqak13ZXJUamItOVdPQ1ZtN1V6alM2QVdHVGlWNFVaandNSVFubF9rcFZrRWQ0cVdNY3VhZmczYUxqRGZ0bWh3U05xRDd0Z1paRFRodGlsTnFyZEE5aFN0UWVIcFpDS2EzLXdXN0FwaHhvWlNmTFhJdVV6TVVSei1mRXJLV3pLQ0FfNjZkOU9QSUg3X051WjJ5bUE5Q2QxXzQ4TWlLYlpfbmF3ZEpCcExkbHVITnNyc1MtT0IyQkxSQnNkSGQtWGZHZ1Jvd1FGYnNQNzNpaTJQTTdiOTBXeHhDcFJBUEx3UFQwbS1BdEhJbjQzam9OYTlDV055bk9OWXN0U0F1OEZfaDlaWndlNE8ydVR0MHpVcFdwZGhLSWp6RGRKbHlCVFRMaXRxMWVfdm1FMm8wTS12QTNhb2tucW9LVU82RVJzMTlw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:54:46.1429104Z",
+        "snapshotPath": "archive/raw/news-7751c5bc9cfd8809.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7fd8dc9734f35ab3",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "親吻摸腿猥褻女學生近百次 國小擊劍「色教練」二審判刑2年11月",
+    "summary": "親吻摸腿猥褻女學生近百次 國小擊劍「色教練」二審判刑2年11月 自由時報",
+    "eventDate": "2025-09-24",
+    "importedAt": "2026-06-08T09:55:02.7961894Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "親吻摸腿猥褻女學生近百次 國小擊劍「色教練」二審判刑2年11月",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1PWDRGclQwbXU1azFPaWVhMHdWSkx4WXI4Z3A5bGJmQmxMRlJkMWRKR1lDSHhyUHU1YXhGQmNYNVk2QlZKVTlLMUEwRm1DVE1JRGtZQ3JyTnJaUlBpTUNsazBjVXZrcjJO0gFuQVVfeXFMUFZ1VkM4TFd6LTd6NnM2WkFpN05qbXJqdl9PMFJJb3picjFNN2dsNktsV0QtNW1CNDZxTXlqOXZYMFN5djRiT3VmS0g3OHBlNlEtMl80T19yVVlhRk9iNGVKVVcyVGxKX2U5aDlpQXc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:54:59.8544200Z",
+        "snapshotPath": "archive/raw/news-3591d9ac9e4bd3fe.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-682442bac514f117",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "公文動手腳!竹縣秀巒國小臨時人員 6年A走130萬下場曝",
+    "summary": "公文動手腳!竹縣秀巒國小臨時人員 6年A走130萬下場曝 自由時報",
+    "eventDate": "2025-10-29",
+    "importedAt": "2026-06-08T09:55:10.9333197Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "公文動手腳!竹縣秀巒國小臨時人員 6年A走130萬下場曝",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1BaWJIT2pFbTZkOFZudnJJeG9lbUl3QVdxU3hoUVRYNHBnM2VBMEhlTWJlWWFEeWdLUFJRS0FVRC15TUhhNkNYcTJrZ0p6Y0hleHM2dy1oMWVtNmkxLVM1Z0lhV1BPSWlL0gFuQVVfeXFMT1JRVkpobTkxQzFocUpLcjlvTy04Y0I5V19wNGx4cDZUQmV5OVFJLXpTV1l2TnQ0SEkyekNndEdtcE1MZFRwQ0s1MDdqMHAzZ2lOSjBpZTNGUkNmbjN2cC00eW5DZEZVN0ZKREhvY3c?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T09:55:08.3605399Z",
+        "snapshotPath": "archive/raw/news-9c37d6a314050aa3.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-276f10b937cb5790",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "負責人涉體罰…新竹5園所遭撤照！議員爆「拿剪刀戳童嘴」離譜行徑挺市府",
+    "summary": "負責人涉體罰…新竹5園所遭撤照！議員爆「拿剪刀戳童嘴」離譜行徑挺市府 UDN",
+    "eventDate": "2025-12-11",
+    "importedAt": "2026-06-08T12:14:49.3157856Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "負責人涉體罰…新竹5園所遭撤照！議員爆「拿剪刀戳童嘴」離譜行徑挺市府",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA4M2RsQjVfZlV4SlZTRGQ4bi01Q1JiZWNOeGl4RTExbnZ2dlNoZ1hja05NM0hMTVZDQXpJN0hiVVBQLWFqQUhPUVFneUROaTRM0gFWQVVfeXFMTzk5VXFPMnFqRVU3U2Vnb0d2N2h6bnNkbVM3N0tlWHhVU2xMd0FRM09wZ2x4bm1LSkNrTy1nQm9lOUhUWnJ0RXZhUXlET0EyZDlzZ0hpRmc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:14:46.5279701Z",
+        "snapshotPath": "archive/raw/news-6ccc1a1ac3a755da.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-852bf6b346021a1e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "【更新】當眾強脫女童衣褲不當管教 新北檢聲押幼兒園長 法院5萬元交保",
+    "summary": "【更新】當眾強脫女童衣褲不當管教 新北檢聲押幼兒園長 法院5萬元交保 Yahoo新聞",
+    "eventDate": "2026-04-10",
+    "importedAt": "2026-06-08T12:14:52.1557190Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "【更新】當眾強脫女童衣褲不當管教 新北檢聲押幼兒園長 法院5萬元交保",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMivANBVV95cUxOMTJBcnBFNFlmQU8tVzZPWXZlV0wxMVRyU2dZdVFjRHc2Mnc0bEhhdVNhSDFnMko2eEdtanUzYVRBaVNvRkEtSmlQeHp6V1NCS3ExT1EwUVZ0bDg5UEx1eXgtREV4NEFPOUZzSW02UHIzbkNSUlkzV0FCM3FtUDY1YmFiVlBNRlZ5MmNjS3NJTFFzUXJHSG1keGItcExpZEw1RkYzaWVTc2xwT1RFR3Y2OXlnRUNzNnV4MUJrSXREYXh1MlhEYkdUanM3ZGQ2ekd1MUhUQVFrT0Ywc0lFVU9vMkhwZkhlb3kxOG9WR3QzcjUxOVRiaFREYnRKMDM3WWpzc2J1REJVT0NuSncwYTgtekprSDRId0VWZzNOVDY0enN2Rmp6V005SzE4TFFGM0szZ1FLTEJOWTFXRWZYN1E0OS0yT0N1eGRsUTUxYWM2NFBIdVUxclVLZlJPVUdIeURPdTBuaDdDYTBkb2JyNDZxM3BFXzl5OWt2TG5XQXcxazgxZ25sRzZYMXNOTGFlZ0VWX1F2bVhjSjA4RGtwTW9HN3ZPUVRaOXRFTnRCdV85YlAta2Etc0MxcVNTYTg?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:14:49.3157856Z",
+        "snapshotPath": "archive/raw/news-a1151b806fe7e89d.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-a343edf722837c08",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "負責人同一人！竹市5所幼兒園「涉體罰」遭撤照 議員爆：剪刀戳童嘴",
+    "summary": "負責人同一人！竹市5所幼兒園「涉體罰」遭撤照 議員爆：剪刀戳童嘴 Yahoo新聞",
+    "eventDate": "2025-12-10",
+    "importedAt": "2026-06-08T12:14:55.2692776Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "負責人同一人！竹市5所幼兒園「涉體罰」遭撤照 議員爆：剪刀戳童嘴",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNY0Ywb3RaNTE5a3V1Q0NaUUJ6UE9KN0lRWkJvZ25mbUZ2LTM3Z2RDU0VPcUdUUUVZQkRaWDdoWXAxNHZkZUF1VUpPa0NjeHFpU054cUZDZGhrb21OZDBfU0NsbTFWMlpUVXRkR243ME1fZXdXa0NoWXZ2MmJoYXZQbFpJRVYyX1pEWmhsbkhDaWV6bXFvdEpRN2EtS0ZHblZ2UlNSa0JZYlRQS29hWWNjR1VaWC04MTV1TzFWU1ItSXhkNUpJbU9lQUhuaU5qZlE5Q0xqQnlPUXczeF95bDY3TzYtel9US2s1VzNXRjRqdVJGdFl4N0J2TTNySjZ4SHJIeTdRWExnY3ZGTTNSQlVWdFUweTNiRW1pck1XTUtBT1NmRFprcHc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:14:52.1557190Z",
+        "snapshotPath": "archive/raw/news-a0a287fa11923065.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-0fc6b6a8a53326a6",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南幼兒園虐13童 教保員粗暴行為長達20分鐘",
+    "summary": "台南幼兒園虐13童 教保員粗暴行為長達20分鐘 主流傳媒",
+    "eventDate": "2026-04-16",
+    "importedAt": "2026-06-08T12:14:57.9135963Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "台南幼兒園虐13童 教保員粗暴行為長達20分鐘",
+        "publisher": "主流傳媒",
+        "url": "https://news.google.com/rss/articles/CBMiPEFVX3lxTFBuVDdSVGsyVDM0YkZXOE5pZnRTUGxlLUlXSmt4LW9xVTc0QmlSQXVvaUF4S0kwR2tiUzlJSg?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:14:55.2730138Z",
+        "snapshotPath": "archive/raw/news-1a528c5e435ec9ae.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-1e7b8abf59309edb",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南私幼淪凌虐營！13童慘遭強行餵食又裝箱狂搖 魔鬼教保員曝",
+    "summary": "台南私幼淪凌虐營！13童慘遭強行餵食又裝箱狂搖 魔鬼教保員曝 ETtoday新聞雲",
+    "eventDate": "2026-04-16",
+    "importedAt": "2026-06-08T12:15:06.3892126Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "台南私幼淪凌虐營！13童慘遭強行餵食又裝箱狂搖 魔鬼教保員曝",
+        "publisher": "ETtoday新聞雲",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9VSTJBeExwaU42TmJ2N19MbW5PLTJ1eXVlN09sVmt2cXZfY2lBcVpXaWVEU19Xc0tZZmRsN0xYbHllUlRuUTVvR2JLSG5JbXRvdThObTNURnBuXzB0VlHSAWhBVV95cUxQWVgxUzJzN1MtMHBWUklLODdwcGo1ZVUxLWl1QlN1RE10ZmhNWjdFcU1WTk1BbE10RmVnWEVWTUZxTHBCMUVSTHh2M2gyMlJNck9BbTZ0eGlCblZLZFlYdl9TQ29XdENMNw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:03.5063534Z",
+        "snapshotPath": "archive/raw/news-b0a8717bff3f4f58.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-e74c185d302ea010",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "強制猥褻幼童 教保員二審判刑8 年",
+    "summary": "強制猥褻幼童 教保員二審判刑8 年 匯流新聞網",
+    "eventDate": "2026-01-15",
+    "importedAt": "2026-06-08T12:15:11.7915928Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "強制猥褻幼童 教保員二審判刑8 年",
+        "publisher": "匯流新聞網",
+        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBFa1VHcTlBeFVlUnM4SjlfdENXYl8xWkhTa25aelBTYl81LWdHOXctaGU2UGYtMVREa3piME1oQzIyT1RNM1luTVNn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:09.0643793Z",
+        "snapshotPath": "archive/raw/news-4e09cf44f9fd0211.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-900ff10d1b377f00",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "土城育全幼兒園4天拉拽踹幼童50次 市府怒開罰13.2萬「一週內掀底旗下10機構」",
+    "summary": "土城育全幼兒園4天拉拽踹幼童50次 市府怒開罰13.2萬「一週內掀底旗下10機構」 Yahoo新聞",
+    "eventDate": "2026-01-22",
+    "importedAt": "2026-06-08T12:15:14.5487136Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "土城育全幼兒園4天拉拽踹幼童50次 市府怒開罰13.2萬「一週內掀底旗下10機構」",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMisgNBVV95cUxNLTY1S3NlOHVoeDZRSExaRzVjRExyVWdMb0t5cEl2cGt1bXUxWHpHX1BvVjE2ckM4b3RnWUFYQjZfQ0c2cDEzeDhCRXFNQW1KVktSS0ZXY0hXWWpuMmswLWtTV1UzdGJXWXpIMnhIZmVQckdvNEtXZjlndXA0RW9OV01TdFl4Tl9BOWc0VXhMVU1FUVVFaFVvUnFianpwNHhKSXBGOG1iTTZqSjZxU2FUT2pGMFo0a2MtaHRsSi1ONko2eS1sS09VX3JQMzc1RVo0ZHREMUEwMGlTODZYUEZvbzd3bENTRlY4T1oyckptNGV5cF8tQnhhOWFhVGJJMjlCVGNNWDVmajExZWZFM0hfVkxYT2d2bF9uVHFrWXVfM2h2MTZQdVA3NlctY3Z6RDdwODlndXpNeVJ3OTdUeGkxUUlkbkNpSTVIaUY4OThLZ0hJenNwWjVzRE16cW45XzNUWGZkaEhZbURJeDVTRFZaazF0ekY0OHQxc09nLWVGN1dqdmVFZzN5dUhDSm1KNXNEYUVjdkI5cWFUeTZxeFBNUWtsX2huMkt4ZWZZRlVpNkJxQQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:11.7953467Z",
+        "snapshotPath": "archive/raw/news-789254b02da00927.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-880937e7c8a0297c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "又見幼兒遭虐！新竹市香山區幼兒園疑多名幼童遭老師體罰，木棒擊打、老師搧巴掌",
+    "summary": "又見幼兒遭虐！新竹市香山區幼兒園疑多名幼童遭老師體罰，木棒擊打、老師搧巴掌 Mombaby 媽媽寶寶懷孕生活網",
+    "eventDate": "2025-10-23",
+    "importedAt": "2026-06-08T12:15:22.5447373Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "又見幼兒遭虐！新竹市香山區幼兒園疑多名幼童遭老師體罰，木棒擊打、老師搧巴掌",
+        "publisher": "Mombaby 媽媽寶寶懷孕生活網",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1GbGJfMlZ6SU1BXzNUVmdyRWsyV0d6WHU4Uy03RmNaTlp2bHpnSW0ycDFaV1dTR19VTzFIVmQ3RGw4SUVQU3ppdUVqUURVTVhzS290cHVR?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:19.8853802Z",
+        "snapshotPath": "archive/raw/news-29a5b60fcf2ba376.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-3107f31cddf081b8",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "桃園平鎮「私立文化幼兒園」教保員涉不當對待幼童 共挨罰24萬",
+    "summary": "桃園平鎮「私立文化幼兒園」教保員涉不當對待幼童 共挨罰24萬 自由時報",
+    "eventDate": "2026-03-06",
+    "importedAt": "2026-06-08T12:15:27.8635263Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "桃園平鎮「私立文化幼兒園」教保員涉不當對待幼童 共挨罰24萬",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9OUmtXeUhDQnZpdnZZTy01cF91WUhwUXNhUEFrVzliRi1zVWJnTGxtTnVaNk1PNnlUanI0dndEb1AtNWxLVXIyMF9ESEpTM3JfOHNpUlVfaGtBbHNudldrcTlITkPSAWpBVV95cUxQYTBpOFM4SUdxRTdPS2RJVDNtZ3dVdFBTTjlROTZpQnNuT0NOS2VSUlQ0VmFoS08wanYtQmJOMXNDUk96M0RabnJtM0RaaHFpUUp3QVRnWWxTRHhnU3BpVmZhOWNXUWdWN3Rn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:25.1489646Z",
+        "snapshotPath": "archive/raw/news-af9fda8239268bed.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-e1324b855fca634c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "彰化準公幼爆虐童、性侵 縣府：教保員停職3年",
+    "summary": "彰化準公幼爆虐童、性侵 縣府：教保員停職3年 公視新聞網PNN",
+    "eventDate": "2025-10-02",
+    "importedAt": "2026-06-08T12:15:30.5715393Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "彰化準公幼爆虐童、性侵 縣府：教保員停職3年",
+        "publisher": "公視新聞網PNN",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9mamZFaXA0RENGZnhWcnVWVkxWdU4tWjNONDhURUZ6Vzh3UFNZRHo1MDNUcXppNFlnWG05NEJEakRkLUkwcE9iRWsxNDhZeEk?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:27.8635263Z",
+        "snapshotPath": "archive/raw/news-c28e17a3829c7e5b.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-8a69620255217943",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南幼稚園女師見男童毆打女童 持鍋鏟教訓還將人拖行致手腳挫傷",
+    "summary": "台南幼稚園女師見男童毆打女童 持鍋鏟教訓還將人拖行致手腳挫傷 UDN",
+    "eventDate": "2026-01-18",
+    "importedAt": "2026-06-08T12:15:33.1833370Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "台南幼稚園女師見男童毆打女童 持鍋鏟教訓還將人拖行致手腳挫傷",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE10cVREdktiY2N5UXNjZFBkMEZqOHhnZEdZR1ZUUDJjYkVMZTNxbWpEN0tHRnNtSVhiZFNTNFZVQl9aR1Y1WHFHb1d1U0NFc1px0gFWQVVfeXFMT2lteWE0QmJDWS1PMXV1Q2xGSlNFdE9nbkNkOHIyRklEODBOc3VxQWZmNFlQLVRKZmhZbGFnTTNwbmgyb0tfalVMU1VVako3c05wSTFGT0E?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:30.5822968Z",
+        "snapshotPath": "archive/raw/news-27caa2fdb3e6efae.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-56f7e424e18906be",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "北市幼兒園性侵案！毛畯珅全數認罪 北院9/24宣判",
+    "summary": "北市幼兒園性侵案！毛畯珅全數認罪 北院9/24宣判 台視新聞網",
+    "eventDate": "2025-08-18",
+    "importedAt": "2026-06-08T12:15:49.5077419Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "北市幼兒園性侵案！毛畯珅全數認罪 北院9/24宣判",
+        "publisher": "台視新聞網",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5oMU84b3hsdWpSYkNsbUd2WFRJc0NtLVlQcVkwTXZ2UzVkMkQxYlB0RHZwT05QUTdvQ0xqNTJIUWxEQm52RmxENWhOUHdLMnJQRGxUbUhCRQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:46.8332684Z",
+        "snapshotPath": "archive/raw/news-3b69d49c06cad1bc.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-380e6de0023fa19d",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台東幼兒園施暴6特教童 2教保員、2助理遭起訴求重刑",
+    "summary": "台東幼兒園施暴6特教童 2教保員、2助理遭起訴求重刑 大纪元",
+    "eventDate": "2025-09-02",
+    "importedAt": "2026-06-08T12:15:52.1643066Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "台東幼兒園施暴6特教童 2教保員、2助理遭起訴求重刑",
+        "publisher": "大纪元",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0tbHhBY2lsQXVrTVhSSnRPbDNFaGkyZGNGdTAxNTVodElUckRhXzVzTDJ4WHFmemFqaGg4aFpLTWpGQ2JtZWRCSWtKenRNMkVQd1F3Tks3LU9VQ3d5dk1V0gFkQVVfeXFMTUYxSk5KT1JTZGNsdXN4OHkycmpsTG5DQUp5bTY1czJPY3F4akdpWlhVRkhfdUJqNlFuRFdLY2g3bUc1NkFVeWxEVHFkMExtN1VoQWZwQU5LOV8wTEptSjI1VFRxVQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:49.5077419Z",
+        "snapshotPath": "archive/raw/news-f9208242375e4e4d.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-dbf17ccd27ec5b81",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "監視器畫面曝！幼兒園老師灌食、體罰3歲童家長心碎| TVBS",
+    "summary": "監視器畫面曝！幼兒園老師灌食、體罰3歲童家長心碎| TVBS LINE TODAY",
+    "eventDate": "2025-08-16",
+    "importedAt": "2026-06-08T12:16:00.2448363Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "監視器畫面曝！幼兒園老師灌食、體罰3歲童家長心碎| TVBS",
+        "publisher": "LINE TODAY",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9xTWZWbHoyVkJuV0pBVUVuYjZNOWUyVklzZllaX0ZzNk5pYUh6VmxxWTg5Q2tpMDJEdnl0bEtUZm54dEtWZ0wyUnJFZXZFcGNrTnhFOUln?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:15:57.5636468Z",
+        "snapshotPath": "archive/raw/news-632b976931da5f81.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-9ab604d393635e1f",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "態度大轉彎！幼兒園狼師毛畯珅認罪了 向受害家屬鞠躬致歉",
+    "summary": "態度大轉彎！幼兒園狼師毛畯珅認罪了 向受害家屬鞠躬致歉 上報Up Media",
+    "eventDate": "2025-08-18",
+    "importedAt": "2026-06-08T12:16:05.6503143Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "態度大轉彎！幼兒園狼師毛畯珅認罪了 向受害家屬鞠躬致歉",
+        "publisher": "上報Up Media",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBBOU4wZ05ONFFuV0xjVEtYbWNWSjB2TElYLV9xcllEbDYyMENwZndwTERDLVo5eklhR1JPWFhidzJzRE54bjJMTXZEcDlFd3lFRHcwZ3lTWDg1Zw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:02.9769290Z",
+        "snapshotPath": "archive/raw/news-0118c7fd5ecc3387.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-f0cf91d928ca59d0",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "高雄幼兒園爆「蓋布袋、當拖把拉扯」3歲童 監視器畫面曝 | 社會 | CTWANT",
+    "summary": "高雄幼兒園爆「蓋布袋、當拖把拉扯」3歲童 監視器畫面曝 | 社會 | CTWANT CTWANT",
+    "eventDate": "2025-07-10",
+    "importedAt": "2026-06-08T12:16:07.9837846Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "高雄幼兒園爆「蓋布袋、當拖把拉扯」3歲童 監視器畫面曝 | 社會 | CTWANT",
+        "publisher": "CTWANT",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9DS2NMZXhmcmlYY0VER1lsSmdsU21DbXAzN205QUNZeDJxMlAzVnRTV091UDdmcEFEejgwVHZldUQ0ZEMteFNJVzg3RFpaUVnSAVRBVV95cUxOZkdnWTBRcWNzWTJkY3dFLUFzM0k5S1BZWmt4QmRURjc1Q0RrQV9TT0JIVGNILWdyUzRKTFJ4VkFyemxhVnQ2bjgzcWk5ZGFVWnQ5WG8?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:05.6513485Z",
+        "snapshotPath": "archive/raw/news-25adb0739fbe3f4a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-87ce35126063c642",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "苗栗幼兒園教保員連續掌摑4歲女童，女童幾度站立不住，母親看監視器畫面崩潰痛哭",
+    "summary": "苗栗幼兒園教保員連續掌摑4歲女童，女童幾度站立不住，母親看監視器畫面崩潰痛哭 Mombaby 媽媽寶寶懷孕生活網",
+    "eventDate": "2025-07-22",
+    "importedAt": "2026-06-08T12:16:10.6409756Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "苗栗幼兒園教保員連續掌摑4歲女童，女童幾度站立不住，母親看監視器畫面崩潰痛哭",
+        "publisher": "Mombaby 媽媽寶寶懷孕生活網",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBEY0d6cHJLQlN1MVRqcUdMdmtnVFpOSm54dDV3MzV4Y2lTVjdaTXJlNUpzT0N3YjdXSTBGMWwxRlowQVc1TVlreVVYbkI4UmRXblgzb0NB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:07.9837846Z",
+        "snapshotPath": "archive/raw/news-67e44a2400f00e09.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-837313917beabd39",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "高雄諾貝爾明誠幼兒園涉虐童！職員拖行孩子、抽椅摔童 畫面曝光",
+    "summary": "高雄諾貝爾明誠幼兒園涉虐童！職員拖行孩子、抽椅摔童 畫面曝光 緯來新聞網",
+    "eventDate": "2025-07-10",
+    "importedAt": "2026-06-08T12:16:13.4165419Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "高雄諾貝爾明誠幼兒園涉虐童！職員拖行孩子、抽椅摔童 畫面曝光",
+        "publisher": "緯來新聞網",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5OT0hLX24wY0pUQ05VQXNhRnZqRERydkNSM0JaMWxxOVBzNm1BLXdIbFY2N2FoUDlGS1ZpTXU3T05JQy1jMnNmWUJjUWhHcGxoM09IZDl3UjRmWkI1aVBDV21QUQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:10.6409756Z",
+        "snapshotPath": "archive/raw/news-73b51f97e5cae874.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-6b496d1a52163ae8",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "躲國小廁所偷拍辯「撿印章」重判 代理教師認罪和解二審判6月",
+    "summary": "躲國小廁所偷拍辯「撿印章」重判 代理教師認罪和解二審判6月 自由時報",
+    "eventDate": "2026-03-08",
+    "importedAt": "2026-06-08T12:16:18.7099175Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "躲國小廁所偷拍辯「撿印章」重判 代理教師認罪和解二審判6月",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1aVFpEVzUtMUY2NjRJUC1ucW9STHZtcWJobzhQWG40UEFkY19ibHNPR2pGMWxaemFsR25BcFlOSnlGZWloZTRlRTZLdHhFUHpzOTcxdDNRLVl2UlQwNE9NaGtQRjBRQjBo0gFuQVVfeXFMUGtNS0RZb1J4aGxoQVVGQUFmOTFTdm5vRjZnUEF1NEVwSWh3UTNGUzBzWGF0TTVjMERlenNWdWE4bEk0Y2dITlR0N19DeE5DQWU2MnJWbnRyNWJleXIyT0Z4TjBSdGM4dnBxSkloZ0E?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:15.9309796Z",
+        "snapshotPath": "archive/raw/news-e8492894a7db6d10.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-d3b663fe8b672b5f",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "前嘉縣國小校長坦承不實核銷經費嘉檢緩起訴| 社會",
+    "summary": "前嘉縣國小校長坦承不實核銷經費嘉檢緩起訴| 社會 中央社 CNA",
+    "eventDate": "2025-09-16",
+    "importedAt": "2026-06-08T12:16:26.8824024Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "前嘉縣國小校長坦承不實核銷經費嘉檢緩起訴| 社會",
+        "publisher": "中央社 CNA",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9NR3ZHMkZxclVmNjRFcjB1MzZWSnNMTUFDQkU5QWdXY2U1c29nTTYzZnR6TzdadnlvRTZRekhLb1dEc01UN1FfYWI0bHlBZjVsMHZFMG9OVGdQOU0zMXo0?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:24.2271953Z",
+        "snapshotPath": "archive/raw/news-03afb84c7e8ca1a3.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-289abfe2d47961ae",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國小樓梯夾層淪狼師犯罪地！惡行塵封17年 判刑8年半定讞",
+    "summary": "國小樓梯夾層淪狼師犯罪地！惡行塵封17年 判刑8年半定讞 自由時報",
+    "eventDate": "2025-10-03",
+    "importedAt": "2026-06-08T12:16:32.1455556Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "國小樓梯夾層淪狼師犯罪地！惡行塵封17年 判刑8年半定讞",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1BX245Wm1JdFlSUERZX0hvRW1RLTBOT1hIVTJNNHp4Q1hqQkdrUDJna2VaM0dHZUlnMnF6blJZNEJ0RUhmX0J1cEhrY0NWRC1YR2Y3ZjZuMm5tZnl6N3NoY2JJUmxTWERY0gFuQVVfeXFMTmFzeGdVM3hTWU1UOFRpODVjdmVGbkI2N1AxcFNIWkhXVmR0b1liLWpQSlR4V0xsMG1OUVJLclFfZHFiNXZDTzJKQjRUTzJPdUVCaUdycXNIS0dKMW0tS3pxdWdXb0duaEVlbV9IS1E?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:29.4232122Z",
+        "snapshotPath": "archive/raw/news-5278f39d91f354c4.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ef00f3b16b7dd6c4",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "判刑確定 宜縣狼師猥褻4生 終身不得任教",
+    "summary": "判刑確定 宜縣狼師猥褻4生 終身不得任教 自由時報",
+    "eventDate": "2025-10-06",
+    "importedAt": "2026-06-08T12:16:40.5451853Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "判刑確定 宜縣狼師猥褻4生 終身不得任教",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB2dC1CcjNwVVRycGF1UU00UmlwTGVHUDlEUjR5a09XTjdnbENYUVhkYUE3TTJyeThXbGdGcExHM2lGalB5XzNZS3RXNlhVR2pOc1NyU3JPY0lITEdUaUww0gFkQVVfeXFMUFkwRTlsQ3dINlJjdlp0Und4Nnk5ZGxBR2JOUGFEaUd0ZS1CbHo1U3p5dUVkTGNiX1NONzFlY2VZcTNjNTJzem52LVVfY2l6NVlBNzhiNHZHU2NEd28yd1ZzQ0VaSA?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:37.8238709Z",
+        "snapshotPath": "archive/raw/news-a2d98ac2440266a2.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-710458b85c565ce2",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台中某國小棒球教練侵犯32童還拍影片 90罪一審分別判刑最重8年6月",
+    "summary": "台中某國小棒球教練侵犯32童還拍影片 90罪一審分別判刑最重8年6月 Yahoo新聞",
+    "eventDate": "2025-07-08",
+    "importedAt": "2026-06-08T12:16:43.1567771Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "台中某國小棒球教練侵犯32童還拍影片 90罪一審分別判刑最重8年6月",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMioANBVV95cUxObGpGb05LWFFGdC1hTkZkcmV3SFNGUzJmanZTMWp3V0FmcFpmSjJsMzNvYUR5SUxjTGpoQTZTemJJb3hWZXZZQWtWSXNhc1lzbjVEVXBWSFE3anp2bzRFQ3VsRjY3TGFaZGlFelN5WnR2dFJhYm81RWY5Ykw5cmUzb0FRSG04MzNiY1NZbDI3ZTFfUzFvcTY2dXhMWV9MOVUxYjV4ZHdGcVJiMXdIUmtrc3JjYVhyWUNBeG94bFktUHFxVDd3aC0zZEUtbFhVbDk0bkF5dlJyYVFkYzNWMG9vUUIzNXhXYWl2TzhSMVMwaFhxLVlmVmhpQTgwMm01c1RVOGpKemwwRjYtci1XY2ZPQ3ZuNEkzV0tiOXNoNzBRNERGTjA1cGF6SGdCNzZhN2hBOHJ1a1d2cm5oWmtiSDBMREdiZGRaNUw5WXFNNXFOOGdaVXVuUDQ3Q2g1VGZxcm92UjRrUjUtRHFqa3loZW9jMTdadE13WXk1WlhURDN5N3p4QUlrTDY2Y2lGa29tMFQ1QjNOZnJjakZmN2RqYjdlZg?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:40.5472117Z",
+        "snapshotPath": "archive/raw/news-10c61f4baeb9c407.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-a2d2b492b894a385",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國小教練性侵41學童遭判刑 家長哭喊：你們知道他對小孩做了什麼嗎？",
+    "summary": "國小教練性侵41學童遭判刑 家長哭喊：你們知道他對小孩做了什麼嗎？ 聯合影音",
+    "eventDate": "2025-11-26",
+    "importedAt": "2026-06-08T12:16:48.6293526Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "國小教練性侵41學童遭判刑 家長哭喊：你們知道他對小孩做了什麼嗎？",
+        "publisher": "聯合影音",
+        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1NQzFxcGY2U2U2ODIwbzExbVJBRlh1VWYwV0VvcWdVXzliVzJUeWFTN1ZEdFFCSGl5YjdHV0VVZU9GbE5Wc3pad2tn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:46.1073627Z",
+        "snapshotPath": "archive/raw/news-1dd344e5d8625002.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-0d05fe8412d5a42c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國小跆拳道教練4年間性侵3學童還拍淫片 犯10罪判刑6年",
+    "summary": "國小跆拳道教練4年間性侵3學童還拍淫片 犯10罪判刑6年 中時新聞網",
+    "eventDate": "2025-09-01",
+    "importedAt": "2026-06-08T12:16:56.9223888Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "國小跆拳道教練4年間性侵3學童還拍淫片 犯10罪判刑6年",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA4cmVobjVYSkRVd3Yxb1Jmd2RFVmV2cEJPS2xVWGUyOF93RThXd2dfU3FxSHFQZU81OXpRalE4YnlhWXk3by1RdWxtYWRMRWpRMlB6ZmR4WVlfOFRwREo2VGNLYXZ3NjUzNl9ob2R3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:53.9800941Z",
+        "snapshotPath": "archive/raw/news-0c340d60be0c47a9.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-17e51e9385999fd8",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "新北國小導師當眾脫7歲女童外內褲、裸臀打屁股，判刑6月！法規禁止體罰， 必要可申訴",
+    "summary": "新北國小導師當眾脫7歲女童外內褲、裸臀打屁股，判刑6月！法規禁止體罰， 必要可申訴 嬰兒與母親",
+    "eventDate": "2025-07-24",
+    "importedAt": "2026-06-08T12:16:59.5594760Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "新北國小導師當眾脫7歲女童外內褲、裸臀打屁股，判刑6月！法規禁止體罰， 必要可申訴",
+        "publisher": "嬰兒與母親",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5WYTljMktObW1MSzhRTXJlN1UwamxxcVM3eDhfUS1aT3BBcUltd0dSV3VXUmZaNm55My1ySlFMblhFUmd0MlFDbmlMclhERkNhR3pzT3ZEM2xlWmNV?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:56.9288665Z",
+        "snapshotPath": "archive/raw/news-3d9f9aa1d93f8f87.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-fdfbf9b02eb52f72",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "涉綑綁、性侵10餘名男童並錄影 國小狼師判刑16年",
+    "summary": "涉綑綁、性侵10餘名男童並錄影 國小狼師判刑16年 自由時報",
+    "eventDate": "2025-07-09",
+    "importedAt": "2026-06-08T12:17:02.2053652Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "涉綑綁、性侵10餘名男童並錄影 國小狼師判刑16年",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1iQ1pNM3o3UEhSLUJTZFp1bncxZy1Vb01INGN1Q3lCM1BQZzRmc0ZVWGJKcWE4aDlBTHVHOG1fNlBKWUczSHNLd0FzNU1QeXJyYVNjQnM4ZFBIZ3VsdFkwcG5IcGhra2R30gFuQVVfeXFMTjhNay14STFWTFpZSkl5TEZKUEhRclZaSTltS0JQOHlzVXphbVNKT25hRVBGRFE5bUhxVUthZ3pxaEdUUHFBU0liaU5zQ1RQMEwtT1NwSUJNWVc5dG9ZUExNcDlfVEFpc2liNlJBaUE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:16:59.5594760Z",
+        "snapshotPath": "archive/raw/news-b3a724196739763f.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-f81155f7413be7a1",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "講台上脫學生褲子膠條打屁股 國小老師被停職、判刑6個月",
+    "summary": "講台上脫學生褲子膠條打屁股 國小老師被停職、判刑6個月 三立新聞網SETN.com",
+    "eventDate": "2025-07-22",
+    "importedAt": "2026-06-08T12:17:04.9525199Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "講台上脫學生褲子膠條打屁股 國小老師被停職、判刑6個月",
+        "publisher": "三立新聞網SETN.com",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8tWnVFanltNE1lNldaOWRKZjlLX1FEZUx2ZS1uZTRNRVA0azRpM251RWw5Y09mMHVYR3VYVW95bjc4VjQ5YUw5WXpVV1Y2aDg5RjBJTU1id2HSAV9BVV95cUxQbnJUdnVLX2VvY2pIQVBfODVWUmpZVzNIaDYtZGJwc2FKejV0Z2RaM2xoWlJZMXNyRWR2TzNqWEE5Ul9iMXZTd2RQVnZhX2YyeHRxTGNLUUY2bkdoODVqWQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:17:02.2053652Z",
+        "snapshotPath": "archive/raw/news-059664b76c2e672e.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-1cefb4148c197d07",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台中國小棒球教練性侵32小球員還拍片 涉犯90罪一審判刑出爐",
+    "summary": "台中國小棒球教練性侵32小球員還拍片 涉犯90罪一審判刑出爐 中時新聞網",
+    "eventDate": "2025-07-08",
+    "importedAt": "2026-06-08T12:17:15.3108976Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "台中國小棒球教練性侵32小球員還拍片 涉犯90罪一審判刑出爐",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBlSzlGYTF6UjNRRHpCWXdEWUlPZFZYMUJrTGJsXzN2Nk91WWhMVW9mTl8xaHhaVzFfZ25NMmY5WkF3X3N1amJjT0NpQ0V5eEtvSXFFSk80em1IV1k2LXk2eVNUWS1oUWdoRTJaVGl3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:17:12.7058361Z",
+        "snapshotPath": "archive/raw/news-8688df50ba64d6e6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-e80193910b0a1f86",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國小體育男師邀女弟子當助教 趁機伸狼爪摸胸判刑出爐",
+    "summary": "國小體育男師邀女弟子當助教 趁機伸狼爪摸胸判刑出爐 中時新聞網",
+    "eventDate": "2025-06-20",
+    "importedAt": "2026-06-08T12:18:25.6069092Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "國小體育男師邀女弟子當助教 趁機伸狼爪摸胸判刑出爐",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBmcFRRUmQ3UHlNS3dRdGJoNmtKNTVWbVBWOVlkakJKOGJoR3VYTnhhRzVlMjlJVEhZQ2xuZnhUVlgxdjZHRXlKeXlVdmhSeWVKcWR4UVZNc1pBcGtOQWVNQWU3bVhyOEV5UE9pV1Bn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:22.9849906Z",
+        "snapshotPath": "archive/raw/news-d98808244e70aa11.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-5d1e60f157108bdb",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "前平溪國中校長圖利廠商 判刑1年半、緩刑3年",
+    "summary": "前平溪國中校長圖利廠商 判刑1年半、緩刑3年 MSN",
+    "eventDate": "2026-06-04",
+    "importedAt": "2026-06-08T12:18:38.6246576Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "前平溪國中校長圖利廠商 判刑1年半、緩刑3年",
+        "publisher": "MSN",
+        "url": "https://news.google.com/rss/articles/CBMivgJBVV95cUxOdmR0Mk04aXVNTXN0R1YtLUZuakl6eTZtR1dTdGtBNWItczFSOGZRbEJBLUJDcUVJR1kxNmhLTFkyVnFXQ09iRHU3Yy1FY1BFZ0hwYVI1aG9mOG1kRVB5aU5UNkpTWFVfX2RacmNpWXR2emNIZmg2YzJnNDNyZzRKZE1GeW9kdDdaN0Z3b3ZuYmY4bWs1OUhGUzd2ZUlvbTF3YTNrSUNQWHlTdllkTzlRelV4YVpsQ1EwQ0hxMEpZb0ZGZWFHOGtwLTRaQVVhQlJYbXRWalZPLXNnd1J2UkhNTXotNURjLWYyUTN0aXN6dVRVRm01WklWVEpDOWxqTmdHS3lfRTYzbVBpeHBZTnZHSTY4X3dmamUweXBuS295TjV1QzBLbzhQSF9tcHo3WndhYmJzNFVnLWlULUJrcXc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:35.9387884Z",
+        "snapshotPath": "archive/raw/news-4162c2805f0f5b32.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-019e306b18644d26",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "A福利社營養午餐款408萬 北市明星國中教師自首：投資失利",
+    "summary": "A福利社營養午餐款408萬 北市明星國中教師自首：投資失利 ETtoday新聞雲",
+    "eventDate": "2026-05-25",
+    "importedAt": "2026-06-08T12:18:44.0422448Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "A福利社營養午餐款408萬 北市明星國中教師自首：投資失利",
+        "publisher": "ETtoday新聞雲",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBCS2tBTXBNM3VJSGZIWHdwU2JpYkFBbGl1a3owSGVDR2ZnYkFNUHZKVXVYMWpSX0xzRTJVU1RLdmo5bW9CMVI2Yk9oRndJT0d0dEwzUlhqNER1VURuNUHSAWhBVV95cUxOQkUzUkN3MzRXQ3NLa2VIcDNRaDExRzQ1bW1zd3hNeW1ZLWhZSldnTjF6c3dpR1dwZnY1SXpnVGR3OFhjaUpUMUdIa084dzdYZTA5em1Pdm05NngxZXVxMUlRLVZ6MWJXNQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:41.2915069Z",
+        "snapshotPath": "archive/raw/news-1a79a159a60520ae.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-8bded4282a04e933",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "判刑定讞！新北國中生割頸案上訴遭駁回 乾哥妹確定關12、11年",
+    "summary": "判刑定讞！新北國中生割頸案上訴遭駁回 乾哥妹確定關12、11年 NOWnews今日新聞",
+    "eventDate": "2026-02-12",
+    "importedAt": "2026-06-08T12:18:52.1026392Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "判刑定讞！新北國中生割頸案上訴遭駁回 乾哥妹確定關12、11年",
+        "publisher": "NOWnews今日新聞",
+        "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBBbVRETTNGQmZLTklhQlgzeFVXb1lOSTJWOU5DZkVYZDNRVXJaU2JOTkcxV3c2eUVEZ3otN1hBNHFXUXo5YXJNYTdYTWvSAVJBVV95cUxNdlFLWFBkRjZjUUVubm9uVWdCY3R4Z184VnpVTVM4VW0tUFRMWXFKVldWaUZQR1lkTzZ1YXNSLTJESHQyaXFZeDlOcVU0WEpkVkJB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:49.5056967Z",
+        "snapshotPath": "archive/raw/news-85fff4b8df65455e.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-6e5f56f8535895b0",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "花蓮學校補助身障者聘用！國中小學免罰款 每年每人補助53萬",
+    "summary": "花蓮學校補助身障者聘用！國中小學免罰款 每年每人補助53萬 工商時報",
+    "eventDate": "2026-02-05",
+    "importedAt": "2026-06-08T12:18:54.8083616Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "花蓮學校補助身障者聘用！國中小學免罰款 每年每人補助53萬",
+        "publisher": "工商時報",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0zc1lLMnFOcnhhby1SUU91bjE0QmxYTVNwMDRlU1E4Z0lEVnpxU0ROb2VYeUhOWVZBb0RMNlRQXzRfMXBwZUZDRTNEQl9faHRYbUFCSHJ3X01UaW8tVDlr?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:52.1026392Z",
+        "snapshotPath": "archive/raw/news-0336ab6e2b768382.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ad4fbf1bfe0ce695",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "南投瑞竹國中僅剩9人！115學年度將停辦 學生併入竹山國中",
+    "summary": "南投瑞竹國中僅剩9人！115學年度將停辦 學生併入竹山國中 Yahoo新聞",
+    "eventDate": "2026-01-31",
+    "importedAt": "2026-06-08T12:18:57.5004193Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "南投瑞竹國中僅剩9人！115學年度將停辦 學生併入竹山國中",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxORjY5Y01PLUVSeWVyMTNQREtod2YtcXN1Q0VrY0hLNGFweVRPQm5mZEZiclJ5cjhLVGRTWFc1WExXR19WUmoyWVpKRkFJSDBXMTA5Yk1WQTdWNEVBcjJCajBDM1lqeU1Kdmx0N3pTdTJrS1RxQXBXUm9MNVZpdVRES19hZGFYSEt1UFhtc0JuRmFmTTdkYTd2ZWh2NnlEUFg5X1liRC1OSEVNU1g3OURveGdRMFl5YlNqOTBjVlRReTVoaE5sS21jRnk2UkZqZGM4ZTBOajVIYVU4bFdTLVVtMFNUTm15d3YtWlFzYm0xc1lPVDRqRnVmWl9oMDJjR0VsVXFCSllqUWVyUm5aTVNqR1N6cFdCbWFibDVHUHV3YUdDcGNaR3BuR0tVQUJEMWNscmkzS204LTlRRjJSNGZZQ3Y0S19WSUdSckJOdU14ZWxJa0JOUThKaEh6T2JDd3N3Vm5yLXpDam1EMnB1UnBr?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:54.8083616Z",
+        "snapshotPath": "archive/raw/news-eec19f02b391afdd.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-727dc9b38b17fe54",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "【國中生割頸案】乾哥乾妹判刑定讞 死者父嗆法官：敢不敢帶回去教？ | 上報",
+    "summary": "【國中生割頸案】乾哥乾妹判刑定讞 死者父嗆法官：敢不敢帶回去教？ | 上報 LINE TODAY",
+    "eventDate": "2026-02-12",
+    "importedAt": "2026-06-08T12:18:59.8181728Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "【國中生割頸案】乾哥乾妹判刑定讞 死者父嗆法官：敢不敢帶回去教？ | 上報",
+        "publisher": "LINE TODAY",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE96a0M1ZjVDY1NIaHNrQ01DQzQ3b0wwajFQVEFfX0lkTnZJd2NTRkN1bldKVy1rR2NsNUJzTG1YUmFaN3J2MWJxbXJYRFFqYlZZYmwzbEd3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:57.5004193Z",
+        "snapshotPath": "archive/raw/news-5631cad3404e4ccf.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-9409a604bfe9db4c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "【台中某國中師生戀！停車場解內衣親熱遭判刑】 那是你的學生耶... (#史蒂芬周)",
+    "summary": "【台中某國中師生戀！停車場解內衣親熱遭判刑】 那是你的學生耶... (#史蒂芬周) facebook.com",
+    "eventDate": "2026-02-04",
+    "importedAt": "2026-06-08T12:19:02.0911839Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "【台中某國中師生戀！停車場解內衣親熱遭判刑】 那是你的學生耶... (#史蒂芬周)",
+        "publisher": "facebook.com",
+        "url": "https://news.google.com/rss/articles/CBMi0gNBVV95cUxQQ2IxMlF0WFN3Z3pzRTZBRDgzR3p6OWsxZEtzS2wyd2RkeGQxQjM5QlU1OE0yTjdhZEFUdURMQUNhd2hwX1IzYVlBdGt0aXN0WVplTGZXVG1RVldtN0djU0dsb1NkQkcxR0xpS0F3d1NWTHJNYThvMXJQdDVJSXN3QkJaLUpVOFVoZXZ1a2tTMEJtbjFEYXRhaW5YS2V6b1FFYXEwd1kzQ3BjcGVJdWt3bHNJQlVVVEZ2eWN1OEpKMzhjVjNEQ0w2dG0yaHRneTZoX3ZOY1dnQk9JUjdqaEZZaWgzLXRXOEd3RjZmU2lBUkpUQm5LWnRxWFF2MnpJNlY2UHowTUVfTzA2T01qd2pqTHpqZjRtZE9ldFpUcmRZdzBhT2xQR1FtSU5HcHU1Z0xoVWRfRjZaZjdib0Z1aWkzcG5COEdTaG5RalZkZ2tHQnBTQzNteXpiSW1LVEFtd2J3eTM2eGtzWlhjUFZpZUdzdUNGeGo2S2JBUjFCek9SZVl6Sk1pVXV5bTB3VUIyWGtUalRUeWt1eGZGcGVNQlh0N2U4dGlGR1NmcjJYVGJMdk1YVXRJZE9Da2FZdk13eHJfQ1FoMVFjMVprVS0xNUFrZGtn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:18:59.8211565Z",
+        "snapshotPath": "archive/raw/news-a92a396126fce82a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-40890c395a06b732",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "全校只剩9人 南投瑞竹國中115學年度停辦、併入竹山國中",
+    "summary": "全校只剩9人 南投瑞竹國中115學年度停辦、併入竹山國中 UDN",
+    "eventDate": "2026-01-31",
+    "importedAt": "2026-06-08T12:19:06.7124882Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "全校只剩9人 南投瑞竹國中115學年度停辦、併入竹山國中",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1jOEhCZFQ5cjVnOGp4eHE2cHdMX045eUw3cXlZbVgwTlp6a0pncF9Fa0taSTJrMXBSeVRDaGhyVTBnaXNTeGNMZ3l0anlWMnBT0gFWQVVfeXFMT0dSeTZlMXJieXE1M0FiZUpERmZMR1JHcHBFRlo2ZVZHVjJrVkhfclo4bEhBbC0yT0twNHdOOE80eEZPaGFtV1VBN0VKaXR6VzFBMmQxX2c?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:19:04.3635976Z",
+        "snapshotPath": "archive/raw/news-1cfaf53d8827fb5c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-e62b4d3cb83e297f",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "幼兒園",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "馬公幼兒園裁罰案延燒! 前後任市長相繼表態",
+    "summary": "馬公幼兒園裁罰案延燒! 前後任市長相繼表態 MSN",
+    "eventDate": "2026-02-08",
+    "importedAt": "2026-06-08T12:26:28.6080680Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "馬公幼兒園裁罰案延燒! 前後任市長相繼表態",
+        "publisher": "MSN",
+        "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNRXRNTjlzclBDdGhFRUxRbWMwQUs1UHR0SGUyRXJjcDNRQzlKWVRqUGRuWVhHbFpUT2FkOUxJVjd3SDdiNjFQTEFHbE1janB5cjVsRmp6S0lVaE5GU09fLTUtN01vZzRkTnNaSVZWODdxQVN6WEJ2RDBCX0FFSE5FRE9WRW9KTjYxX3g3aTY1bENQSHczQnZZdjJlOGdiNXdvM05iQjVuZTFjVk9ydGJHVVNaQ0RvZk1QMG9DVHIyRGJBMEE1TjZZOW5XY0dxbmFXWHVwbXZabGJ5ZVp5ZWNnVWU3SjVxQUNDMzJVck1ZendFYzNDZzVlblItRHpidjFRMlRPSGRTZXZlSEI2T1liVDE4NnZiUVVYZG42ZVZMVEdiTVdOY3RZbkRIVHhCZEd3NzdBS2dPX1BNOHNaR1JrYUU1VQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:26:26.0537891Z",
+        "snapshotPath": "archive/raw/news-34ba468d00c73885.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-d8b9e6c2b7d9df3e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "少子化彰縣潭墘國小恐停辦 村民組反廢校聯盟",
+    "summary": "少子化彰縣潭墘國小恐停辦 村民組反廢校聯盟 國語日報社",
+    "eventDate": "2023-02-25",
+    "importedAt": "2026-06-08T12:26:41.2062799Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "少子化彰縣潭墘國小恐停辦 村民組反廢校聯盟",
+        "publisher": "國語日報社",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5tYmZIcXBkWU51dTIxYXczbHNKdGJNbDMzemFKS0U4RjBMRmtxd0tzY1FTVC0xQUdFRWE5RTFUcW9oZF9waTRKTDREWndudm1RbVk0V3JDYw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:26:38.9881999Z",
+        "snapshotPath": "archive/raw/news-79a8b87afe547a28.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-bfaff3678833e5ee",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國中割頸案判刑定讞 前檢察官： 離社會正義感太遠",
+    "summary": "國中割頸案判刑定讞 前檢察官： 離社會正義感太遠 MSN",
+    "eventDate": "2026-02-15",
+    "importedAt": "2026-06-08T12:26:53.2159607Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "國中割頸案判刑定讞 前檢察官： 離社會正義感太遠",
+        "publisher": "MSN",
+        "url": "https://news.google.com/rss/articles/CBMiqANBVV95cUxORGUxWVBjSFB0RHBfWWZFMUlodk13NzlXSEZIWmJudTZnbGl2Y2V6RHV4b0VPSkNOWk9GQkdrVWJKQ0ZJU3NkRXg1aUFBNmVJbjdSY3ZyRU9fRVllUWkza21ZWHk1YlAwaTJXNGgyZzFLR3hpU2J3MlplaUItTC1OdUF2Ykx4c1J1My0yNG1HSG0xNjk5RS1TaHA1VS1IYVhnMFlWTWZiTV9WZGlwQ1ZOWkl6dmtRbWJoVW11OGhPNmRmaUdGM3RScVBuWGk4akpEZmc5VkttOFYtU181N0hGYXFRRWJvWDM0TDdndWhrU2xrV3pGTTEzZmRwUjN6RkJyb09wX0JSNTF2S1Y4NDlJb3JoeDhpNlFxX2NnNk52bnhzXzFfYjFBdGNMMVdMU3hRY2N6ZXR4QXYtWEhNaEtoSEZ5WC1UWGxUM3RoeVU5X2kwdkpya3d2ZkZmNjhMeVBRbk5naWhBM3N3dVU0THM0Y09qdWFObW9fQ250ektKZ1RWXzZkSGYtR1o0RndCajN5TFo1TGlhYk1YVGV4em5wcENDcTJrS0Nf?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:26:50.9897366Z",
+        "snapshotPath": "archive/raw/news-5f939567b59229af.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-615cf661db765dfa",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "考前衝刺騙回家！狼師性侵國中兄弟4年 情勒「想去天堂」判13年",
+    "summary": "考前衝刺騙回家！狼師性侵國中兄弟4年 情勒「想去天堂」判13年 ETtoday新聞雲",
+    "eventDate": "2026-04-09",
+    "importedAt": "2026-06-08T12:26:58.3862021Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "考前衝刺騙回家！狼師性侵國中兄弟4年 情勒「想去天堂」判13年",
+        "publisher": "ETtoday新聞雲",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9fOWVNdTRpVU5TQktOSDdnU1dkb2dfRDFGb0JXR3I0dUV6alJySWtJME94Sk5QSXF3dzhpZ0RnMnk5clExanlzOWVXcjFQeC1sb1FaNnI5c1pYdjhGMUHSAWhBVV95cUxPeHNhcVNVWkhrU2Zya1ctQ3ptaTI5azZhbC1POEY4NzVBaWtpNzBETXpvNWdUcTdScWU0YmViU2E0Z3A3Y3Nab0xHR2VnQ3NZM2xRelAyLWczaFFXWnlIbXZqZXRPSkZuZQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:26:56.1726184Z",
+        "snapshotPath": "archive/raw/news-3d9267021949df4e.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-8d9e64ffa8aa5833",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "宜蘭蘇澳國中傳補校老師詐領鐘點費 檢調追查已有老師坦承溢領",
+    "summary": "宜蘭蘇澳國中傳補校老師詐領鐘點費 檢調追查已有老師坦承溢領 UDN",
+    "eventDate": "2026-01-08",
+    "importedAt": "2026-06-08T12:27:00.6188416Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "宜蘭蘇澳國中傳補校老師詐領鐘點費 檢調追查已有老師坦承溢領",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBKLUVxS0M3NW05T0pUNFJCTENUenEwZ2JtRHNaY1JRcURNLXF3UFV1WDFDZV9pRWloLXpKZlNMNEZvTzkxWFE1TW9fNUd6MGsz0gFWQVVfeXFMUEdlR2tYeDRhRGJCU1liSGQydklsQmJTbVZOWF9CZ1A4bWpaRDZEajZrUHN0NGU1UmFQU3Y3VGdsbS1KMlhacVc4aE5VMlZleEEtdFZLVXc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:26:58.4009885Z",
+        "snapshotPath": "archive/raw/news-36b0ef4e2975685c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-490a6d65618365a1",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "新北市國中生割頸命案 高檢署：判刑過輕已上訴",
+    "summary": "新北市國中生割頸命案 高檢署：判刑過輕已上訴 Yahoo新聞",
+    "eventDate": "2026-01-12",
+    "importedAt": "2026-06-08T12:27:02.8537923Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "新北市國中生割頸命案 高檢署：判刑過輕已上訴",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxORXFiMjZ2bTEwdHVNSmhaeG9hZ1lUMHAyQ3Z1YlVKN0xBb25QVm41V1dOMW54RGNjSldOUEhHWUJzOV8wNFUzb3NTOGFVZldZdzNmT2x2Q0pDNXNQeC1YeUxDQ2ZfOGZCX0FqandXWVJCOHBqMzRvTkd5bm1TeDAtU29seWxHWGRlb192ZTI0WnBvdkUtVUVURENmUjdUTGFJSHdxUk1WbVZtLVp0d3hTdUYwZGszcGNLWklhUjdtYmtQS3ZjYWpKZFo2N1htWk5Jd25QSmdlZXFuNmJ4ZXFMVFpsRnhZUjFRSnI5ZFBqRGpPSWxZamdQOGUwc3ZFVy1lYkZZandYemtvQjhPWmZyNGJWcGJLRkdtWWJkWXNDLVVVeVZYclcwNF9sSEx3YTlvaWpLSnktVjk4VUE0bHpRaWtDMjlGdw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:00.6259492Z",
+        "snapshotPath": "archive/raw/news-32045c513f5c0132.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-6d8fe8ab36bcab27",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國中老師對女學生舌吻舔胸…判刑5月緩刑2年",
+    "summary": "國中老師對女學生舌吻舔胸…判刑5月緩刑2年 Yahoo新聞",
+    "eventDate": "2026-02-03",
+    "importedAt": "2026-06-08T12:27:07.4324797Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "國中老師對女學生舌吻舔胸…判刑5月緩刑2年",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxOemUtQ3E2X010Nkl6elpZVzdMMlhMQThDQXVGV0owalFXcmNxRC1uWm5ZdmlvSThmcHF0anZ4ajdzTldJa2JEZHNseUxtYWNnWDBSM3lvVGpwRGVQVXlFb00tSmttbFota3FTbXR0ZVBwOW1iS2FTdC04blRGQzNRUEFwa0JoNEMtUDhMM2F3Skw5ODRXRllGZU5nd3FtUXdDRGdFMjlDZERqZjR4MTZDbl9FNFZVS1oxVXVaVXVITm93dmNLVWR2T2J1MXZUbFBVQmt5QkpVNFRERVJlMXdqQ0p3RnpMS0lnTUhZd3FYVXdtN3ZiRnR1ODdRQXoxTlpzSXk0LU9Mcy02OGxySzlaeERFcnc3ZUx0ZkxDblpwUGx3STAxYzZyNG1BUEtZazQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:05.1073390Z",
+        "snapshotPath": "archive/raw/news-47e4e4d9823addd2.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-72a49dc7fb27d2ff",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "乾哥、乾妹逃死！新北國中生割頸案判刑定讞死者父母悲吼：誰給我兒子機會| 風傳媒",
+    "summary": "乾哥、乾妹逃死！新北國中生割頸案判刑定讞死者父母悲吼：誰給我兒子機會| 風傳媒 LINE TODAY",
+    "eventDate": "2026-02-12",
+    "importedAt": "2026-06-08T12:27:14.2990046Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "乾哥、乾妹逃死！新北國中生割頸案判刑定讞死者父母悲吼：誰給我兒子機會| 風傳媒",
+        "publisher": "LINE TODAY",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB2dHl1RnNHQlRqcFQzclV6TEhIMkhCVTB0bU5CX2xwRmZjNWV1YXhRdDlsUTRTck5TMFdBTjd6ZC1fX3E5RzNNY01oQzFKSUJ1bXJIOHp3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:12.1285172Z",
+        "snapshotPath": "archive/raw/news-8aa340fca43c6bfe.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-71e3a894ae128ff4",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "蘇澳國中夜間補校7師坦承溢領鐘點費 教育處：配合調查絕不包庇",
+    "summary": "蘇澳國中夜間補校7師坦承溢領鐘點費 教育處：配合調查絕不包庇 ETtoday新聞雲",
+    "eventDate": "2026-01-08",
+    "importedAt": "2026-06-08T12:27:16.6411760Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "蘇澳國中夜間補校7師坦承溢領鐘點費 教育處：配合調查絕不包庇",
+        "publisher": "ETtoday新聞雲",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBweGNLVy05eElNczVEeWEyYkx1dHBUUUFZUmxUUVFxYzNBdjZaRkhGdzcyR1FwaWRHT2cwS19HSTRaQkJINzZLa0l3eWVIa3lzMDR1ZE1xTlc4dC1qMGfSAWhBVV95cUxNQWFfYXhXd3hEWklFbU10UllyaWktOGRvUVR2bmYycHFKb1dYU29yU0E5ampiZ2ZqaTMwYml6XzBEM1dKb2dUd3B6eGU3MFdreHBBWGlUa2VPdDVldkJDZkhkM2pjMHpzQQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:14.3184958Z",
+        "snapshotPath": "archive/raw/news-61c062066ee8c89c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-e8b1a1603ededd9b",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台中師生戀出事「臭澀寶」數學師愛上國中妹 停車場舔胸解內衣",
+    "summary": "台中師生戀出事「臭澀寶」數學師愛上國中妹 停車場舔胸解內衣 ETtoday新聞雲",
+    "eventDate": "2026-02-04",
+    "importedAt": "2026-06-08T12:27:32.6410979Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "台中師生戀出事「臭澀寶」數學師愛上國中妹 停車場舔胸解內衣",
+        "publisher": "ETtoday新聞雲",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE92emZOWkEyYlREd1lTX3JYOVJPQXdvcTZ1dFNIQVVjZTRSNE5GckduN0M5WTVFVlphNlVmZ0NXQmR2V21HeGtpYWsxVzRKMFRLVFNLQmI0ZHg0RkVZMlHSAWhBVV95cUxQUXY0RlRnT0FPMmpfY0poOW53Y0d6amV4bmhFc2lKNklmX1ZlQl93c01LanRLdDVQU0FwbldNNXhwWC0tTXpqNDFzMFNya3RMY0pad2FDcnM0SXVHUjRSZEpCU0VDM3E1aQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:30.3852727Z",
+        "snapshotPath": "archive/raw/news-e5a324b788cbb7ef.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-4a8ae9dd60a41e30",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "少子化全校剩6人 南投竹山、鹿谷115學年廢3國中小",
+    "summary": "少子化全校剩6人 南投竹山、鹿谷115學年廢3國中小 自由時報",
+    "eventDate": "2026-01-23",
+    "importedAt": "2026-06-08T12:27:34.8430045Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "少子化全校剩6人 南投竹山、鹿谷115學年廢3國中小",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9Lb3JuQ2VRODZTX1p4Si1JQ0gyRnZ2MU1LY1A2OFRHeUVXVUZkRzk3OXdXdkxJZUtWeGhMTWNQNm5lSjA4OXlYZ29PcTg1SUtoV2UyV240SEd6UHFHRjhHVjAtNTnSAWpBVV95cUxNVm5fbmdzY2pQN0dPbENWNThnWW5QMkp5YTY2emdZS1B5cVFRaFdGa0VyaWhTaGozN1JjS1FkOGdMZFI2TlZYeTkxRExhekRmWk1hOEFxeGFueDFrUU1STzJzOUQwWS1CZkV3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:32.6505439Z",
+        "snapshotPath": "archive/raw/news-2d44c55f3ed78854.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-4fe428f5ed190fda",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "快訊／新北國中生割頸案！乾兄妹判刑12、11年確定",
+    "summary": "快訊／新北國中生割頸案！乾兄妹判刑12、11年確定 東森電視",
+    "eventDate": "2026-02-12",
+    "importedAt": "2026-06-08T12:27:37.0671259Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "快訊／新北國中生割頸案！乾兄妹判刑12、11年確定",
+        "publisher": "東森電視",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1BVGx4WElEWmhPNl81SWV0OGtnejJMZ2NiLXlsdDNmRTh3ZHVKZ0hKV3NrNVFfQXBIRDZSUWJkbkR5cnZjTVhhYllYVnVmdDR0SURaaWVfNzdTZw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:34.8430045Z",
+        "snapshotPath": "archive/raw/news-38175b9263150f61.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-2e2af74e8feb9aca",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "全校不到20人！南投3所學校下學年正式停辦",
+    "summary": "全校不到20人！南投3所學校下學年正式停辦 東森新聞",
+    "eventDate": "2026-01-24",
+    "importedAt": "2026-06-08T12:27:41.6086764Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "全校不到20人！南投3所學校下學年正式停辦",
+        "publisher": "東森新聞",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBidnV0TmVtbUJtTlk5WlUwZG1OR25wemp2NThRZ2NnT1lmb1U4LTNlRk1WUVhLak5IdnJzNC1xVTVkZFE4UnRZNGgyZ3MzRXZOQ2FkeQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:39.3014084Z",
+        "snapshotPath": "archive/raw/news-1e6b6a7f09f11df3.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-daaf1fbbc6fc2fd0",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "【台中某國中師生戀！停車場解內衣親熱遭判刑】 那是你的學生耶... (#史蒂芬周)",
+    "summary": "【台中某國中師生戀！停車場解內衣親熱遭判刑】 那是你的學生耶... (#史蒂芬周) facebook.com",
+    "eventDate": "2026-02-04",
+    "importedAt": "2026-06-08T12:27:48.6661825Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "【台中某國中師生戀！停車場解內衣親熱遭判刑】 那是你的學生耶... (#史蒂芬周)",
+        "publisher": "facebook.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxOMXl5QUkzR21zZkJMTTRpSF81anhqREU1SDBnd0QyYzNSWmdjU1VZb1M4M1QzQkpsSEhiQWwtMTk0V1c2emNtMWJwRWpycWhBR05iUEg2Zm5QUFJKckRLUGtWd2dtREhoU0FZa24xVkptTXBDWjdMM3k4WjZXSXJEd1FDTkpGNjhSc0xnamVxamtDYmxnX0pQWUxzX3g4dUk4U0tCc1hpWHk1OHlPZGNXS2hkZVFaVjZSZXNPOXdGaW5HUVZwQ1ZOOHhjTzRjMkZNUnpicGRrdVdTNW1INDg3UDlId1dURUphWmI5YW10Ny1Ydno1SmNQQWpndkpRR3FqUlpIS0tCcFh3MktqdXZsNVk4d19TQlNlVGREc1J4cm5iRkh5VGdPenJQc2RPU2doQVNpWUg5REx0WmNRQXQwQnlvR1VkbTRTQnY1WGdCV2hGSnNIdFVESmVzX2Q5Tnd5MVlBWEloYVVGN2pqanltemVSN2ZjcU56WXhKeTRZU0VmY3daMVpWQ1RTak5lZWdSekdMUXJJT3BXbHdJUmc4VUdpeWNqVjJnWDZKTWRCLUZUUG12QzZpYWJkOUlDaDBTRXZ1TF9laFdDU3V2M3ptcXFadw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:27:46.1628194Z",
+        "snapshotPath": "archive/raw/news-36c20bf77a74469c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-b8679c7dcc5d9dca",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "少女讀國中遭多次猥褻…上大學揭不堪回憶！狼師交自首書、認罪賠40萬",
+    "summary": "少女讀國中遭多次猥褻…上大學揭不堪回憶！狼師交自首書、認罪賠40萬 Yahoo新聞",
+    "eventDate": "2025-07-29",
+    "importedAt": "2026-06-08T12:28:04.4649811Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "少女讀國中遭多次猥褻…上大學揭不堪回憶！狼師交自首書、認罪賠40萬",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMiqgNBVV95cUxPVkxKcjVNN1ZEb2tIQlJXTXlfQ2U0c3pwTW9NSS1ISmJDOHZTRktpMUg2UEpSMjcybnpLM0lYc0NnWEpCYWFScmpMY1ktNXpJVXBCWTBkZmZUaC1kbDJ4a1czTGc5U19kQjMxLVQ1ZjhyV1I1b1pnZzBXY3lNaERwcV9LbVEwUG1OTW14YmxBa3RycDZoeDJYZ21PdFdPbEN0UTJXVzRHb0JRdjEzS3RKM1VKMDQ2N2RvcGxCZ0FrMGtuVG95Vld5aWVOSW1mc0xoVllNWHFraXEzbm82Z0M4d2hUVE0yZWV2U2JUZFBGdmpfSlVMejVYcDNfVm82MEJkZWlraGxlaC1iSWxFZEY1VlNubGlWd2pjMnBrZC1Rci1zQU1IRG1pRi1XTkFCbm80cHpUSGZFUzBUU254MURXNnlrQVVnQU5yMDFlSGJhbzRMd2tGWWxPeEVPTnFycjdiTEZsQWZXUnFBaUI1dnVScUJHVmtjdXdRemx4YXBlaTJ0bzI3YnpzdVFKRjRDUUp2NE0wdGp3WGttQ2wtVDJyTEFuOUFwczlPWlE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:02.1851223Z",
+        "snapshotPath": "archive/raw/news-75949bdcb0acf7e3.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-82d8d37558194113",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "少女讀國中遭多次猥褻…上大學揭不堪回憶！狼師交自首書、認罪賠40萬",
+    "summary": "少女讀國中遭多次猥褻…上大學揭不堪回憶！狼師交自首書、認罪賠40萬 三立新聞網SETN.com",
+    "eventDate": "2025-07-30",
+    "importedAt": "2026-06-08T12:28:08.7666266Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "少女讀國中遭多次猥褻…上大學揭不堪回憶！狼師交自首書、認罪賠40萬",
+        "publisher": "三立新聞網SETN.com",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5SVlgzZmhCblNXWndMaVRrU19ERDVITDMwc2dLSHhmXy1SLWZfZ0MxdldoTl91VlhwMWUzNUVEdTZ5RVpIbWczd1NMSGEybXRIMnJNWTFZNlTSAV9BVV95cUxPZFhZdmd0cS1qdUF2N1NNcGVEVW14eGgyQmdOY3VrVXdOMlpycVdfd1VyeGR2VmYzSlk2ek1XM3h4VnhLZ3dyUFdLV1VpUHFxTm9lR0xKaFBQdzdidl94Zw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:06.6559923Z",
+        "snapshotPath": "archive/raw/news-bf35304e31fab3a1.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-c6c0a10c6e3f362e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "替學妹出氣 國中生撂人持BB槍抵頭痛毆學弟 1判刑、4人送少年法庭",
+    "summary": "替學妹出氣 國中生撂人持BB槍抵頭痛毆學弟 1判刑、4人送少年法庭 自由時報",
+    "eventDate": "2025-09-03",
+    "importedAt": "2026-06-08T12:28:13.2515289Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "替學妹出氣 國中生撂人持BB槍抵頭痛毆學弟 1判刑、4人送少年法庭",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1lM1NnVnNuQWFhUVNfaElMNmNFNkhLVkY5aXdaNUFwbHZCNDJpWV9icklYZ3RHYV9tZjdnSGY2Uk9qT19fTHNvOGpfZ0lMZnR4WGtLYUJlaURDM0E0N2dXUHlRR3VLbndp0gFuQVVfeXFMTUZIaWFkbURmRkZ0QXFENTQ4MDBjVmZhVW1uSVdacWJfNDRGRDlNaE1WZ1hUY0k0Y0dyWl81cmlFSjdBSWtFZS1fQUFNeDEtZjZBcVhJeUZuNHZPWllmZlpsQWR2Y2cwMFVnOGJUcmc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:11.0281712Z",
+        "snapshotPath": "archive/raw/news-471257e115a46a8a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-a50776adf165ec02",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南市立國中老師輔導女學生...撫胸摸臀還企圖偷拍 自首賠錢獲緩刑",
+    "summary": "台南市立國中老師輔導女學生...撫胸摸臀還企圖偷拍 自首賠錢獲緩刑 UDN",
+    "eventDate": "2025-07-29",
+    "importedAt": "2026-06-08T12:28:17.7839744Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "台南市立國中老師輔導女學生...撫胸摸臀還企圖偷拍 自首賠錢獲緩刑",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE8yUWVfQ3dmWDJyQ2tvOHNsS0pVc0p6QUlROEhtTmpXSFMydzNEV1daeWlqQzM4YXlfdUpOWmZDTXgteldZLUZUZXVyemczZHBE0gFWQVVfeXFMUDFSdWdKMzhCTXJGNEVndG41SlJHRXh5RjZCc0pDUDI5UjlrSHp0a18zTmRwN0NZbnMxLUFVREpBcVRUYUJLekw1NDc0NEtRR3ZYTkFDWEE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:15.5193449Z",
+        "snapshotPath": "archive/raw/news-03c713b6501d7e06.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-3be885c6815c0497",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "近50年的鎮海國中即將走入歷史 保障相關師生權益 校區規劃轉型",
+    "summary": "近50年的鎮海國中即將走入歷史 保障相關師生權益 校區規劃轉型 澎湖e傳媒",
+    "eventDate": "2024-06-11",
+    "importedAt": "2026-06-08T12:28:31.8013556Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "近50年的鎮海國中即將走入歷史 保障相關師生權益 校區規劃轉型",
+        "publisher": "澎湖e傳媒",
+        "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxQcGtrel83bGdGRXpRWjVEZXpoT2ZXVjJ0eFJ5RzBGWllMWDROM1dTdXIzVlJMcE4wVDhqN2pCY2FtV1hYV2FtU21NNlBGV1p0anlPVzhQN3cxRnFZcGtIUEhaOU15NExBUVcxQm5fS0pyakZ0Ml9PZzBSM0xBZ3p6V2l4NnJtckhxb2phWWlXYnYzN2FiYzZfTUFOR3ZRSGNackJ4UUYxMlFwLVhwSkVfY3llZUdudWxvS0dmMWJ2d25Ba3pyenI3Qlhla3JUeGZmbWswS0F6MEhiNlBEbERGV1ljTXE4TjU0ZkdyclpmbWxVQ3FqN041Y3dCNTNBc0hKZE1NVndiN21JRG1kZDVmT2NaWjB4Yl9JX3prTjBIZURUS01IaGNpR0FwdXlXNTBmMk5SWk5JSzhaUQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:29.5100766Z",
+        "snapshotPath": "archive/raw/news-32268c6c0bc578be.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-0523b801d15bd142",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "又一國中「確定停辦」！成立57年走入歷史「即刻拆校舍」改制普通高中",
+    "summary": "又一國中「確定停辦」！成立57年走入歷史「即刻拆校舍」改制普通高中 Yahoo新聞",
+    "eventDate": "2024-05-23",
+    "importedAt": "2026-06-08T12:28:36.3259572Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "又一國中「確定停辦」！成立57年走入歷史「即刻拆校舍」改制普通高中",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxPMExRRjdVcUdvMnlOc29mbzlHZUxJV0MyRVVCN0xMNWI1LTVmaHA5aWJ4bUZEZTg0UU1hb1IweVZBQkQ4WG1ORWUwWklpVDVUYWRLcXA1NEtlclQxQkpZTnk0OThuazJBYndIdlBUZ1BySEhKazFIRnVEcVJoR2tTTHVhVEZtblkxTTNVM0xjLV9xX0M0RkVXcDJVd1o1LWxQLWF0bXFmUnltZTJGeE02NjBwekFSR1ZwZVFqdW1CZWVHdzltci0tZ0pHNUNrNnR6RkpOQVMtWG9vQlk3eEhBQTZqZUlNVGU5YllZTXZJQmthQ3hzMkRiNEJHc0JfTTdSUjdGUFZhSkM2anczQ3FEaWYtZFFTQ1h1UVlISzFuTVdxVWJXSnQ0NHNmbzlkM0FxWUdoNXVuSFlyS0dFV25z?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:34.0868316Z",
+        "snapshotPath": "archive/raw/news-2bed203e1956b903.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-e40c49bb22bfd458",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台灣又一國中「確定停辦」！創校60年走入歷史 將改制普通高中",
+    "summary": "台灣又一國中「確定停辦」！創校60年走入歷史 將改制普通高中 TVBS新聞網",
+    "eventDate": "2024-05-23",
+    "importedAt": "2026-06-08T12:28:38.5113483Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "台灣又一國中「確定停辦」！創校60年走入歷史 將改制普通高中",
+        "publisher": "TVBS新聞網",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBaaHAxdllqcXNfQmRGbWR5ZkgzWlJuR0RCM2VhQlk4TTktdkFDMFJrOHpLMndUSV83S1lXbjh4REQ2TUZiNjlDcW1sdGdYZw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:36.3337171Z",
+        "snapshotPath": "archive/raw/news-79b82c23f7bd4a31.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-f746278c0ff1432a",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "桃園國中生校內糾紛 黑幫父率眾施暴遭判刑4年10月",
+    "summary": "桃園國中生校內糾紛 黑幫父率眾施暴遭判刑4年10月 大纪元",
+    "eventDate": "2024-12-20",
+    "importedAt": "2026-06-08T12:28:40.7842626Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "桃園國中生校內糾紛 黑幫父率眾施暴遭判刑4年10月",
+        "publisher": "大纪元",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBXRVZzTFFnLTVXSXVfU1hacGZlemp2czN0dnJQdWpJdTFsZC1PYWhkc1lwX3dkVnI1R3JRVmpvQkFvU0ljSEdMdFMxUnUteklhTXFiVjA0X09zSGJEVXNTd1hR0gFnQVVfeXFMTXdlOXZqU0NiUmZNSG4tSkJiV3AwWUtRMnBoRTZGeXdQV0FkZW4xZWRORHV5VkcweFM5QlFyT3pKOE8xT0NELWxvN19qV0NDWnRGZUFHbVpsOG1WQW9XdTN0NE5XRzY4dw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:38.5139119Z",
+        "snapshotPath": "archive/raw/news-360d0c7efb8d5156.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-2210c9e38ada9a59",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "受少子女化、航空城計畫影響 今年22校停辦",
+    "summary": "受少子女化、航空城計畫影響 今年22校停辦 大纪元",
+    "eventDate": "2024-12-29",
+    "importedAt": "2026-06-08T12:28:43.0475629Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "受少子女化、航空城計畫影響 今年22校停辦",
+        "publisher": "大纪元",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9NeERlazBUMVgyU2duMTdhN3R0N2JzVm15N29oeU4xR0NvZ1FEVVZLYUY2UDg2dVlWc1h5cEgxRC1jc0lvOC1jbUZybzVCMWtGSVpZN1lyY2RQa1M0SmJCcjJR0gFnQVVfeXFMUHlKUFRHbkNZMDlvVEVhQjVyaGU3aF9lTF9zVzJfWFRfeDlBdjZ4aTlDRWF5NHZCQzNwbjgwRTRMUmZoRUhiMjRSS1Etdkh6bFZTUVBvTmtmNzIyd09MaTNvMU1UMUZKNA?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:40.8035471Z",
+        "snapshotPath": "archive/raw/news-0c1d64ffcbe050c2.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-37cba0b3633a0419",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "反課綱學運教上床 男大生奪國中女初夜判刑3 年",
+    "summary": "反課綱學運教上床 男大生奪國中女初夜判刑3 年 匯流新聞網",
+    "eventDate": "2025-02-10",
+    "importedAt": "2026-06-08T12:28:47.4913016Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "反課綱學運教上床 男大生奪國中女初夜判刑3 年",
+        "publisher": "匯流新聞網",
+        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5xTTlEcDVaSUZiRlh2RGd2TFR0eUpGSnlabXJ2ZGZqYXhFRjN0c093UW41X3VTRGNhX3RtWG9sTFBqdWdST2NEaHZ3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:45.2670664Z",
+        "snapshotPath": "archive/raw/news-121d40ba5c3ee6ba.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-3a331bdf5c9470b4",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "宜昌國中體育教師遭控 曾對學生施暴遭判刑",
+    "summary": "宜昌國中體育教師遭控 曾對學生施暴遭判刑 公視新聞網PNN",
+    "eventDate": "2019-12-04",
+    "importedAt": "2026-06-08T12:28:51.9277008Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "宜昌國中體育教師遭控 曾對學生施暴遭判刑",
+        "publisher": "公視新聞網PNN",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE40WWNDRTE1UkFMYkhVRW9pSXA1azROR1V2Qmp5cWZ3T0UxZVNXbWVwdTRNZnFHQlIycGpwbGM1RnBoX3BBVVUxel9OZjRzekk?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:49.7108849Z",
+        "snapshotPath": "archive/raw/news-1234d60b88f5649f.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-8f85ea1bcf8ce8ad",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "南投某國中生校園販售電子煙 函告監護人裁罰20萬元",
+    "summary": "南投某國中生校園販售電子煙 函告監護人裁罰20萬元 自由時報",
+    "eventDate": "2025-04-18",
+    "importedAt": "2026-06-08T12:28:54.1114714Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "南投某國中生校園販售電子煙 函告監護人裁罰20萬元",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1UdmRUalBCbk5JWF9kelFrQnVKZlJjaVdSOUhya01FNjd2NldjLVNldl9LN0tSLUNFMDBOVUI4RU1KdDBaUnh0RkVaZnRvQ2NxTzZlVk1KWmNKdjF3NFhieGtBYWl1RVpS0gFuQVVfeXFMTnZqZXg5U2ozRkJ0NEJJMHA2UWFldEozcW4tSk1nNUpPbGdFTmM1NS1FUnJwak5nRGI5dmZNVUR2eUhlOWM4Z05VYllPR1lXUTBsUllERE5WWWt5dHNZSjE2a0lnbHVWaXhJWkYzTlE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:51.9277008Z",
+        "snapshotPath": "archive/raw/news-39767fa16c535d8a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-c21e11372cb26459",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "補新竹縣高中不足缺口 六家高中後年起停招國中部改制",
+    "summary": "補新竹縣高中不足缺口 六家高中後年起停招國中部改制 UDN",
+    "eventDate": "2024-05-23",
+    "importedAt": "2026-06-08T12:29:00.8158428Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "補新竹縣高中不足缺口 六家高中後年起停招國中部改制",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBXU2hjVXdPY3BiaDNWSjg1QnlpN253MzhDNS1UMXpNOVlWOHVqZmVzTll1M1haYTVVOW9aQXFnd1R5bXp6RnZkdDFHZks1cFdH0gFWQVVfeXFMTS1jOVIwVEhtVW1hbEZEM3JfUlJDeWZ2ZzV2aFRhMXQ4VG1vaDdFb1hCaWVQdVhyd0VtMWFmU21SMjhRS1ZKd1ZweWdBT1pHazNFcWRrMnc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:28:58.5561437Z",
+        "snapshotPath": "archive/raw/news-7d697f343b62773e.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ff66ce416c68a94d",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "57年學校將成回憶！台灣「又1國中將停辦」原因曝光 校舍已開始拆了",
+    "summary": "57年學校將成回憶！台灣「又1國中將停辦」原因曝光 校舍已開始拆了 Yahoo新聞",
+    "eventDate": "2024-05-23",
+    "importedAt": "2026-06-08T12:29:03.0053011Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "57年學校將成回憶！台灣「又1國中將停辦」原因曝光 校舍已開始拆了",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMilANBVV95cUxNMV9JdnVUbS1Md1lJeHBpTlZCTTZVZGF2OHVTbEVlRG1NSmFURm1hS2hEYWRGVkQ2emlGZEpoN09PNHlxZ3lEVnowLWgta0ZpTS0xM1VXZkNUdU9KRlBlWHEyYmVKVnE4ckdabkxVd0lNRENETktSbjM5X1c3Q3BYY0VaWGtVLXBNN3FBa3p6VXVoRUItbXFGWFpMZFNuRHlwWFhoZUstUjhuY0xxdHh6THlyM3JPNWd3RXJQQkcwakFLaXI2WkJCUG1rcnNiSHpTTVFlb2cxdURyaTJ5MkVzcHBVa3A5WEVmOHAxay1EZkpabjg0TkIyV0JLTkJEcnQ0Q3drZWk0VllpQ0huZmxETnkweTNaWFNmVFdQLU5ncERtLUs2Q183NzdUcXVhR0tSdHMySXJxZF9yc2dkMkNzU0lKY01YbWIwVzdreDlEaFFETXpXamtVUmdsVXRqYVNEbW9XTXhfTk8wYjFsWkpNMnZUTGdEbFkzVzBxREtHa2hfbjIta3FfTHltYWYwVC1vUG1LcA?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:00.8315318Z",
+        "snapshotPath": "archive/raw/news-0bdef0bddbede2f7.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-bbabafa704af08af",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "傳訊學生「錯位共浴」 國中老師遭解聘罰款6萬確定- 社會",
+    "summary": "傳訊學生「錯位共浴」 國中老師遭解聘罰款6萬確定- 社會 中時新聞網",
+    "eventDate": "2024-11-10",
+    "importedAt": "2026-06-08T12:29:05.2358619Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "傳訊學生「錯位共浴」 國中老師遭解聘罰款6萬確定- 社會",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9XMmJnWnQzZTVZQ1NJdWdQUVNHMlZIS1FUQjR1cUJvdC1QLUpuY2VqMk4zWWdGVmdEYTBPc3d5SVFvaW1lWi1COEF3aFllWDFaY3R5d2lwdV9wQzBWemxmeXd0ZUQ4eHZMYkdBQjl3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:03.0118337Z",
+        "snapshotPath": "archive/raw/news-0f8620bd573f8145.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-cc7df5417ce14437",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "宜蘭4校學生數不足恐裁併 年底召開教審會審議",
+    "summary": "宜蘭4校學生數不足恐裁併 年底召開教審會審議 自由時報",
+    "eventDate": "2024-11-16",
+    "importedAt": "2026-06-08T12:29:09.8795137Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "宜蘭4校學生數不足恐裁併 年底召開教審會審議",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBPZjQzeXIyZ2Jxa3BZLWFrRjBTSElLaUp1T3Q3R2F2d2owd21vQXpFRlVodE9VOWtxeXZLT084dS1xVW5TSVpEVEJUZ25CSmdKaEx0UU9DVmlMWjNVLVR2c2hTTS3SAWpBVV95cUxOd0ZhMG9JWERpYmI3UTRQZHNEdC01ZE9uNW1SYkxZTEhGNkZveTVBUWtMWm10bGVwRy1iMFM5bDJhdTdXeG9SN1BsVDVvRUlPcUxvM05xSV9wTERiUFBaQlk0V0J3NlhJMGNR?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:07.5780532Z",
+        "snapshotPath": "archive/raw/news-94420fbb0d2b259e.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-890679795b700636",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "國中外甥女遭同學霸凌 舅舅幫出氣拿椅砸同學遭判刑",
+    "summary": "國中外甥女遭同學霸凌 舅舅幫出氣拿椅砸同學遭判刑 中時新聞網",
+    "eventDate": "2025-05-16",
+    "importedAt": "2026-06-08T12:29:16.4968445Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "國中外甥女遭同學霸凌 舅舅幫出氣拿椅砸同學遭判刑",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE96M3RhQktwTjI0Tnp3VDd3R0pFdy1LX1NBeW5Hb3Y1UVFoeTdwbms2UWlXYUEwYmtxelpYUEVhYVVQTUQwMGtHazZuNDJOZy1fd1VLaXVCX0dOS0MwemU3TkM5VkhwZmlMa25WdGdn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:14.3058293Z",
+        "snapshotPath": "archive/raw/news-2e9e7d12bf5663c6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-25a08dcbe766ec2c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南後港國中停辦 校區打造台南第4座職探中心啟用",
+    "summary": "台南後港國中停辦 校區打造台南第4座職探中心啟用 自由時報",
+    "eventDate": "2022-06-30",
+    "importedAt": "2026-06-08T12:29:18.7488584Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "台南後港國中停辦 校區打造台南第4座職探中心啟用",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5tdUVleHVpS3FOUVF1WHQ1ZVJOaWRFWTg4T2hoeGdXRkw3M1pNX3JlejdYbGFyUUpKTlBKTmc4djdidEt0bHN1bXZURldLdFZEUUdpVDQzbjJydzNkMUpEWF92YUHSAWpBVV95cUxObDEwLUhYRndkSHpGWTBHYmQtQzg3NFFFaG5NbzRmTU9KRzRSenFCUkhZTm9CQlBiVlJCeUR3ei1TbUVtVm8yVjFRRnY3WU9DWXFXaURvamY3RGRKRnZyVDdvS1lobm0yUVVB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:16.5177005Z",
+        "snapshotPath": "archive/raw/news-7381cb7e05bafb4a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-4a50941ca0c4931e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "嘉義私立同濟中學國中新生僅個位數 決停辦國中部",
+    "summary": "嘉義私立同濟中學國中新生僅個位數 決停辦國中部 自由時報",
+    "eventDate": "2022-08-04",
+    "importedAt": "2026-06-08T12:29:21.1620881Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "嘉義私立同濟中學國中新生僅個位數 決停辦國中部",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9yRHZaQXFYRkJMdmV1dGNiUkNQejJ3ZnMtZ2hXZGVtSGNoSmxfdUxHblpwckQycTJuQWQ1V1JWdUk3RDlHNGNiUDZmUFZicEQzLVpzZk5ncHNXbExyTGtxSUc2czHSAWpBVV95cUxNejFpT3lRbzVMQnhNZ2dWTTc4N3ZRRW9ReWRGUlJKVS1KNGZjVzlQOXBGd2xWUVpQZHpaMGxpTGhRc241blVINk5xOHFjMGMwdHd2ZFhOYzE2U0JCeHctb1VvUHgtNkpZQ0Nn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:18.7562254Z",
+        "snapshotPath": "archive/raw/news-4a1e55c29982eb00.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ef0b2171bb2d6788",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "高市國中小評鑑 教局：108學年度起停辦2年",
+    "summary": "高市國中小評鑑 教局：108學年度起停辦2年 公視新聞網PNN",
+    "eventDate": "2019-03-13",
+    "importedAt": "2026-06-08T12:29:23.5310389Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "高市國中小評鑑 教局：108學年度起停辦2年",
+        "publisher": "公視新聞網PNN",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1qNHE0dnNteVdmUnZQZWpDamZramgwMktfUEdrYTBFQTJMY2Q4YVVBd01PUUZPOERMVXU3amNSVDI5SzVkQmJjNU5TZzNTTHc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:21.1847461Z",
+        "snapshotPath": "archive/raw/news-11370bed14ab43a0.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-8ce4e92d7f7a01de",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台灣又一國中「確定停辦」！創校60年走入歷史將改制普通高中| TVBS",
+    "summary": "台灣又一國中「確定停辦」！創校60年走入歷史將改制普通高中| TVBS LINE TODAY",
+    "eventDate": "2024-05-22",
+    "importedAt": "2026-06-08T12:29:25.8425776Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "台灣又一國中「確定停辦」！創校60年走入歷史將改制普通高中| TVBS",
+        "publisher": "LINE TODAY",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1vZEVUZGVyYVNqamRETGFBb2paVXVaUHc1SUQwME9nbF9KV1JDNnJJWXN3RUZ4UEtWQ0NsdUh6WkkzU3YxS3NPNFk2ZTFsX3BWSTNOUUhB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:23.5361663Z",
+        "snapshotPath": "archive/raw/news-60e9a44c840420bf.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-2a642615edde34de",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "停辦不廢校 後港國中校區變職業試探中心",
+    "summary": "停辦不廢校 後港國中校區變職業試探中心 中時新聞網",
+    "eventDate": "2022-06-30",
+    "importedAt": "2026-06-08T12:29:30.3540239Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "停辦不廢校 後港國中校區變職業試探中心",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9GU1Zhem9tTXoxZkpoZmVvTXlBMmZkTHhZdFY2T3Bra0J0dW9XTkR0SVhiRVB4SHMwTEFyOXVmWW9EdnZpYV9Zd0lKV3pXWlA0c1hTOEFhakxMV05qR0lpa2xXUzdJTE4wcjZVWUpR?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:28.1362962Z",
+        "snapshotPath": "archive/raw/news-dbde3fe6a0c964b5.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-4a7a4c7440528196",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "獨／今年22校停辦停招！教育部揭退場四大主因",
+    "summary": "獨／今年22校停辦停招！教育部揭退場四大主因 ETtoday新聞雲",
+    "eventDate": "2024-12-29",
+    "importedAt": "2026-06-08T12:29:37.2057489Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "獨／今年22校停辦停招！教育部揭退場四大主因",
+        "publisher": "ETtoday新聞雲",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFB6NEtZQ0Y2YnNsUWFBNWRXT0ljNE9YRUd5ZXZ6VEZxY0Y5cUdrT1plTk5QMVpXSHVST1BGNEczcm9lZTZuZmwwMTNBSDB6OE9EcXhPNUctYnhFeTBQR3fSAWhBVV95cUxNY3d6TXRjZHdUMThDM1hoTTVrNWRwN1hFV2YwNFVuaFp6aEQtcmdDV1JXR0hDSlFEVGM3b0MzZUNFWnNNTnM3VUxJS1V3MGsxcndKVzhReTRma0NlME9tMndzUDJHaEVpOQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:34.9015561Z",
+        "snapshotPath": "archive/raw/news-8fa1c71350432e71.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-a22a3725861ef463",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "邀男國國中生到家裡看電影 噁男師狂摸1小時判刑7月",
+    "summary": "邀男國國中生到家裡看電影 噁男師狂摸1小時判刑7月 中時新聞網",
+    "eventDate": "2025-01-01",
+    "importedAt": "2026-06-08T12:29:39.3946241Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "邀男國國中生到家裡看電影 噁男師狂摸1小時判刑7月",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9GT2pBSWtjYnZsandjbExCS2VoQlJXWmQyM0VFc2wtVXBhUzJlQjEyc1RiSkhkZFNVcFZHZE0zY1RFUnYwUVB2MjFTQWthVTJLSzJmTXBtV3NZQWR1SDZqaGNVSW9QNXR5RlhjUUJB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:37.2238931Z",
+        "snapshotPath": "archive/raw/news-178ea8d15118afc6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-f651573228ba448c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "地方教甄喊卡！取消正式缺，讓代理教師轉正遇寒冬",
+    "summary": "地方教甄喊卡！取消正式缺，讓代理教師轉正遇寒冬 翻轉教育",
+    "eventDate": "2021-07-13",
+    "importedAt": "2026-06-08T12:29:41.7198409Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "地方教甄喊卡！取消正式缺，讓代理教師轉正遇寒冬",
+        "publisher": "翻轉教育",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9aTmgycHlsNTVJa215MWdqakU4R2Q1MlBhWFREdTJOb1BiMzVPTlJWVlR6VnRoMTZyMXVsQkJhOU5welFOTDh0Z2VOMWpnYlVIY1hVRExwOHV5ZjQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:39.4104101Z",
+        "snapshotPath": "archive/raw/news-0b0ffdbf4d98384d.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-66ab84fced8b6a7d",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "逼學生聽佛號霸凌師「你業障重」？龍井國中校長：早已停辦",
+    "summary": "逼學生聽佛號霸凌師「你業障重」？龍井國中校長：早已停辦 三立新聞網SETN.com",
+    "eventDate": "2025-01-06",
+    "importedAt": "2026-06-08T12:29:43.8938440Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "逼學生聽佛號霸凌師「你業障重」？龍井國中校長：早已停辦",
+        "publisher": "三立新聞網SETN.com",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAzazN0eElLc1dKdF9RUDR4R1liV1N5LVJhc2hIX2J0YXVnSFdmQVkxeTE3Q2NQNHBRbDVlckQ5Y3ZiWXZ4SUZZNkNwSDFtVXB4cFh0QkF1LXfSAV9BVV95cUxObHQ1bU1vOENGUWI4c1ZjUFhyZl9ka2EyRW1ydk1va2RvY2tseW1NbFUxZFVuZUhfOV9yZjFqV2JwWFpjTXhycDl2MVhhT2w2cHZoYzhCMGRTd3d0TG5yNA?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:41.7358556Z",
+        "snapshotPath": "archive/raw/news-7e1adbcbe742392d.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-3b75b7f720f74f6b",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "少子化浪潮衝擊！113學年度22校停招停辦",
+    "summary": "少子化浪潮衝擊！113學年度22校停招停辦 自由時報",
+    "eventDate": "2024-12-29",
+    "importedAt": "2026-06-08T12:29:48.4969550Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "少子化浪潮衝擊！113學年度22校停招停辦",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9DMmlCNTFlenFrUUtGZkk4M0dsR1prMVU2RHlrOWwzd3VrNlVmSENCbHRldHg2SHczbGlhN2hIZjJpbFlfb3E0V1c0WGNiUHhEZkFTX1JfWm0tclFLSVNmVjhZX0fSAWpBVV95cUxORENRcko3MVpJbjhRczRSZk96dnBfenJ1SElBcGg1TlF0cC1MaWhJUG9zcGxTb0lDQWJjbWwzNTNHVWt6djlGUldEcmhWWDUxUXlUMld3Mk1IQzBaM19Ic25JblB2aWtXRHRR?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:46.2167563Z",
+        "snapshotPath": "archive/raw/news-dc5f7dbbfb7fa076.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-4358064922abf92f",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國中",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "割喉國中生判刑後將送明陽中學 由少年法院指導教化",
+    "summary": "割喉國中生判刑後將送明陽中學 由少年法院指導教化 好房網News",
+    "eventDate": "2023-12-31",
+    "importedAt": "2026-06-08T12:29:50.7682547Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "割喉國中生判刑後將送明陽中學 由少年法院指導教化",
+        "publisher": "好房網News",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE55cUNQQV9zTkZnSmxlYTdZeUI2NWxVX3BUa0t5X1dpU1dpWUJIN1ZKMmZZY3RmNER1Z3BGV0pzTWRnWjJ4bG1aYmYwZUNhbnhKWTRPdEsxbEx3RTM5VUtOR3lyWHlqQzNCaUQ40gFwQVVfeXFMTVd1OF9pUjhHNExoZVdRQWFscTh0cDE4YWVVckRnZlMycWVXQzJKTXZTd213T1lGQXpaWHBldEIyNkp5UDhDcDhwMlVHZzJ2U2lTZHJRUTVqaHFGcWxuRWI5dUtWZXRIYWRvZ3ROWlU1Xw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:48.5071230Z",
+        "snapshotPath": "archive/raw/news-523fa4ed0d586242.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-43b96ce12ce6845f",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "少子化衝擊！新竹1私校已無學生 教育部：尚未接獲停辦或合併申請 | 民視新聞網",
+    "summary": "少子化衝擊！新竹1私校已無學生 教育部：尚未接獲停辦或合併申請 | 民視新聞網 LINE TODAY",
+    "eventDate": "2026-06-05",
+    "importedAt": "2026-06-08T12:29:56.0588735Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "少子化衝擊！新竹1私校已無學生 教育部：尚未接獲停辦或合併申請 | 民視新聞網",
+        "publisher": "LINE TODAY",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5NVVJhNjh1S3lqeDlELXJvYkZFQndnUlh6ZnBDMFlRdEwteEk4TFdQNG43TGRYQ2swVGhrM1czZy1ua0M3SF9pMkdwcE9hWDE0RjZNNjNB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:29:53.7825979Z",
+        "snapshotPath": "archive/raw/news-a50538e2c4bce66a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7c332b93a3918b70",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "教育部拍板 5私立高中職114學年停辦",
+    "summary": "教育部拍板 5私立高中職114學年停辦 Yahoo新聞",
+    "eventDate": "2025-07-18",
+    "importedAt": "2026-06-08T12:30:09.5405124Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "教育部拍板 5私立高中職114學年停辦",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPN0JMbjVYa2tQRUs1aE5RTTdPUWw4dEYyMWwzeUNVOWticEpnMXpWSXQzMjE5cndPdWVLeWt0ZUxMUW5YRS0zZkNPX1prSHdFWndUY3cyU1czaXFxeGthWWZ5dnc3eHVZdkJQZUZ2U1ZhMFdwVzdNMm96SUlqVy1PMnVZZElzUHZQMXVaYUQwdnpwODhMbDVMLWZ3d2xiV0IwSV9oZm02a2M0M005X3BVWElXQzdTdzlLYTlRbW9VZjZ2XzIyT285YWd4N0FFaVlTd2lscV9qVmttVVN2Z1hfSWhaYWRiMGFma2F0SlpoSFNUYzA1NlBoaWFGTTJ1eGY1X3c?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:30:07.2863194Z",
+        "snapshotPath": "archive/raw/news-d76310f4a0c5ce83.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-3eb08818603bdc22",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "國小",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "拿掃把柄打球隊主力 國小羽球教練不認罪「無從原諒」 不准緩刑",
+    "summary": "拿掃把柄打球隊主力 國小羽球教練不認罪「無從原諒」 不准緩刑 MSN",
+    "eventDate": "2025-06-13",
+    "importedAt": "2026-06-08T13:37:48.4256551Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國小"
+    ],
+    "evidence": [
+      {
+        "title": "拿掃把柄打球隊主力 國小羽球教練不認罪「無從原諒」 不准緩刑",
+        "publisher": "MSN",
+        "url": "https://news.google.com/rss/articles/CBMimgNBVV95cUxPYXpRWllld0FYdzRWdVQtSXVqamJZcHQxOTZvd0VFTU4xZTllT1BsSW5jUXRpSFpsWUR1UERHQ0ZfMjZ3ZWl3QmhZOTJ1VUFVdnBaamNHUlNpV05DSEpSMnMxbFBXTjBFRkVpZ2lNT2V0dzBsQWxsYzRic1FXektpS2RyUmlTN3Jwdk1QbkQtdjJVMDVLV1BiQVRBMGhsb3U5dnZ5MTB0MW5pZlg0aWhYR3ItYzVCWEZlNkJnTW1WTGgzVTBxaUVkS1FpenFYSVBTZXhnYnQ1aDRvNEtQbi1yQXdxYVdzUjl6ODlGU1NEc2ZfSGQwN1RzbzVVWUh1ek5Ta1V6TmwtYlNfMlRiWDQtQUFoSGp0WWRnQ2ZRZDFQOG5fM3o5TXRVZUZpekVMSnVDMExRM2VsVVE5LUladloyMjRVMkNSZmp5SWtDRzVBZkM1OF85Q2dObTllRmUyN2NNMnE2SnhpV2JrVnZNdG9QZFpCQ0lLeFdQRC1DYVBJUmlhbEFVeGNmMnhlRjlObU5YVHRrb0lFMEZpZw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:37:45.9398615Z",
+        "snapshotPath": "archive/raw/news-6f1dfe0e21db2626.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-bafff96f92d95b47",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "超貴冷氣費「1分鐘1元」？ 彰化高中坦承「算錯了」 差額從寬全退",
+    "summary": "超貴冷氣費「1分鐘1元」？ 彰化高中坦承「算錯了」 差額從寬全退 自由時報",
+    "eventDate": "2025-09-04",
+    "importedAt": "2026-06-08T13:38:12.0579735Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "超貴冷氣費「1分鐘1元」？ 彰化高中坦承「算錯了」 差額從寬全退",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tdV83ZTFoUVB2OEFWd21YTkdFY2thakN1c3ZUaEkyS1ZaSHY5b0NfWEV0T0ttRGRiV3dfcHVsek8walBLdG9wbDByTExBWTBlY25pLWx1UDlzYThiY1lXaE9RTGvSAWpBVV95cUxPcGxuVDRxcVFzNG91b0ZiTXBLajVMb0lyVHJZMjdITHhoODlBOE9Fa3BJVU9kZ1hZS1hIbWprZDZ4NzNvUXpJbTV5aFA4UVRET2ozLVBNVkJvS0VwdkRYWUpzNnNSdS1vd2Nn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:38:09.8427591Z",
+        "snapshotPath": "archive/raw/news-0100b69337ff4e96.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-eb6db57bd4cb22aa",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "教育部拍板 5私立高中職114學年停辦",
+    "summary": "教育部拍板 5私立高中職114學年停辦 好房網News",
+    "eventDate": "2025-07-19",
+    "importedAt": "2026-06-08T13:38:50.1550021Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "教育部拍板 5私立高中職114學年停辦",
+        "publisher": "好房網News",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QNzJuMVkzbmJBOXgxTkJWZF8zSkVBaks5WjVvV1hmSHlDaU1YSXVrNTd6OXhPSHd6eFpieEJOd1lKeWo2SmxHQ09zLXdfTUVBMWhuODRENllnb3dkZ2x5R091NmlYVXRpaUlv0gFwQVVfeXFMTkU2MlIzcGRpdG5TUDdKc0JFRjdNcnF3Q2hEUFdmc2VrNi1zcXVuM290cFhrRnNIdWVpY2JJUVFiVHktTE9DWmNtT2RYOVlRUHVkYTdnMURtcVI1S001TnZsUjBxZlRXazhSYWRWTUJTRA?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:38:47.9087325Z",
+        "snapshotPath": "archive/raw/news-302306244c7ea195.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7caf03cb9006649e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "桃園某高中學生墜樓！驚傳「同學推擠所致」 監視器畫面曝真相 | 社會 | CTWANT",
+    "summary": "桃園某高中學生墜樓！驚傳「同學推擠所致」 監視器畫面曝真相 | 社會 | CTWANT CTWANT",
+    "eventDate": "2025-11-29",
+    "importedAt": "2026-06-08T13:38:57.0123720Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "桃園某高中學生墜樓！驚傳「同學推擠所致」 監視器畫面曝真相 | 社會 | CTWANT",
+        "publisher": "CTWANT",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE03UW4tTVBDbXdPYnNuV3B3V1Vvd3NUcjZvTkRLb3NEdy0xX3Y2aXJVeG4tM3JNMF9YYlRKUk1nR0xMTVByUDl6NTgwcTZRUEHSAVRBVV95cUxNZjVfS2FReWxUcGhXVS1yVFRTeVRldXJCYWZ1cU1Hd2N1UDBhQWN0TFh1LUhhQlZTTGRLRXVtZVNUdk42anJIZTd6U004TXp4d0NYdGM?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:38:54.8031663Z",
+        "snapshotPath": "archive/raw/news-924976344cec446e.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-91c7a7389650ce71",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "5私校團滅！HBL籃球名校也倒下教育部勒令停辦退場時間點曝光- 其他",
+    "summary": "5私校團滅！HBL籃球名校也倒下教育部勒令停辦退場時間點曝光- 其他 旺得富理財網",
+    "eventDate": "2025-07-19",
+    "importedAt": "2026-06-08T13:39:03.7481056Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "5私校團滅！HBL籃球名校也倒下教育部勒令停辦退場時間點曝光- 其他",
+        "publisher": "旺得富理財網",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBXb3pDVXJ0OXJHVW5QMlZEZGVLd2dOQkZjclBscl84bjVvUTBiWHFCOVZ3Rl9YUFY5V05MdVh2aGFsdk1HUGhTMnlOczZDS3FHR3NydkVZZEtSVmxncnB3d2JEOWhRU1NLLVE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:01.5223779Z",
+        "snapshotPath": "archive/raw/news-2cb616e82940697c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-b60a82a46efc4dad",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "高雄2高中生吸電煙慘罰27萬 暑假青少年接觸電子煙風險升高",
+    "summary": "高雄2高中生吸電煙慘罰27萬 暑假青少年接觸電子煙風險升高 自由健康網",
+    "eventDate": "2025-07-04",
+    "importedAt": "2026-06-08T13:39:05.9817882Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "高雄2高中生吸電煙慘罰27萬 暑假青少年接觸電子煙風險升高",
+        "publisher": "自由健康網",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE85WEpTdVdNa3FRaW5WZEVNYzBVMUl4MVBMVjNmSU4xNTg0Tl92NE16ZEltMXkzaDBQdm5tN3llM3VhMHRfSzliMkpFa0tBdUZjT25QWGdOLUwyRlhHUU16dWxNVFPSAWpBVV95cUxPbVFDQXlXOENqX3dZRmEtSUtkRmFuUUI2OVhWNnBXNERSYlhORTJfRFBVR0dReFhDZ2k5SEI5UFI5N0dhZ2xJRDlvZzNTVGgyRTgyYlR5UUY0X2R4VmhkNnUtOUV4UjRnWkh3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:03.7481056Z",
+        "snapshotPath": "archive/raw/news-78d14cbecc465382.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-99fa751713591b8a",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "又有高校要退場 大成高中、賢德高工等5校114學年停招停辦",
+    "summary": "又有高校要退場 大成高中、賢德高工等5校114學年停招停辦 上報Up Media",
+    "eventDate": "2025-07-18",
+    "importedAt": "2026-06-08T13:39:08.2318821Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "又有高校要退場 大成高中、賢德高工等5校114學年停招停辦",
+        "publisher": "上報Up Media",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9jMUc1LXgzT1dvb0VwS0h2M1FnQzNScV9sWVJDVWd2QTN4WGEzWXZwNGo1R2t5Z2t1NEtqSkdVeW5feDVyRjRjV18xUjhyVTNRM05qbVl5Y1dHTEhmSmhKZ05fV1I0YUI0SHVNMw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:05.9919641Z",
+        "snapshotPath": "archive/raw/news-daa361c361b9daf0.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-d8c84ed5d5d2d38d",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台灣又5所學校確定退場！「學生全沒了」改善沒過勒令停辦，創立79 年也撐不下去",
+    "summary": "台灣又5所學校確定退場！「學生全沒了」改善沒過勒令停辦，創立79 年也撐不下去 風傳媒",
+    "eventDate": "2025-07-19",
+    "importedAt": "2026-06-08T13:39:12.6433746Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "台灣又5所學校確定退場！「學生全沒了」改善沒過勒令停辦，創立79 年也撐不下去",
+        "publisher": "風傳媒",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9zdWk5ZHpkUktkZ0YwYVVoOENOR2lKR1d0Q0JFemtvY2c0b2g3dENIOEQ3TFZxekpoS2l1bkcteDhKVkpaejdheEUzdlZyVWd4?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:10.4878068Z",
+        "snapshotPath": "archive/raw/news-8554e721a569c800.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ab4e5abc146ea360",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "少子女化衝擊! 屏東7私校退場 9校苦撐中",
+    "summary": "少子女化衝擊! 屏東7私校退場 9校苦撐中 自由時報",
+    "eventDate": "2025-06-28",
+    "importedAt": "2026-06-08T13:39:14.8055114Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "少子女化衝擊! 屏東7私校退場 9校苦撐中",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5uRzFMNy1OSDlCb0kwQlF1dldwVjN2ZzZwdTlJQWVTZXNGUkJ2NlJicnVJM1ZtcU8xUmVjTHRoX1NaNTBidF8yaE1iQkIwTVJzZUNFdEo0dHNBNXNRU01wcXB4NXRuUDhGbWfSAW9BVV95cUxPU3prOERTMHBmOVNpTkNXelBfR190TUFxdGtNeHR4elk0U25lRjdiTWFITkVvMmtoVDRXN1F2c0FiRk1CdkRkYkhzOUM1TF84cXB1NHFtS09kamRBZFI2bGJEQ0hCcGhtRU0wSVBBUDA?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:12.6544236Z",
+        "snapshotPath": "archive/raw/news-bb60f8390919b766.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-d33cf8be73b808fa",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "新竹世界高中自行宣布停辦 教育部：不准",
+    "summary": "新竹世界高中自行宣布停辦 教育部：不准 客新聞 HakkaNews",
+    "eventDate": "2025-05-22",
+    "importedAt": "2026-06-08T13:39:21.6036669Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "新竹世界高中自行宣布停辦 教育部：不准",
+        "publisher": "客新聞 HakkaNews",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE43dnVaMDVuSVJ4TjRONVVZNVhmZklMMDFJNTlISW1zaGg3bDFpLUFxeFh0QVJrWWpQemo5ZmFtbUU3Z3ZfeTAxbXRzQ0ZrTnZD?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:19.4354294Z",
+        "snapshotPath": "archive/raw/news-88d3df165550d964.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-c7f30dfef3ad47d7",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "苗栗大成高中7月停辦 龍德家商免列專案輔導",
+    "summary": "苗栗大成高中7月停辦 龍德家商免列專案輔導 客新聞 HakkaNews",
+    "eventDate": "2025-03-10",
+    "importedAt": "2026-06-08T13:39:30.4686479Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "苗栗大成高中7月停辦 龍德家商免列專案輔導",
+        "publisher": "客新聞 HakkaNews",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9IRzl5bGxIQ3ZaR05pR0ZGeVUtQjZTc1dCZGJ2b25qRXRTMTNFOUZTeVJGUnR3LUN6RWxrVDBnX09IWXEtZWZTQXM2UDZqa3pP?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:28.3437914Z",
+        "snapshotPath": "archive/raw/news-fb0e9d021f31feb3.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-8dda19614f319b62",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "54年私校喊卡！世界高中宣布停辦133學生成「人球」 教育部震怒要求續辦",
+    "summary": "54年私校喊卡！世界高中宣布停辦133學生成「人球」 教育部震怒要求續辦 Yahoo新聞",
+    "eventDate": "2025-05-22",
+    "importedAt": "2026-06-08T13:39:32.7113890Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "54年私校喊卡！世界高中宣布停辦133學生成「人球」 教育部震怒要求續辦",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMiogNBVV95cUxQZ21NRW93Zkg0VHJYVm5IbHp5MjdaNUdFdHNjMGRPdG1iX2hHRlo0c2JiRTRRWFBlbzc5R05IZ0RBQjlmQy1nalFqUnVTLUdkZXBnWm1wU0x1MTdpYVZKLVNzWjV5alhVTEpXQnozeVItcEJxM0t5blhrbGxlS25WcnhtVWJwdEZMYmNkekV3UGhIYlY3WVlpOGhVSEwwNU85WGpab0hpV05QZ0JXYTY2ZDZHaFliZmlVSzBRaElYakhySlREU01ZaHRJMWVOWklzSm5mLUdsQWRkU05ucWNDb01qMkhRV3NEcmdWbjNtN2E5TGpET2RrTnQwNHpsc2xLb1VRUDNEaEd0Y3Y1ZmdNZ0VvMW1nSG1hV3BhNGdPT0hWZEJvYkRzdnh2VmhrNEZ1OGc2d3lmS25zNDRzd1ItQ04wbFB6UWtCdXg2N21rVHh3a0VjRzl0RkY3WHpyU1BDejBnbzBKUDYyOHBtMUhtYmZ4YUoxRkZrZ1FmM01LQUV0aVBtbFoyOUhFYU55V0lZcWo0YkFxRDFMa2ZnSDctc2t3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:30.4686479Z",
+        "snapshotPath": "archive/raw/news-45dd8b595a3883b6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-aa7ec0e9011f3b25",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南新榮高中「全校19師生」遭勒令停辦 校長：不是差幾個億，盼給機會",
+    "summary": "台南新榮高中「全校19師生」遭勒令停辦 校長：不是差幾個億，盼給機會 Yahoo新聞",
+    "eventDate": "2025-03-10",
+    "importedAt": "2026-06-08T13:39:37.2393671Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "台南新榮高中「全校19師生」遭勒令停辦 校長：不是差幾個億，盼給機會",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxQaGVhSVkyczdYREJrdTBmWEhRNmVQN3U5bmhQM3BYc0pCVi1tQUx5RmhpTlpibVFFckY3bFFUZnFkRDZOd2pLSmJKRzUtQzM0VTdfOEdWN0lhTmpsM2I4VTN4NEFOOThlUVdsMjRtSE5mNWdtRzkxeXhiakNfdWtxbzVRRHZJN3M1VTM1X1F3Z2xVZ1FpNEhUQWJoLWVOTXNYNjVsdEcyQ21RdE9wOTlFVUZ3TzM1MDlrOFY5VUVFV2oySWdtNW5fS1E0R3pKclM3OUdhT3JjVnFUX3N5N1dLMTlmcUx5TVNxdWE0UjZhSXgzMlFxUXdlV2pBS0NNaUFnNU9OVHpKRmxmN1VzSVhFVzBwb1AxakgxWVFkZWc4eUlxVlNxRVQyYWNpZmtZejNGbkREblVHSGlXOFJqbHRGY2VHd0VxbWNxbERIcFBic3BCSTdGa3doVlJ3OG9wUUVfNHBXSmdCZ3JDX2hOT0hj?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:34.9630609Z",
+        "snapshotPath": "archive/raw/news-cd4767775811b678.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-27c595107cab45e7",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "創校63年走入歷史台南明星私校確定熄燈- 生活",
+    "summary": "創校63年走入歷史台南明星私校確定熄燈- 生活 中時新聞網",
+    "eventDate": "2025-03-22",
+    "importedAt": "2026-06-08T13:39:41.7775440Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "創校63年走入歷史台南明星私校確定熄燈- 生活",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5PMjlGdmM1cEJTWXJDbm9ORUdYdV9TWDk0Nk15bV9FZTZ6Wll5Y29TWnlscVdMbHhYNDdSYzUtYURvZDdlX1kxRGljcDZ4VEY0Y0F5MU1xenBlem1kWmJPaTFZUzdoOVNPMGhsLS13?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:39.5316669Z",
+        "snapshotPath": "archive/raw/news-eaa906453f366e43.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-0dbabf10926b71db",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "才說停招停辦…國教署不准！世界高中「髮夾彎」：讓133名學生順利畢業",
+    "summary": "才說停招停辦…國教署不准！世界高中「髮夾彎」：讓133名學生順利畢業 Yahoo新聞",
+    "eventDate": "2025-05-22",
+    "importedAt": "2026-06-08T13:39:43.8928569Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "才說停招停辦…國教署不准！世界高中「髮夾彎」：讓133名學生順利畢業",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMilANBVV95cUxNcU00ZDk5T3JUTUV1VGpyZUYzX2Jld0xTZmM1UDNITWN5d1lVR29Zd0ZlRm5LR3dMRjl2Zm1YV0dOQ2swek1hTU00X0ljNjNTOUNyQ2h0eFRHVWVhRkYzTXRJM3lzc2xnRTJ2amVDbExOYmJ0Q240NDZVSlluTGhoRmNGMFRFS1pjcmlmSGRBSTBUMjdWZ1RJaVZVZHRUcWdTNHVKUldUNjl5UnZWMnhLMGFrajU1TlkyeHpGTjJqZEI3dU5KaHFSeTkySXlXNHUtczBCOXNxS3o2QjN2VF9EeEh5N1FYRG5NUWZMcllQM3pRTlNDMzBERmVZT3ZKb2hqZTBDWmFLS0RSWGNMU0tRTGR0SmFXUFVicWZzTThCdWs5aWpaT2dwUVVSdUtNd24wemUybDJUU1NxbEFQZm5fdkVfSVBSeDR1aFpfVUdyTk1tYU5ESlhvM3JVemNuVmtTeUxET21uMDNjdG1Nck55OUl0T1BSa0JVLUY0eUVHRnhaTGQxTndaWVZSRDIwelUzT0J4Mw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:41.7775440Z",
+        "snapshotPath": "archive/raw/news-28084b7fc3a6b907.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-8139f5bdcf3b82e4",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "HBL冠軍名校退場！新榮高中停辦 校長求補救機會",
+    "summary": "HBL冠軍名校退場！新榮高中停辦 校長求補救機會 Yahoo新聞",
+    "eventDate": "2025-04-03",
+    "importedAt": "2026-06-08T13:39:46.0980300Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "HBL冠軍名校退場！新榮高中停辦 校長求補救機會",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNcm5Ec1NHdU1od1IyM0ZvN2JwSUw5Vl9SY2VQNVo2ZmZCenFseXhseHR2YUQ1VS1zb3VBRzAwLURkOVNHM3JpdlFITmUteWRxd1d3V3JpNVpybm13aDdvMDA1aFVyWDAwOHduUnFBZWMwTFUzZ1FqQzZJendCSnJUY2FMeWZGYWNlTkJHV29tVEFTbDJ0TDc0VEV6b0NWRk5EdklFN3VyQU5fQW9XM1NHNDVSbzZURGhkTWFvckNycUdybTFaX1VDWEhaQUdyb0d1UGY4OHNUQTllNWMtUkVmaHdsT0k1NmFzVVk5b0ZUcUFtekNyNVE0UHZWS25JckNTUDBmcU5EbEM0QkpPMXRubFc4R0NGY0Z5eWRqV3VKNnU2ekliMkg2ZUpqNzBfS2pvUmRPYjZyM05oMV9sVmc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:43.9008627Z",
+        "snapshotPath": "archive/raw/news-750d12c92543f9f0.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-09e451bcc45ef8bc",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "又2私校退場苗栗大成高中、台南新榮高中遭勒令停辦- 生活",
+    "summary": "又2私校退場苗栗大成高中、台南新榮高中遭勒令停辦- 生活 工商時報",
+    "eventDate": "2025-03-10",
+    "importedAt": "2026-06-08T13:39:52.8254816Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "又2私校退場苗栗大成高中、台南新榮高中遭勒令停辦- 生活",
+        "publisher": "工商時報",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9sNXpzdmFmeU90VWIxbnJ1VFg4aE0tYldMUkh0Y05KZG9mSTdhT2NrYWpTN0lucm81VEZxSGNpSEtHODFyYWRNUjV6MWdmbnR3NGpSM25CSzI0N0FpaEVV?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:50.5435938Z",
+        "snapshotPath": "archive/raw/news-49b77f6c0872e618.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-f18954a1a5fce98b",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "新竹世界高中擅自宣布停辦 教育部不同意：嚴重影響受教權",
+    "summary": "新竹世界高中擅自宣布停辦 教育部不同意：嚴重影響受教權 知新聞",
+    "eventDate": "2025-05-22",
+    "importedAt": "2026-06-08T13:39:57.3071172Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "新竹世界高中擅自宣布停辦 教育部不同意：嚴重影響受教權",
+        "publisher": "知新聞",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1XUXNkRENOalZCb3BERVM3NDJCYmw4ZV85bVdLV1A0aUVqczNQUndpa08xUUFVXzVhZGZzY29TVE5raXVPWExESktveFRiSlJnbklvMTdXTDJrcVZGNnFqbWtuRkV2bndZMm92TDV6Zw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:55.1006919Z",
+        "snapshotPath": "archive/raw/news-13ccb434631f666f.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-eb7bf595606f652b",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "竹市世界高中擅自宣布停辦 教育部：不同意",
+    "summary": "竹市世界高中擅自宣布停辦 教育部：不同意 自由時報",
+    "eventDate": "2025-05-22",
+    "importedAt": "2026-06-08T13:39:59.5779587Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "竹市世界高中擅自宣布停辦 教育部：不同意",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE80OVl3dlZwNDFnME11RnVIY0dzdXBzNktldkQ3RGxYaVFuSnNJQ2JJSkZMQjFwSGZaVm1jVnhLWkJIQ1Iyb0pGd3Z3MDFiZlRqTXVwbTc4czZ2TWhucE92UlFZeGPSAWpBVV95cUxPaXJZUXdMTFVURmQyMjBkeUVVZ3JiNGVzcWlXUU1MSy0tbGc0bmVnNUhKYnR2ZE9HTkJTTFh1VWNuWkp5dTZkMWpkTnVuYk55RjFSa2g4NmFnejdhUExkbEhQTTlTdm1Fa1pB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:57.3153315Z",
+        "snapshotPath": "archive/raw/news-3ff40b9346ae89c5.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-9cdfc50a94d8f9f9",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台灣明星私校「確定熄燈」！創立63年將停辦 剩餘財產要清算了 | 生活 | CTWANT",
+    "summary": "台灣明星私校「確定熄燈」！創立63年將停辦 剩餘財產要清算了 | 生活 | CTWANT CTWANT",
+    "eventDate": "2025-03-22",
+    "importedAt": "2026-06-08T13:40:01.8602273Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "台灣明星私校「確定熄燈」！創立63年將停辦 剩餘財產要清算了 | 生活 | CTWANT",
+        "publisher": "CTWANT",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE95U1o1ZF85YWFpOWhiU2NBVng5RHdNeGRfVEM2cXBjYURRSjhwalhLTFprZ1JldTVqVU5RVzVXZ1hVbk55TEVZbFFDS3dOVzDSAVRBVV95cUxPNUNudmltNTljckFNa0ZRbUpHVnJMaWx3emdhTG82STdRMUFoQzB2TTRZOXhSNjFrdW9Ga0NseUtCS1ZpSm1qNU9YSlVXYmNIbG0tTEw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:39:59.5836815Z",
+        "snapshotPath": "archive/raw/news-018d590d175e2d6d.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-e566fcf5f88ff632",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "又有私校退場！ 彰化大慶商工停辦停招、台南鳳和高中解散",
+    "summary": "又有私校退場！ 彰化大慶商工停辦停招、台南鳳和高中解散 Yahoo新聞",
+    "eventDate": "2025-02-18",
+    "importedAt": "2026-06-08T13:40:04.1371836Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "又有私校退場！ 彰化大慶商工停辦停招、台南鳳和高中解散",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxNNWtMM0VUbF8wUUVHb0xoVkgxNzFpYXJCVmEwTzNFNXJlSHYxMTZuM2hQeUc4dHZDaXI2azZ5dWJDUU5WOXBUajFuRjhJbmtFN2I4OC1leDh1cno5V1pFa0V0Q2JvT1RDUW1lTlJKY0MyOHUyd0Rvbl9xX1BYY19xdXpzdlRpa1ZMNTgyeDBGMEMwaVFMR1dsRlo4N1ZRV3E0dThpeEJrZjFuN2tuQWZVcXpTZXRBOW1VM3RBUmRaWDN6LVQ4SnNyY0lhMzlEcmtEeDNQekpRaHN1TUYwNEg0T2xaU2lRS2tUb3JOaVJ5cDI0YmFRb1BVbmFmei01NmhpU3pCVGRQVGZ4VmVqUkloZEFjT3lkTlFIRzVQYzAwc2x6eFRtYnVfOER6d3hZN1hpbHlhUU5fckJzbGZoQ3JBU1JTY1RFajNuR2l0c2hRWVZJY0d3cmdTTUVEdVNwQkYwMFVoTGpITEpDNHh3ajhadGprb3dMdw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:01.8695920Z",
+        "snapshotPath": "archive/raw/news-484bcc1c0a3f048c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-0f641f8598c85023",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台灣明星私校「確定熄燈」！創立63年將停辦剩餘財產要清算了| CTWANT",
+    "summary": "台灣明星私校「確定熄燈」！創立63年將停辦剩餘財產要清算了| CTWANT LINE TODAY",
+    "eventDate": "2025-03-21",
+    "importedAt": "2026-06-08T13:40:06.3881642Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "台灣明星私校「確定熄燈」！創立63年將停辦剩餘財產要清算了| CTWANT",
+        "publisher": "LINE TODAY",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9rdEtrWF9fdlNJazE2N19yREFtRG83VHdRd3lIWlBycmtCNlpMc0xqanhPYVc5VTYwanlYZnpGa2pfZ1ViYks0bk41UnF2bTZpNmNuc2xB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:04.1531521Z",
+        "snapshotPath": "archive/raw/news-f0c2b47279db5301.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-da11c2ad9427323e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "開明工商成新北首間退場高職 停辦後拚轉型長照 | 生活 | CTWANT",
+    "summary": "開明工商成新北首間退場高職 停辦後拚轉型長照 | 生活 | CTWANT CTWANT",
+    "eventDate": "2024-11-11",
+    "importedAt": "2026-06-08T13:40:13.1978292Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "開明工商成新北首間退場高職 停辦後拚轉型長照 | 生活 | CTWANT",
+        "publisher": "CTWANT",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB2Y0h1ZlhvWUFobFduR0U3V2ZjdkVpZ2dCbGw0SndJRjYtZm8ybVBxb3puVkNyNTZCM0M2RDN4MVItS2lZRDlpZ2Z5MUZVM2_SAVRBVV95cUxObkVmVnZFQllDR1FvSkk4dnNzZlpNc1FCcW8yNFhnUmo4cGNHcDNqY0RoblJyMmh5dURXRDg3N2t2Nm5mbjZZamRFM094TmVpR1dqU2k?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:10.9634807Z",
+        "snapshotPath": "archive/raw/news-61e2f50760bea318.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-b4ce95479fa3b0fa",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "2私校退場！彰化大慶商工停辦停招、台南1老牌高中解散- 生活",
+    "summary": "2私校退場！彰化大慶商工停辦停招、台南1老牌高中解散- 生活 工商時報",
+    "eventDate": "2025-02-18",
+    "importedAt": "2026-06-08T13:40:15.4123530Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "2私校退場！彰化大慶商工停辦停招、台南1老牌高中解散- 生活",
+        "publisher": "工商時報",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAzbXlTaWVXQ3JfMDByYVBWZThuY0RtX2YtWXpKbllvSDB2WTJHOTVnY3h3dFQ1QVZGMGUzeVdQcVV4QXRDQXpjNjZjOE00TDBRcFRrMFU2eGdMSzRrSUZn?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:13.2053940Z",
+        "snapshotPath": "archive/raw/news-4eda104e0693d84b.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ccbf1989e84c5ab0",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "世界高中擅自停招 恐被扣補助",
+    "summary": "世界高中擅自停招 恐被扣補助 UDN",
+    "eventDate": "2025-05-25",
+    "importedAt": "2026-06-08T13:40:17.6318202Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "世界高中擅自停招 恐被扣補助",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBrcjh2WmYxTGtkNWFZZUFXbE1kMXliaGpBeDFkRTRiek05NnFhRDVCcFF6SmZoTVg5RVdkVzBGMDA5b2FheklVcUtMOWRubmRr0gFWQVVfeXFMTnhFLS15M3YteGVNc29lVWVna2hVOXhHRlZ2SUJfMmNXN0pHUVRHZzl4X1BDUlZncGUwVmlmTXVYVjFiTWZLRzJSTFQ1anFOT1VKMUpha3c?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:15.4213290Z",
+        "snapshotPath": "archive/raw/news-15a86510cdc5dc52.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-fc0f70772b36f068",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "昔籃球名校新榮高中遭勒令停辦 校方將「申覆」爭取翻盤",
+    "summary": "昔籃球名校新榮高中遭勒令停辦 校方將「申覆」爭取翻盤 中時新聞網",
+    "eventDate": "2025-03-10",
+    "importedAt": "2026-06-08T13:40:24.3789422Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "昔籃球名校新榮高中遭勒令停辦 校方將「申覆」爭取翻盤",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9vTXVES05mX1FoWFV0bU41VGVpckpNMkM0dXRRdXFjVW90bGxQd1ZHN0g5VkJzc0NiRU9BTHdZdW1pTW9LazdBVnY3cDl2MlpHTkpEYndhYXV0Q0taY21DVEFCaFp5VnFUX0FLY2ln?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:22.1340816Z",
+        "snapshotPath": "archive/raw/news-dcaa9e2a220fa0b5.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-c5e169138832a6d4",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台灣名校「宣布倒閉」！學生全面停招 校長求救發聲",
+    "summary": "台灣名校「宣布倒閉」！學生全面停招 校長求救發聲 TVBS新聞網",
+    "eventDate": "2025-04-02",
+    "importedAt": "2026-06-08T13:40:26.6137835Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "台灣名校「宣布倒閉」！學生全面停招 校長求救發聲",
+        "publisher": "TVBS新聞網",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBPR2M1MkhHbERYSnFla1NMWEh6d1dUT2p5X2NfTjNVbVhva2stdHFMdFF5UWgwb0s1OFJ1cnJtVTZxem5FOVVZVHgxQmg1UQ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:24.3789422Z",
+        "snapshotPath": "archive/raw/news-1562867160523de0.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-52d8f3f2feca79e5",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "又有2校退場！彰化「62年老牌私校」今年停辦 台南鳳和高中解散",
+    "summary": "又有2校退場！彰化「62年老牌私校」今年停辦 台南鳳和高中解散 Yahoo新聞",
+    "eventDate": "2025-02-18",
+    "importedAt": "2026-06-08T13:40:33.4171049Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "又有2校退場！彰化「62年老牌私校」今年停辦 台南鳳和高中解散",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMi_AJBVV95cUxNSTM3a3l5c2Q0b2hGUmh5MFlad0dYdkYzM2lCSGY4UlVuQXZOZ0FQcUROUDdEQkhHRzNucUxrMEptREk0NG5JSzhYQVZrc1Z0T2duUTFITW9TUHJodF8tUnluQjBQYkhwWURzZkNZMlJhQ1cxcjNZVHRHMlh4ajE0RXBQR0h0RDRNU3BRb0xQaGkwR25Pa0JodXM1V1pGZ0hRQTBvOHc2alVfT3VPN2FnSG9VaGVwR2c4M0JiT0s2c0c0Ym05akVwTDEwcXlsQ1pyR1Z6VHdBcU5heW1TZ2hSNXF3NXhYcm41bmw1aW9Qc1dVdXdUZkJNWjR2cklwbjRkX2lWU2dNUHZMRkR2N0tMcGVyV2tPcy1EY00xRWpYVTlyWXRGdmduQ0phRXlXdEVCOEFTYVZlMUhqUnFtVzZjVGhLUFM0eE50dlVjZFgyUmp2WDI0c2dzNGRITVRoT1RBaWV6OFZEMkZUdlVscDY4enBvUU41cUMyRzE1Nw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:31.1851737Z",
+        "snapshotPath": "archive/raw/news-9b53d723f6dcd7a0.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ba97cd2aafc86249",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "私校退場+2！苗栗大成高中、台南新榮高中將停辦",
+    "summary": "私校退場+2！苗栗大成高中、台南新榮高中將停辦 梅花新聞網",
+    "eventDate": "2025-03-11",
+    "importedAt": "2026-06-08T13:40:40.3334625Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "私校退場+2！苗栗大成高中、台南新榮高中將停辦",
+        "publisher": "梅花新聞網",
+        "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9KUHlxUFZRQmtiOTUtN1NzVjdIcUwzUWppX1hrbDZmNS1CX0Q5UUZid0dnOGRhWWxVVUhTRERGVkQtaTVSMl9ISnYtc0lPck1jMmdwanVLQWs?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:38.0485674Z",
+        "snapshotPath": "archive/raw/news-c70846d6714a7a4a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-2f7411dcf4274290",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台灣又有1私校確定退場！「全校師生剩19人」昔籃球名校遭勒令停辦 | 林瑩真 | 風生活",
+    "summary": "台灣又有1私校確定退場！「全校師生剩19人」昔籃球名校遭勒令停辦 | 林瑩真 | 風生活 風傳媒",
+    "eventDate": "2025-03-11",
+    "importedAt": "2026-06-08T13:40:42.5864194Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "台灣又有1私校確定退場！「全校師生剩19人」昔籃球名校遭勒令停辦 | 林瑩真 | 風生活",
+        "publisher": "風傳媒",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9yekFobkc4aS1PSHYzcjZZcEVEYjdnZ0hUd3BKREo3MTlhaWxpaXlGSThMd1RQQ25nS25hbUF3MzRyWDBFaXUwTjFhS3ZPWVU?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:40.3492217Z",
+        "snapshotPath": "archive/raw/news-5d346ccf171f8d55.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-4e947eeba7c50df3",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "2所私校退場！賢德高工及育民工家明年停辦 新光高中「逃過一劫」",
+    "summary": "2所私校退場！賢德高工及育民工家明年停辦 新光高中「逃過一劫」 Yahoo新聞",
+    "eventDate": "2024-12-13",
+    "importedAt": "2026-06-08T13:40:44.6963349Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "2所私校退場！賢德高工及育民工家明年停辦 新光高中「逃過一劫」",
+        "publisher": "Yahoo新聞",
+        "url": "https://news.google.com/rss/articles/CBMihgNBVV95cUxOUll5TDZqSUEzcEZuVEtNR0llMmNVXzZwbG5ZZi15X3NKdW9lM1l2ZUF6OWNNX3FQNjVSZ3VaRDlzbmlwT3FQSElmck81UG5zRmtvdnBtUWZ0OHQ4TS1RRExKcW9OekNDN3ZYaHI2MUltcWw2c3hGWjc3ZWxQa3lrOVc2VXdPcEhsQkN2dllndjhvVTRUSVprMFNtelE0a0R1NGo4UUNQdnZmWDA3S0tUTUFYR3c3LS1LaGhibVVsVzFwTGNfRFAxdklBWjFaZU5ncExzc2xEQTEtSU9Ycm9BUnhHUjZfLUlsNkdoOHB2VG1sZnA3d2k0RVlUOWZHZTVNeEZlcDRzTGp1bGM2Z2NvbERrYVRwd29ydEZxZzlLRGVSTVcxTTZzN3h4ZVFWUTJKakRxaEpXOWVpVEhROVg3ZVo0U3l0eEhyN1V1cFJWa2JuVVRNcGR0eThESEhhd01ieDBMbmtOeGNuTWpIMHNoQU15a1VKVTJYOWdMUlFIcUVKTnVnMmc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:42.5931985Z",
+        "snapshotPath": "archive/raw/news-ecfa4fecd6c68bc1.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-57f72601ad261248",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "2私校退場！彰化大慶商工停辦停招、台南1老牌高中解散",
+    "summary": "2私校退場！彰化大慶商工停辦停招、台南1老牌高中解散 中時新聞網",
+    "eventDate": "2025-02-18",
+    "importedAt": "2026-06-08T13:40:49.1273718Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "2私校退場！彰化大慶商工停辦停招、台南1老牌高中解散",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5qZE56YmtvaWlLdDNPMEkwV1ZZUVhwM0h6OFZDRjZ6bXVteTdFTThvd2xwbnhNeS14aE12cFc3WXB0QjFXMWdYV21VWmE5TFRKUU9GQko0OXFmaUhXZ1JqdlZTQU5BTG5LY0pwcHl3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:46.8788122Z",
+        "snapshotPath": "archive/raw/news-3bfd890bac9b3eb4.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-c2fa67f69164eeb8",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "教部令停辦 大慶商工爭取轉圜 未如期轉型 鳳和高中法人解散",
+    "summary": "教部令停辦 大慶商工爭取轉圜 未如期轉型 鳳和高中法人解散 好房網News",
+    "eventDate": "2025-02-19",
+    "importedAt": "2026-06-08T13:40:51.3761417Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "教部令停辦 大慶商工爭取轉圜 未如期轉型 鳳和高中法人解散",
+        "publisher": "好房網News",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBQd2lDdVZ1UTd6RU85UjdJRVc1SDNDOFNCRXU5WENTakZmTThFRFNPQnNPWUlxRi1Kd2RjdHFYRy1LVWJpMTdGWnVwN2szM1dUUWR0X1VOaEJPY2lyYTVEc1JVeUpUeTQyYUlN0gFwQVVfeXFMT2d1VHRfOHY3V09ySjN3dzUyWHZCeUpuV1VlaEZ4NFJaaVBsOG43VXhQSXJ1UTQxcURMU0FNTjZJQl9uY3dkVjdzeDNMa3QxcHFDNmlEMlBnVmRnNFNwV0JBTHdSblN3UklPRUZSMEZVMA?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:49.1343804Z",
+        "snapshotPath": "archive/raw/news-c6a1f17e818892c6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7f9878ca7435fefd",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "今年22校停辦停招 教育部曝：4大退場主因",
+    "summary": "今年22校停辦停招 教育部曝：4大退場主因 中時新聞網",
+    "eventDate": "2024-12-29",
+    "importedAt": "2026-06-08T13:40:53.6086771Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "今年22校停辦停招 教育部曝：4大退場主因",
+        "publisher": "中時新聞網",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE95aEpHelF1MUVhTGFPcW93Q21uWThlTFFITHlkOTlLdU1qSVVJT1ZSaENselhRWmZRWXpzaDliQVhVMWxYcWhKbkVSRl9nMUdjRGdVbS1odDE4ZUNyRFRmTG5uU2tldWRPeEUwa0xB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:51.3914406Z",
+        "snapshotPath": "archive/raw/news-e7efb1704e66016d.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-f8c9449abbb34c84",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "學校法人遭解散 鳳和高中退場",
+    "summary": "學校法人遭解散 鳳和高中退場 中華新聞雲／中華日報",
+    "eventDate": "2025-02-18",
+    "importedAt": "2026-06-08T13:40:58.0481546Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "學校法人遭解散 鳳和高中退場",
+        "publisher": "中華新聞雲／中華日報",
+        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ENFRkYUpkR3dndkdCRDdyZlgxWEJhdFRobTRFVHp1ZHR4WndhUzJHamlSR2lZX0NvSFhEbGEwUGthZWgyc2xiX0pFdHcweUxjY0E?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:40:55.8177568Z",
+        "snapshotPath": "archive/raw/news-85afcce3c165d4e8.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-2eb8f5bc051f9d21",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "全台今年22所學校停辦停招！61年大學也撐不住倒閉，教團示警「3年內恐60校退場」",
+    "summary": "全台今年22所學校停辦停招！61年大學也撐不住倒閉，教團示警「3年內恐60校退場」 風傳媒",
+    "eventDate": "2024-12-29",
+    "importedAt": "2026-06-08T13:41:02.5476821Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "全台今年22所學校停辦停招！61年大學也撐不住倒閉，教團示警「3年內恐60校退場」",
+        "publisher": "風傳媒",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1uTWY2bEJzZFFYczd1V0NodlJFZ1hBUFljNHVGSzFOSDJFVWhFSzAzY1F2QjFpRmptT3hfblR4Z3FCaTNEaTc0NXd0dVFxMk0?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:00.2382645Z",
+        "snapshotPath": "archive/raw/news-d995cd0ebd9bb94a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7842560f87dd046c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "高中 OR 高中職 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "高中職",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "去年才超收挨罰！東山高中又爆違法收保證金 北市：最重可停辦",
+    "summary": "去年才超收挨罰！東山高中又爆違法收保證金 北市：最重可停辦 自由時報",
+    "eventDate": "2025-03-19",
+    "importedAt": "2026-06-08T13:41:07.1114700Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "高中職"
+    ],
+    "evidence": [
+      {
+        "title": "去年才超收挨罰！東山高中又爆違法收保證金 北市：最重可停辦",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE53X21UeF9vNWlwdUlab09kLTJrbTJmNzJyVDNnMkY1SFdOV2FFY2U2ZWxNU0tiYVBjS3VMZEdoWGtaWDNMUUw3aURFc0VrS2UzV3lDQngyNmMwaU1DT2ljd2s0R1fSAWpBVV95cUxNVm95MXZXblNmd3JzRkZsM2FEU0hGNWZidXFlYjlTM0piNmlDVHdIamk5VlM5SDN6dTV6WVhxcm9TbTYxWWJCX1gwT1VkYkZSU2JRd05fQ2tMcWNBMVNHZ0hyNlYzQlpuX2lB?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:04.8855926Z",
+        "snapshotPath": "archive/raw/news-8555af22ffa17722.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-38804bdb0f23c82b",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南安親班驚爆狼師！猥褻偷拍30女童市府：終身解聘、廢止立案- 生活",
+    "summary": "台南安親班驚爆狼師！猥褻偷拍30女童市府：終身解聘、廢止立案- 生活 工商時報",
+    "eventDate": "2026-05-14",
+    "importedAt": "2026-06-08T13:41:12.6122753Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "台南安親班驚爆狼師！猥褻偷拍30女童市府：終身解聘、廢止立案- 生活",
+        "publisher": "工商時報",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBMUXdLbjk3anE4R3dRZzZha3B6UGJzU1paaWI0anJ0ZlBrTFE1SnRPMzN5dkpPcVM4b2RnOVI4YU9oUmlOaFYwNmZRWXFEWkVqSTZ4ejhKbGNKRXlxR2dJ?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:10.3083862Z",
+        "snapshotPath": "archive/raw/news-d446c332b3b1b64c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-73f7ca66b8e71b7c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南補習班負責人涉猥褻女童重判10年6月 教育局：終身解聘、廢止立案",
+    "summary": "台南補習班負責人涉猥褻女童重判10年6月 教育局：終身解聘、廢止立案 UDN",
+    "eventDate": "2026-05-14",
+    "importedAt": "2026-06-08T13:41:14.8329434Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "台南補習班負責人涉猥褻女童重判10年6月 教育局：終身解聘、廢止立案",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5KVktOSE9VWExDd3Q2czJjSHltTjE1dTdmYW9JSUZLMjlLa05xYXRnVmlWSHV4MWFnRm9WOGEwTUowZ19SSG5JQVhzODNNcVh40gFWQVVfeXFMT1RNc3pYblZlSE56YmZ4ZE41eERIQWpwLWFTUzA1V2hLSEw0bHQ4RnZiZ2dWQ1VQTjJ0NXZXT0QtODh1N1EtUGNFMXBuMmhIRjdMYVdON3c?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:12.6232691Z",
+        "snapshotPath": "archive/raw/news-b671bd266a90cdc6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-4e70566629ecfb6e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "補習班發放過期豆花 衛生局稽查將依《食安法》裁罰",
+    "summary": "補習班發放過期豆花 衛生局稽查將依《食安法》裁罰 鏡新聞",
+    "eventDate": "2026-03-27",
+    "importedAt": "2026-06-08T13:41:17.1248108Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "補習班發放過期豆花 衛生局稽查將依《食安法》裁罰",
+        "publisher": "鏡新聞",
+        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBEbHhrdURsajJXUU1vdm5RZ2dVcUZPZFA4YzNmckJFaVJaZ2VQdHR1alVlbGhSVWdabzdyaTRPZVdtYUUyc3JiakhWS3VRQS1pbEHSAVdBVV95cUxPSFlHRmZhSmFzamloTDh4eS1FRzBFNHlZZXhLMDUtOHhQTGNpaUlNaTQ3VlNnY2xkd1FLSEx2amQ1N0pFM1g5d3hQVXNEdEpnRWtfWDZmM28?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:14.8430979Z",
+        "snapshotPath": "archive/raw/news-e947b0c86c162f2f.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-ea261a2a2e782b19",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "安南區某補習班學生間疑似衝突致吞食異物案 教育局：依法即時受理通報、立即裁罰",
+    "summary": "安南區某補習班學生間疑似衝突致吞食異物案 教育局：依法即時受理通報、立即裁罰 視傳媒",
+    "eventDate": "2026-02-02",
+    "importedAt": "2026-06-08T13:41:24.1001161Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "安南區某補習班學生間疑似衝突致吞食異物案 教育局：依法即時受理通報、立即裁罰",
+        "publisher": "視傳媒",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1IdlNJcW51MTNldHVVZy1wS0ZqbDVMc3R3NEdJMHU1WmRJR2tCblNQdEpTZHktY1QtMFlUd3A4eUJ5cVdZQmg4dS0zRGZRQjRaNk5OTUpnbHZkOW9HaU96Wl9leDJacXp2?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:21.8120121Z",
+        "snapshotPath": "archive/raw/news-acb4388f85b43f64.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-30b9ce990b2ffdf4",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "偷拍4女童如廁猥褻1女 才藝班狼師判刑9年2月定讞",
+    "summary": "偷拍4女童如廁猥褻1女 才藝班狼師判刑9年2月定讞 自由時報",
+    "eventDate": "2026-05-19",
+    "importedAt": "2026-06-08T13:41:26.4352439Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "偷拍4女童如廁猥褻1女 才藝班狼師判刑9年2月定讞",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1HVVgxQ3BlVlpYZlRKTnpEc0ZEeTh2ZHZISEVKMnRaaVNDQS1heUY3WDAwZXNkU05DOXJ5VjFTYklaclhQMnFqV29IcWpTTVdOYVJjNHZPZ29CUDRRdy15UHR6UXJyajZT0gFuQVVfeXFMTmRlUENsUHl2MGZUM01VZG1TWUxjZzk2Qkk2NEI0amlvRG50LXc5WE5mNEZ4YmdHaVBDa3JZRkpCYWs3cllkOTE5bHpjOVVQb2t5M2RjNHVaNXNfUGw5QnVkdkRoQWYxWUNNSkFKMGc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:24.1159445Z",
+        "snapshotPath": "archive/raw/news-b18fdfb7af61b68a.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-2e962964a24ad4ce",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南安親班驚爆狼師! 猥褻偷拍30女童 市府：終身解聘、 廢止立案",
+    "summary": "台南安親班驚爆狼師! 猥褻偷拍30女童 市府：終身解聘、 廢止立案 MSN",
+    "eventDate": "2026-05-17",
+    "importedAt": "2026-06-08T13:41:28.7463492Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "台南安親班驚爆狼師! 猥褻偷拍30女童 市府：終身解聘、 廢止立案",
+        "publisher": "MSN",
+        "url": "https://news.google.com/rss/articles/CBMiqgRBVV95cUxNQmtrX21IYjVyM1JHWGE3bXYwSTBIUEkxM3VFLVhOeGxNLThaSkZLbkdJdlI0c3JwLXBPMVAtMW1lWURZb29BcGs2SlFNaE1saVdVNmRleTlUNlo5bHdPeG1yMWljOGlTN1NHMDZmOWpGTW1UbUtFaWNVOW11U3dtNUFGeWV6NWg1VmUydF85OUR5dXdsaUt0YkxsM1hjektCZnNTSGRGZ0FrOXExZzdtZmFWV1ZyQmRTU3dfOUpaY2VNcndjeWRFdjFSN2k5ZHpPNy1yZFZ0TU1QU1dMM2dKZFN6TVFOOFR2TGh1Sjc0endBMWtnRndMN1JZSEZmT0RGbXJKdmlaeDFvdlFGczViYXJsOURsbVBMVXJGbEowamxZMmZWTXV6enlVT2pmZXptN0d5VEtfNEZJUEhDbGt6V1hweFlXOVdLUWtUM1IxNE9naXJobWVTQXA4Rms0TFJKaWhDYVJYSlotdUtscHlYdnpNZ09QTnNoVjh5YldPdG5UT29BLXoyQ2xad3ZlYUs1MUJVVmtEZzM2elZnTDFzMUExRkNPX0VTdlVVREhyaHBkZjFGTGNhVThnYXNFNzFMSmgyb0dOWU1RMTRTWmlFQXU5bGR3bXFERk9JX0dieUNhc3hRLVJtdF9HNjdYZkxyT2VBbnhTd2hPa1BSUGMtbjVfd1plLVpxUmp3NmctOVlLelViYklBeDhMcHUzbGJGWlFSUXIwdmtJdw?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:26.4411355Z",
+        "snapshotPath": "archive/raw/news-090d90051771499c.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-2f4ddd30c09164dd",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "台南安南補習班學生衝突後吞食磁鐵 業者違規未即時通報遭裁罰",
+    "summary": "台南安南補習班學生衝突後吞食磁鐵 業者違規未即時通報遭裁罰 大成報",
+    "eventDate": "2026-02-02",
+    "importedAt": "2026-06-08T13:41:30.9893016Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "台南安南補習班學生衝突後吞食磁鐵 業者違規未即時通報遭裁罰",
+        "publisher": "大成報",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE54TDJ6cjZQclhzbGZSdmMxRkdTTGpJYThBTmxWQ0R4Nmx6X3FzdThIdHJRQVMyR3pDMk1FTV9KaFUwNTgyc1hQNjV5U2xBWDV5Snd6UjFRTVpkTjZkNE9sTklwYlZCdWhUX1VKTktwUEc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:28.7554302Z",
+        "snapshotPath": "archive/raw/news-5071a93c24ea3303.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-f4df2b8dbe1c513e",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "補習班 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "待人工分類",
+      "type": "補習班",
+      "city": "",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "影像記憶卡成鐵證！ 補教狼師猥褻、性侵未成年兄弟檔判刑13年",
+    "summary": "影像記憶卡成鐵證！ 補教狼師猥褻、性侵未成年兄弟檔判刑13年 自由時報",
+    "eventDate": "2026-04-08",
+    "importedAt": "2026-06-08T13:41:37.6933823Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "補習班"
+    ],
+    "evidence": [
+      {
+        "title": "影像記憶卡成鐵證！ 補教狼師猥褻、性侵未成年兄弟檔判刑13年",
+        "publisher": "自由時報",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA4ZjUxUjZWOHRQeFk1U2pNRkdLTFNOcnp4N1hvbkN5eGFRV0JKSW9WczczTW1HUzBmOXpycjZTNjJQbjZzQmdiQWNoMGRxMko2X2YtTGoxakdKZElQeWZYdkUxR2I0RzVQ0gFuQVVfeXFMTWN1dEcya3FyenRLLVlaTmI3dkFVbUU4WWNFWW0xWVFOcXBtcW1sOGxtMkFzckxiU3dGWlNjX3FiTGxpYWVsTF9fejEwN2M2ekxPNWlSMGljV2JZUDRGYlRuTkU1VjBuTFNwSENUSHc?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T13:41:35.3864411Z",
+        "snapshotPath": "archive/raw/news-9be546242d807b69.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
   }
 ]
