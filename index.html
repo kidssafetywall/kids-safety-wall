@@ -1084,7 +1084,7 @@
     }
 
     function populateFilterOptions() {
-      addOptions(document.querySelector("#city"),  [...new Set(institutions.map(i => i.city))]);
+      addOptions(document.querySelector("#city"),  [...new Set(institutions.map(i => normCity(i.city)))]);
       addOptions(document.querySelector("#type"),  [...new Set(institutions.map(i => i.type))]);
     }
 
