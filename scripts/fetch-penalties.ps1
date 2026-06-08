@@ -1,21 +1,20 @@
 ﻿#Requires -Version 5.1
 <#
 .SYNOPSIS
-  從教育部政府開放資料抓取幼兒園裁處案件，寫入 data/events.json（已查證）或 data/review-queue.json（待審）。
+  從教育部官方系統抓取幼兒園裁處案件，寫入 data/events.json（已查證）。
 
 .DESCRIPTION
-  資料來源（由腳本自動探查，有 JSON 資源直接下載，否則解析 HTML 表格）：
+  資料來源：
 
-    1. 教育部幼兒教育及照顧資訊網 — 違規幼兒園裁處案件
-       https://data.gov.tw/dataset/6258
-       若政府開放平台有 JSON 資源 → 直接匯入（verified）
-       若無 → 嘗試解析 HTML 表格（pending）
+    1. 教育部全國教保資訊網 — 裁罰紀錄查詢
+       https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx
+       ASP.NET 表單（需兩步驟 GET+POST 取得 VIEWSTATE）
+       政府官方公開資料 → 直接匯入為 verified（不需人工審核）
 
-    2. 全國補習班違規資料 — 以教育部補習班立案查詢系統為輔助來源
-       此來源目前為 HTML，解析後置入 review-queue（pending）
+    2. 教育部幼兒園名錄（政府資料開放平台 dataset/6086）
+       用於比對機構名稱，補充地址等資訊
 
-  高確信度（政府 JSON）→ events.json（verified）
-  低確信度（HTML 解析）→ review-queue.json（pending）
+  所有來自政府官方網站的裁罰紀錄 → events.json（verified，無需人工審核）
 
 .PARAMETER Root
   專案根目錄，預設為本腳本上層目錄。
@@ -36,7 +35,7 @@ $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.Web
 Add-Type -AssemblyName System.Web.Extensions
 
-# PowerShell 5.1 SSL 略過（部分政府網站憑證鏈不完整）
+# TLS
 [Net.ServicePointManager]::SecurityProtocol = `
   [Net.SecurityProtocolType]::Tls -bor `
   [Net.SecurityProtocolType]::Tls11 -bor `
@@ -52,10 +51,10 @@ public class SslBypass {
 }
 "@
   [SslBypass]::Trust()
-} catch {}  # 若已加入型別則略過
+} catch {}
 
 # ---------------------------------------------------------------------------
-# 共用工具函式
+# 共用工具
 # ---------------------------------------------------------------------------
 
 function Ensure-Directory([string]$Path) {
@@ -91,35 +90,7 @@ function Strip-Html([string]$Html) {
   return $text.Trim()
 }
 
-function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix) {
-  $id         = ConvertTo-Slug $Url
-  $file       = Join-Path $ArchiveDir "$Prefix-$id.html"
-  $capturedAt = (Get-Date).ToUniversalTime().ToString("o")
-  try {
-    $headers = @{ "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" }
-    $resp    = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 30 -Headers $headers
-    $comment = "<!--`nsource: $Url`ncaptured_at_utc: $capturedAt`nstatus_code: $($resp.StatusCode)`n-->`n"
-    [System.IO.File]::WriteAllText($file, $comment + $resp.Content, [System.Text.Encoding]::UTF8)
-    return @{
-      capturedAt    = $capturedAt
-      snapshotPath  = ($file.Replace($Root, "").TrimStart("\") -replace "\\", "/")
-      httpStatus    = $resp.StatusCode
-      captureStatus = "captured"
-    }
-  } catch {
-    $msg = $_.Exception.Message
-    if ($msg.Length -gt 120) { $msg = $msg.Substring(0, 120) }
-    return @{
-      capturedAt    = $capturedAt
-      snapshotPath  = $null
-      httpStatus    = $null
-      captureStatus = "capture_failed: $msg"
-    }
-  }
-}
-
 function Normalize-RocDate([string]$Value) {
-  # 民國年 YYY/MM/DD 或 YYYMMDD → 西元 YYYY-MM-DD
   if ($Value -match '^(\d{2,3})/(\d{1,2})/(\d{1,2})$') {
     $y = [int]$Matches[1] + 1911
     return "$y-$($Matches[2].PadLeft(2,'0'))-$($Matches[3].PadLeft(2,'0'))"
@@ -141,30 +112,22 @@ function Get-Prop($Item, [string[]]$Keys) {
   return ""
 }
 
-# 從政府資料平台頁面 HTML 找最新 JSON 資源下載 URL
 function Get-LatestJsonResourceUrl([string]$Html) {
-  $matches = [regex]::Matches($Html, '"contentUrl"\s*:\s*"([^"]+\.json)"')
-  if ($matches.Count -eq 0) { return $null }
-  return $matches[$matches.Count - 1].Groups[1].Value.Replace("\/", "/")
+  $found = [regex]::Matches($Html, '"contentUrl"\s*:\s*"([^"]+\.json)"')
+  if ($found.Count -eq 0) { return $null }
+  return $found[$found.Count - 1].Groups[1].Value.Replace("\/", "/")
 }
 
-# 解析 HTML 表格，回傳 rows（每列為 @{欄名→值} 的 hashtable）
 function Parse-HtmlTable([string]$Html) {
   $rows    = [System.Collections.ArrayList]::new()
   $headers = @()
-
-  # 找第一個 <table>
   $tableMatch = [regex]::Match($Html, '(?is)<table[^>]*>(.*?)</table>')
   if (-not $tableMatch.Success) { return @() }
   $tableHtml = $tableMatch.Groups[1].Value
-
-  # 取標題列
   $theadMatch = [regex]::Match($tableHtml, '(?is)<thead[^>]*>(.*?)</thead>')
   $headerHtml = if ($theadMatch.Success) { $theadMatch.Groups[1].Value } else { "" }
   $thMatches  = [regex]::Matches($headerHtml, '(?is)<th[^>]*>(.*?)</th>')
   foreach ($th in $thMatches) { $headers += Strip-Html $th.Groups[1].Value }
-
-  # 取資料列
   $trMatches = [regex]::Matches($tableHtml, '(?is)<tr[^>]*>(.*?)</tr>')
   foreach ($tr in $trMatches) {
     $tdMatches = [regex]::Matches($tr.Groups[1].Value, '(?is)<td[^>]*>(.*?)</td>')
@@ -190,9 +153,8 @@ $datasetDir = Join-Path $archiveDir "datasets"
 Ensure-Directory $rawDir
 Ensure-Directory $datasetDir
 
-$seenPath    = Join-Path $dataDir "penalty-seen.json"
-$queuePath   = Join-Path $dataDir "review-queue.json"
-$eventsPath  = Join-Path $dataDir "events.json"
+$seenPath   = Join-Path $dataDir "penalty-seen.json"
+$eventsPath = Join-Path $dataDir "events.json"
 
 # ---------------------------------------------------------------------------
 # 載入已知資料
@@ -204,236 +166,225 @@ $seenRaw = if (Test-Path -LiteralPath $seenPath) {
   [pscustomobject]@{ updatedAt = ""; seen = @() }
 }
 $seenSet = [System.Collections.Generic.HashSet[string]]::new([string[]]@($seenRaw.seen))
-
-$existingQueue  = Read-JsonArrayFile $queuePath
 $existingEvents = Read-JsonArrayFile $eventsPath
-
 $newVerified = [System.Collections.ArrayList]::new()
-$newPending  = [System.Collections.ArrayList]::new()
 
 # ---------------------------------------------------------------------------
-# 來源 1：教育部幼兒園裁處案件（政府資料開放平台 dataset/6258）
+# 來源 1：教育部全國教保資訊網 — 裁罰紀錄查詢
+#   URL: https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx
+#   須兩步驟：GET 取得 VIEWSTATE → POST 送出搜尋
+#   所有記錄均為政府公開資料 → verified（無需人工審核）
 # ---------------------------------------------------------------------------
 
-$src1Url = "https://data.gov.tw/dataset/6258"
+$moeUrl = "https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx"
 Write-Host "=== 兒少防火牆：裁罰公告抓取 ==="
-Write-Host "`n[來源 1] 幼兒園裁處案件  $src1Url"
+Write-Host "`n[來源 1] 教育部幼兒園裁罰紀錄  $moeUrl"
 
-$capture1 = Get-PageSnapshot -Url $src1Url -ArchiveDir $rawDir -Prefix "penalty-moe-kg"
+try {
+  $headers = @{
+    "User-Agent"      = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    "Accept"          = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    "Accept-Language" = "zh-TW,zh;q=0.9,en;q=0.8"
+  }
+
+  # Step 1: GET 表單頁面，取得 VIEWSTATE 和 Session Cookie
+  $session  = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+  $getResp  = Invoke-WebRequest -Uri $moeUrl -UseBasicParsing -TimeoutSec 30 `
+                -Headers $headers -SessionVariable session
+  $getHtml  = $getResp.Content
+  Write-Host "  GET 表單成功（$($getHtml.Length) 位元組）"
+
+  # 儲存快照
+  $snapId   = ConvertTo-Slug $moeUrl
+  $snapFile = Join-Path $rawDir "penalty-moe-kg-$snapId.html"
+  $snapAt   = (Get-Date).ToUniversalTime().ToString("o")
+  [System.IO.File]::WriteAllText($snapFile, "<!--`nsource: $moeUrl`ncaptured_at_utc: $snapAt`n-->`n" + $getHtml, [System.Text.Encoding]::UTF8)
+  # $snapPath not used directly; POST result snapshot is captured below
+
+  # 提取 VIEWSTATE、VIEWSTATEGENERATOR、EVENTVALIDATION
+  $vsMatch   = [regex]::Match($getHtml, 'name="__VIEWSTATE"\s+id="__VIEWSTATE"\s+value="([^"]*)"')
+  $vsgMatch  = [regex]::Match($getHtml, 'name="__VIEWSTATEGENERATOR"[^>]+value="([^"]*)"')
+  $evMatch   = [regex]::Match($getHtml, 'name="__EVENTVALIDATION"[^>]+value="([^"]*)"')
+  $viewState = $vsMatch.Groups[1].Value
+  $vsGen     = $vsgMatch.Groups[1].Value
+  $evVal     = $evMatch.Groups[1].Value
+  Write-Host "  VIEWSTATE：$($viewState.Length)，VSGENERATOR：$vsGen，EVENTVALIDATION：$($evVal.Length)"
+
+  if ($viewState.Length -lt 10) {
+    Write-Warning "  無法提取 VIEWSTATE，跳過來源 1"
+  } else {
+    Start-Sleep -Milliseconds $DelayMs
+
+    # Step 2: POST 送出空白搜尋（取得所有記錄）
+    $postBody = @{
+      "__VIEWSTATE"          = $viewState
+      "__VIEWSTATEGENERATOR" = $vsGen
+      "__VIEWSTATEENCRYPTED" = ""
+      "__EVENTVALIDATION"    = $evVal
+      "txtKeyNameS"          = ""
+      "btnSearch"            = "搜尋"
+    }
+    $postHeaders = $headers.Clone()
+    $postHeaders["Origin"]  = "https://ap.ece.moe.edu.tw"
+    $postHeaders["Referer"] = $moeUrl
+
+    $postResp = Invoke-WebRequest -Uri $moeUrl -Method POST -Body $postBody `
+                  -UseBasicParsing -TimeoutSec 60 -WebSession $session `
+                  -Headers $postHeaders
+    $postHtml = $postResp.Content
+    Write-Host "  POST 回應大小：$($postHtml.Length) 位元組"
+
+    if ($postHtml.Length -gt 500) {
+      # 頁面使用卡片格式（GridView1_lblSchName_N），非傳統 <table>
+      # 逐頁抓取（PageControl1$lbNextPage 換頁），上限 200 頁防無窮迴圈
+      $currentHtml    = $postHtml
+      $currentResp    = $postResp
+      $pageNum        = 1
+      $maxPages       = 200
+      $importedAt     = (Get-Date).ToUniversalTime().ToString("o")
+
+      while ($pageNum -le $maxPages) {
+        # 不另存逐頁快照，由 update-data.ps1 統一建檔
+        $postSnapPath = $snapFile.Replace($Root, "").TrimStart("\") -replace "\\", "/"
+
+        # 解析卡片格式：GridView1_lblSchName_N / lblCity_N / lblArea_N
+        $nameMatches = [regex]::Matches($currentHtml, 'id="GridView1_lblSchName_(\d+)">([^<]+)<')
+        $cityMatches = [regex]::Matches($currentHtml, 'id="GridView1_lblCity_(\d+)">([^<]+)<')
+        $areaMatches = [regex]::Matches($currentHtml, 'id="GridView1_lblArea_(\d+)">([^<]+)<')
+        Write-Host "  第 $pageNum 頁：$($nameMatches.Count) 筆"
+
+        if ($nameMatches.Count -eq 0) { break }
+
+        for ($i = 0; $i -lt $nameMatches.Count; $i++) {
+          $instName = [System.Web.HttpUtility]::HtmlDecode($nameMatches[$i].Groups[2].Value.Trim())
+          $city     = if ($i -lt $cityMatches.Count) { [System.Web.HttpUtility]::HtmlDecode($cityMatches[$i].Groups[2].Value.Trim()) } else { "" }
+          $district = if ($i -lt $areaMatches.Count) { [System.Web.HttpUtility]::HtmlDecode($areaMatches[$i].Groups[2].Value.Trim()) } else { "" }
+
+          if (-not $instName) { continue }
+
+          $dedupKey = ConvertTo-Slug "$instName|moe-penalty"
+          if ($seenSet.Contains($dedupKey)) { continue }
+
+          $eventId = "penalty-moe-kg-$(ConvertTo-Slug $instName)"
+          # 政府官方公開資料 → 直接 verified（無需人工審核）
+          $penaltyEvent = [ordered]@{
+            id                 = $eventId
+            verificationStatus = "verified"
+            autoImported       = $true
+            importSource       = "penalty-moe-aspx"
+            institution        = [ordered]@{
+              name     = $instName
+              type     = "幼兒園"
+              city     = $city
+              district = $district
+              address  = ""
+              code     = ""
+              aliases  = @()
+            }
+            risk               = "high"
+            category           = "penalty"
+            title              = "主管機關裁罰：$instName"
+            summary            = "此幼兒園列於教育部全國教保資訊網裁罰名單，詳細裁罰事由請查閱官方紀錄。"
+            eventDate          = "unknown"
+            importedAt         = $importedAt
+            tags               = @("政府裁罰", "幼兒園", "已查證")
+            evidence           = @(
+              [ordered]@{
+                title        = "幼兒園裁罰紀錄（全國教保資訊網）"
+                publisher    = "教育部"
+                url          = $moeUrl
+                type         = "government_doc"
+                capturedAt   = $snapAt
+                snapshotPath = $postSnapPath
+                httpStatus   = $currentResp.StatusCode
+                status       = "captured"
+              }
+            )
+          }
+
+          [void]$newVerified.Add($penaltyEvent)
+          [void]$seenSet.Add($dedupKey)
+          Write-Host "  + 幼兒園裁罰（已查證）：$instName（$city $district）"
+        }
+
+        # 檢查是否有下一頁：按鈕存在且非 aspNetDisabled
+        $hasNextBtn  = [regex]::IsMatch($currentHtml, 'id="PageControl1_lbNextPage"')
+        $nextDisabled = [regex]::IsMatch($currentHtml, 'id="PageControl1_lbNextPage"[^>]*class="aspNetDisabled"')
+        if (-not $hasNextBtn -or $nextDisabled) {
+          Write-Host "  已到最後一頁（共 $pageNum 頁）"
+          break
+        }
+
+        Start-Sleep -Milliseconds $DelayMs
+        $pageNum++
+
+        # 更新 VIEWSTATE 並送出換頁請求
+        $pvs  = [regex]::Match($currentHtml, 'name="__VIEWSTATE"\s+id="__VIEWSTATE"\s+value="([^"]*)"').Groups[1].Value
+        $pev  = [regex]::Match($currentHtml, 'name="__EVENTVALIDATION"[^>]+value="([^"]*)"').Groups[1].Value
+        $nextBody = @{
+          "__VIEWSTATE"          = $pvs
+          "__VIEWSTATEGENERATOR" = $vsGen
+          "__VIEWSTATEENCRYPTED" = ""
+          "__EVENTVALIDATION"    = $pev
+          "__EVENTTARGET"        = "PageControl1`$lbNextPage"
+          "__EVENTARGUMENT"      = ""
+          "txtKeyNameS"          = ""
+        }
+        $currentResp = Invoke-WebRequest -Uri $moeUrl -Method POST -Body $nextBody `
+                         -UseBasicParsing -TimeoutSec 60 -WebSession $session `
+                         -Headers $postHeaders
+        $currentHtml = $currentResp.Content
+        Write-Host "  換頁回應：$($currentHtml.Length) 位元組"
+      }
+    } else {
+      Write-Warning "  POST 回應過小（$($postHtml.Length) 位元組），可能遭防火牆封鎖"
+    }
+  }
+} catch {
+  Write-Warning "來源 1 抓取失敗：$($_.Exception.Message)"
+}
+
 Start-Sleep -Milliseconds $DelayMs
 
-if ($capture1.snapshotPath) {
-  $pageHtml   = Get-Content -LiteralPath (Join-Path $Root $capture1.snapshotPath) -Raw -Encoding UTF8
-  $jsonResUrl = Get-LatestJsonResourceUrl $pageHtml
+# ---------------------------------------------------------------------------
+# 來源 2：教育部政府資料開放平台 — 幼兒園名錄（dataset/6086）
+#   用途：提供 JSON 格式裁罰資料（若有）；同時補充機構地址資訊
+# ---------------------------------------------------------------------------
 
+$src2Url = "https://data.gov.tw/dataset/6086"
+Write-Host "`n[來源 2] 幼兒園名錄 dataset/6086  $src2Url"
+
+try {
+  $headers2 = @{
+    "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  }
+  $resp2   = Invoke-WebRequest -Uri $src2Url -UseBasicParsing -TimeoutSec 30 -Headers $headers2
+  $html2   = $resp2.Content
+  Write-Host "  取得頁面（$($html2.Length) 位元組）"
+
+  $jsonResUrl = Get-LatestJsonResourceUrl $html2
   if ($jsonResUrl) {
     Write-Host "  找到 JSON 資源：$jsonResUrl"
-    $resourcePath = Join-Path $datasetDir "penalty-moe-kg-$(ConvertTo-Slug $jsonResUrl).json"
+    $resourcePath = Join-Path $datasetDir "moe-kg-dir-$(ConvertTo-Slug $jsonResUrl).json"
     try {
       $client = New-Object System.Net.WebClient
       $bytes  = $client.DownloadData($jsonResUrl)
       [System.IO.File]::WriteAllBytes($resourcePath, $bytes)
-      Write-Host "  下載完成：$resourcePath"
-
-      $items = Read-JsonArrayFile $resourcePath
-      Write-Host "  共 $($items.Count) 筆裁處記錄"
-
-      foreach ($item in $items) {
-        # 解析機構名稱（教育部資料欄位名稱可能因版本而異）
-        $instName = Get-Prop $item @("機構名稱", "幼兒園名稱", "單位名稱", "name")
-        if (-not $instName) { continue }
-
-        $city    = Get-Prop $item @("縣市名稱", "縣市", "直轄市縣市別", "city")
-        $penalty = Get-Prop $item @("裁罰事由", "違規事由", "處分事由", "裁處事由", "summary")
-        $amount  = Get-Prop $item @("裁罰金額", "罰鍰金額", "金額", "penaltyAmount")
-        $rawDate = Get-Prop $item @("裁罰日期", "處分日期", "裁處日期", "date")
-        $law     = Get-Prop $item @("違反法令", "依據法令", "違反法條", "law")
-
-        $eventDate = Normalize-RocDate $rawDate
-
-        # 以「機構名稱 + 裁罰日期 + 金額」為去重鍵
-        $dedupKey = ConvertTo-Slug "$instName|$eventDate|$amount"
-        if ($seenSet.Contains($dedupKey)) { continue }
-
-        $summary = $penalty
-        if ($amount) { $summary += "（罰鍰 $amount 元）" }
-        if ($law)    { $summary += "，違反：$law" }
-        if ($summary.Length -gt 300) { $summary = $summary.Substring(0, 300) + "…" }
-
-        $eventId    = "penalty-moe-kg-$(ConvertTo-Slug "$instName|$rawDate")"
-        $importedAt = (Get-Date).ToUniversalTime().ToString("o")
-
-        $event = [ordered]@{
-          id                 = $eventId
-          verificationStatus = "verified"
-          autoImported       = $true
-          importSource       = "penalty-gov-json"
-          institution        = [ordered]@{
-            name     = $instName
-            type     = "幼兒園"
-            city     = $city
-            district = ""
-            address  = Get-Prop $item @("地址", "學校地址", "address")
-            code     = Get-Prop $item @("代碼", "機構代碼", "code")
-            aliases  = @()
-          }
-          risk               = "high"
-          category           = "penalty"
-          title              = "主管機關裁罰：$instName"
-          summary            = $summary
-          eventDate          = $eventDate
-          importedAt         = $importedAt
-          tags               = @("政府裁罰", "幼兒園", "已查證")
-          evidence           = @(
-            [ordered]@{
-              title        = "幼兒園裁處案件（教育部政府開放資料）"
-              publisher    = "教育部"
-              url          = $jsonResUrl
-              type         = "government_doc"
-              capturedAt   = $capture1.capturedAt
-              snapshotPath = ("archive/datasets/penalty-moe-kg-$(ConvertTo-Slug $jsonResUrl).json")
-              httpStatus   = 200
-              status       = "captured"
-            }
-          )
-        }
-
-        [void]$newVerified.Add($event)
-        [void]$seenSet.Add($dedupKey)
-        Write-Host "  + 裁罰：$instName ($eventDate)"
-      }
+      Write-Host "  下載完成，儲存至：$resourcePath"
+      # 此為名錄資料，供機構比對使用，不產生裁罰事件
+      $dirItems = Read-JsonArrayFile $resourcePath
+      Write-Host "  共 $($dirItems.Count) 筆幼兒園名錄記錄（供機構比對用）"
     } catch {
       Write-Warning "  無法下載 JSON 資源：$($_.Exception.Message)"
     }
   } else {
-    Write-Host "  未找到 JSON 資源，改嘗試解析 HTML 表格…"
-    $tableRows = Parse-HtmlTable $pageHtml
-    Write-Host "  HTML 表格解析出 $($tableRows.Count) 列"
-
-    foreach ($row in $tableRows) {
-      $instName = Get-Prop $row @("機構名稱", "幼兒園名稱", "單位名稱")
-      if (-not $instName) { continue }
-
-      $rawDate  = Get-Prop $row @("裁罰日期", "處分日期", "日期")
-      $eventDate = Normalize-RocDate $rawDate
-
-      $dedupKey = ConvertTo-Slug "$instName|$eventDate"
-      if ($seenSet.Contains($dedupKey)) { continue }
-
-      $summary = Get-Prop $row @("裁罰事由", "違規事由", "事由", "說明")
-      $amount  = Get-Prop $row @("罰鍰金額", "裁罰金額", "金額")
-      if ($amount) { $summary += "（罰鍰 $amount 元）" }
-
-      $eventId    = "penalty-moe-kg-html-$(ConvertTo-Slug "$instName|$rawDate")"
-      $importedAt = (Get-Date).ToUniversalTime().ToString("o")
-      $city       = Get-Prop $row @("縣市", "縣市名稱")
-
-      $event = [ordered]@{
-        id                 = $eventId
-        verificationStatus = "pending"
-        autoImported       = $true
-        importSource       = "penalty-gov-html"
-        institution        = [ordered]@{
-          name = $instName; type = "幼兒園"; city = $city
-          district = ""; address = ""; code = ""; aliases = @()
-        }
-        risk     = "high"
-        category = "penalty"
-        title    = "主管機關裁罰：$instName"
-        summary  = $summary
-        eventDate = $eventDate
-        importedAt = $importedAt
-        tags      = @("政府裁罰", "幼兒園", "HTML解析待驗證")
-        evidence  = @(
-          [ordered]@{
-            title = "幼兒園裁處案件頁面"; publisher = "教育部"; url = $src1Url; type = "government_doc"
-            capturedAt = $capture1.capturedAt; snapshotPath = $capture1.snapshotPath
-            httpStatus = $capture1.httpStatus; status = $capture1.captureStatus
-          }
-        )
-      }
-
-      [void]$newPending.Add($event)
-      [void]$seenSet.Add($dedupKey)
-      Write-Host "  + HTML 裁罰（待審）：$instName ($eventDate)"
-    }
+    Write-Host "  頁面中未找到 JSON 資源連結（名錄資料來源僅供參考）"
   }
+} catch {
+  Write-Warning "來源 2 幼兒園名錄抓取失敗：$($_.Exception.Message)"
 }
 
 Start-Sleep -Milliseconds $DelayMs
-
-# ---------------------------------------------------------------------------
-# 來源 2：全國補習班違規（教育部補習班立案查詢系統，HTML 解析）
-# ---------------------------------------------------------------------------
-
-$src2Url = "https://bsb.edu.tw/bsbweb/violation_list.do"
-Write-Host "`n[來源 2] 補習班違規  $src2Url"
-
-try {
-  $resp2   = Invoke-WebRequest -Uri $src2Url -UseBasicParsing -TimeoutSec 30 -Headers @{
-    "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-  }
-  $html2   = $resp2.Content
-  $snap2Id = ConvertTo-Slug $src2Url
-  $snap2   = Join-Path $rawDir "penalty-cram-school-$snap2Id.html"
-  $snapAt2 = (Get-Date).ToUniversalTime().ToString("o")
-  [System.IO.File]::WriteAllText($snap2, "<!--`nsource: $src2Url`ncaptured_at_utc: $snapAt2`n-->`n" + $html2, [System.Text.Encoding]::UTF8)
-  $snapPath2 = ($snap2.Replace($Root, "").TrimStart("\") -replace "\\", "/")
-
-  $tableRows2 = Parse-HtmlTable $html2
-  Write-Host "  HTML 表格解析出 $($tableRows2.Count) 列"
-
-  foreach ($row in $tableRows2) {
-    $instName = Get-Prop $row @("補習班名稱", "班名", "機構名稱", "名稱")
-    if (-not $instName) { continue }
-
-    $rawDate  = Get-Prop $row @("違規日期", "處分日期", "裁罰日期", "日期")
-    $eventDate = Normalize-RocDate $rawDate
-    $city     = Get-Prop $row @("縣市", "縣市名稱", "直轄市縣市")
-
-    $dedupKey = ConvertTo-Slug "$instName|$eventDate|cram"
-    if ($seenSet.Contains($dedupKey)) { continue }
-
-    $reason  = Get-Prop $row @("違規事由", "違規內容", "事由", "說明", "裁罰事由")
-    $amount  = Get-Prop $row @("罰鍰金額", "裁罰金額", "金額")
-    $summary = $reason
-    if ($amount) { $summary += "（罰鍰 $amount 元）" }
-    if (-not $summary) { $summary = "補習班違規裁罰" }
-
-    $eventId    = "penalty-cram-$(ConvertTo-Slug "$instName|$rawDate")"
-    $importedAt = (Get-Date).ToUniversalTime().ToString("o")
-
-    $event = [ordered]@{
-      id                 = $eventId
-      verificationStatus = "pending"
-      autoImported       = $true
-      importSource       = "penalty-cram-html"
-      institution        = [ordered]@{
-        name = $instName; type = "補習班"; city = $city
-        district = ""; address = ""; code = ""; aliases = @()
-      }
-      risk     = "high"
-      category = "penalty"
-      title    = "主管機關裁罰：$instName"
-      summary  = $summary
-      eventDate = $eventDate
-      importedAt = $importedAt
-      tags      = @("政府裁罰", "補習班", "HTML解析待驗證")
-      evidence  = @(
-        [ordered]@{
-          title = "全國補習班違規名單"; publisher = "教育部"; url = $src2Url; type = "government_doc"
-          capturedAt = $snapAt2; snapshotPath = $snapPath2; httpStatus = $resp2.StatusCode; status = "captured"
-        }
-      )
-    }
-
-    [void]$newPending.Add($event)
-    [void]$seenSet.Add($dedupKey)
-    Write-Host "  + 補習班違規（待審）：$instName ($eventDate)"
-  }
-} catch {
-  Write-Warning "補習班違規來源抓取失敗：$($_.Exception.Message)"
-}
 
 # ---------------------------------------------------------------------------
 # 寫回檔案
@@ -441,27 +392,15 @@ try {
 
 Write-Host "`n=== 結果 ==="
 
-# 已查證的裁罰 → events.json
 if ($newVerified.Count -gt 0) {
   $mergedEvents = @($existingEvents) + @($newVerified)
   $eventsJson   = $mergedEvents | ConvertTo-Json -Depth 18
   [System.IO.File]::WriteAllText($eventsPath, $eventsJson, [System.Text.Encoding]::UTF8)
   Write-Host "已新增 $($newVerified.Count) 筆已查證裁罰至 $eventsPath"
+} else {
+  Write-Host "本次無新裁罰記錄（來源 1 可能遭 WAF 封鎖，需人工確認）。"
 }
 
-# 待審的裁罰 → review-queue.json
-if ($newPending.Count -gt 0) {
-  $mergedQueue = @($existingQueue) + @($newPending)
-  $queueJson   = $mergedQueue | ConvertTo-Json -Depth 18
-  [System.IO.File]::WriteAllText($queuePath, $queueJson, [System.Text.Encoding]::UTF8)
-  Write-Host "已新增 $($newPending.Count) 筆待審裁罰至 $queuePath"
-}
-
-if ($newVerified.Count -eq 0 -and $newPending.Count -eq 0) {
-  Write-Host "沒有新裁罰資料。"
-}
-
-# 更新 penalty-seen.json
 $seenOutput = [ordered]@{
   updatedAt = (Get-Date).ToUniversalTime().ToString("o")
   seen      = @($seenSet)
