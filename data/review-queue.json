@@ -2909,5 +2909,2055 @@
                              "status":  "captured"
                          }
                      ]
+    },
+    {
+        "id":  "news-4ee99b5a27484df0",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "幼兒園惡師「搖晃剪刀嚇童」園方還滅證 教保員終認罪判刑6月",
+        "summary":  "幼兒園惡師「搖晃剪刀嚇童」園方還滅證 教保員終認罪判刑6月 facebook.com",
+        "eventDate":  "2025-12-18",
+        "importedAt":  "2026-06-08T05:04:05.0229402Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "幼兒園惡師「搖晃剪刀嚇童」園方還滅證 教保員終認罪判刑6月",
+                             "publisher":  "facebook.com",
+                             "url":  "https://news.google.com/rss/articles/CBMimANBVV95cUxOdFhCS0doUDhheTdTVW12ckJsNmxNWGNoWnljTDFhOVZKQ3BoTGxZRzU2YnFYLTI3dmRta1IyUTAxLXI3Nm1yUTE0dUp6cGc3anZ6dFc0RDA0SWctMFNGcl8zb0dsTk84SXFnLVRWWGhINlRrZGxVYnZVSUVGbnlRVWNzeGw1UnRhWHA3cnpOYnNFZU1DRnVLYUNRMkZwR0xUQlg4ZUtSdl9keWJ1Wi1YNnV1ZVpYb0d6bkxKcmV6UzlucjR0a3JianhKQWpvMEIzS25BWW1FeXJwMV8xMGxRQ1JlSEd0Q1FIQ2hGLWZsaFdaY2IwZzF5WERWS2dWaHRFdHc4X0JQSUpyZm9ZQk5BNEczYWtFNmdhWV8xdWNBbHFUc3UxOHBYcXQxSFBCMEVib0pxYjVrSDVtSkFudWtmbXI0QUZYSVp4M2pQN0JIY3FFa2lUakgtQVJ3Y1JrNVNkYW1qU3o1VXpvT3I0Z1piMFNsQndYRXBQbmFkd2M2UHpSRlNpSThyNEZGeEIzWXJLaGR4c3c4RnQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:00.7265346Z",
+                             "snapshotPath":  "archive/raw/news-750e85f3e13ca211.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-11ea9fcc21ccf582",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "新莊幼兒園「拍打、拖行」學童 教育局不排除勒令停辦",
+        "summary":  "新莊幼兒園「拍打、拖行」學童 教育局不排除勒令停辦 壹蘋新聞網",
+        "eventDate":  "2026-04-14",
+        "importedAt":  "2026-06-08T05:04:09.2562972Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "新莊幼兒園「拍打、拖行」學童 教育局不排除勒令停辦",
+                             "publisher":  "壹蘋新聞網",
+                             "url":  "https://news.google.com/rss/articles/CBMif0FVX3lxTE9HVXdJSTh1eDdRWnRvLXFlNjZrb1dyTlI3RHZFUVBVM29hbXhYdW9aZjA5bkdUbzdkYjRaYnlEUjkzSEVpc0s4dVNPMjBqaTVlcEZDQjZSR1M2eGVkbFhqeXoxczM3MHppd0FkX1FRSnM2cmc1QUNyd2QtU1BiN00?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:05.0391315Z",
+                             "snapshotPath":  "archive/raw/news-c617fc7b4186a6e1.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-d8d1c43003537d1d",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "地主3.99億出售土地 台中豐原34年私立幼兒園8月起熄燈",
+        "summary":  "地主3.99億出售土地 台中豐原34年私立幼兒園8月起熄燈 中時新聞網",
+        "eventDate":  "2025-07-25",
+        "importedAt":  "2026-06-08T05:04:13.3982283Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "地主3.99億出售土地 台中豐原34年私立幼兒園8月起熄燈",
+                             "publisher":  "中時新聞網",
+                             "url":  "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9hOUFfU3BqMFM2ODhrc0xnVUVDTzlOaE5LY0VZbmQ0blFXVW5xNzM4dVA1UjlGelhjek95MmJSY2RUWEQ3T3oySUxNcE5CN3pzU2RNM0hHdkRyVFFvQ0k4?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:09.2583127Z",
+                             "snapshotPath":  "archive/raw/news-e66d2979d265acb7.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-f40f1c97b96aa67c",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "北市幼兒園狼師 猥褻4男女童判刑8年",
+        "summary":  "北市幼兒園狼師 猥褻4男女童判刑8年 自由時報",
+        "eventDate":  "2025-07-12",
+        "importedAt":  "2026-06-08T05:04:17.5821457Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "北市幼兒園狼師 猥褻4男女童判刑8年",
+                             "publisher":  "自由時報",
+                             "url":  "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5JdkhkYl96TUI5a0gtdHlDTHdPRTNucnRKY3o5YVpORTQ2UEdsamNwMUlIRFRVU2hCMERsTXNaOVZRNnhaaG1iZ1N3SlNYek1FLXlBMzhzZnNsZTREY3JMM2hubW1hcV9W0gFuQVVfeXFMTnM3VUhxb2U5U05GSmI1eW9aWTNKanJQYUtsb0hXM19aeklCcXMycmhiTDg3R1MxMmQtRm5RMUhPZXV3TU1UUWNXblhKNFJWT0JVbmRHelkzamE4c3U4MVA0WTM1UUppMzJUQlRaYnc?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:13.4002544Z",
+                             "snapshotPath":  "archive/raw/news-96276f581c866130.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-dfb12c658898525d",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "3間幼稚園本學年停辦 1所新註冊 上學年23間停辦",
+        "summary":  "3間幼稚園本學年停辦 1所新註冊 上學年23間停辦 香港01",
+        "eventDate":  "2025-10-16",
+        "importedAt":  "2026-06-08T05:04:21.8447567Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "3間幼稚園本學年停辦 1所新註冊 上學年23間停辦",
+                             "publisher":  "香港01",
+                             "url":  "https://news.google.com/rss/articles/CBMi4gJBVV95cUxQaUtTNUhEU2tYeklfWTJ3c201NnoyYTV3YlhmMUtvT2xYc3I0NE12S19hbTBsdmJfMFIzb0VvTXJTQWJvSlJXZHVqaXN3alhSWU5OaDVYRVJ1ejdMVW13S2I0eDljNTRnb3BsYk5Xc0NycXZMbnZBRWpTY05GVnVLOFZnODE4NGdoZF9nRlJfNndfTXVQOGlCSzZaem4teC1nMWpsMC0zMGRFQUM4ZTRnSFgta2V1TGlLTUtFRWMzWEM3UUEzbUlRNEhWOV9yX0t1emZ0S0NfMzFWNkxabmp3NkR2Sy1uZWJGcnJEWEphb0djR0hmaTBXMWMwdHVWMS0tOVBVbmxmNjJCclF3WVhDdnFKeWpUWklNeUtFTFBWcHpyZm5aRWhSUWFIMnVZMHN3bGJBYTdhNHIxSERTd3c1WWZHdEZZMHU2YzgxNnZlLVF5WktCYUp1NUpUamxwaHhuVUE?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:17.5839004Z",
+                             "snapshotPath":  "archive/raw/news-9384427afe5786e1.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-e403b400c4966c1e",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "觀點投書：臺南市何時重視過公幼? | 施文平 | 評論",
+        "summary":  "觀點投書：臺南市何時重視過公幼? | 施文平 | 評論 風傳媒",
+        "eventDate":  "2025-07-06",
+        "importedAt":  "2026-06-08T05:04:25.9977820Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "觀點投書：臺南市何時重視過公幼? | 施文平 | 評論",
+                             "publisher":  "風傳媒",
+                             "url":  "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1pX2RWX09EWlNnSmtQWGRLSlhmdkMtUk5LTWtHVzg5eGR3RC1EVkdlLXU2bWZxU1ZtYm1XLTB1MUNvbWZ1cExROWJHMUx6UQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:21.8467754Z",
+                             "snapshotPath":  "archive/raw/news-669bd6bbaa1a7127.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-82d1b0f4a95be2f7",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "地主3.99億出售土地 台中豐原34年私立幼兒園8月起熄燈",
+        "summary":  "地主3.99億出售土地 台中豐原34年私立幼兒園8月起熄燈 Yahoo新聞",
+        "eventDate":  "2025-07-23",
+        "importedAt":  "2026-06-08T05:04:30.2296053Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "地主3.99億出售土地 台中豐原34年私立幼兒園8月起熄燈",
+                             "publisher":  "Yahoo新聞",
+                             "url":  "https://news.google.com/rss/articles/CBMi2gJBVV95cUxNWUxlQnhoRzlVMUtQQ05KVzNDTGloSlVqdXRFZm9qamRxb3cySV9neWxWUXU4UUtCSHY5TkZoOHZpN0JFNVFEY3c3NmxRQkJiY1NVRkVTZ3BoZ3RDaUtVSU43MEVyZFRHU1pFbHdDQnE5alg1VWZGYXp6QXlDeWZFLXl3VVlKMkViZ1JVM0lJSkFDdVgteG9Kal84QmdzVVBDVUNhejRiX3cyS2VUNDJvMEpoeTNocVlSa2kwdzNUZi14UFVCVjFMZjMzMFF3eWczc2NLNzFqTEQtNmRPVFhXOV9aRFphb3hkcGVRejhTRlFkVmx0MDhkdDNUMHBFWDh4cGVKekFabmcwaGlJM24wRzQ4Q0pzSmkyaEVLd0JoZ05yd09mbjlCaURkX3VVV2RiSUx4cDcyNEpxVVhTQlFtMzhnbFgtU1RJT1dlakVJWC00Z0NiUkE3S2Fn?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:25.9997974Z",
+                             "snapshotPath":  "archive/raw/news-d41867d1461090bc.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-2ec1667037720a6d",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "幼稚園結業｜長洲國民幼稚園宣佈7月停辦 校方通告揭停辦原因家長崩潰：又要轉校！",
+        "summary":  "幼稚園結業｜長洲國民幼稚園宣佈7月停辦 校方通告揭停辦原因家長崩潰：又要轉校！ 香港經濟日報HKET",
+        "eventDate":  "2026-04-01",
+        "importedAt":  "2026-06-08T05:04:34.5463624Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "幼稚園結業｜長洲國民幼稚園宣佈7月停辦 校方通告揭停辦原因家長崩潰：又要轉校！",
+                             "publisher":  "香港經濟日報HKET",
+                             "url":  "https://news.google.com/rss/articles/CBMimwRBVV95cUxQb2xrRjdmSS1RdVJMNEhzOUlJcXBDQWFlTGNDMUJOb2lpNm9WVklTQXlqZFNuX0FnbnBobnFYblpnUjE2WW1xRi1BWjZBNjdDREVsYXpyTzE3bjJaUHgtNnNqODc2a09DV2JsWHNGTUh2UFEtRHpSdUw0eUdZUmhQd0lUVGdKWm1wMTZnakM5aGh4WnY1aXp4djlPNDBzWU45aTZmTGhEWU5DanZlOFZqSGdIdXNLbWpGWHRtNHVDT1Q3MkU4UTVsYU9WVkhiUkoxN2l2UVM3LTJudU1CajdkVmdId2tQS0RwWTNHRlUweEhPMW5pVngybDVqcGFpZTkyY0pLUDVpUmtVSlpwclhPRjAwcnlNUFpCUWdRV09kaDZCMFRhWm1ob0tVSU5IV2lDcnFfYU5qeFNCVjRwaDZuXzRHbl9iNWpXak13clRSWi02UmlkRU04VE9EbTd0YklnNWdxSTRiU210bFRZS0p5UFA3dlE1VWdCZnMyY2xXY2QwTFhoeXJfMkNNdlVjaWNfY1pBcnptQXJNWVVIUDZaYXlwZ1FIV05CMXlPQjRveEpMejdveTFzVXp0SG9hS2RJQ1BUcWoxVUNUNWxyYk1vN0xxSzdXVWNWVXRraHdIWGJ5M1VGcGtlWEV1SmlDSTU4aTM3TVd2clU5U1hJeTE5UkVjcEdxS3kxbk9ZMHJTR3o0WFdPSmN4UnYwUQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:30.2316160Z",
+                             "snapshotPath":  "archive/raw/news-989c1949437a30e1.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-9b6b5ade3c929862",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "受害不只6童？彰化幼兒園爆不當管教 調查報告與裁罰出爐",
+        "summary":  "受害不只6童？彰化幼兒園爆不當管教 調查報告與裁罰出爐 自由時報",
+        "eventDate":  "2025-07-15",
+        "importedAt":  "2026-06-08T05:04:38.7619761Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "受害不只6童？彰化幼兒園爆不當管教 調查報告與裁罰出爐",
+                             "publisher":  "自由時報",
+                             "url":  "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBOWXc3RzhPaEVhTTd6cEhNcmx5cGNSOGpwTnBXTVJBbUw2U0hTRHA2RE9wTnE4WmcwaV9NMXNrVmxkUVpaZ0YzSHFnU29UUEZBQUh6SWdHbTBKN3dQaEZSTGdpekVCSTlh0gFuQVVfeXFMTTdnX3MyWXRHdEdsUl8tT01kRGVReXBMNnV1Rjd3b3J6Wno3S1RQZ1ZGZkJ6ZTFXbkF1QjgxNnlEeERVS1IteU9xZVFGNkFLRHdFZERPbG8xcVBaYWtoZlpXbjRRa2xoUGZBY3lYWXc?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:34.5483705Z",
+                             "snapshotPath":  "archive/raw/news-fe2280a3f33e6f4a.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-06dbb4c9aacbd400",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "資通電軍指揮部委辦幼兒園有狼師判8年 12家長向國防部求償",
+        "summary":  "資通電軍指揮部委辦幼兒園有狼師判8年 12家長向國防部求償 UDN",
+        "eventDate":  "2025-07-14",
+        "importedAt":  "2026-06-08T05:04:42.9581502Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "資通電軍指揮部委辦幼兒園有狼師判8年 12家長向國防部求償",
+                             "publisher":  "UDN",
+                             "url":  "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA2MUVjRFZxZjRlMWZHbTZjUFoyVzhMbi1RU1M3MEVackhMSnFXVGRYcmNmQzZWR09OLUpPbFhIbU5GbFZfRU54ZEVZY1V0Sndo0gFWQVVfeXFMUEVPaTVsRHo3T01MTVRGTTJnWGdfTGUwSEFTYlFBX0llUF8wY09laXVkRnhLZ25BVHc5TGlidmt2YVZEYmpkcWFhZWUwVDdLak5kNDRodUE?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:38.7640015Z",
+                             "snapshotPath":  "archive/raw/news-e50554509c052255.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-7df28e7600ab3157",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "長洲國民幼園7月停辦 小學部稱不受影響 - 20260401 - 教育",
+        "summary":  "長洲國民幼園7月停辦 小學部稱不受影響 - 20260401 - 教育 明報新聞網",
+        "eventDate":  "2026-04-01",
+        "importedAt":  "2026-06-08T05:04:47.2030155Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "長洲國民幼園7月停辦 小學部稱不受影響 - 20260401 - 教育",
+                             "publisher":  "明報新聞網",
+                             "url":  "https://news.google.com/rss/articles/CBMi3gJBVV95cUxOU05DVFJQTG96eHlha1FRVHVtNGtHa3A2QWRqTTVlMVpRZHlub2J1R2FNNnozWVkwVVk4SEVkc0c4X3FQajBoNkdKWER0VVVUdjRfd3R2SWV4eVF6MUVCVEtOZjUxeEhrN0IyZjBnaG1sZlFhWkJqYzhvaGFoclN3RWRNVUZMYWVhOUZoM29Gb2M2S1M3WU0xOXkwNXFvSE9kSWNIUDJ0N0pkSWF3QUw4WEdjeFNBblczZVYtOEZqTmR5a2ZJT29jWTdkUE9USFN4SEJiNUhWcXNmNTBkeDA3MUNWY2NFSWhsMGhXbjZFNnYwT19WbTh2UUt3M1pJbWRjam9nX2RpVGdsa1JrTEtlVHBjd2hJNmx1WElQc0Q0RkhMYUxsMVp5dEVfX19udkMzYThHWk1Ka0JHa24zRktCZGJhS3FlU0NDNlphSXlXTERBTGRVeXhMMVlMWFFTZw?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:42.9601715Z",
+                             "snapshotPath":  "archive/raw/news-2553bb78e67bddf1.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-b69a08807eae19bb",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "幼稚園停辦｜長洲國民幼稚園8月停辦 同系小學國民學校指絕不受影響",
+        "summary":  "幼稚園停辦｜長洲國民幼稚園8月停辦 同系小學國民學校指絕不受影響 香港經濟日報HKET",
+        "eventDate":  "2026-04-01",
+        "importedAt":  "2026-06-08T05:04:51.6321434Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "幼稚園停辦｜長洲國民幼稚園8月停辦 同系小學國民學校指絕不受影響",
+                             "publisher":  "香港經濟日報HKET",
+                             "url":  "https://news.google.com/rss/articles/CBMixANBVV95cUxQbnBGRUdGZ2xqX2JDM1dHSTB6UmlZLVVYdVk5RlNQSHJBdks4UHd0T3NoSGZTY181dDBfajFITGZOeHBkdDNsX1lFSkM4X1Rfa2JGVVpuUFoyY2V2dExqaWZrWFo3UUwyTzZ3Z0hhZ3RiT1F5V1ZOZHVEbkVtN0gwUTNiS3hQTGloVzczV052Y0RHSExfU3h3UkhwVGNscjZwUmQyY3QtWmZHU24zUU04eFd4bENJYjFvUWhzSWVkRjd0WUxwS0luRGE3V28zLTlYNHRILXRTV3AwQVFWU2FGZVo5V2NJUnpYVnhnNjNmdGMzX2pMX1hMVzduYVNnTTZGd0ZHVVdxbVdnQWp0aHRnNzhiN0lzRnQ0MEhPV3h3SDc2bHN4dmxaRExxM0VLLXlkLXIyVHgtVWNsMnpuU3BIeXE1bGpjUmdxTUYyWkMzVWhGaHZyRHJWZWkwMzVKcjBNV0ZuazVDaU5CdHZvQkVHZVhmOFNUbXNFTEcyVWIyUk55cGhEMzNJbzVDWG40bnN1dVdDSGhNMGd6UVo0aEh1QlJrZXJSVWp1LUdfdHZQM2tkS1d1Tl9SVUFKRGQwTlQ1aWtjMA?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:47.2050299Z",
+                             "snapshotPath":  "archive/raw/news-07c0d32d0cf7a5f0.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-b843eb35063e8166",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "幼兒園不當對待裁罰年增近百件 約7成為身體傷害、2成精神傷害",
+        "summary":  "幼兒園不當對待裁罰年增近百件 約7成為身體傷害、2成精神傷害 公視新聞網PNN",
+        "eventDate":  "2025-05-15",
+        "importedAt":  "2026-06-08T05:04:55.8266472Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "幼兒園不當對待裁罰年增近百件 約7成為身體傷害、2成精神傷害",
+                             "publisher":  "公視新聞網PNN",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9jdDJoSUNvVTAwaGdBenFNeUVORkxsTE5wNnJtazNNVkg3VFA3MGxLNDQ1SDBmc29sOURGOFdqNFF5OWxpWUdWbXM2b1FHN3M?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:51.6341642Z",
+                             "snapshotPath":  "archive/raw/news-e6cf827c6852e0a6.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-01e512558c8d5943",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "鴨脷洲右思維國際幼兒園暨幼稚園七月底停辦",
+        "summary":  "鴨脷洲右思維國際幼兒園暨幼稚園七月底停辦 TVB",
+        "eventDate":  "2026-05-30",
+        "importedAt":  "2026-06-08T05:05:00.0246870Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "鴨脷洲右思維國際幼兒園暨幼稚園七月底停辦",
+                             "publisher":  "TVB",
+                             "url":  "https://news.google.com/rss/articles/CBMitgJBVV95cUxPNFg4TVV1UnFaUDRZT280RTdUd3hSUVZkWFpWVk5nc3FiMl9nRkZQeElNT0ViQjdmSHdfdUlnMHVqckRvd0w1ZXJDYUhxNWVLZ0hjV3VYclFxOFVkQjJpc0hNRnhKMHozS1FSdVdOUnFqQ3NrbG5TSllDaUVPV3VLdUZXWERFRHRVZGEyYjF6dGUyend5RGhLbEEtVHc4S0lwaWVOSXlyMlpZampFUjZxLVhLZkVYTWg3NDlpZnY2YVVyMUR5NjV2NlFpSDZxeFN3Y3RMR0VJUzJLODhuMUZSTWV5T29Xc3Q4cnVHTWpsdVIzM1JwVkowek5KX2I3QXNyRHhaSms3NkVUQkNfaEVhY1RER3JvM3F0bEFPeGJyUEQyVVdBcmc0UzFjOTRNcVFPR3lPdi1B?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:04:55.8286720Z",
+                             "snapshotPath":  "archive/raw/news-2db6893ee623e076.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-20d137a2341ccc30",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "彰化幼兒園不當管教153次教保員吊照3年 家長怒轟二次傷害",
+        "summary":  "彰化幼兒園不當管教153次教保員吊照3年 家長怒轟二次傷害 自由時報",
+        "eventDate":  "2025-07-15",
+        "importedAt":  "2026-06-08T05:05:04.2067005Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "彰化幼兒園不當管教153次教保員吊照3年 家長怒轟二次傷害",
+                             "publisher":  "自由時報",
+                             "url":  "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9ESEVPU2d3M010MDFNN3IzU2JGRk5YX3pleUdPbXlfX21nXzluUWRuZEhCNTZwb1ZkQWVQNTZ4eVRNa1JVTGprVi0wTzN2S1A3dVRQdXc5b3U0RTFTZ3E2VmNaTU1mQ3hC0gFuQVVfeXFMT0NRWlJZNjlhU0QweGR1LWt4eE9IdlU1MjByeFFqYnA0QnlDSlloMTcxTUN0a2JRQ1hzNEZEbVdZaXNPMy15VF81WlEyRFNfVmY1d3BBdDg3b0Z5M19Pdnhmc0FFVnlPdXR4QzZQemc?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:00.0266976Z",
+                             "snapshotPath":  "archive/raw/news-f98644db930a0905.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-5470c7b7a9d1df57",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "新竹男童摔飯碗遭壓制受傷 幼兒園老師遭判刑3月",
+        "summary":  "新竹男童摔飯碗遭壓制受傷 幼兒園老師遭判刑3月 LINE TODAY",
+        "eventDate":  "2025-07-30",
+        "importedAt":  "2026-06-08T05:05:08.3472628Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "新竹男童摔飯碗遭壓制受傷 幼兒園老師遭判刑3月",
+                             "publisher":  "LINE TODAY",
+                             "url":  "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAySmRHWjY1eTZTVEhTcE4xVVNKclNOMXdPTFVHR3dPTWVad25yLXB1NnMtU3FYdlY3NHFTNGtHOHFXWjFXczFsRmRyVXNGLVZtN0FsWGlB?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:04.2087173Z",
+                             "snapshotPath":  "archive/raw/news-f44c091cee602ff2.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-a1b05856bef1f08f",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "北市幼兒園性侵案毛畯珅判刑28年8月定讞| 社會",
+        "summary":  "北市幼兒園性侵案毛畯珅判刑28年8月定讞| 社會 中央社 CNA",
+        "eventDate":  "2025-05-02",
+        "importedAt":  "2026-06-08T05:05:12.5961335Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "北市幼兒園性侵案毛畯珅判刑28年8月定讞| 社會",
+                             "publisher":  "中央社 CNA",
+                             "url":  "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1wV2NXQms1bGFlQWcxZ2xDOFRRdEJCMEFwU3EwOGR0R3pfamh1amlBM3Q2bmt3d2hzdjV6Mk9ldWZvbzBXM3hJeXNaS0xpeklOdEMzVW9fR21TRlVfN0lB?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:08.3492822Z",
+                             "snapshotPath":  "archive/raw/news-cbdb8fe8d8881af8.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-b814692dca3fe597",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "6童10天遭虐158次！家長控「私密處掉肉」 惡師挨罰23萬並解聘",
+        "summary":  "6童10天遭虐158次！家長控「私密處掉肉」 惡師挨罰23萬並解聘 ETtoday新聞雲",
+        "eventDate":  "2025-07-15",
+        "importedAt":  "2026-06-08T05:05:16.8137294Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "6童10天遭虐158次！家長控「私密處掉肉」 惡師挨罰23萬並解聘",
+                             "publisher":  "ETtoday新聞雲",
+                             "url":  "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5pWkVnNE9aY3E3TTZiTUpQSS1BTjI4OXlwRVZVNGpMZ3haRlppNzJkV3E2ZWZrZmliR3NFMjJqZ0t6dkpSOHB4RUpQVmxlOFNWemR6RDZMcjhpV2F0Y2fSAWhBVV95cUxQczZveXV3b2lLYnVIcnk5MTR5aXpvSEZDYjZyRmhXWVU5YlJUV0t2QjdhMmp3QkI3d2hhX0t3LXZSVzdfSURiY0pEVUpHWWtuV0xMQU9HNTNnU3V6bWVZdFEzMjY2SDRlXw?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:12.5979261Z",
+                             "snapshotPath":  "archive/raw/news-8c0e53c87f58b0c8.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-fde2c6f9ceb174c1",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "英基幼稚園賄賂案 14名家長等為子女插隊入學行賄 囚8至14月",
+        "summary":  "英基幼稚園賄賂案 14名家長等為子女插隊入學行賄 囚8至14月 香港01",
+        "eventDate":  "2026-03-31",
+        "importedAt":  "2026-06-08T05:05:21.1403496Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "英基幼稚園賄賂案 14名家長等為子女插隊入學行賄 囚8至14月",
+                             "publisher":  "香港01",
+                             "url":  "https://news.google.com/rss/articles/CBMinwNBVV95cUxPZHJzaXJOQTRmeDM1ZXFaVkdGZTFKcWFCd0JJQzBWMmFoSTZrX1J4eHhkRkl5VHlLeEZySG1iZGhQZDBPX3hORHVlaWhCcHF2MUZtZnRKOVRSRDJRb3o5TWhrWHMzUmhnZ1VTVHJxRWJZdF9oYTJSdk9tUmowSVhOclhRMDV5c21zUGVMZnlSR2M3LVRlUmo4d1dyU2FPMnBtZ2t3czFUTlFicXdqbE51MTVhelJFSnBvdUtVNkRYMHpWOVM3aVZRN3lHQXFrSFZZUDMwbmFtVEVnUEp1aGhlSE1oVEYyM1NqSmVJV2llSFJDZFBFR1N0bFU1Tm1BR2ItcFVZc2lKamIzb1FQci0tV0dqZHJmZmphM2xfVHlJWUtwRFNvbmFmZUxjeklZUkdjaGhfendZTTliaWUzOTY4ZXE1Mmx0bHYwQ0dXbnR2RFdFUVZEWk5vdUZmMkhQUUJCSnAyOENoZWdPSlZxbm9JM0c2aWFhQ0FvbWVJdldiT1NocUN3cEJ6SU5UbmJlSHREdkV3dGxzbDFWcGdubjYw?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:16.8157507Z",
+                             "snapshotPath":  "archive/raw/news-a5f0d62eb38ddae8.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-ca6415a47a45d14b",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "新莊吉尼爾幼兒園「拍打拖行幼童」遭罰24萬、 最重勒令停辦",
+        "summary":  "新莊吉尼爾幼兒園「拍打拖行幼童」遭罰24萬、 最重勒令停辦 MSN",
+        "eventDate":  "2026-04-13",
+        "importedAt":  "2026-06-08T05:05:25.4862786Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "新莊吉尼爾幼兒園「拍打拖行幼童」遭罰24萬、 最重勒令停辦",
+                             "publisher":  "MSN",
+                             "url":  "https://news.google.com/rss/articles/CBMiugNBVV95cUxQM3FkdENNVnUzTlNIRWdEdzBtMHVXcWpoNzI2aUZNY1VhQnBQOW02eUs1T1JNeGRnV3ZwenZsai0yUzZST09SQ0VZcHJMRXZzcGY5VUhYeTJfd2tydzNRaFFiX3RjUUZoZzJUMzVjQnU0MlpRdGtoTkJQandYOGxKVXhZUW8xLV9SdmpOMFZWeVJjNDJCYUxZWVFsUG05LUZmMzQ2M3hPenJzSEFjcTNWRTBqcUZCNE5fNjZJT1UyRXVVMXQxRXpab1F5Z3pyaEdIbkE2MEN2UzFRU2FaLWN1NllDVzV5dXVrakltVXRFZHkwOEhBWk0zX09HZ2tIZ2czc29zMkJXSUVuRTdyODZqT1JpQzN6YjlmaTQtVzBkRWJOMEw0aGdoTGMyVHdNZjFRakdjZWlNQlJUNUZpa0pSa3pZbXFhT25RMkpEVDdiRmsyQm5IZzhaREtmbWhpV2djd2tQM29ZN2NRcjREVldYV2x0TlhBVTZnXzhmZWVrTFdLUnJCbHZOUm9uR1FWVTYwUS13REhacWJpZEVaMXhkdGN1RkdGSzBaX282S2lQZ2czekJkRDYtb05R?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:21.1403496Z",
+                             "snapshotPath":  "archive/raw/news-8cc90185dfa34f3a.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-d4b975d094ae1f4b",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "台北幼兒園毛畯珅連續性侵幼童案一審判28年：不認罪的加害人，與消極被動的教育局官僚",
+        "summary":  "台北幼兒園毛畯珅連續性侵幼童案一審判28年：不認罪的加害人，與消極被動的教育局官僚 報導者The Reporter",
+        "eventDate":  "2024-08-15",
+        "importedAt":  "2026-06-08T05:05:29.6835579Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "台北幼兒園毛畯珅連續性侵幼童案一審判28年：不認罪的加害人，與消極被動的教育局官僚",
+                             "publisher":  "報導者The Reporter",
+                             "url":  "https://news.google.com/rss/articles/CBMikwFBVV95cUxNWG1VZDgxcGlYWm45UVJSNnhJQlByX3czbUw4S0tDY0ZlWlNYSkNDd0FuYmF5VkFKV0FURlNkZXRSY0tyNWh3b1c5MVNvZTBFTmR1ek9TZTFDY3pjSEtUTXlzNTVzSFVoTExBeFhiR0xibzVzekxHZEFKeFBNT1A2UFQ3OGdyS0JHYWtuV2pxcTZkMTQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:25.4882922Z",
+                             "snapshotPath":  "archive/raw/news-34d39fdd57040005.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-fa3ba24a19b82ecf",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "上訴駁回！北市幼兒園性侵案 毛畯珅判刑28年8月定讞",
+        "summary":  "上訴駁回！北市幼兒園性侵案 毛畯珅判刑28年8月定讞 客新聞 HakkaNews",
+        "eventDate":  "2025-05-02",
+        "importedAt":  "2026-06-08T05:05:33.9257340Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "上訴駁回！北市幼兒園性侵案 毛畯珅判刑28年8月定讞",
+                             "publisher":  "客新聞 HakkaNews",
+                             "url":  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0tSUJqT2ZOSDdXejYta1ZMRVp2blcwMzJFTUFSUTBiVkp4aTF2NWY2RzA0b09ISVBvMFlOaW1DdlI3SnQxNUhQSTBzZkpja3JI?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:29.6855810Z",
+                             "snapshotPath":  "archive/raw/news-527e1ad5fec5c775.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-896c82fac3176f93",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "教保裁罰紀錄「查不到」，幼兒園違規記錄為何要下架？【幼兒園違規紀錄失蹤記】",
+        "summary":  "教保裁罰紀錄「查不到」，幼兒園違規記錄為何要下架？【幼兒園違規紀錄失蹤記】 Mombaby 媽媽寶寶懷孕生活網",
+        "eventDate":  "2023-10-12",
+        "importedAt":  "2026-06-08T05:05:38.0986571Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "教保裁罰紀錄「查不到」，幼兒園違規記錄為何要下架？【幼兒園違規紀錄失蹤記】",
+                             "publisher":  "Mombaby 媽媽寶寶懷孕生活網",
+                             "url":  "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5xV0NDeXpGRWlMU0JYSzNUZGs4V0NpaS0zOFk4Mmw5V0VoYWZvRDRFaVNuWE5RVzVFeVIxN3NMQkZmaUFRdExqNW5DNWtSRHNhdm8tMjJR?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:33.9277539Z",
+                             "snapshotPath":  "archive/raw/news-4638af059b7a2531.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-3cfe966f8859896f",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "新學年23間幼稚園停辦 有學校雜費高達逾萬 茶點費3千元1年",
+        "summary":  "新學年23間幼稚園停辦 有學校雜費高達逾萬 茶點費3千元1年 on.cc東網",
+        "eventDate":  "2025-10-16",
+        "importedAt":  "2026-06-08T05:05:42.2663752Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "新學年23間幼稚園停辦 有學校雜費高達逾萬 茶點費3千元1年",
+                             "publisher":  "on.cc東網",
+                             "url":  "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZDgtc21XMUYyUHh1OGc1SFd5R1NkZjJhTWF6QWJmbXVreEZzZkhWSEllcUItaXYyU2VCQlBRV1U4UWk2cDk1RjlZWlhkNnJ6blZBRXdxSjBPV2FZZXh5ZUR1MFp5RjRGZHZjOExYY041Rl9udEpIdU1zOHc1aHBWWHJ6TVpORWwxd0cw?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:38.1006872Z",
+                             "snapshotPath":  "archive/raw/news-1b83eb18505c83b0.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-11074df55a9ab436",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "消息﹕綠茵英文(國際)幼稚園(日出康城)停辦 3年間4分校停辦由栢基國際幼稚園機構接辦課程/學費不變| 幼稚園, 教育熱話",
+        "summary":  "消息﹕綠茵英文(國際)幼稚園(日出康城)停辦 3年間4分校停辦由栢基國際幼稚園機構接辦課程/學費不變| 幼稚園, 教育熱話 Oh!爸媽",
+        "eventDate":  "2026-04-27",
+        "importedAt":  "2026-06-08T05:05:46.4937368Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "消息﹕綠茵英文(國際)幼稚園(日出康城)停辦 3年間4分校停辦由栢基國際幼稚園機構接辦課程/學費不變| 幼稚園, 教育熱話",
+                             "publisher":  "Oh!爸媽",
+                             "url":  "https://news.google.com/rss/articles/CBMi4AJBVV95cUxNdWozMVdtZTBUdWRTdU1XVUdPdGZ4S0UtM0V1V2lDeklEQWgxbk1MUkdWRzBOa0hTMTVudFhWV1lYMUU3Z2hSNVFydU9qczk2dWZjWkg0WUpJNGZpSF93LTh3SUJHMW5mMklTTXIxX2p2V0hTRDZGNFg2TGcycktaMU1FVC0tZlR6bFR1WThNMjRHNjVfNXo0LW1yUHRxNUdmd3F0a05vS24wNUpxZC00MjVVWFdEa0xrNDR3cENKc1hjR0RlRmxCZXJ5eHphVjRaOTJKWXVqUnpkZ0F1ZXpOWWlja0dseEZjYjBDb2ZnYmgwYXE1eERpYXRGMF9SUjNfd0FyaTBQeUVNcEdxOHM2WGhjY1BiR0FsQkZMWnNqNFIxVXRLeDJqcGpVTG9PX0FsNklCSzRtcHhUejFNb1VwemlrUzN0UXBxX2tCX3ZRRmFES040Z2Zrd2x4N2dKSTdu?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:42.2683932Z",
+                             "snapshotPath":  "archive/raw/news-661c5f0ca1ebbd6d.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-41696c14c53c1965",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "屹屯門半世紀 「天后幼園」結業 暫11間本學年內停辦 - 20260129 - 教育",
+        "summary":  "屹屯門半世紀 「天后幼園」結業 暫11間本學年內停辦 - 20260129 - 教育 明報新聞網",
+        "eventDate":  "2026-01-29",
+        "importedAt":  "2026-06-08T05:05:51.0829378Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "屹屯門半世紀 「天后幼園」結業 暫11間本學年內停辦 - 20260129 - 教育",
+                             "publisher":  "明報新聞網",
+                             "url":  "https://news.google.com/rss/articles/CBMinANBVV95cUxPRnV3U3ZfYUVRUEMyVHMwZE5kNnoyRHRvVHo5ODlKX3lJaGRhRGtiQ3lkRUoyZEE4LWpUV1ZCSXhDR3ROMEhkZWxxSHdwSFNwelUwSk1UbmZUQjhSMkFHbnJaV0o1dE9qV2hpZ3FucllYdU5pWEI0cjFRZ0ZtUkREcWxsdlJQX2gxUzlWbmpvM2hIQzNzdlZ1ZGEtbVp5SFlONDFpX0VzWXF1N2o4bWt4eFM0cWNrUGg2WjFaLTk1TEsxRWxCc21yX1QxaGFZamFDMjVWZ1hhTkFNZlhLZjZWVXdSNjZudTdpbHRxemh5dkdaS2VkOWVsNER1eFc2WlkzanMwd0dmdWdwTWJfbzFQcUJfMTBlY0J5YUhrNU9zamZNQUk4SDVVVzZkcEdMYUtKc1dqY0Z0QzdJcURzSS1SbHotWTNXTTZMZUppQ01VWUx3czhIYmJUWlBvcFhWbjZxcENPRmFPTmhRSjBCeW4tdUwySlBha2FJODdiODRvSXV4QVZmQzdtaWF6cHVQRHFranR2TGhQR2h4US1M?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:46.4957492Z",
+                             "snapshotPath":  "archive/raw/news-787111650d61ce7c.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-9edd178cee2bd9b2",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "桃園幼童疑遭師拉脫臼受傷 幼兒園裁罰3萬元",
+        "summary":  "桃園幼童疑遭師拉脫臼受傷 幼兒園裁罰3萬元 公視新聞網PNN",
+        "eventDate":  "2023-02-07",
+        "importedAt":  "2026-06-08T05:05:55.5183884Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "桃園幼童疑遭師拉脫臼受傷 幼兒園裁罰3萬元",
+                             "publisher":  "公視新聞網PNN",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1wRnBubTFHQnhETlRRb2tPREhYZW1nSnQyOGgwTWZNdzAwb29DM0t6Nm1oajBORGRabHUtVmJ2WFpYZ1pIRml6eWd0N1NzNUk?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:51.0849616Z",
+                             "snapshotPath":  "archive/raw/news-8d48b51bfc4e01b3.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-4ce79d68d2c1403e",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "不當對待幼兒裁罰案暴增1.7倍 靖娟籲政府強化監督制度",
+        "summary":  "不當對待幼兒裁罰案暴增1.7倍 靖娟籲政府強化監督制度 UDN",
+        "eventDate":  "2025-05-15",
+        "importedAt":  "2026-06-08T05:06:00.0430659Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "不當對待幼兒裁罰案暴增1.7倍 靖娟籲政府強化監督制度",
+                             "publisher":  "UDN",
+                             "url":  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1jcUVlNXVwM3AzWG85VkJ4aUxIblNadWR0bkhNUlNiZlpaVGc3UVp1bWVNQkdDRFFuSXBoSTdBQU4yTm9PVWJ0SGRUNGQ1OGxW0gFWQVVfeXFMTjJrMzlOUzhYa2VPc1hTdzdzMkQ4YU1OVFJuS1BLbUJnVDZPYmFhQzZZOU9KT0E0X0RJbkstUWxBMTc2LV8tdWJ5ZlVOUktEUXctek5aeHc?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:05:55.5203976Z",
+                             "snapshotPath":  "archive/raw/news-7be846b09bdeff59.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-f5290ecdbd151e0f",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "違法幼兒園現形記6》24%違規園所是準公幼 教部：標準等同私幼",
+        "summary":  "違法幼兒園現形記6》24%違規園所是準公幼 教部：標準等同私幼 新聞實驗室",
+        "eventDate":  "2020-10-28",
+        "importedAt":  "2026-06-08T05:06:04.5874490Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "違法幼兒園現形記6》24%違規園所是準公幼 教部：標準等同私幼",
+                             "publisher":  "新聞實驗室",
+                             "url":  "https://news.google.com/rss/articles/CBMiS0FVX3lxTE55Sl83MDlCR0xudFBsWW1vVWRfYXhUNjBNQ1dUTUJxWG1oSE1UakpTMW9mUDl4TDB2cFFwNTU1UExfRzRPV1MzMENtRQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:00.0450827Z",
+                             "snapshotPath":  "archive/raw/news-cf8f155121423e9f.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-1025d96260c86801",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "北市幼兒園狼師事件引擔憂！3大各縣市幼兒園地圖避險必查",
+        "summary":  "北市幼兒園狼師事件引擔憂！3大各縣市幼兒園地圖避險必查 城市學",
+        "eventDate":  "2024-07-19",
+        "importedAt":  "2026-06-08T05:06:08.9202713Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "北市幼兒園狼師事件引擔憂！3大各縣市幼兒園地圖避險必查",
+                             "publisher":  "城市學",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBXdm5XOVlRay1GTzJXU3dKRUlNejFzcDlxT1ZKRHR2cmlXOGt3UXUyS2I0Q2NtTVJwcFlTeFA0Y2QtTnFrQ0h5UVRkb05nUzg?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:04.5894622Z",
+                             "snapshotPath":  "archive/raw/news-d28af507316fbb06.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-af324bdc7b809e64",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "北市幼兒園狼師疑性侵多名女童 教育部：裁罰資訊已上網",
+        "summary":  "北市幼兒園狼師疑性侵多名女童 教育部：裁罰資訊已上網 UDN",
+        "eventDate":  "2024-07-13",
+        "importedAt":  "2026-06-08T05:06:13.2294803Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "北市幼兒園狼師疑性侵多名女童 教育部：裁罰資訊已上網",
+                             "publisher":  "UDN",
+                             "url":  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE8yYnYzd3VlRlRsbE5kOHRkbWhabE5oOE53N3VGZ0hadzU1TXM0MWlSN083SlJZUHZxa3dpRTNacHdOay1PWEsxbDZGb1Y5S1830gFWQVVfeXFMT2wwTERlOTYwRTlrZGs0UHpXY3BaTGFFVDZVV2xPbHVuN2piTkhlUmZzVmczeV9hTkN5cmVqRlUzNzRENjJKLWFDdDhxNkJxNllxTUtsYUE?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:08.9222816Z",
+                             "snapshotPath":  "archive/raw/news-68bb4923852b3f3e.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-3b22b7a6621cf4a6",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "不當對待幼兒裁罰案增1.7倍靖娟籲強化監督機制| 生活",
+        "summary":  "不當對待幼兒裁罰案增1.7倍靖娟籲強化監督機制| 生活 中央社 CNA",
+        "eventDate":  "2025-05-15",
+        "importedAt":  "2026-06-08T05:06:17.4664652Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "不當對待幼兒裁罰案增1.7倍靖娟籲強化監督機制| 生活",
+                             "publisher":  "中央社 CNA",
+                             "url":  "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5nbUgtSGlIN00wLTFlWHZwV2FmOGIxYnRxRVg5SFJqZnY0UnNRcWJsOElsRVJyWHlnRlpqaC1yT3FOUThabUVUUFFFQjVmSU9nX0FoSDl4eDkzazdqQk93?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:13.2314906Z",
+                             "snapshotPath":  "archive/raw/news-46403a449bbb55a7.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-222446bd1b32aa7a",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "台南北門雙春國小走入歷史 今辦畢典5國小畢業生、2幼兒園畢業生",
+        "summary":  "台南北門雙春國小走入歷史 今辦畢典5國小畢業生、2幼兒園畢業生 自由時報",
+        "eventDate":  "2025-06-18",
+        "importedAt":  "2026-06-08T05:06:21.6866710Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "台南北門雙春國小走入歷史 今辦畢典5國小畢業生、2幼兒園畢業生",
+                             "publisher":  "自由時報",
+                             "url":  "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBFY1RlOFNfVDdOdmRBYXJYaFoyU2NvbG1tMmZtUVBqOHBpX1FwTExhMHZ5aTVBNFd4bFFmdE14Y2d6a2NVUEhaaEpLX0pXZTktRDRCYjRES2E0TjlfTGZVNjBEc0jSAWpBVV95cUxPY1B1UGN0TllPWUN4b3FRejc0ZU52R2RHZlAtQWkwY09MaHZTOGFkN2hRTjlXbEZaRVJuaUFuZmVmcmFBUjhwb1hqX0NsaTNrQy1KZzdCd3Q5eURWUnlOVzdnRWppNWxUanlB?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:17.4702522Z",
+                             "snapshotPath":  "archive/raw/news-fd5ba6136d8c0c31.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-3fe766c23c465ab1",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "1年內侵犯6女童至少224次 北市幼兒園園長之子一審判刑28年",
+        "summary":  "1年內侵犯6女童至少224次 北市幼兒園園長之子一審判刑28年 公視新聞網PNN",
+        "eventDate":  "2024-08-16",
+        "importedAt":  "2026-06-08T05:06:25.8852165Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "1年內侵犯6女童至少224次 北市幼兒園園長之子一審判刑28年",
+                             "publisher":  "公視新聞網PNN",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBQUEN0bF9MYlNIc0JwSnlvTmhTSlVibHlDcnVwYm1YSFJmSGRERXFhMWxQSnZPX2lLQm9ONlBSc3R0OC1rZHJsVXRCU1dUWTA?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:21.6886915Z",
+                             "snapshotPath":  "archive/raw/news-8c8d8291a241948d.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-6e66e4bc3910a981",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "教育局：今年至今3間幼稚園停辦 上學年則為23間",
+        "summary":  "教育局：今年至今3間幼稚園停辦 上學年則為23間 橙新聞",
+        "eventDate":  "2025-10-16",
+        "importedAt":  "2026-06-08T05:06:30.1053587Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "教育局：今年至今3間幼稚園停辦 上學年則為23間",
+                             "publisher":  "橙新聞",
+                             "url":  "https://news.google.com/rss/articles/CBMiyAJBVV95cUxObmI5WjBQUEZyaTJ4djNBeDVfell2ODVQZTFfazRpVklxWUlLTkg4SE5tdjVVa0ZqY3J3U1ZRR3JhNDdydmo3NWhsc1ZtU041RFp1V0NlSnp6cHBSVXdHRThSNHBMMU93Mjhna1RqRFVEbEw5a19BamNpLU5xWVBLTWllSE1NN3dRcVd6bklud1pUai1pVE1wSGpaWU9aaUlYc181T09tdVNyY2FaRno0SXBJTkFBNS1CWFdCbkRLRnJDLWFRS2w1TFJxRDhlRTdUM1R2ZnlfdUtQWk42VkxaWEN5a1cyOEFFbUZtOXBraXlWY0dyanJMOHFuam1RRjVpNjB1RzgxeVdyRnpRV29rWXRHQ0o3RTROVG4zVG5JMFkwR1RoNTJOR1JCcFZIVEtWX3c5dktRQV9FcUl0NS1iVzFVR1k0UjNV?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:25.8872305Z",
+                             "snapshotPath":  "archive/raw/news-810a18c47d015692.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-5b6610b92d4a0b64",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "不當對待幼兒裁罰案年增2.7倍 民團籲教師留意孩童身上傷",
+        "summary":  "不當對待幼兒裁罰案年增2.7倍 民團籲教師留意孩童身上傷 公視新聞網PNN",
+        "eventDate":  "2025-05-15",
+        "importedAt":  "2026-06-08T05:06:34.2542904Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "不當對待幼兒裁罰案年增2.7倍 民團籲教師留意孩童身上傷",
+                             "publisher":  "公視新聞網PNN",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5ZNVAySFhadWtBSklRa1FFMW5RNk01SXBSX0FfMnNBWFc3X0ZSYmd6M2h0Q0JfbjdrUWFuN3RVVkhJdWtXMmc1WFVHQ0I3TXM?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:30.1073732Z",
+                             "snapshotPath":  "archive/raw/news-9814dc0d8ea7b9a3.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-5e73f6647889e72c",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "台中烏日區幼兒園涉嫌虐童 教育局勒令停辦一年 負責人出面喊冤",
+        "summary":  "台中烏日區幼兒園涉嫌虐童 教育局勒令停辦一年 負責人出面喊冤 四季線上4gTV",
+        "eventDate":  "2024-08-20",
+        "importedAt":  "2026-06-08T05:06:38.4519165Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "台中烏日區幼兒園涉嫌虐童 教育局勒令停辦一年 負責人出面喊冤",
+                             "publisher":  "四季線上4gTV",
+                             "url":  "https://news.google.com/rss/articles/CBMiV0FVX3lxTE0wT1VnNUVuaGJxcTNfWXlvSWhCOFA2YTJaay1nd3Q0TFByQmdkNDF4R21WYzFiUy1mbGFxb295WUxPa1M2Z1JaRDIzbTdvQjlDb05VQmNuSQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:34.2562999Z",
+                             "snapshotPath":  "archive/raw/news-2cf52c8f5fe46cbe.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-6988a60321e9da49",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "教育局收11間幼稚園停辦通知 近半世紀幼稚園「光榮結業」邀校友重返母校告別",
+        "summary":  "教育局收11間幼稚園停辦通知 近半世紀幼稚園「光榮結業」邀校友重返母校告別 GOtrip.hk",
+        "eventDate":  "2026-02-11",
+        "importedAt":  "2026-06-08T05:06:43.0137104Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "教育局收11間幼稚園停辦通知 近半世紀幼稚園「光榮結業」邀校友重返母校告別",
+                             "publisher":  "GOtrip.hk",
+                             "url":  "https://news.google.com/rss/articles/CBMi7wJBVV95cUxPNERVSGpkcjRaQ25VYUpBcFdrZ3pEam5zNVdhOGJzWW43ekY2VmtKYy1pLTVCZzNwMUhtMGhpV1ltQ0hwWUhRZVpHZjRkdzM3MlVVSUtvU3FUTm9qSmx4MU5ObHBtcVZFclJ5dXNCeUJmSk1rU3BGemxCZ1E3WmJwVUI0RkNfMm8teWp0V05NVE5IQXFTenpGTTZFeUY1X3ZXcjdBMWVyYnV2T1Jhak84Q2xNcWJKaWZFMzVYZkpIQ2ZlRm9ZbEJUeVdzdmgtX2J1WDRWdG9pVlRQUkVjSmZYQ3ZOdEdCNy1iTDJvdmJaLU10NndGWnV0eWdqSWw0Tnk2a3ZPV2xTQmFZZFk0QURQRHpxakpOdHdBYWx3Yi1NdWExdGVLSnFKeHlucl9TcTltbkRVaDFoUlpXSkh5TUI3bExlMjJUQnVuek5jQ1dwc052SXU0cjFUSTZySmtPVEpZeW9SSm9JUWpvcDdIa3VB?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:38.4539392Z",
+                             "snapshotPath":  "archive/raw/news-51da1933fe615c58.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-b7a3225a97c9c109",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "《幼照法》三讀通過 不當管教最重罰60萬、幼兒園超收罰鍰多10倍",
+        "summary":  "《幼照法》三讀通過 不當管教最重罰60萬、幼兒園超收罰鍰多10倍 公視新聞網PNN",
+        "eventDate":  "2022-05-31",
+        "importedAt":  "2026-06-08T05:06:47.4336220Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "《幼照法》三讀通過 不當管教最重罰60萬、幼兒園超收罰鍰多10倍",
+                             "publisher":  "公視新聞網PNN",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5JMkdGRkRmb0JLYUNFSzFKQlpTLUppbGJkdnRMQWRFbi02ODZHd3VCcndEVTB3d3lQSkp4eU1RR1JwdVFiWjNVUF9iQW5HTGc?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:43.0157356Z",
+                             "snapshotPath":  "archive/raw/news-4b699ae177cf7444.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-f7096c67b2da84d8",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "台中幼兒園增7教保員不當管教 教育局開罰並要求園方全數解聘",
+        "summary":  "台中幼兒園增7教保員不當管教 教育局開罰並要求園方全數解聘 公視新聞網PNN",
+        "eventDate":  "2024-09-08",
+        "importedAt":  "2026-06-08T05:06:52.3796818Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "台中幼兒園增7教保員不當管教 教育局開罰並要求園方全數解聘",
+                             "publisher":  "公視新聞網PNN",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9BbmRGNnlTSWR6UFV0QnVyZDc5RmxhbVk3Q2trWnlmRTVJUFc5NG5PNzVxeUhJUTkwLUo4MUI4ZVFPWi1zQUN2Y1FDUC10NGc?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:47.4356515Z",
+                             "snapshotPath":  "archive/raw/news-d9c9867efd465f9f.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-6171a4777cd7a4e2",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "幼兒園餵藥案／新北市府行政調查出爐 撤銷廢止立案處分",
+        "summary":  "幼兒園餵藥案／新北市府行政調查出爐 撤銷廢止立案處分 公視新聞網PNN",
+        "eventDate":  "2023-07-13",
+        "importedAt":  "2026-06-08T05:06:57.1300279Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "幼兒園餵藥案／新北市府行政調查出爐 撤銷廢止立案處分",
+                             "publisher":  "公視新聞網PNN",
+                             "url":  "https://news.google.com/rss/articles/CBMiT0FVX3lxTE40R3pMNjJiUVU3YjFCeTZUeEl2Ty1NSmV0alRnVUlNX0lVbmtvd2t0U2JYbURLY2pnakhibkJHeV84TU53UE90Q19tUDl3dmM?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:52.3837154Z",
+                             "snapshotPath":  "archive/raw/news-dc88c186206e054c.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-48349730737347da",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "政府裁罰資料永久公開！「台灣幼兒園地圖」 助爸媽找到合適幼兒園",
+        "summary":  "政府裁罰資料永久公開！「台灣幼兒園地圖」 助爸媽找到合適幼兒園 inside.com.tw",
+        "eventDate":  "2023-07-04",
+        "importedAt":  "2026-06-08T05:07:01.5009986Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "政府裁罰資料永久公開！「台灣幼兒園地圖」 助爸媽找到合適幼兒園",
+                             "publisher":  "inside.com.tw",
+                             "url":  "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBQTUpLNWg4Tnd0bUZCQzdNWnZmQlloZkE2dUp0MXo4UkJmY0RZUEFTaDFJZTJySkU1aTVjM3V4LTR3YmFRNzBNaDR0VWxaQnZ3TE9YdVhnTmRiQlphejFJTVJiWU5vUQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:06:57.1320489Z",
+                             "snapshotPath":  "archive/raw/news-c4263d2c5394180b.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-c64838f5bae66dfd",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "幼稚園結業｜屯門天后中英文幼稚園7月「光榮結業」 至今11間幼稚園本學年停辦",
+        "summary":  "幼稚園結業｜屯門天后中英文幼稚園7月「光榮結業」 至今11間幼稚園本學年停辦 香港經濟日報HKET",
+        "eventDate":  "2026-01-29",
+        "importedAt":  "2026-06-08T05:07:05.9540030Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "幼稚園結業｜屯門天后中英文幼稚園7月「光榮結業」 至今11間幼稚園本學年停辦",
+                             "publisher":  "香港經濟日報HKET",
+                             "url":  "https://news.google.com/rss/articles/CBMi9wNBVV95cUxQR1ItU0RWUGcwYjNaR2liTl9pT3ZuTm1QYWVYdzVncmt4UHZIUmlMUUVSZ2E5MnoxcUIwM3pCRkItNUVKQnlfYmgyam53UlhzU3NZZkNvRkVqVzVjZE1uZ25BakcwSkZXaDFMWE1CX2tYN1RjTkdWQ3l2ZE4zT0RLRThmRUNGZUVIVVBNd0dJNUZlX0t1Nk9NSC1SM1I3b0NGX09ONnNSbTVuNHNEb2NfeEl2RWlxNU1iU2dvOWl1Ykg3bHFMU0pOaW1OOXpIeEVUclRUeXJnZTlLUkVKWUN3QndxMHVIb3h2RG4xaFdmX1NyUnZPemJUc3lZUWtMNUhERE9NcHpSREt1OGlJTUk4dXRiUVl4ZW5hNjBwVVJoNzd4OWtqSWJhMzVyOGp6c3l6Z1NkaEtWSHRpNFZCUHFaLWJtelhZclZBSjlSbmVkcHJ5MnI1WHVsaGVxRkxrS21kY3I2WHl3NE9EZTIwMDBfQm96UTVYd2pSLXVnckF5dUpRUFMxZmFOOXRQMlQ1Q0ZsMmxWOV8xQ3BGSk1GMTdCYlFrQWNBR0w3cjRzajJ1SnBSTHFIb3lOZmt0Mm5zcUM4Vko4bFVDU1lDWl9FTjNoblB6VUFEZElacl9xOVpMQzAtNVY5R0twdVNpem9BUWFNei0yWGoxVQ?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:01.5030121Z",
+                             "snapshotPath":  "archive/raw/news-33b1871fbd65c754.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-6221ec816d704077",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "幼兒園",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "竹縣幼兒園傳「人體壽司捲」案 教育局：最重將終身解聘",
+        "summary":  "竹縣幼兒園傳「人體壽司捲」案 教育局：最重將終身解聘 UDN",
+        "eventDate":  "2024-09-03",
+        "importedAt":  "2026-06-08T05:07:10.4813239Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "幼兒園"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "竹縣幼兒園傳「人體壽司捲」案 教育局：最重將終身解聘",
+                             "publisher":  "UDN",
+                             "url":  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0xb0F1bTRGQmtCYi1QbGFnRTV1bTJadWJsbVhLNDJHdnU3SThFQTJLSkJEYnNFTTJpcVlVT3JhTl8wSzlZblBJSC13Vm1jQVVS0gFWQVVfeXFMTm1PeVRDd2wybW5EM2N2OFA0TzhTbkZnYjFkaFJCVUsxMmFXZUZELW54N2lsNklTUEdiZ0x2RzlBNkJBcEVXSFJ0cHhTUVdhbVhNS0lGU0E?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:05.9560181Z",
+                             "snapshotPath":  "archive/raw/news-f89ad854f3bcaa1a.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-692fd05a5015eeee",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "國小",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "「停辦不廢校」新營新興國小新橋校區 變身共融健康基地",
+        "summary":  "「停辦不廢校」新營新興國小新橋校區 變身共融健康基地 UDN",
+        "eventDate":  "2026-04-21",
+        "importedAt":  "2026-06-08T05:07:17.9313867Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "國小"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "「停辦不廢校」新營新興國小新橋校區 變身共融健康基地",
+                             "publisher":  "UDN",
+                             "url":  "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBERjVyNW9DOVRyX21vUWJfTzB3Nk5XNUFPN3FrbjkzTGJ5OGJEaTFPOVBhekY2MmF5X3lKaHo5OTFWWjRpUm55bm1uWXdPOU040gFWQVVfeXFMUEFGaDlSWnhyM0M5c2l2bHJHX05IVmFCZzZDLVJyNEFjaUMzdW1yeHQtWU1jdWdhWVpYWlJqcllFSjFtYmFDcm9ZNzNIWlVUQ3JSbThMMVE?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:13.7717031Z",
+                             "snapshotPath":  "archive/raw/news-e6812e78f75500d2.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-fa18e3d1133bafd6",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "國小",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "停辦校區活化新典範！新營區新興國小新橋校區變身「共融健康基地」",
+        "summary":  "停辦校區活化新典範！新營區新興國小新橋校區變身「共融健康基地」 wennan.org.tw",
+        "eventDate":  "2026-04-21",
+        "importedAt":  "2026-06-08T05:07:22.0995733Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "國小"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "停辦校區活化新典範！新營區新興國小新橋校區變身「共融健康基地」",
+                             "publisher":  "wennan.org.tw",
+                             "url":  "https://news.google.com/rss/articles/CBMickFVX3lxTFBTVmkzbFZQOVlCR2tpaEc3REJDd0FqOTNsbnZuWUxoWnNyU3h4R2UtczU0aU13SG40aGU1dFZpemxkczlfVEhsOGkxckQ3Nm9MVVAtODMzWEtqdnNyd2otOU5mMEhfdm16ZVhCd3EzTzdNZw?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:17.9334078Z",
+                             "snapshotPath":  "archive/raw/news-f833979f35b681ff.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-6bb3f2a8726e3e36",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "國小",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "台灣1所知名學校退場了！創立105年停辦、學生轉學，近3公頃校地「轉型共融基地」",
+        "summary":  "台灣1所知名學校退場了！創立105年停辦、學生轉學，近3公頃校地「轉型共融基地」 風傳媒",
+        "eventDate":  "2026-04-24",
+        "importedAt":  "2026-06-08T05:07:26.2163664Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "國小"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "台灣1所知名學校退場了！創立105年停辦、學生轉學，近3公頃校地「轉型共融基地」",
+                             "publisher":  "風傳媒",
+                             "url":  "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9QVGU0WEVKWndZLWloXy1YZTJtTW9nSHA3V21IaDQtT25acnlrU2k3TlprT0hmWllzNW40NWpNY1dJNEhONTVmdk1pS0pyVlQt?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:22.1013573Z",
+                             "snapshotPath":  "archive/raw/news-af6f275b8721e418.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-e12977d154f47959",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "國小",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "台南3年關9校 小一估減150班 - 中國時報- 翻爆",
+        "summary":  "台南3年關9校 小一估減150班 中國時報- 翻爆",
+        "eventDate":  "2026-04-25",
+        "importedAt":  "2026-06-08T05:07:30.3803547Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "國小"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "台南3年關9校 小一估減150班 - 中國時報- 翻爆",
+                             "publisher":  "中國時報- 翻爆",
+                             "url":  "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQnlKUXpMc1N1cTJNazFaaEZUeFpkTzlfdmhqUjZQNnhBejBDcnFKd29lcTdIR0gtSDVOWUZVdmZrNnZrUU1YVWlwb1hpZVZ2Z29rcno1bjU0RWRWa04weS1YNjltb2IzWURjV0RwUWs5UkNPRm9ZbDUyZFZzdWc5ekVlaXAxZ216?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:26.2206898Z",
+                             "snapshotPath":  "archive/raw/news-8316f5603130f3db.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-f2d4674b64b5997d",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "國小",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "北寮國小舊校區變身學生宿舍",
+        "summary":  "北寮國小舊校區變身學生宿舍 中華新聞雲／中華日報",
+        "eventDate":  "2026-03-23",
+        "importedAt":  "2026-06-08T05:07:34.5348329Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "國小"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "北寮國小舊校區變身學生宿舍",
+                             "publisher":  "中華新聞雲／中華日報",
+                             "url":  "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5PcW1ZNlVtYS1iSlZIeDYxV01fUXVMR1I5TEhDYXBLR0ttMXg2WjBOSkJITzd1LUhsQlBrc0hJOWhDeUN5QUM0TFYxdVlaU0VlREE?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:30.3823631Z",
+                             "snapshotPath":  "archive/raw/news-ed98a86b29a6b2d4.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
+    },
+    {
+        "id":  "news-5df2811fcded1456",
+        "verificationStatus":  "pending",
+        "autoImported":  true,
+        "importSource":  "google-news-rss",
+        "searchQuery":  "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分)",
+        "institution":  {
+                            "name":  "待人工分類",
+                            "type":  "國小",
+                            "city":  "",
+                            "district":  "",
+                            "address":  "",
+                            "code":  "",
+                            "aliases":  [
+
+                                        ]
+                        },
+        "risk":  "mid",
+        "category":  "news",
+        "title":  "國小導師偷拍女童如廁48次 判刑累計183年應執行11年2月",
+        "summary":  "國小導師偷拍女童如廁48次 判刑累計183年應執行11年2月 自由時報",
+        "eventDate":  "2026-01-20",
+        "importedAt":  "2026-06-08T05:07:38.8592186Z",
+        "tags":  [
+                     "自動匯入",
+                     "新聞",
+                     "國小"
+                 ],
+        "evidence":  [
+                         {
+                             "title":  "國小導師偷拍女童如廁48次 判刑累計183年應執行11年2月",
+                             "publisher":  "自由時報",
+                             "url":  "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0yVUpXTmVoLTV1YTdPel9UeGg0SjBhN1ZZUzRQRlVBQ1Y4dGYwMDAzek5HSjh5RjNfbjVvemJZajJ6OVJrNWkxM1hsaXoteDI2X0draVp3UDEzTDItZW9yaW8xaExrSjU10gFuQVVfeXFMTlJQYTF0V0RLRXM5dDEyeW0ycjFtMmdyUVkxVzNZY1F6bUpZeDd3cy1YajlHanM0U3FZZlprZVRaZjFDT0dOOTB1UF9ySWMyRUxCNHVncGZCZlEteWhfRkV3dUhORk5Bb3VsWnZqT3c?oc=5",
+                             "type":  "news",
+                             "capturedAt":  "2026-06-08T05:07:34.5368876Z",
+                             "snapshotPath":  "archive/raw/news-24c046c6c7854f7c.html",
+                             "httpStatus":  200,
+                             "status":  "captured"
+                         }
+                     ]
     }
 ]
