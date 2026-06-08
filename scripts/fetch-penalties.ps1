@@ -301,23 +301,28 @@ try {
         Start-Sleep -Milliseconds $DelayMs
         $pageNum++
 
-        # 更新 VIEWSTATE 並送出換頁請求
-        $pvs  = [regex]::Match($currentHtml, 'name="__VIEWSTATE"\s+id="__VIEWSTATE"\s+value="([^"]*)"').Groups[1].Value
-        $pev  = [regex]::Match($currentHtml, 'name="__EVENTVALIDATION"[^>]+value="([^"]*)"').Groups[1].Value
-        $nextBody = @{
-          "__VIEWSTATE"          = $pvs
-          "__VIEWSTATEGENERATOR" = $vsGen
-          "__VIEWSTATEENCRYPTED" = ""
-          "__EVENTVALIDATION"    = $pev
-          "__EVENTTARGET"        = "PageControl1`$lbNextPage"
-          "__EVENTARGUMENT"      = ""
-          "txtKeyNameS"          = ""
+        # 更新 VIEWSTATE 並送出換頁請求（捕捉網路錯誤，保留已蒐集資料）
+        try {
+          $pvs  = [regex]::Match($currentHtml, 'name="__VIEWSTATE"\s+id="__VIEWSTATE"\s+value="([^"]*)"').Groups[1].Value
+          $pev  = [regex]::Match($currentHtml, 'name="__EVENTVALIDATION"[^>]+value="([^"]*)"').Groups[1].Value
+          $nextBody = @{
+            "__VIEWSTATE"          = $pvs
+            "__VIEWSTATEGENERATOR" = $vsGen
+            "__VIEWSTATEENCRYPTED" = ""
+            "__EVENTVALIDATION"    = $pev
+            "__EVENTTARGET"        = "PageControl1`$lbNextPage"
+            "__EVENTARGUMENT"      = ""
+            "txtKeyNameS"          = ""
+          }
+          $currentResp = Invoke-WebRequest -Uri $moeUrl -Method POST -Body $nextBody `
+                           -UseBasicParsing -TimeoutSec 60 -WebSession $session `
+                           -Headers $postHeaders
+          $currentHtml = $currentResp.Content
+          Write-Host "  換頁回應：$($currentHtml.Length) 位元組"
+        } catch {
+          Write-Warning "  第 $pageNum 頁換頁失敗，保留已蒐集 $($allInstitutions.Count) 筆機構繼續處理：$($_.Exception.Message)"
+          break
         }
-        $currentResp = Invoke-WebRequest -Uri $moeUrl -Method POST -Body $nextBody `
-                         -UseBasicParsing -TimeoutSec 60 -WebSession $session `
-                         -Headers $postHeaders
-        $currentHtml = $currentResp.Content
-        Write-Host "  換頁回應：$($currentHtml.Length) 位元組"
       }
 
       Write-Host "`n  共蒐集 $($allInstitutions.Count) 筆機構，開始抓取裁罰詳情..."

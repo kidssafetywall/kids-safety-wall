@@ -1,0 +1,261 @@
+﻿<!--
+source: https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=QQBYADUAWABuAEwAYwBQAG0AcgBrAC8ATgBlAGwASwBCAHAAQQAyADYAMQBBAGwAdQA2AHQAWgAwAFYAcwA4AEQAWQBYAGkAUgA3ADUAWgA4AFUAYgBQAFIAcQBhAHcAOQBOADAAYwAyAGwAWABlAEUANwBmADUAcQBuAEEAdABrAEkARwByAEgAYgBWADYALwAzAGgARgBzAGwAZwBpAGsAQQAzADYAdABRAHUAbgBHAGsALwBrAHUAaQBBADkASwBBAGgAYgBXAFQAbABQAHYAQwBBAEcARwBZAEYAdwAwAHcAMABCADQASwBEAHIASABkAEcAbwBIAHYAYwBIAEMAcABkAEgATwB4ADIAQQB4AGkAZgBqADAAVAA2AGYAdwBxAG0ASwAyAEYAOAA3ADEAVQBEADIAOABIAHgAWABpAGEAQwBIADQAZwBpAGsAegBlAFkARgBoAGoAcQBnAGgAKwBBADIANQBlAC8AYwB4AEIAMQA0AFgATwBEAEQAcwBMAFcAOQAwAEoAaQBiAGIAVQBIAHYATQBoAHYARAAvAGEAVABPAHgAdwA9AD0A
+captured_at_utc: 2026-06-08T07:44:38.6155627Z
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3z-9yrCFPI99gMfv9nzRAaTuYv-PbYkA8klx-m6gu8J7VSfQJQXO1A7HI_bomuJqR4cqatZm_H7NdRl9TpdoxueOUrdpl2feHR8IMwMuRGjcMCFEUhfu-G7pyop9sWRCR-zc40_ywTeyrN_NRnFwDv81&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=QQBYADUAWABuAEwAYwBQAG0AcgBrAC8ATgBlAGwASwBCAHAAQQAyADYAMQBBAGwAdQA2AHQAWgAwAFYAcwA4AEQAWQBYAGkAUgA3ADUAWgA4AFUAYgBQAFIAcQBhAHcAOQBOADAAYwAyAGwAWABlAEUANwBmADUAcQBuAEEAdABrAEkARwByAEgAYgBWADYALwAzAGgARgBzAGwAZwBpAGsAQQAzADYAdABRAHUAbgBHAGsALwBrAHUAaQBBADkASwBBAGgAYgBXAFQAbABQAHYAQwBBAEcARwBZAEYAdwAwAHcAMABCADQASwBEAHIASABkAEcAbwBIAHYAYwBIAEMAcABkAEgATwB4ADIAQQB4AGkAZgBqADAAVAA2AGYAdwBxAG0ASwAyAEYAOAA3ADEAVQBEADIAOABIAHgAWABpAGEAQwBIADQAZwBpAGsAegBlAFkARgBoAGoAcQBnAGgAKwBBADIANQBlAC8AYwB4AEIAMQA0AFgATwBEAEQAcwBMAFcAOQAwAEoAaQBiAGIAVQBIAHYATQBoAHYARAAvAGEAVABPAHgAdwA9AD0A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/webecems/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGLb3NTNvhYj08c3wKhpRK4e1bUYbUJ8X1rS2giVJqgH2FI_7tDFy8Y__iBYgUUuIA2&amp;t=638901824248157332" type="text/javascript"></script>
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzuChMNOAttLUPJvKLk-ltsrx39R0fVSy2eLEhyBrdYSSK4Sc-_r5XtzIgAQZvic2Y2IBfj8BLeI3Qi9u_liCJd9_ao3M5BpxzN0B5UF3WEWpzE5I9LubAFOzVc1LvmF1s0sjVkVsjA80efY8UfeA_AQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=-542Fa50f3_d4GeGZYGfgVkT41nYHbxU7KEc52Uy97lLnIXGUrJIm8gzgyQS4RiM9dF8l5AHyaOpppy_CE-oE15GzYd29vbq1s0qB2wLVS1f8ZMyTedAL_9BjfreXBtbYLifmqKhljvvadH5Ux6zA1XmpZjNdzKIjBDUUN3BZs8pTYphou0CbNl6IiXb7vw00&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioHyxHe6_ZlJHVUafw4E0lauwVBCX5hKjC0TvU-DZzpoIATNr5VjFPe_PZx4RrlMk5bHz5Ud6UNnxpXBjqDNDgbZcC4MMEaANqEXWCZ9B4TObH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj0YoVlU5Q-64M_-dgvyOeacc6xUUanLWEs3Gw8s-pXktmYqL9nLxnj4AEvvKDO9bbl30AaPOnJywgwjWPyLIxFw1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_rRcrEetEkpVUrhD20cxdAa02sRUmQy-QJRsKCbyRakbvXyCdYNZ_ux8FggI3XdIAakHXm54HeSs9ti-lRThqPIxjoju-M3SEBtsV2LxC37O0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqQosU_G-jOizjuLKOB6sHuaOu6ZYDEgoO4BDwYNstN8hp80-0qCvKc-lPq_3_cwZT66kyRsZdt18wqE20w3_p4dGvk6R-zoSWtfSfWEBQg6Y0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghUqEDFblw0XynepaBrOV055X2EQPiFcbVlxoHJ_ge8Smsz2mV6CFpuWIHvU8yDy3rdplnfhDX4fvm36R6o5LGh3iMY2Ywzo77-pdu1braf7g0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0ArITJcTYy4EX1hzNvJeHRadmz7sgI5Lk41MHCH9ogp5AXD2-2wbG3bu1GGt9BHEUCb4nIj6BC3rzb1j7_L6M2j9VJzefC7-GCikCSiD0ukS0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAhCzkmHM_AFnb_p4VDoJbm8lCOgUAELXQTUhDxnsGn0_-B13mEBstiGmIWke0HEXeUOtWqUBnzGuTE0rRYS_eNKPdKl5LZAXwyrJ5sn-q_R10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQmHbA8ZkYo00R3lZR28STIMubApFVQf7tBLlbh5RvUQAbIS7Qp3JCT7W4MBZFEW6ERlshBik82HmsCKm6SHR-RlOXhS8ux7mo97W4MEVggr0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKnfEM4bwU60yd-6ed09MRx0ke_IgjLBgBUgMwZ7HtoDf8fEGMsAgDI-qf2SEXDt3GVb4mCy_r9jmm8ehx94X76nBGI_S9uvdaJhFuhLwb9To0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNVhL3QO0yzcu3tPLazaCb7B5ocjcDL-NviwOoNzOkJnKGUZ7B_MGYzIi03aJ1YmfPf9QZ-elIjSOetdQ-AZhJMKTuqZLGrxqkwZhYZaEFVIp0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUVjaASz5mQRkPZxL-4GmWxCuBVROnFsBjiy8jLAoYJuGTI6nKVWBm3oy3o70TbFzwLMgGGNUc-YKcSepvob9w9WZ2ZVbvecXC-owrUhaDHD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmmDZoU5V_aLTuj9Wlu5C4-ZGI_3YnB3MazjKztkbUk0UrPmCGD5RZqTZmwtJbc1WGJpMloK7n8STjFBqXAhINEy-5YhWKuCRHgRp3BGB4NuD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA4S3dnJB0eH8zxZXeJWbFtiILpZS22jPboUSgYbJ1UvfM3vOZvBwXsTMv398rrFshx1xR477zrYBhL9JFL8yQWBLOx61LjfTR0C3TaMD8rDG0&amp;t=2009a88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="DAjMTi2nLmPBWb6R1halIWHNH3OCjFW4sLtBY3qhFrP7hu57Y0udgkh+Dz+E35hwKvNpg/9ZBoTgAfrPdR4uoaKAA4HbZ1ORJ+nGdp6uq2DI8bWWHIjZQ6n6YaUsMdug2jGXMh6CkegHlyOVJMl5GSsPrr9NcOJvgf3hyaKQPjs=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">新北市私立幼苗國際幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" id="GridView1" style="border-color:#000FFF;border-width:0px;border-collapse:collapse;">
+			<tr class="listHd_c">
+				<th align="center" scope="col" style="width:10%;">處分日期</th><th align="center" scope="col" style="width:15%;">處分時園名</th><th align="center" scope="col" style="width:15%;">裁處文號</th><th align="center" scope="col" style="width:18%;">處分依據</th><th align="center" scope="col">違反之規定</th><th align="center" scope="col" style="width:12%;">負責人/行為人</th><th align="center" scope="col" style="width:12%;">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2025/02/05</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_0">新北市私立幼苗國際幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">新北府教幼字第1140154270號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">教保服務人員條例<br>第41條第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_0">第32條第2項<br>幼兒園進用未具資格者從事教保服務。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">負責人：黃碧娥</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2024/11/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_1">新北市私立幼苗國際幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">新北府教幼字第1132167932號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">幼兒教育及照顧法<br>第52條第7款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_1">第46條第2項<br>幼兒園規避、妨礙或拒絕檢查或評鑑。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">負責人：黃碧娥</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2024/11/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_2">新北市私立幼苗國際幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">新北府教幼字第1132167932號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_2">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">負責人：黃碧娥</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2024/11/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_3">新北市私立幼苗國際幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">新北府教幼字第11321416994號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_3">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">行為人：林欣慧</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：150,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2024/11/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_4">新北市私立幼苗國際幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">新北府教幼字第11321416993號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_4">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">行為人：陳禹臻</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">罰鍰：150,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2024/11/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_5">新北市私立幼苗國際幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">新北府教幼字第11321416992號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_5">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">行為人：李淑華</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_6">2024/05/02</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_6">新北市私立幼苗國際幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_6">新北府教幼字第1130841076號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_6">幼兒教育及照顧法<br>第54條第1項第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_6">第15條<br>教保服務機構未依規定將進用教職員資料報地方主管機關備查。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_6">負責人：黃碧娥</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_6">罰鍰：150,000&nbsp;元</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="height:380px;width:500px;display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

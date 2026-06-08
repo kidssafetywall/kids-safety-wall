@@ -1,0 +1,243 @@
+﻿<!--
+source: https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=agBTAEsASwBaAG0AdwBiAEoAZABmAE0AVwBhAGMAKwAxAE0AOABuAEQAaAAxAEkAVAA5AFoAWQBnAEYAMABSAEwAdwBiAEsAbABpAFkAbABqAEIAUABUADcARABYADkAVwB6AEwAcwB3AHMANABqAHEAaABSAHkATAA0AHoAcABiAGQAMQBDAFcAMwBsAG8AbwA5AE0AUgAyAGgAOABqAFQATQBiAHUAYgBnAGsASwBZADMATABUAEIAVQBtAEQAagB2AFgAdwB0ADgARABOAFMAYgBXAGsAQwBqAEwAUwBjADgAcwBkAE0AbAA2AGkAawAyAEIAegBFAE0AWQA5AGIAUQBoAHoAagBOAE8AVABCAG4AYQAwADkAUABJAE8AYwBMAFMAeQBNAFcAdgBZADgAZwBHADkATwBmAFkAVABPAEsAVQBUAEwAWQBiAEcASQBYAEoANgAxAG4AcQBqAGwAagBZAFMAcwBNAHgARABDAHIATABwAHAAVAA1AGMAUABGAFoAVwBHAEYAVwB6ADQAagBlAEwAVQBVAFMASQByAGoAaQBCAEwAUQA9AD0A
+captured_at_utc: 2026-06-08T07:43:00.0549890Z
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3z-9yrCFPI99gMfv9nzRAaTuYv-PbYkA8klx-m6gu8J7VSfQJQXO1A7HI_bomuJqR4cqatZm_H7NdRl9TpdoxueOUrdpl2feHR8IMwMuRGjcMCFEUhfu-G7pyop9sWRCR-zc40_ywTeyrN_NRnFwDv81&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=agBTAEsASwBaAG0AdwBiAEoAZABmAE0AVwBhAGMAKwAxAE0AOABuAEQAaAAxAEkAVAA5AFoAWQBnAEYAMABSAEwAdwBiAEsAbABpAFkAbABqAEIAUABUADcARABYADkAVwB6AEwAcwB3AHMANABqAHEAaABSAHkATAA0AHoAcABiAGQAMQBDAFcAMwBsAG8AbwA5AE0AUgAyAGgAOABqAFQATQBiAHUAYgBnAGsASwBZADMATABUAEIAVQBtAEQAagB2AFgAdwB0ADgARABOAFMAYgBXAGsAQwBqAEwAUwBjADgAcwBkAE0AbAA2AGkAawAyAEIAegBFAE0AWQA5AGIAUQBoAHoAagBOAE8AVABCAG4AYQAwADkAUABJAE8AYwBMAFMAeQBNAFcAdgBZADgAZwBHADkATwBmAFkAVABPAEsAVQBUAEwAWQBiAEcASQBYAEoANgAxAG4AcQBqAGwAagBZAFMAcwBNAHgARABDAHIATABwAHAAVAA1AGMAUABGAFoAVwBHAEYAVwB6ADQAagBlAEwAVQBVAFMASQByAGoAaQBCAEwAUQA9AD0A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/webecems/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGLb3NTNvhYj08c3wKhpRK4e1bUYbUJ8X1rS2giVJqgH2FI_7tDFy8Y__iBYgUUuIA2&amp;t=638901824248157332" type="text/javascript"></script>
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzuChMNOAttLUPJvKLk-ltsrx39R0fVSy2eLEhyBrdYSSK4Sc-_r5XtzIgAQZvic2Y2IBfj8BLeI3Qi9u_liCJd9_ao3M5BpxzN0B5UF3WEWpzE5I9LubAFOzVc1LvmF1s0sjVkVsjA80efY8UfeA_AQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=-542Fa50f3_d4GeGZYGfgVkT41nYHbxU7KEc52Uy97lLnIXGUrJIm8gzgyQS4RiM9dF8l5AHyaOpppy_CE-oE15GzYd29vbq1s0qB2wLVS1f8ZMyTedAL_9BjfreXBtbYLifmqKhljvvadH5Ux6zA1XmpZjNdzKIjBDUUN3BZs8pTYphou0CbNl6IiXb7vw00&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioHyxHe6_ZlJHVUafw4E0lauwVBCX5hKjC0TvU-DZzpoIATNr5VjFPe_PZx4RrlMk5bHz5Ud6UNnxpXBjqDNDgbZcC4MMEaANqEXWCZ9B4TObH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj0YoVlU5Q-64M_-dgvyOeacc6xUUanLWEs3Gw8s-pXktmYqL9nLxnj4AEvvKDO9bbl30AaPOnJywgwjWPyLIxFw1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_rRcrEetEkpVUrhD20cxdAa02sRUmQy-QJRsKCbyRakbvXyCdYNZ_ux8FggI3XdIAakHXm54HeSs9ti-lRThqPIxjoju-M3SEBtsV2LxC37O0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqQosU_G-jOizjuLKOB6sHuaOu6ZYDEgoO4BDwYNstN8hp80-0qCvKc-lPq_3_cwZT66kyRsZdt18wqE20w3_p4dGvk6R-zoSWtfSfWEBQg6Y0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghUqEDFblw0XynepaBrOV055X2EQPiFcbVlxoHJ_ge8Smsz2mV6CFpuWIHvU8yDy3rdplnfhDX4fvm36R6o5LGh3iMY2Ywzo77-pdu1braf7g0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0ArITJcTYy4EX1hzNvJeHRadmz7sgI5Lk41MHCH9ogp5AXD2-2wbG3bu1GGt9BHEUCb4nIj6BC3rzb1j7_L6M2j9VJzefC7-GCikCSiD0ukS0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAhCzkmHM_AFnb_p4VDoJbm8lCOgUAELXQTUhDxnsGn0_-B13mEBstiGmIWke0HEXeUOtWqUBnzGuTE0rRYS_eNKPdKl5LZAXwyrJ5sn-q_R10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQmHbA8ZkYo00R3lZR28STIMubApFVQf7tBLlbh5RvUQAbIS7Qp3JCT7W4MBZFEW6ERlshBik82HmsCKm6SHR-RlOXhS8ux7mo97W4MEVggr0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKnfEM4bwU60yd-6ed09MRx0ke_IgjLBgBUgMwZ7HtoDf8fEGMsAgDI-qf2SEXDt3GVb4mCy_r9jmm8ehx94X76nBGI_S9uvdaJhFuhLwb9To0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNVhL3QO0yzcu3tPLazaCb7B5ocjcDL-NviwOoNzOkJnKGUZ7B_MGYzIi03aJ1YmfPf9QZ-elIjSOetdQ-AZhJMKTuqZLGrxqkwZhYZaEFVIp0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUVjaASz5mQRkPZxL-4GmWxCuBVROnFsBjiy8jLAoYJuGTI6nKVWBm3oy3o70TbFzwLMgGGNUc-YKcSepvob9w9WZ2ZVbvecXC-owrUhaDHD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmmDZoU5V_aLTuj9Wlu5C4-ZGI_3YnB3MazjKztkbUk0UrPmCGD5RZqTZmwtJbc1WGJpMloK7n8STjFBqXAhINEy-5YhWKuCRHgRp3BGB4NuD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA4S3dnJB0eH8zxZXeJWbFtiILpZS22jPboUSgYbJ1UvfM3vOZvBwXsTMv398rrFshx1xR477zrYBhL9JFL8yQWBLOx61LjfTR0C3TaMD8rDG0&amp;t=2009a88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="xwvf3IN47DAlJbO7Giqw2lEvBY/dNuDtNkfbrje3HMAy5BGsTieJIWRX/SrxPUuQl5y76rnCdZTYIUViBSfzU6UCyMN+Omg9V7m8rW88esBJKTwYTC1m5sRTu4yiIrmeKfC4htdl2UisuMlxTRrV7PFmwfRTSKnKrpUFXzm93Nc=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">新北市私立福音幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" id="GridView1" style="border-color:#000FFF;border-width:0px;border-collapse:collapse;">
+			<tr class="listHd_c">
+				<th align="center" scope="col" style="width:10%;">處分日期</th><th align="center" scope="col" style="width:15%;">處分時園名</th><th align="center" scope="col" style="width:15%;">裁處文號</th><th align="center" scope="col" style="width:18%;">處分依據</th><th align="center" scope="col">違反之規定</th><th align="center" scope="col" style="width:12%;">負責人/行為人</th><th align="center" scope="col" style="width:12%;">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2024/07/22</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_0">新北市私立福音幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">新北府教幼字第1131444181號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_0">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">負責人：張復民</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">停止招生：2024/08/01~2025/07/31</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2024/06/20</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_1">新北市私立福音幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">新北府教幼字第1131175093號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_1">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">負責人：張復民</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2024/06/13</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_2">新北市私立福音幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">新北府教幼字第11311207457號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">教保服務人員條例<br>第46條第2項(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_2">第33條第1項<br>教保服務人員對幼兒有非屬情節重大之不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">行為人：高維萍</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：30,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2024/06/13</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_3">新北市私立福音幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">新北府教幼字第11311207456號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_3">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">行為人：張雯怡</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：300,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2024/06/13</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_4">新北市私立福音幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">新北府教幼字第11311207455號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_4">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">行為人：江宜芳</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">罰鍰：600,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2023/09/20</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_5">新北市私立福音幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">新北府教幼字第1121815368號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">幼兒教育及照顧法<br>第52條第6款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_5">第43條第3項-費用超收<br>幼兒園收費超過備查數額及項目。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">負責人：張復民</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="height:380px;width:500px;display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

@@ -1,0 +1,315 @@
+﻿<!--
+source: https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=aABEADEARwBIAE4AYwBoAEkAUgBlADIAVgBPAFQAZQBuAEwAWQAyAE8ATQBlAE4AegBKAGEAMQB6ACsAZwBrAFAAeQAzAFAAZgA1AGUAeABvAHkAYgBPAFoAVgBwADkAdwB3AHEANQBxAE4AVQBZAEgAYQBOAFYAUgBPAFkAOABvAEwAVAA2AGMAYgBiAHYAWgB6AGQAZgBIAEsAYwBFAFcAagBTAE8AdgBwAEQARwBvAGgAbQBFADUAagB1AGkAdQBIADcAZAB3AGUAaQBjAEwAawBWAEoAVgBGAFIAYwB5AEUAVAA0AHkANwArAHkATABBAEoANABIAHgAQwBZAGgAcwBvAFAAYQBmAEYAUgBmADQAbQBhAGsARABuAG4AWABTAHMAegB2AEYASwBrAG0AUwBmAEkAcgBkAEwATQBTAHcAQwBTAG4ARQBTAG0AQQA0AC8ASQByACsAdABPAGgAegBiAG8AVABVAGcANwBjAEUAcwBvAEYARQBIAFQAVgBPAEYAVgBwAHIAVgArAGEANQBEAEMARwB1AGwAcwBOAE0ARgBEAEUAZwA9AD0A
+captured_at_utc: 2026-06-08T07:49:57.2904611Z
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3z-9yrCFPI99gMfv9nzRAaTuYv-PbYkA8klx-m6gu8J7VSfQJQXO1A7HI_bomuJqR4cqatZm_H7NdRl9TpdoxueOUrdpl2feHR8IMwMuRGjcMCFEUhfu-G7pyop9sWRCR-zc40_ywTeyrN_NRnFwDv81&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=aABEADEARwBIAE4AYwBoAEkAUgBlADIAVgBPAFQAZQBuAEwAWQAyAE8ATQBlAE4AegBKAGEAMQB6ACsAZwBrAFAAeQAzAFAAZgA1AGUAeABvAHkAYgBPAFoAVgBwADkAdwB3AHEANQBxAE4AVQBZAEgAYQBOAFYAUgBPAFkAOABvAEwAVAA2AGMAYgBiAHYAWgB6AGQAZgBIAEsAYwBFAFcAagBTAE8AdgBwAEQARwBvAGgAbQBFADUAagB1AGkAdQBIADcAZAB3AGUAaQBjAEwAawBWAEoAVgBGAFIAYwB5AEUAVAA0AHkANwArAHkATABBAEoANABIAHgAQwBZAGgAcwBvAFAAYQBmAEYAUgBmADQAbQBhAGsARABuAG4AWABTAHMAegB2AEYASwBrAG0AUwBmAEkAcgBkAEwATQBTAHcAQwBTAG4ARQBTAG0AQQA0AC8ASQByACsAdABPAGgAegBiAG8AVABVAGcANwBjAEUAcwBvAEYARQBIAFQAVgBPAEYAVgBwAHIAVgArAGEANQBEAEMARwB1AGwAcwBOAE0ARgBEAEUAZwA9AD0A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/webecems/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGLb3NTNvhYj08c3wKhpRK4e1bUYbUJ8X1rS2giVJqgH2FI_7tDFy8Y__iBYgUUuIA2&amp;t=638901824248157332" type="text/javascript"></script>
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzuChMNOAttLUPJvKLk-ltsrx39R0fVSy2eLEhyBrdYSSK4Sc-_r5XtzIgAQZvic2Y2IBfj8BLeI3Qi9u_liCJd9_ao3M5BpxzN0B5UF3WEWpzE5I9LubAFOzVc1LvmF1s0sjVkVsjA80efY8UfeA_AQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=-542Fa50f3_d4GeGZYGfgVkT41nYHbxU7KEc52Uy97lLnIXGUrJIm8gzgyQS4RiM9dF8l5AHyaOpppy_CE-oE15GzYd29vbq1s0qB2wLVS1f8ZMyTedAL_9BjfreXBtbYLifmqKhljvvadH5Ux6zA1XmpZjNdzKIjBDUUN3BZs8pTYphou0CbNl6IiXb7vw00&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioHyxHe6_ZlJHVUafw4E0lauwVBCX5hKjC0TvU-DZzpoIATNr5VjFPe_PZx4RrlMk5bHz5Ud6UNnxpXBjqDNDgbZcC4MMEaANqEXWCZ9B4TObH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj0YoVlU5Q-64M_-dgvyOeacc6xUUanLWEs3Gw8s-pXktmYqL9nLxnj4AEvvKDO9bbl30AaPOnJywgwjWPyLIxFw1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_rRcrEetEkpVUrhD20cxdAa02sRUmQy-QJRsKCbyRakbvXyCdYNZ_ux8FggI3XdIAakHXm54HeSs9ti-lRThqPIxjoju-M3SEBtsV2LxC37O0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqQosU_G-jOizjuLKOB6sHuaOu6ZYDEgoO4BDwYNstN8hp80-0qCvKc-lPq_3_cwZT66kyRsZdt18wqE20w3_p4dGvk6R-zoSWtfSfWEBQg6Y0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghUqEDFblw0XynepaBrOV055X2EQPiFcbVlxoHJ_ge8Smsz2mV6CFpuWIHvU8yDy3rdplnfhDX4fvm36R6o5LGh3iMY2Ywzo77-pdu1braf7g0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0ArITJcTYy4EX1hzNvJeHRadmz7sgI5Lk41MHCH9ogp5AXD2-2wbG3bu1GGt9BHEUCb4nIj6BC3rzb1j7_L6M2j9VJzefC7-GCikCSiD0ukS0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAhCzkmHM_AFnb_p4VDoJbm8lCOgUAELXQTUhDxnsGn0_-B13mEBstiGmIWke0HEXeUOtWqUBnzGuTE0rRYS_eNKPdKl5LZAXwyrJ5sn-q_R10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQmHbA8ZkYo00R3lZR28STIMubApFVQf7tBLlbh5RvUQAbIS7Qp3JCT7W4MBZFEW6ERlshBik82HmsCKm6SHR-RlOXhS8ux7mo97W4MEVggr0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKnfEM4bwU60yd-6ed09MRx0ke_IgjLBgBUgMwZ7HtoDf8fEGMsAgDI-qf2SEXDt3GVb4mCy_r9jmm8ehx94X76nBGI_S9uvdaJhFuhLwb9To0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNVhL3QO0yzcu3tPLazaCb7B5ocjcDL-NviwOoNzOkJnKGUZ7B_MGYzIi03aJ1YmfPf9QZ-elIjSOetdQ-AZhJMKTuqZLGrxqkwZhYZaEFVIp0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUVjaASz5mQRkPZxL-4GmWxCuBVROnFsBjiy8jLAoYJuGTI6nKVWBm3oy3o70TbFzwLMgGGNUc-YKcSepvob9w9WZ2ZVbvecXC-owrUhaDHD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmmDZoU5V_aLTuj9Wlu5C4-ZGI_3YnB3MazjKztkbUk0UrPmCGD5RZqTZmwtJbc1WGJpMloK7n8STjFBqXAhINEy-5YhWKuCRHgRp3BGB4NuD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA4S3dnJB0eH8zxZXeJWbFtiILpZS22jPboUSgYbJ1UvfM3vOZvBwXsTMv398rrFshx1xR477zrYBhL9JFL8yQWBLOx61LjfTR0C3TaMD8rDG0&amp;t=2009a88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="fs4fS9KgF0bnehZwAsRfO+7Zeb1gfobVrr28rc94mML5499oGn8SCQOcrF66KzLRxqvxq8wh7AgrYsZrHd80s7dnf+0VgF+R+2c2R3gducWQsEjzGRS9QB2id8+uMHIfrUtqmmxDF6w8FSwCtqWJPhz8QGza5pqUfJLt/xcuJx0=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">臺中市私立道町森幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" id="GridView1" style="border-color:#000FFF;border-width:0px;border-collapse:collapse;">
+			<tr class="listHd_c">
+				<th align="center" scope="col" style="width:10%;">處分日期</th><th align="center" scope="col" style="width:15%;">處分時園名</th><th align="center" scope="col" style="width:15%;">裁處文號</th><th align="center" scope="col" style="width:18%;">處分依據</th><th align="center" scope="col">違反之規定</th><th align="center" scope="col" style="width:12%;">負責人/行為人</th><th align="center" scope="col" style="width:12%;">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2025/04/01</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_0">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">中市教幼字第1140027879號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_0">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">行為人：王暐婷</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">罰鍰：150,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2025/04/01</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_1">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">中市教幼字第1140027890號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_1">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">行為人：黃芊瑜</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：90,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2024/11/05</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_2">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">中市教幼字第1130095597號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_2">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">行為人：賴郁蕎</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2024/11/05</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_3">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">中市教幼字第1130095595號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_3">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">行為人：伍庭萱</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：120,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2024/11/05</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_4">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">中市教幼字第1130095594號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_4">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">行為人：林佩宣</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2024/11/05</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_5">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">中市教幼字第1130095592號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_5">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">行為人：陳柔方</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_6">2024/11/05</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_6">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_6">中市教幼字第1130095590號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_6">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_6">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_6">行為人：蘇昭菱</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_6">罰鍰：180,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_7">2024/09/25</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_7">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_7">中市教幼字第1130081957號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_7">幼兒教育及照顧法<br>第52條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_7">第16條第4項<br>幼兒園班級師生比違反規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_7">負責人：潘建男</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_7">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_8">2024/08/29</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_8">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_8">中市教幼字第1130073296號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_8">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_8">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_8">負責人：潘建男</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_8">停辦：2024/09/01~2025/08/31</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_9">2024/08/26</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_9">臺中市私立道町森幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_9">中市教幼字第1130071312號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_9">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_9">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_9">行為人：林竹君</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_9">罰鍰：240,000&nbsp;元</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="height:380px;width:500px;display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

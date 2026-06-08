@@ -1,0 +1,261 @@
+﻿<!--
+source: https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=TwBQADQATQBpADEAVQA1AGQAcwAvADkAeQBPAHUAMQB4AEgAaQBDAGQAUgA1ADUAcABrADYAQQBnAEUAVQBUAFYALwBIAG8AQgB6AGwAZwBTAEwAZwBGAFMAVQBhAGQANwBxADMAcQBPAHEAVwBaAEkATgBLAFQAbQByAEgAOAA3AGoAWQBtAEQAUgAxADYANwA2AFUAUgB5AHgANwBDAFgARQBqAGgAZgB1AGcAZABOADcASABJAHkAZwBHAFYAOABsADMAbwA2ADMANgBmAFIAdgB0AG0AZAAwAGgATwBXADIAeABEAGoAcwBkAFkAZwBIADQAMwBUAEcAVABQACsAeABEAEgATwBJAG8AaQBZAGMAMgBIAGcAbwBiAHoANQBGADkAMwBoAFIAeABlAFMAaABVADIATABkACsASgBEAHoATwA0ADIANQBiAHMAYgByAEMAVQA1AFkAegA4AEIAeQBmAFgARgAxAGsAeABrAFUATwA1AFEALwB2AE4ATABLAE8ARgAvAGgASAB4AE0AdABMAHAAdgBxAEsAOABwADAAeAB2AG0AQQA9AD0A
+captured_at_utc: 2026-06-08T07:54:17.1888199Z
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3z-9yrCFPI99gMfv9nzRAaTuYv-PbYkA8klx-m6gu8J7VSfQJQXO1A7HI_bomuJqR4cqatZm_H7NdRl9TpdoxueOUrdpl2feHR8IMwMuRGjcMCFEUhfu-G7pyop9sWRCR-zc40_ywTeyrN_NRnFwDv81&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=TwBQADQATQBpADEAVQA1AGQAcwAvADkAeQBPAHUAMQB4AEgAaQBDAGQAUgA1ADUAcABrADYAQQBnAEUAVQBUAFYALwBIAG8AQgB6AGwAZwBTAEwAZwBGAFMAVQBhAGQANwBxADMAcQBPAHEAVwBaAEkATgBLAFQAbQByAEgAOAA3AGoAWQBtAEQAUgAxADYANwA2AFUAUgB5AHgANwBDAFgARQBqAGgAZgB1AGcAZABOADcASABJAHkAZwBHAFYAOABsADMAbwA2ADMANgBmAFIAdgB0AG0AZAAwAGgATwBXADIAeABEAGoAcwBkAFkAZwBIADQAMwBUAEcAVABQACsAeABEAEgATwBJAG8AaQBZAGMAMgBIAGcAbwBiAHoANQBGADkAMwBoAFIAeABlAFMAaABVADIATABkACsASgBEAHoATwA0ADIANQBiAHMAYgByAEMAVQA1AFkAegA4AEIAeQBmAFgARgAxAGsAeABrAFUATwA1AFEALwB2AE4ATABLAE8ARgAvAGgASAB4AE0AdABMAHAAdgBxAEsAOABwADAAeAB2AG0AQQA9AD0A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/webecems/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGLb3NTNvhYj08c3wKhpRK4e1bUYbUJ8X1rS2giVJqgH2FI_7tDFy8Y__iBYgUUuIA2&amp;t=638901824248157332" type="text/javascript"></script>
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzuChMNOAttLUPJvKLk-ltsrx39R0fVSy2eLEhyBrdYSSK4Sc-_r5XtzIgAQZvic2Y2IBfj8BLeI3Qi9u_liCJd9_ao3M5BpxzN0B5UF3WEWpzE5I9LubAFOzVc1LvmF1s0sjVkVsjA80efY8UfeA_AQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=-542Fa50f3_d4GeGZYGfgVkT41nYHbxU7KEc52Uy97lLnIXGUrJIm8gzgyQS4RiM9dF8l5AHyaOpppy_CE-oE15GzYd29vbq1s0qB2wLVS1f8ZMyTedAL_9BjfreXBtbYLifmqKhljvvadH5Ux6zA1XmpZjNdzKIjBDUUN3BZs8pTYphou0CbNl6IiXb7vw00&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioHyxHe6_ZlJHVUafw4E0lauwVBCX5hKjC0TvU-DZzpoIATNr5VjFPe_PZx4RrlMk5bHz5Ud6UNnxpXBjqDNDgbZcC4MMEaANqEXWCZ9B4TObH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj0YoVlU5Q-64M_-dgvyOeacc6xUUanLWEs3Gw8s-pXktmYqL9nLxnj4AEvvKDO9bbl30AaPOnJywgwjWPyLIxFw1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_rRcrEetEkpVUrhD20cxdAa02sRUmQy-QJRsKCbyRakbvXyCdYNZ_ux8FggI3XdIAakHXm54HeSs9ti-lRThqPIxjoju-M3SEBtsV2LxC37O0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqQosU_G-jOizjuLKOB6sHuaOu6ZYDEgoO4BDwYNstN8hp80-0qCvKc-lPq_3_cwZT66kyRsZdt18wqE20w3_p4dGvk6R-zoSWtfSfWEBQg6Y0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghUqEDFblw0XynepaBrOV055X2EQPiFcbVlxoHJ_ge8Smsz2mV6CFpuWIHvU8yDy3rdplnfhDX4fvm36R6o5LGh3iMY2Ywzo77-pdu1braf7g0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0ArITJcTYy4EX1hzNvJeHRadmz7sgI5Lk41MHCH9ogp5AXD2-2wbG3bu1GGt9BHEUCb4nIj6BC3rzb1j7_L6M2j9VJzefC7-GCikCSiD0ukS0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAhCzkmHM_AFnb_p4VDoJbm8lCOgUAELXQTUhDxnsGn0_-B13mEBstiGmIWke0HEXeUOtWqUBnzGuTE0rRYS_eNKPdKl5LZAXwyrJ5sn-q_R10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQmHbA8ZkYo00R3lZR28STIMubApFVQf7tBLlbh5RvUQAbIS7Qp3JCT7W4MBZFEW6ERlshBik82HmsCKm6SHR-RlOXhS8ux7mo97W4MEVggr0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKnfEM4bwU60yd-6ed09MRx0ke_IgjLBgBUgMwZ7HtoDf8fEGMsAgDI-qf2SEXDt3GVb4mCy_r9jmm8ehx94X76nBGI_S9uvdaJhFuhLwb9To0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNVhL3QO0yzcu3tPLazaCb7B5ocjcDL-NviwOoNzOkJnKGUZ7B_MGYzIi03aJ1YmfPf9QZ-elIjSOetdQ-AZhJMKTuqZLGrxqkwZhYZaEFVIp0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUVjaASz5mQRkPZxL-4GmWxCuBVROnFsBjiy8jLAoYJuGTI6nKVWBm3oy3o70TbFzwLMgGGNUc-YKcSepvob9w9WZ2ZVbvecXC-owrUhaDHD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmmDZoU5V_aLTuj9Wlu5C4-ZGI_3YnB3MazjKztkbUk0UrPmCGD5RZqTZmwtJbc1WGJpMloK7n8STjFBqXAhINEy-5YhWKuCRHgRp3BGB4NuD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA4S3dnJB0eH8zxZXeJWbFtiILpZS22jPboUSgYbJ1UvfM3vOZvBwXsTMv398rrFshx1xR477zrYBhL9JFL8yQWBLOx61LjfTR0C3TaMD8rDG0&amp;t=2009a88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="RQ4qrKEgtSNBPuqTlNF4BOTzC86ethCpUrMY+TPwLHduijJq376Zc3ky4Xwd9KqSiOTMm9ieZNfQN40uxRyTHsWAXi6v8EsfXam29QJNljZqxJpQ4k9dJSF10mp+w71gcqg8YqyDQgAtCwM8iPi1Gbi8Xy5QscJqqG2Fmx+p7wc=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">花蓮縣私立何嘉仁幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" id="GridView1" style="border-color:#000FFF;border-width:0px;border-collapse:collapse;">
+			<tr class="listHd_c">
+				<th align="center" scope="col" style="width:10%;">處分日期</th><th align="center" scope="col" style="width:15%;">處分時園名</th><th align="center" scope="col" style="width:15%;">裁處文號</th><th align="center" scope="col" style="width:18%;">處分依據</th><th align="center" scope="col">違反之規定</th><th align="center" scope="col" style="width:12%;">負責人/行為人</th><th align="center" scope="col" style="width:12%;">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2026/04/02</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_0">花蓮縣私立何嘉仁幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">府教特字第1150064064號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">幼兒教育及照顧法<br>第52條第6款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_0">第43條第3項-收費備查<br>幼兒園收費數額未報地方主管機關備查。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">負責人：武榮財</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2025/07/09</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_1">花蓮縣私立何嘉仁幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">府教特字第1140136616號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">幼兒教育及照顧法<br>第52條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_1">第8條第6項-超收逾15人<br>幼兒園超收人數逾15人。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">負責人：武榮財</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2025/05/15</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_2">花蓮縣私立何嘉仁幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">府教特字第1140097676號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">教保服務人員條例<br>第41條第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_2">第32條第2項<br>幼兒園進用未具資格者從事教保服務。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">負責人：武榮財</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2025/05/15</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_3">花蓮縣私立何嘉仁幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">府教特字第1140097611號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">幼兒教育及照顧法<br>第52條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_3">第8條第6項-檢查時藏匿<br>幼兒園於行政機關檢查時藏匿幼兒。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">負責人：武榮財</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2025/05/15</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_4">花蓮縣私立何嘉仁幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">府教特字第1140097611號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">幼兒教育及照顧法<br>第52條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_4">第16條第1項-班級人數<br>幼兒園編班違反班級人數限制。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">負責人：武榮財</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2025/05/15</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_5">花蓮縣私立何嘉仁幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">府教特字第1140097611號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">幼兒教育及照顧法<br>第52條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_5">第16條第4項<br>幼兒園班級師生比違反規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">負責人：武榮財</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_6">2025/05/15</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_6">花蓮縣私立何嘉仁幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_6">府教特字第1140097611號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_6">幼兒教育及照顧法<br>第52條第5款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_6">第34條第1項<br>幼兒園未辦理幼兒團體保險。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_6">負責人：武榮財</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_6">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="height:380px;width:500px;display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

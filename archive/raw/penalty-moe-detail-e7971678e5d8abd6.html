@@ -1,0 +1,351 @@
+﻿<!--
+source: https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=TgBqAHgAZQBHAGMARQBvAHEAagBUADEAcgBHAE0AeQBPAHcANwBTAG8AWgAzADgAZAB3ADgANQA3AFkANwBwAHMARgAwAGsATABWAFQANwAzAEsAUABUAE8AWQAvAC8ATgA0AHoARABVAFMAVABZAFEATABiAHIAUgBQAEUASQBGADIAaAArAFYAUQBMADcAagB6AFcALwBIADMAYQBPAFAANQB5AEcAaABXAHMAOAAxAEYAWABOAEsASQByAEwAVwBXAGYASgAxADUAMQB1AEYAdwBvAFIAMAByAGcANgBoADYAVQBFAGMAMgBIAGIANwBRAEMAOABQAHMAWAB4AFcASQB2AEsAcABJAEkAbwA0AHQAcQBGAHYASwAyAEIAeABFAFUATQBRAFQAbQBMAGkASgBiAFkANgA0AHQATgB1ADkANgBrADEANAB2AHYANQAxAGMAdwB5AGkAbwBSAEUAQQBYAG4AcQA3AGMAYwBmADcAVQB0AEkAUgBrAE4AdwBXAGcAOAB0AFgAdgBhAG8AcQBEADkAawBZAEsAaQAyAEoAagBwAFUAUQA9AD0A
+captured_at_utc: 2026-06-08T07:45:10.7521741Z
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3z-9yrCFPI99gMfv9nzRAaTuYv-PbYkA8klx-m6gu8J7VSfQJQXO1A7HI_bomuJqR4cqatZm_H7NdRl9TpdoxueOUrdpl2feHR8IMwMuRGjcMCFEUhfu-G7pyop9sWRCR-zc40_ywTeyrN_NRnFwDv81&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=TgBqAHgAZQBHAGMARQBvAHEAagBUADEAcgBHAE0AeQBPAHcANwBTAG8AWgAzADgAZAB3ADgANQA3AFkANwBwAHMARgAwAGsATABWAFQANwAzAEsAUABUAE8AWQAvAC8ATgA0AHoARABVAFMAVABZAFEATABiAHIAUgBQAEUASQBGADIAaAArAFYAUQBMADcAagB6AFcALwBIADMAYQBPAFAANQB5AEcAaABXAHMAOAAxAEYAWABOAEsASQByAEwAVwBXAGYASgAxADUAMQB1AEYAdwBvAFIAMAByAGcANgBoADYAVQBFAGMAMgBIAGIANwBRAEMAOABQAHMAWAB4AFcASQB2AEsAcABJAEkAbwA0AHQAcQBGAHYASwAyAEIAeABFAFUATQBRAFQAbQBMAGkASgBiAFkANgA0AHQATgB1ADkANgBrADEANAB2AHYANQAxAGMAdwB5AGkAbwBSAEUAQQBYAG4AcQA3AGMAYwBmADcAVQB0AEkAUgBrAE4AdwBXAGcAOAB0AFgAdgBhAG8AcQBEADkAawBZAEsAaQAyAEoAagBwAFUAUQA9AD0A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/webecems/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGLb3NTNvhYj08c3wKhpRK4e1bUYbUJ8X1rS2giVJqgH2FI_7tDFy8Y__iBYgUUuIA2&amp;t=638901824248157332" type="text/javascript"></script>
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzuChMNOAttLUPJvKLk-ltsrx39R0fVSy2eLEhyBrdYSSK4Sc-_r5XtzIgAQZvic2Y2IBfj8BLeI3Qi9u_liCJd9_ao3M5BpxzN0B5UF3WEWpzE5I9LubAFOzVc1LvmF1s0sjVkVsjA80efY8UfeA_AQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=-542Fa50f3_d4GeGZYGfgVkT41nYHbxU7KEc52Uy97lLnIXGUrJIm8gzgyQS4RiM9dF8l5AHyaOpppy_CE-oE15GzYd29vbq1s0qB2wLVS1f8ZMyTedAL_9BjfreXBtbYLifmqKhljvvadH5Ux6zA1XmpZjNdzKIjBDUUN3BZs8pTYphou0CbNl6IiXb7vw00&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioHyxHe6_ZlJHVUafw4E0lauwVBCX5hKjC0TvU-DZzpoIATNr5VjFPe_PZx4RrlMk5bHz5Ud6UNnxpXBjqDNDgbZcC4MMEaANqEXWCZ9B4TObH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj0YoVlU5Q-64M_-dgvyOeacc6xUUanLWEs3Gw8s-pXktmYqL9nLxnj4AEvvKDO9bbl30AaPOnJywgwjWPyLIxFw1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_rRcrEetEkpVUrhD20cxdAa02sRUmQy-QJRsKCbyRakbvXyCdYNZ_ux8FggI3XdIAakHXm54HeSs9ti-lRThqPIxjoju-M3SEBtsV2LxC37O0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqQosU_G-jOizjuLKOB6sHuaOu6ZYDEgoO4BDwYNstN8hp80-0qCvKc-lPq_3_cwZT66kyRsZdt18wqE20w3_p4dGvk6R-zoSWtfSfWEBQg6Y0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghUqEDFblw0XynepaBrOV055X2EQPiFcbVlxoHJ_ge8Smsz2mV6CFpuWIHvU8yDy3rdplnfhDX4fvm36R6o5LGh3iMY2Ywzo77-pdu1braf7g0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0ArITJcTYy4EX1hzNvJeHRadmz7sgI5Lk41MHCH9ogp5AXD2-2wbG3bu1GGt9BHEUCb4nIj6BC3rzb1j7_L6M2j9VJzefC7-GCikCSiD0ukS0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAhCzkmHM_AFnb_p4VDoJbm8lCOgUAELXQTUhDxnsGn0_-B13mEBstiGmIWke0HEXeUOtWqUBnzGuTE0rRYS_eNKPdKl5LZAXwyrJ5sn-q_R10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQmHbA8ZkYo00R3lZR28STIMubApFVQf7tBLlbh5RvUQAbIS7Qp3JCT7W4MBZFEW6ERlshBik82HmsCKm6SHR-RlOXhS8ux7mo97W4MEVggr0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKnfEM4bwU60yd-6ed09MRx0ke_IgjLBgBUgMwZ7HtoDf8fEGMsAgDI-qf2SEXDt3GVb4mCy_r9jmm8ehx94X76nBGI_S9uvdaJhFuhLwb9To0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNVhL3QO0yzcu3tPLazaCb7B5ocjcDL-NviwOoNzOkJnKGUZ7B_MGYzIi03aJ1YmfPf9QZ-elIjSOetdQ-AZhJMKTuqZLGrxqkwZhYZaEFVIp0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUVjaASz5mQRkPZxL-4GmWxCuBVROnFsBjiy8jLAoYJuGTI6nKVWBm3oy3o70TbFzwLMgGGNUc-YKcSepvob9w9WZ2ZVbvecXC-owrUhaDHD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmmDZoU5V_aLTuj9Wlu5C4-ZGI_3YnB3MazjKztkbUk0UrPmCGD5RZqTZmwtJbc1WGJpMloK7n8STjFBqXAhINEy-5YhWKuCRHgRp3BGB4NuD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA4S3dnJB0eH8zxZXeJWbFtiILpZS22jPboUSgYbJ1UvfM3vOZvBwXsTMv398rrFshx1xR477zrYBhL9JFL8yQWBLOx61LjfTR0C3TaMD8rDG0&amp;t=2009a88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="soLV/VFn202T/CjlH8jjcGgFLvttKWqBxTmf5Qfgq9blJnxpYJdLNwF0vP8PLaBGftE3zCp3cjAuVDqtLcyCdnfOwoW9bN7Uia04ls+CqXqISOx9PUmEpdgdO3TAg4PlNvWPqvZQYuUbJ3cCzZAAFDWMj1nkjYm1gdpEqSWRyCY=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">新北市私立智盛幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" id="GridView1" style="border-color:#000FFF;border-width:0px;border-collapse:collapse;">
+			<tr class="listHd_c">
+				<th align="center" scope="col" style="width:10%;">處分日期</th><th align="center" scope="col" style="width:15%;">處分時園名</th><th align="center" scope="col" style="width:15%;">裁處文號</th><th align="center" scope="col" style="width:18%;">處分依據</th><th align="center" scope="col">違反之規定</th><th align="center" scope="col" style="width:12%;">負責人/行為人</th><th align="center" scope="col" style="width:12%;">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2024/08/30</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_0">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">新北府教幼字第11317211852號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">教保服務人員條例<br>第46條第2項(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_0">第33條第1項<br>教保服務人員對幼兒有非屬情節重大之不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">行為人：李沁霓</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">罰鍰：30,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2023/07/31</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_1">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">新北府教幼字第1121444999號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">教保服務人員條例<br>第41條第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_1">第32條第2項<br>幼兒園進用未具資格者從事教保服務。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2023/07/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_2">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">新北府教幼字第1121253838號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">教保服務人員條例<br>第40條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_2">第33條第1項<br>教保服務人員對幼兒有身心虐待情事。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">行為人：柯宛姍</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：600,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2023/07/03</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_3">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">新北府教幼字第1121239335號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">幼兒教育及照顧法<br>第52條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_3">第16條第4項<br>幼兒園班級師生比違反規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：300,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2023/07/03</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_4">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">新北府教幼字第1121239335號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">幼兒教育及照顧法<br>第52條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_4">第16條第4項<br>幼兒園班級師生比違反規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">停辦：2023/08/01~2024/07/31</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2023/07/03</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_5">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">新北府教幼字第1121239335號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_5">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_6">2023/07/03</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_6">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_6">新北府教幼字第1121239335號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_6">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_6">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_6">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_6">停辦：2024/08/01~2025/07/31</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_7">2023/06/19</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_7">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_7">新北府教幼字第1121129539號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_7">幼兒教育及照顧法<br>第56條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_7">第8條第6項-超收15人以下<br>幼兒園超收人數未達15人。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_7">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_7">罰鍰：90,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_8">2023/06/19</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_8">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_8">新北府教幼字第1121129539號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_8">幼兒教育及照顧法<br>第56條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_8">第8條第6項-超收15人以下<br>幼兒園超收人數未達15人。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_8">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_8">停止招生：2023/08/01~2024/01/31</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_9">2022/11/28</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_9">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_9">新北府教幼字第1112284603號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_9">幼兒教育及照顧法<br>第49條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_9">第8條第6項--招收人數限制<br>幼兒園有超收情事。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_9">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_9">減少招收人數：2023/08/01~2024/01/31</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_10">2022/11/28</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_10">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_10">新北府教幼字第1112284603號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_10">幼兒教育及照顧法<br>第51條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_10">第16條第4項<br>幼兒園班級師生比違反規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_10">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_10">停止招生：2023/02/01~2023/07/31</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_11">2022/09/26</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_11">新北市私立智盛幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_11">新北府教幼字第1111824326號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_11">幼兒教育及照顧法<br>第51條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_11">第16條第4項<br>幼兒園班級師生比違反規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_11">負責人：楊雅如</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_11">減少招收人數：2023/02/01~2023/07/31</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="height:380px;width:500px;display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

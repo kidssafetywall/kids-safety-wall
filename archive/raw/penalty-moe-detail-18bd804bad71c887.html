@@ -1,0 +1,315 @@
+﻿<!--
+source: https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=YgA1AEcAegBmAE0AbABxAFYAagBwAGUATgBKAGwAeABTAEgAZQBMAGIAOQBCAHYAdgBWAG4ARgBPAGUAOAAzAGMAWgA3AFYAcQBVAEIAUgBCAE0AbwBpADQANABSAEwAVgBqAFAAZABNAFUARABuADcASQBnAGYAbQB0AGQAUwA3AFgAZQBrAHEAbABYADYASQBqADQAUABNAFYAaQBkAHkAUwB1ADcAMAA0AHAATQBOAFMALwBiADIAdgBXAHIAcwBDAEcAYwA3AGEAQwBJADEAQwBCADcAOQBUAHUAKwBWAG0ASgB1AG0AVABmAG0ARABMAGIAeQBnAG8AUQBhADYAYwArAFMAQQBHAFAAOABqADUANABYAHIAZAA0AGYATABVAG8AYgBNAFoAWgA4AEkAdgBhAGcAMgBkAHgAYgA4AEkAMgBkAHoASABGAHoANgBtAEQAZgBaAFQAUgB2AEsAWABVAEYATwBVAEoAdwA0AHcAQQBXAEgAMAB4AHMANwBZAFEARgBXAGsAYwArAFgAMQBFAE4AWABEAFQAdQBZADgAYwArAHIAUQA9AD0A
+captured_at_utc: 2026-06-08T07:44:44.8312349Z
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3z-9yrCFPI99gMfv9nzRAaTuYv-PbYkA8klx-m6gu8J7VSfQJQXO1A7HI_bomuJqR4cqatZm_H7NdRl9TpdoxueOUrdpl2feHR8IMwMuRGjcMCFEUhfu-G7pyop9sWRCR-zc40_ywTeyrN_NRnFwDv81&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=YgA1AEcAegBmAE0AbABxAFYAagBwAGUATgBKAGwAeABTAEgAZQBMAGIAOQBCAHYAdgBWAG4ARgBPAGUAOAAzAGMAWgA3AFYAcQBVAEIAUgBCAE0AbwBpADQANABSAEwAVgBqAFAAZABNAFUARABuADcASQBnAGYAbQB0AGQAUwA3AFgAZQBrAHEAbABYADYASQBqADQAUABNAFYAaQBkAHkAUwB1ADcAMAA0AHAATQBOAFMALwBiADIAdgBXAHIAcwBDAEcAYwA3AGEAQwBJADEAQwBCADcAOQBUAHUAKwBWAG0ASgB1AG0AVABmAG0ARABMAGIAeQBnAG8AUQBhADYAYwArAFMAQQBHAFAAOABqADUANABYAHIAZAA0AGYATABVAG8AYgBNAFoAWgA4AEkAdgBhAGcAMgBkAHgAYgA4AEkAMgBkAHoASABGAHoANgBtAEQAZgBaAFQAUgB2AEsAWABVAEYATwBVAEoAdwA0AHcAQQBXAEgAMAB4AHMANwBZAFEARgBXAGsAYwArAFgAMQBFAE4AWABEAFQAdQBZADgAYwArAHIAUQA9AD0A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/webecems/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGLb3NTNvhYj08c3wKhpRK4e1bUYbUJ8X1rS2giVJqgH2FI_7tDFy8Y__iBYgUUuIA2&amp;t=638901824248157332" type="text/javascript"></script>
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzuChMNOAttLUPJvKLk-ltsrx39R0fVSy2eLEhyBrdYSSK4Sc-_r5XtzIgAQZvic2Y2IBfj8BLeI3Qi9u_liCJd9_ao3M5BpxzN0B5UF3WEWpzE5I9LubAFOzVc1LvmF1s0sjVkVsjA80efY8UfeA_AQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=-542Fa50f3_d4GeGZYGfgVkT41nYHbxU7KEc52Uy97lLnIXGUrJIm8gzgyQS4RiM9dF8l5AHyaOpppy_CE-oE15GzYd29vbq1s0qB2wLVS1f8ZMyTedAL_9BjfreXBtbYLifmqKhljvvadH5Ux6zA1XmpZjNdzKIjBDUUN3BZs8pTYphou0CbNl6IiXb7vw00&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioHyxHe6_ZlJHVUafw4E0lauwVBCX5hKjC0TvU-DZzpoIATNr5VjFPe_PZx4RrlMk5bHz5Ud6UNnxpXBjqDNDgbZcC4MMEaANqEXWCZ9B4TObH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj0YoVlU5Q-64M_-dgvyOeacc6xUUanLWEs3Gw8s-pXktmYqL9nLxnj4AEvvKDO9bbl30AaPOnJywgwjWPyLIxFw1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_rRcrEetEkpVUrhD20cxdAa02sRUmQy-QJRsKCbyRakbvXyCdYNZ_ux8FggI3XdIAakHXm54HeSs9ti-lRThqPIxjoju-M3SEBtsV2LxC37O0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqQosU_G-jOizjuLKOB6sHuaOu6ZYDEgoO4BDwYNstN8hp80-0qCvKc-lPq_3_cwZT66kyRsZdt18wqE20w3_p4dGvk6R-zoSWtfSfWEBQg6Y0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghUqEDFblw0XynepaBrOV055X2EQPiFcbVlxoHJ_ge8Smsz2mV6CFpuWIHvU8yDy3rdplnfhDX4fvm36R6o5LGh3iMY2Ywzo77-pdu1braf7g0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0ArITJcTYy4EX1hzNvJeHRadmz7sgI5Lk41MHCH9ogp5AXD2-2wbG3bu1GGt9BHEUCb4nIj6BC3rzb1j7_L6M2j9VJzefC7-GCikCSiD0ukS0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAhCzkmHM_AFnb_p4VDoJbm8lCOgUAELXQTUhDxnsGn0_-B13mEBstiGmIWke0HEXeUOtWqUBnzGuTE0rRYS_eNKPdKl5LZAXwyrJ5sn-q_R10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQmHbA8ZkYo00R3lZR28STIMubApFVQf7tBLlbh5RvUQAbIS7Qp3JCT7W4MBZFEW6ERlshBik82HmsCKm6SHR-RlOXhS8ux7mo97W4MEVggr0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKnfEM4bwU60yd-6ed09MRx0ke_IgjLBgBUgMwZ7HtoDf8fEGMsAgDI-qf2SEXDt3GVb4mCy_r9jmm8ehx94X76nBGI_S9uvdaJhFuhLwb9To0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNVhL3QO0yzcu3tPLazaCb7B5ocjcDL-NviwOoNzOkJnKGUZ7B_MGYzIi03aJ1YmfPf9QZ-elIjSOetdQ-AZhJMKTuqZLGrxqkwZhYZaEFVIp0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUVjaASz5mQRkPZxL-4GmWxCuBVROnFsBjiy8jLAoYJuGTI6nKVWBm3oy3o70TbFzwLMgGGNUc-YKcSepvob9w9WZ2ZVbvecXC-owrUhaDHD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmmDZoU5V_aLTuj9Wlu5C4-ZGI_3YnB3MazjKztkbUk0UrPmCGD5RZqTZmwtJbc1WGJpMloK7n8STjFBqXAhINEy-5YhWKuCRHgRp3BGB4NuD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA4S3dnJB0eH8zxZXeJWbFtiILpZS22jPboUSgYbJ1UvfM3vOZvBwXsTMv398rrFshx1xR477zrYBhL9JFL8yQWBLOx61LjfTR0C3TaMD8rDG0&amp;t=2009a88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="XaLpSG9UIFVCxGogBBoPzHBm8NSxigMuWaI39aZAis8awi93tl6uxHYqjY+DgrskSzssv5bwCFLXbF8W8Oa6rRO4zaKslo7un1UmU9GHdMNRPTE3FwsVSVOR51QP5TBjET1ZcY0Uo+zbBLBGJVUV5cJYLqnKhbpp/asFYyMXIIc=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">新北市私立學仕幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" id="GridView1" style="border-color:#000FFF;border-width:0px;border-collapse:collapse;">
+			<tr class="listHd_c">
+				<th align="center" scope="col" style="width:10%;">處分日期</th><th align="center" scope="col" style="width:15%;">處分時園名</th><th align="center" scope="col" style="width:15%;">裁處文號</th><th align="center" scope="col" style="width:18%;">處分依據</th><th align="center" scope="col">違反之規定</th><th align="center" scope="col" style="width:12%;">負責人/行為人</th><th align="center" scope="col" style="width:12%;">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2025/04/30</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_0">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">新北府教幼字第1140795507號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">教保服務人員條例<br>第41條第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_0">第32條第2項<br>幼兒園進用未具資格者從事教保服務。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">罰鍰：300,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2025/03/21</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_1">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">新北府教幼字第1140496377號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">幼兒教育及照顧法<br>第58條第1項第9款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_1">第30條第1項<br>教保服務機構有其他服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2024/11/18</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_2">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">新北府教幼字第1132268680號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">教保服務人員條例<br>第41條第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_2">第32條第2項<br>幼兒園進用未具資格者從事教保服務。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：150,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2024/11/14</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_3">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">新北府教幼字第11322625956號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">幼兒教育及照顧法<br>第58條第2項(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_3">第30條第1項<br>教保服務機構人員對幼兒有非屬情節重大之不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">行為人：馬子琳</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：30,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2024/09/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_4">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">新北府教幼字第1131743262號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">幼兒教育及照顧法<br>第58條第1項第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_4">第12條第5項-教保及照顧服務禁止規定<br>教保服務機構違反教保及照顧服務之禁止規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">罰鍰：30,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2024/08/08</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_5">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">新北府教幼字第1131564403號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_5">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_6">2024/08/08</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_6">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_6">新北府教幼字第1131564403號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_6">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_6">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_6">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_6">停止招生：2024/08/08~2025/08/07</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_7">2024/08/08</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_7">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_7">新北府教幼字第1131548196號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_7">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_7">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_7">行為人：林秀珍</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_7">罰鍰：600,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_8">2024/08/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_8">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_8">新北府教幼字第1131530512號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_8">幼兒教育及照顧法<br>第52條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_8">第16條第4項<br>幼兒園班級師生比違反規定。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_8">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_8">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_9">2024/08/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_9">新北市私立學仕幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_9">新北府教幼字第1131530512號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_9">教保服務人員條例<br>第41條第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_9">第32條第2項<br>幼兒園進用未具資格者從事教保服務。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_9">負責人：簡惠玲</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_9">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="height:380px;width:500px;display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

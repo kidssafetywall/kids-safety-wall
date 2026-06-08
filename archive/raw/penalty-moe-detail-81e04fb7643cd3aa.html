@@ -1,0 +1,333 @@
+﻿<!--
+source: https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=RABKAEIATQBxAFoAMQBBAEkASQBXAC8AeQBiAG0AUwBkAE0AaQBlAGYAYwBYADUARwBCADQAdwBSAGEAVAAzAGEAVwBmAGgAVwBYAC8AQwBqAC8AQwBjAGgATQBhAFMAMwBhAEwAYQBsAHYAOQAwADUANgBVAGwARAB4AFgAKwBXADgAbgBKAGgAQgB3ACsAbgBVADcAbQA2AGkAMwBqAGkAdgAzAG0ASABqAGwATQA2AFQAbgBrAEIAZgByADYAOQBkAFgAcABLAFUATQBWADcAYwBLAE0AUgBaAG8AVQBEAFIASABCAHQAbgBJAGYATABhAEIAYgB3AHcANABTAGsAbwBHAGYAZABTAEIAOABMAHoAbgBnAG0AQwArAGIAegA4ACsAQwBHAGIAUQBnAGsARABzAFYAVwBsAEcAUQBKAGwAeABLAHEAMAAvAEoATwBsAEQAdABuAHEAMAA0AGwAQQBBAFYANwBvAG8AMQBEADgANgBGADAAOQAwAGMAbQBxAFcAawBnAFMAZgBGAHEAZgBnAGYATwBUAHEAbQBDAEkAcgBjAEUAUQA9AD0A
+captured_at_utc: 2026-06-08T07:42:03.6568666Z
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT3z-9yrCFPI99gMfv9nzRAaTuYv-PbYkA8klx-m6gu8J7VSfQJQXO1A7HI_bomuJqR4cqatZm_H7NdRl9TpdoxueOUrdpl2feHR8IMwMuRGjcMCFEUhfu-G7pyop9sWRCR-zc40_ywTeyrN_NRnFwDv81&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=RABKAEIATQBxAFoAMQBBAEkASQBXAC8AeQBiAG0AUwBkAE0AaQBlAGYAYwBYADUARwBCADQAdwBSAGEAVAAzAGEAVwBmAGgAVwBYAC8AQwBqAC8AQwBjAGgATQBhAFMAMwBhAEwAYQBsAHYAOQAwADUANgBVAGwARAB4AFgAKwBXADgAbgBKAGgAQgB3ACsAbgBVADcAbQA2AGkAMwBqAGkAdgAzAG0ASABqAGwATQA2AFQAbgBrAEIAZgByADYAOQBkAFgAcABLAFUATQBWADcAYwBLAE0AUgBaAG8AVQBEAFIASABCAHQAbgBJAGYATABhAEIAYgB3AHcANABTAGsAbwBHAGYAZABTAEIAOABMAHoAbgBnAG0AQwArAGIAegA4ACsAQwBHAGIAUQBnAGsARABzAFYAVwBsAEcAUQBKAGwAeABLAHEAMAAvAEoATwBsAEQAdABuAHEAMAA0AGwAQQBBAFYANwBvAG8AMQBEADgANgBGADAAOQAwAGMAbQBxAFcAawBnAFMAZgBGAHEAZgBnAGYATwBUAHEAbQBDAEkAcgBjAEUAUQA9AD0A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/webecems/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGLb3NTNvhYj08c3wKhpRK4e1bUYbUJ8X1rS2giVJqgH2FI_7tDFy8Y__iBYgUUuIA2&amp;t=638901824248157332" type="text/javascript"></script>
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzuChMNOAttLUPJvKLk-ltsrx39R0fVSy2eLEhyBrdYSSK4Sc-_r5XtzIgAQZvic2Y2IBfj8BLeI3Qi9u_liCJd9_ao3M5BpxzN0B5UF3WEWpzE5I9LubAFOzVc1LvmF1s0sjVkVsjA80efY8UfeA_AQ1&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=-542Fa50f3_d4GeGZYGfgVkT41nYHbxU7KEc52Uy97lLnIXGUrJIm8gzgyQS4RiM9dF8l5AHyaOpppy_CE-oE15GzYd29vbq1s0qB2wLVS1f8ZMyTedAL_9BjfreXBtbYLifmqKhljvvadH5Ux6zA1XmpZjNdzKIjBDUUN3BZs8pTYphou0CbNl6IiXb7vw00&amp;t=5c0e0825" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioHyxHe6_ZlJHVUafw4E0lauwVBCX5hKjC0TvU-DZzpoIATNr5VjFPe_PZx4RrlMk5bHz5Ud6UNnxpXBjqDNDgbZcC4MMEaANqEXWCZ9B4TObH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj0YoVlU5Q-64M_-dgvyOeacc6xUUanLWEs3Gw8s-pXktmYqL9nLxnj4AEvvKDO9bbl30AaPOnJywgwjWPyLIxFw1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_rRcrEetEkpVUrhD20cxdAa02sRUmQy-QJRsKCbyRakbvXyCdYNZ_ux8FggI3XdIAakHXm54HeSs9ti-lRThqPIxjoju-M3SEBtsV2LxC37O0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqQosU_G-jOizjuLKOB6sHuaOu6ZYDEgoO4BDwYNstN8hp80-0qCvKc-lPq_3_cwZT66kyRsZdt18wqE20w3_p4dGvk6R-zoSWtfSfWEBQg6Y0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghUqEDFblw0XynepaBrOV055X2EQPiFcbVlxoHJ_ge8Smsz2mV6CFpuWIHvU8yDy3rdplnfhDX4fvm36R6o5LGh3iMY2Ywzo77-pdu1braf7g0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0ArITJcTYy4EX1hzNvJeHRadmz7sgI5Lk41MHCH9ogp5AXD2-2wbG3bu1GGt9BHEUCb4nIj6BC3rzb1j7_L6M2j9VJzefC7-GCikCSiD0ukS0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAhCzkmHM_AFnb_p4VDoJbm8lCOgUAELXQTUhDxnsGn0_-B13mEBstiGmIWke0HEXeUOtWqUBnzGuTE0rRYS_eNKPdKl5LZAXwyrJ5sn-q_R10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQmHbA8ZkYo00R3lZR28STIMubApFVQf7tBLlbh5RvUQAbIS7Qp3JCT7W4MBZFEW6ERlshBik82HmsCKm6SHR-RlOXhS8ux7mo97W4MEVggr0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKnfEM4bwU60yd-6ed09MRx0ke_IgjLBgBUgMwZ7HtoDf8fEGMsAgDI-qf2SEXDt3GVb4mCy_r9jmm8ehx94X76nBGI_S9uvdaJhFuhLwb9To0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNVhL3QO0yzcu3tPLazaCb7B5ocjcDL-NviwOoNzOkJnKGUZ7B_MGYzIi03aJ1YmfPf9QZ-elIjSOetdQ-AZhJMKTuqZLGrxqkwZhYZaEFVIp0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZlUVjaASz5mQRkPZxL-4GmWxCuBVROnFsBjiy8jLAoYJuGTI6nKVWBm3oy3o70TbFzwLMgGGNUc-YKcSepvob9w9WZ2ZVbvecXC-owrUhaDHD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmmDZoU5V_aLTuj9Wlu5C4-ZGI_3YnB3MazjKztkbUk0UrPmCGD5RZqTZmwtJbc1WGJpMloK7n8STjFBqXAhINEy-5YhWKuCRHgRp3BGB4NuD0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA4S3dnJB0eH8zxZXeJWbFtiILpZS22jPboUSgYbJ1UvfM3vOZvBwXsTMv398rrFshx1xR477zrYBhL9JFL8yQWBLOx61LjfTR0C3TaMD8rDG0&amp;t=2009a88" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="UbIEOZBPtpnJwn2Y1LnQmScOb1TFNiPX9r16cIkuuPrGUa8/LsS7ex3MGXHbj6baqgGKM/Xzs39C/E7RPkG1e/Mto8XjuY8OksCG+jnZntKzOfBQ8WeDCX6e2Hqg+SnRb3KwzQLSTWDc9b5WVRy37wpxvf0qqdQA077xOf+DZFs=" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">臺北市私立培諾米達信義幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" id="GridView1" style="border-color:#000FFF;border-width:0px;border-collapse:collapse;">
+			<tr class="listHd_c">
+				<th align="center" scope="col" style="width:10%;">處分日期</th><th align="center" scope="col" style="width:15%;">處分時園名</th><th align="center" scope="col" style="width:15%;">裁處文號</th><th align="center" scope="col" style="width:18%;">處分依據</th><th align="center" scope="col">違反之規定</th><th align="center" scope="col" style="width:12%;">負責人/行為人</th><th align="center" scope="col" style="width:12%;">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2025/07/02</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_0">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">府教前字第11430767221號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">教保服務人員條例<br>第40條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_0">第33條第1項<br>教保服務人員對幼兒有身心虐待情事。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">行為人：毛畯珅</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">罰鍰：18,000,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2025/07/02</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_1">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">府教前字第11430767222號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_1">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">負責人：洪珮筠</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2025/06/03</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_2">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">北市教前字第11430679811號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">教保服務人員條例<br>第40條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_2">第33條第1項<br>教保服務人員對幼兒有身心虐待情事。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">行為人：毛畯珅</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：3,600,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2025/06/03</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_3">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">北市教前字第11430679812號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_3">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">負責人：洪珮筠</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2025/05/15</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_4">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">北市教前字第11430624562號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">幼兒教育及照顧法<br>第58條第1項第9款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_4">第30條第1項<br>教保服務機構有其他服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">負責人：洪珮筠</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2025/04/25</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_5">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">北市教前字第1143057402號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">幼兒教育及照顧法<br>第50條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_5">第30條第1項<br>教保服務機構人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">行為人：陳加穎</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_6">2024/03/13</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_6">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_6">北市教前字第11330447161號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_6">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_6">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_6">行為人：彭鈺怡</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_6">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_7">2023/09/20</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_7">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_7">北市教前字第11230821472號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_7">教保服務人員條例<br>第40條第2款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_7">第33條第1項<br>教保服務人員對幼兒有不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_7">行為人：毛畯珅</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_7">罰鍰：600,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_8">2023/09/20</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_8">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_8">北市教前字第11230821473號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_8">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_8">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_8">負責人：洪珮筠</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_8">罰鍰：60,000&nbsp;元</span>
+                                    </td>
+			</tr><tr style="background-color:WhiteSmoke;">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_9">2023/09/20</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_9">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_9">北市教前字第11230821473號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_9">教保服務人員條例<br>第46條第1項第3款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_9">第33條第1項<br>教保服務機構有教保服務人員對幼兒不當對待行為。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_9">負責人：洪珮筠</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_9">廢止設立許可：2023/10/01</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_10">2023/08/18</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPShName_10">臺北市私立培諾米達信義幼兒園</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_10">北市教前字第1123075892號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_10">教保服務人員條例<br>第41條第1款(111/6/29修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <span id="GridView1_lblPDetail_10">第17條第3項<br>幼兒園知悉有應停聘之教保服務人員，未依規定辦理。</span>
+                                        
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_10">負責人：洪珮筠</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_10">罰鍰：300,000&nbsp;元</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="height:380px;width:500px;display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
