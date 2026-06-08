@@ -454,10 +454,19 @@
 
     .tag {
       border-radius: 999px;
-      padding: 5px 8px;
+      padding: 3px 11px;
       font-size: 12px;
       background: #eef2f6;
       color: #344054;
+      display: inline-block;
+      white-space: nowrap;
+      line-height: 1.6;
+    }
+
+    .tag-closed {
+      background: #f0f2f4;
+      color: #667085;
+      border: 1px solid #d8dee8;
     }
 
     .card-actions {
@@ -749,9 +758,15 @@
             <h2>查詢結果</h2>
             <div class="meta" id="resultMeta">依目前條件顯示所有示範資料</div>
           </div>
-          <div class="view-toggle" aria-label="切換檢視">
-            <button id="listBtn" class="active" type="button" title="列表">☰</button>
-            <button id="mapBtn" type="button" title="地圖">⌖</button>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <select id="sortBy" style="min-height:40px;width:auto;font-size:13px;" aria-label="排序">
+              <option value="default">預設排序</option>
+              <option value="penalty_date">最新裁罰優先</option>
+            </select>
+            <div class="view-toggle" aria-label="切換檢視">
+              <button id="listBtn" class="active" type="button" title="列表">☰</button>
+              <button id="mapBtn" type="button" title="地圖">⌖</button>
+            </div>
           </div>
         </div>
 
@@ -1092,8 +1107,34 @@
           && (!risk     || item.risk === risk);
     }
 
+    const CLOSED_KEYWORDS = ["廢止設立許可", "令其停辦", "撤銷設立許可", "廢止立案"];
+
+    function isClosed(item) {
+      if (item.closed) return true;
+      return (item.events || []).some(e =>
+        typeof e === "object" && CLOSED_KEYWORDS.some(k =>
+          (e.penaltyContent || "").includes(k) || (e.penaltyViolation || "").includes(k)
+        )
+      );
+    }
+
+    function getLatestPenaltyDate(item) {
+      const dates = (item.events || [])
+        .filter(e => typeof e === "object" && e.kind === "official" && e.date && e.date !== "unknown")
+        .map(e => e.date).sort().reverse();
+      return dates[0] || "";
+    }
+
     function render() {
       state.items = institutions.filter(matchesFilters);
+
+      const sortBy = document.querySelector("#sortBy").value;
+      if (sortBy === "penalty_date") {
+        state.items = [...state.items].sort((a, b) =>
+          getLatestPenaltyDate(b).localeCompare(getLatestPenaltyDate(a))
+        );
+      }
+
       grid.className = state.mode === "map" ? "results map-mode" : "results";
 
       const totalPenalties = institutions.reduce((sum, item) => sum + (item.penalties || 0), 0);
@@ -1107,7 +1148,8 @@
       if (state.mode === "map") {
         grid.style.display = "none";
         mapContainer.style.display = "";
-        initOrUpdateMap(state.items);
+        // Double rAF ensures the browser has finished layout before Leaflet reads container size
+        requestAnimationFrame(() => requestAnimationFrame(() => initOrUpdateMap(state.items)));
         return;
       }
       grid.style.display = "";
@@ -1125,11 +1167,15 @@
       grid.innerHTML = state.items.map(item => {
         const hasEvents = item.events && item.events.length > 0;
         const hasIssues = (item.penalties || 0) + (item.news || 0) + (item.reviews || 0) > 0;
-        const monitorBadge = !hasIssues
+        const closed = isClosed(item);
+        const monitorBadge = !hasIssues && !closed
           ? `<div style="margin-top:6px;font-size:12px;color:var(--muted);">監測中，目前無負面紀錄</div>`
           : "";
+        const closedBadge = closed
+          ? `<span class="badge tag-closed" style="margin-top:6px;display:inline-block;">已停業</span>`
+          : "";
         return `
-        <article class="institution-card">
+        <article class="institution-card" ${closed ? 'style="opacity:.75;"' : ""}>
           <div class="card-head">
             <div>
               <h3>${item.name}</h3>
@@ -1142,7 +1188,7 @@
             <div class="metric"><strong>${item.news || 0}</strong><span>新聞紀錄</span></div>
             <div class="metric"><strong>${item.pending || 0}</strong><span>待審事件</span></div>
           </div>
-          ${monitorBadge}
+          ${closedBadge}${monitorBadge}
           <div class="tags">${(item.tags || []).map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
           <div class="card-actions">
             <span class="date">更新 ${item.updated || ""}</span>
@@ -1308,6 +1354,7 @@
           <div>
             <h2 id="detailModalTitle" style="margin:0 0 5px;font-size:22px;line-height:1.3;">${item.name}</h2>
             <div class="meta">${item.city}${item.district || ""} · ${item.type}${addr}</div>
+            ${isClosed(item) ? '<span class="badge tag-closed" style="margin-top:5px;display:inline-block;">已停業</span>' : ""}
           </div>
           <span class="badge ${riskClass[item.risk]}" style="flex-shrink:0;">${riskLabel[item.risk]}</span>
         </div>
@@ -1345,7 +1392,7 @@
       render();
     });
 
-    ["query", "type", "risk", "district", "instCategory"].forEach(id => {
+    ["query", "type", "risk", "district", "instCategory", "sortBy"].forEach(id => {
       document.querySelector(`#${id}`).addEventListener("input", render);
     });
 
