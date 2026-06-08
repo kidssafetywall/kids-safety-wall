@@ -507,84 +507,6 @@
     ]
   },
   {
-    "id": "news-81060a3dc6895048",
-    "verificationStatus": "disputed",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國小",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "涉嫌環抱、摸胸…金門前國小田徑教練遭判刑2年檢方擬上訴| 情慾犯罪| 社會",
-    "summary": "涉嫌環抱、摸胸…金門前國小田徑教練遭判刑2年檢方擬上訴| 情慾犯罪| 社會 UDN",
-    "eventDate": "2025-06-20",
-    "importedAt": "2026-06-08T12:17:12.6998039Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國小"
-    ],
-    "evidence": [
-      {
-        "title": "涉嫌環抱、摸胸…金門前國小田徑教練遭判刑2年檢方擬上訴| 情慾犯罪| 社會",
-        "publisher": "UDN",
-        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBVVkJBSGcwdlEzQlA5SElDeWhVeXZFcFhvaHZSeWpfSmxwNzk4ZkwxUXdzaVZqNjBia3FZaVdMZkV1VTAwSDEyT1l0X2pDNXZv?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-08T12:17:10.3211719Z",
-        "snapshotPath": "archive/raw/news-3ca0c61fcbc79af4.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-7c5ce4a8a0a33263",
-    "verificationStatus": "disputed",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國小",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "前國小擊劍教練涉猥褻女學生一審判刑4年半| 社會",
-    "summary": "前國小擊劍教練涉猥褻女學生一審判刑4年半| 社會 中央社 CNA",
-    "eventDate": "2025-06-13",
-    "importedAt": "2026-06-08T12:17:18.1155701Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國小"
-    ],
-    "evidence": [
-      {
-        "title": "前國小擊劍教練涉猥褻女學生一審判刑4年半| 社會",
-        "publisher": "中央社 CNA",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1iVUc3dk0yTkRoZWtSZXVrR3JLX0ROcTJobEo4d0RtQ244eXBsVGozdFJsUGRJczhTV3diN3h4a1FOMGRiX2ZqZ1RtZ0xNcktldVVHWklBcVl6QmwxOWdZ?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-08T12:17:15.3108976Z",
-        "snapshotPath": "archive/raw/news-c6fe7475c56656b6.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
     "id": "news-405ed2247069257e",
     "verificationStatus": "disputed",
     "autoImported": true,
@@ -618,45 +540,6 @@
         "type": "news",
         "capturedAt": "2026-06-08T12:17:26.1710207Z",
         "snapshotPath": "archive/raw/news-7199ae6f663325a2.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-ab9d7a0e25e29b36",
-    "verificationStatus": "disputed",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國小",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "前國小擊劍教練涉猥褻女學生一審判刑4年半| 社會",
-    "summary": "前國小擊劍教練涉猥褻女學生一審判刑4年半| 社會 Newtalk新聞",
-    "eventDate": "2025-06-13",
-    "importedAt": "2026-06-08T12:17:45.0464684Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國小"
-    ],
-    "evidence": [
-      {
-        "title": "前國小擊劍教練涉猥褻女學生一審判刑4年半| 社會",
-        "publisher": "Newtalk新聞",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE95WXhhNUVKRm9mSXltX1JqM1djbWFlWHRQcWNaSThsa2dhdGI5ZU83QTFad1lRTUlCVUJIYXlIX2ZSX0VNbkRhYWxBc2pmQW1STnptM2VRV0NUQQ?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-08T12:17:42.5311487Z",
-        "snapshotPath": "archive/raw/news-ef4c01e3fcd04b66.html",
         "httpStatus": 200,
         "status": "captured"
       }
