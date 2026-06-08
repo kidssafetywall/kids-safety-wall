@@ -141,6 +141,16 @@
     .inst-edit input.needs-edit { background: #fff9e8; border-color: #e8b84b; color: #67470b; font-weight: 700; }
     .inst-edit label { font-size: 12px; color: var(--muted); margin: 0; white-space: nowrap; display: inline; }
 
+    .inst-lookup-panel { margin-top: 6px; }
+    .inst-lookup-panel summary { cursor: pointer; font-size: 12px; color: var(--teal); user-select: none; list-style: none; }
+    .inst-lookup-panel summary::-webkit-details-marker { display: none; }
+    .inst-lookup-panel .lk-selects { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+    .inst-lookup-panel select { flex: 1; min-width: 100px; max-width: 220px; padding: 4px 6px; font-size: 13px; min-height: unset; border-radius: 4px; }
+
+    .reclassify-section { margin-top: 24px; border-top: 2px dashed var(--line); padding-top: 18px; }
+    .reclassify-section h3 { margin: 0 0 6px; font-size: 16px; }
+    .reclassify-card { border: 1px solid #e8b84b; border-left: 4px solid #e8b84b; border-radius: 8px; background: #fffdf4; padding: 14px; display: grid; gap: 8px; }
+
     .export-bar {
       position: sticky; bottom: 0; background: white; border: 1px solid var(--line);
       border-radius: 8px; padding: 14px; display: flex; gap: 10px; flex-wrap: wrap;
@@ -345,6 +355,12 @@
 
         <div id="reviewList" style="display:grid;gap:10px;"></div>
 
+        <div id="reclassifySection" class="reclassify-section" style="display:none;">
+          <h3>⚠ 已收錄但尚未分類的事件 <span id="reclassifyCount" style="font-size:14px;font-weight:400;color:var(--muted);"></span></h3>
+          <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">這些事件已在 events.json 中，但機構名稱為「待人工分類」。請在下方補充正確機構，下載 events.json 時即會套用。</p>
+          <div id="reclassifyList" style="display:grid;gap:10px;"></div>
+        </div>
+
         <div class="export-bar" id="exportBar" style="display:none;">
           <span id="exportSummary"></span>
           <button class="primary" type="button" onclick="downloadUpdatedEvents()">下載 events.json</button>
@@ -503,7 +519,75 @@
     let reviewQueue  = [];   // 載入的 review-queue.json 條目
     let baseEvents   = [];   // 載入的現有 events.json 條目
     const decisions  = {};   // id → "verified" | "disputed" | "removed" | null
-    const institutionEdits = {}; // id → {name, city} 使用者在審核時修改的機構資訊
+    const institutionEdits = {}; // id → {name, city, district} 使用者在審核時修改的機構資訊
+
+    let instByCity = {};     // 正規化縣市 → 鄉鎮 → [{name, type, city, district}]
+    let cityOptionsHtml = ""; // 縣市 <option> HTML，卡片渲染時使用
+
+    function normCityAdmin(s) { return (s || "").replace(/臺/g, "台"); }
+
+    function buildInstLookup() {
+      instByCity = {};
+      baseEvents.forEach(event => {
+        const inst = event.institution;
+        if (!inst || !inst.name || inst.name === "待人工分類") return;
+        const city = normCityAdmin(inst.city || "");
+        const dist = inst.district || "";
+        if (!instByCity[city]) instByCity[city] = {};
+        if (!instByCity[city][dist]) instByCity[city][dist] = [];
+        if (!instByCity[city][dist].find(i => i.name === inst.name)) {
+          instByCity[city][dist].push({ name: inst.name, type: inst.type || "", city, district: dist });
+        }
+      });
+      cityOptionsHtml = Object.keys(instByCity).sort((a,b) => a.localeCompare(b,"zh-Hant"))
+        .map(c => `<option value="${c.replace(/"/g,'&quot;')}">${c || '（其他）'}</option>`)
+        .join("");
+    }
+
+    function lkCity(id) {
+      const city = document.getElementById(`lk-c-${id}`) && document.getElementById(`lk-c-${id}`).value;
+      const distSel = document.getElementById(`lk-d-${id}`);
+      const instSel = document.getElementById(`lk-i-${id}`);
+      if (!distSel || !instSel) return;
+      distSel.innerHTML = '<option value="">鄉鎮市區…</option>';
+      instSel.innerHTML = '<option value="">機構名稱…</option>';
+      if (!city || !instByCity[city]) return;
+      Object.keys(instByCity[city]).sort((a,b) => a.localeCompare(b,"zh-Hant")).forEach(d => {
+        const o = document.createElement("option");
+        o.value = d; o.textContent = d || "（全市）";
+        distSel.appendChild(o);
+      });
+    }
+
+    function lkDist(id) {
+      const citySel = document.getElementById(`lk-c-${id}`);
+      const distSel = document.getElementById(`lk-d-${id}`);
+      const instSel = document.getElementById(`lk-i-${id}`);
+      if (!citySel || !distSel || !instSel) return;
+      const city = citySel.value, dist = distSel.value;
+      instSel.innerHTML = '<option value="">機構名稱…</option>';
+      const bucket = instByCity[city] && instByCity[city][dist];
+      if (!bucket) return;
+      bucket.sort((a,b) => a.name.localeCompare(b.name,"zh-Hant")).forEach(inst => {
+        const o = document.createElement("option");
+        o.value = JSON.stringify({name:inst.name, city:inst.city, district:inst.district});
+        o.textContent = inst.name + (inst.type ? ` (${inst.type})` : "");
+        instSel.appendChild(o);
+      });
+    }
+
+    function lkApply(id) {
+      const instSel = document.getElementById(`lk-i-${id}`);
+      if (!instSel || !instSel.value) return;
+      try {
+        const inst = JSON.parse(instSel.value);
+        editInst(id, "name", inst.name);
+        editInst(id, "city", inst.city);
+        editInst(id, "district", inst.district || "");
+        renderReview();
+        renderReclassify();
+      } catch(e) {}
+    }
 
     const verifiedLabel = { verified:"已查證", pending:"待審核", disputed:"有爭議", removed:"已移除" };
     const categoryIcon  = { news:"📰", judicial:"⚖️", penalty:"🏛️", parent_review:"💬", government_dataset:"📋" };
@@ -530,13 +614,67 @@
       reader.onload = ev => {
         try {
           baseEvents = JSON.parse(ev.target.result);
+          buildInstLookup();
           const status = document.querySelector("#eventsFileStatus");
           if (status) status.textContent = `✓ 已載入 ${baseEvents.length} 筆`;
+          renderReclassify();
         } catch {
           alert("events.json 解析失敗，請確認格式正確。");
         }
       };
       reader.readAsText(file, "UTF-8");
+    }
+
+    function renderReclassify() {
+      const items = baseEvents.filter(e => e.institution && e.institution.name === "待人工分類");
+      const sec = document.querySelector("#reclassifySection");
+      if (!sec) return;
+      if (items.length === 0) { sec.style.display = "none"; return; }
+      sec.style.display = "";
+      document.querySelector("#reclassifyCount").textContent = `（${items.length} 筆）`;
+      document.querySelector("#reclassifyList").innerHTML = items.map(item => {
+        const ev0 = (item.evidence && item.evidence[0]) || {};
+        const editedName = (institutionEdits[item.id] && institutionEdits[item.id].name !== undefined) ? institutionEdits[item.id].name : "待人工分類";
+        const editedCity = (institutionEdits[item.id] && institutionEdits[item.id].city !== undefined) ? institutionEdits[item.id].city : (item.institution.city || "");
+        const assigned = editedName !== "待人工分類" && editedName;
+        return `
+        <div class="reclassify-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+            <div style="flex:1;min-width:0;">
+              <strong style="font-size:14px;">${item.title}</strong>
+              <div class="meta">${item.category || ""} · ${item.eventDate || "日期未知"}${ev0.publisher ? " · " + ev0.publisher : ""}</div>
+            </div>
+            ${assigned ? `<span style="font-size:12px;padding:3px 8px;border-radius:999px;background:#e7f5ec;color:#357a38;white-space:nowrap;">✓ ${editedName}</span>` : ""}
+          </div>
+          <div class="inst-edit">
+            <label>機構：</label>
+            <input type="text" placeholder="機構名稱（必填）"
+              value="${editedName !== '待人工分類' ? editedName.replace(/"/g,'&quot;') : ''}"
+              class="${!assigned ? 'needs-edit' : ''}"
+              oninput="editInst('${item.id}','name',this.value)"
+              title="機構名稱">
+            <input type="text" placeholder="縣市"
+              value="${editedCity.replace(/"/g,'&quot;')}"
+              oninput="editInst('${item.id}','city',this.value)"
+              title="縣市">
+          </div>
+          <details class="inst-lookup-panel">
+            <summary>🔍 從名錄選取縣市 → 鄉鎮 → 機構</summary>
+            <div class="lk-selects">
+              <select id="lk-c-${item.id}" onchange="lkCity('${item.id}')">
+                <option value="">縣市…</option>${cityOptionsHtml}
+              </select>
+              <select id="lk-d-${item.id}" onchange="lkDist('${item.id}')">
+                <option value="">鄉鎮市區…</option>
+              </select>
+              <select id="lk-i-${item.id}" onchange="lkApply('${item.id}')">
+                <option value="">機構名稱…</option>
+              </select>
+            </div>
+          </details>
+          ${ev0.url ? `<div class="evidence-links"><a href="${ev0.url}" target="_blank" rel="noreferrer">原始來源 ↗</a>${ev0.snapshotPath ? ` · <a href="${ev0.snapshotPath}" target="_blank" rel="noreferrer">快照 ↗</a>` : ""}</div>` : ""}
+        </div>`;
+      }).join("");
     }
 
     function pasteQueueJson() {
@@ -659,6 +797,21 @@
           <div class="summary">${item.summary || ""}</div>
           <div class="meta">${sourceLabel}${ev0.publisher ? " · " + ev0.publisher : ""}</div>
           ${evidenceHtml ? `<div class="evidence-links">${evidenceHtml}</div>` : ""}
+          ${cityOptionsHtml ? `
+          <details class="inst-lookup-panel">
+            <summary>🔍 從名錄選取縣市 → 鄉鎮 → 機構</summary>
+            <div class="lk-selects">
+              <select id="lk-c-${item.id}" onchange="lkCity('${item.id}')">
+                <option value="">縣市…</option>${cityOptionsHtml}
+              </select>
+              <select id="lk-d-${item.id}" onchange="lkDist('${item.id}')">
+                <option value="">鄉鎮市區…</option>
+              </select>
+              <select id="lk-i-${item.id}" onchange="lkApply('${item.id}')">
+                <option value="">機構名稱…</option>
+              </select>
+            </div>
+          </details>` : ""}
           <div class="review-btns">${btnApprove}${btnDispute}${btnRemove}${btnUndo}</div>
         </div>`;
       }).join("");
@@ -676,13 +829,15 @@
 
     function applyInstEdit(item) {
       const edit = institutionEdits[item.id];
-      if (!edit || (!edit.name && !edit.city)) return item;
+      if (!edit || (!edit.name && !edit.city && !edit.district)) return item;
+      const base = item.institution || {};
       return {
         ...item,
         institution: {
-          ...(item.institution || {}),
-          name: (edit.name !== undefined && edit.name !== "") ? edit.name : (item.institution && item.institution.name || ""),
-          city: (edit.city !== undefined) ? edit.city : (item.institution && item.institution.city || ""),
+          ...base,
+          name:     (edit.name !== undefined && edit.name !== "") ? edit.name : (base.name || ""),
+          city:     (edit.city !== undefined)     ? edit.city     : (base.city || ""),
+          district: (edit.district !== undefined) ? edit.district : (base.district || ""),
         }
       };
     }
@@ -703,7 +858,8 @@
         if (!ok) return;
       }
 
-      const merged = [...baseEvents, ...newVerified];
+      const updatedBase = baseEvents.map(item => applyInstEdit(item));
+      const merged = [...updatedBase, ...newVerified];
       downloadJson(merged, "events.json");
     }
 

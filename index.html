@@ -1132,8 +1132,12 @@
     function render() {
       state.items = institutions.filter(matchesFilters);
 
-      // Hide placeholder bucket from public results
-      state.items = state.items.filter(item => item.name !== "待人工分類");
+      // Keep "待人工分類" items but show them last
+      state.items.sort((a, b) => {
+        if (a.name === "待人工分類" && b.name !== "待人工分類") return 1;
+        if (a.name !== "待人工分類" && b.name === "待人工分類") return -1;
+        return 0;
+      });
 
       const sortBy = document.querySelector("#sortBy").value;
       if (sortBy === "penalty_date") {
@@ -1181,12 +1185,17 @@
         const closedBadge = closed
           ? `<span class="badge tag-closed" style="margin-top:6px;display:inline-block;">已停業</span>`
           : "";
+        const isUnclassified = item.name === "待人工分類";
+        const displayName = isUnclassified ? "未知機構（待補充）" : item.name;
+        const displayMeta = isUnclassified
+          ? `新聞事件（機構尚未確認）`
+          : `${item.city}${item.district || ""} · ${item.type}<br>${item.address || ""}`;
         return `
-        <article class="institution-card" ${closed ? 'style="opacity:.75;"' : ""}>
+        <article class="institution-card" ${closed ? 'style="opacity:.75;"' : ""} ${isUnclassified ? 'style="border-left:3px solid #e8b84b;opacity:.85;"' : ""}>
           <div class="card-head">
             <div>
-              <h3>${item.name}</h3>
-              <div class="meta">${item.city}${item.district || ""} · ${item.type}<br>${item.address || ""}</div>
+              <h3>${displayName}</h3>
+              <div class="meta">${displayMeta}</div>
             </div>
             <span class="badge ${riskClass[item.risk]}">${riskLabel[item.risk]}</span>
           </div>
