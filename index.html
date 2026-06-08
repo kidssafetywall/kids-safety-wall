@@ -1032,6 +1032,9 @@
     const grid = document.querySelector("#resultGrid");
     const mapContainer = document.querySelector("#mapContainer");
 
+    // Normalize 臺→台 so data (臺北市) matches dropdown/map keys (台北市)
+    function normCity(s) { return (s || "").replace(/臺/g, "台"); }
+
     const COUNTY_COORDS = {
       "台北市": [25.0330, 121.5654], "新北市": [25.0127, 121.4670],
       "基隆市": [25.1283, 121.7419], "桃園市": [24.9936, 121.3009],
@@ -1053,8 +1056,9 @@
     const cityDistrictMap = {};
     institutions.forEach(item => {
       if (!item.city) return;
-      if (!cityDistrictMap[item.city]) cityDistrictMap[item.city] = new Set();
-      if (item.district) cityDistrictMap[item.city].add(item.district);
+      const nc = normCity(item.city);
+      if (!cityDistrictMap[nc]) cityDistrictMap[nc] = new Set();
+      if (item.district) cityDistrictMap[nc].add(item.district);
     });
 
     function addOptions(select, values) {
@@ -1100,7 +1104,7 @@
       const haystack = `${item.name} ${item.city} ${item.district || ""} ${item.type} ${item.address || ""} ${(item.tags || []).join(" ")} ${respondents}`.toLowerCase();
 
       return (!q        || haystack.includes(q))
-          && (!city     || item.city === city)
+          && (!city     || normCity(item.city) === city)
           && (!district || item.district === district)
           && (!type     || item.type === type)
           && (!category || item.instCategory === category)
@@ -1127,6 +1131,9 @@
 
     function render() {
       state.items = institutions.filter(matchesFilters);
+
+      // Hide placeholder bucket from public results
+      state.items = state.items.filter(item => item.name !== "待人工分類");
 
       const sortBy = document.querySelector("#sortBy").value;
       if (sortBy === "penalty_date") {
@@ -1216,7 +1223,7 @@
       // Group items by county
       const byCounty = {};
       items.forEach(item => {
-        const c = item.city || "全國";
+        const c = normCity(item.city) || "全國";
         if (!byCounty[c]) byCounty[c] = [];
         byCounty[c].push(item);
       });
