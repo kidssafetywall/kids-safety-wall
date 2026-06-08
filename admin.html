@@ -136,6 +136,11 @@
     .evidence-links a { font-size: 13px; color: var(--teal); text-decoration: none; }
     .evidence-links a:hover { text-decoration: underline; }
 
+    .inst-edit { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: 2px; }
+    .inst-edit input { flex: 1; min-width: 120px; max-width: 280px; padding: 5px 8px; font-size: 13px; min-height: unset; border-radius: 4px; }
+    .inst-edit input.needs-edit { background: #fff9e8; border-color: #e8b84b; color: #67470b; font-weight: 700; }
+    .inst-edit label { font-size: 12px; color: var(--muted); margin: 0; white-space: nowrap; display: inline; }
+
     .export-bar {
       position: sticky; bottom: 0; background: white; border: 1px solid var(--line);
       border-radius: 8px; padding: 14px; display: flex; gap: 10px; flex-wrap: wrap;
@@ -498,6 +503,7 @@
     let reviewQueue  = [];   // 載入的 review-queue.json 條目
     let baseEvents   = [];   // 載入的現有 events.json 條目
     const decisions  = {};   // id → "verified" | "disputed" | "removed" | null
+    const institutionEdits = {}; // id → {name, city} 使用者在審核時修改的機構資訊
 
     const verifiedLabel = { verified:"已查證", pending:"待審核", disputed:"有爭議", removed:"已移除" };
     const categoryIcon  = { news:"📰", judicial:"⚖️", penalty:"🏛️", parent_review:"💬", government_dataset:"📋" };
@@ -622,15 +628,30 @@
         const btnUndo    = decision !== "pending"
           ? `<button class="ghost undo-btn"    type="button" onclick="decide('${item.id}',null)">↩ 還原</button>` : "";
 
+        const rawName  = item.institution ? (item.institution.name || "") : "";
+        const rawCity  = item.institution ? (item.institution.city || "") : "";
+        const editedName = (institutionEdits[item.id] && institutionEdits[item.id].name !== undefined) ? institutionEdits[item.id].name : rawName;
+        const editedCity = (institutionEdits[item.id] && institutionEdits[item.id].city !== undefined) ? institutionEdits[item.id].city : rawCity;
+        const needsEdit  = editedName === "待人工分類" || !editedName;
+        const safeId     = item.id.replace(/'/g, "\\'");
+
         return `
         <div class="review-card status-${decision}" id="rc-${item.id.replace(/[^a-z0-9]/gi,'_')}">
           <div class="review-card-head">
-            <div>
+            <div style="flex:1;min-width:0;">
               <h3>${icon} ${item.title}</h3>
-              <div class="meta">
-                ${item.institution ? `${item.institution.name} · ${item.institution.city || ""}` : ""}
-                &nbsp;·&nbsp; ${item.category || ""}
-                &nbsp;·&nbsp; ${item.eventDate || "日期未知"}
+              <div class="inst-edit">
+                <label>機構：</label>
+                <input type="text" placeholder="機構名稱${needsEdit ? '（必填）' : ''}"
+                  value="${editedName.replace(/"/g,'&quot;')}"
+                  class="${needsEdit ? 'needs-edit' : ''}"
+                  oninput="editInst('${safeId}','name',this.value)"
+                  title="機構名稱">
+                <input type="text" placeholder="縣市"
+                  value="${editedCity.replace(/"/g,'&quot;')}"
+                  oninput="editInst('${safeId}','city',this.value)"
+                  title="縣市（可留空）">
+                <span class="meta">${item.category || ""} · ${item.eventDate || "日期未知"}</span>
               </div>
             </div>
             <span style="font-size:13px;white-space:nowrap;padding:4px 8px;border-radius:999px;background:#f0f2f4;color:var(--muted);">${verifiedLabel[decision] || decision}</span>
@@ -648,10 +669,28 @@
       renderReview();
     }
 
+    function editInst(id, field, value) {
+      if (!institutionEdits[id]) institutionEdits[id] = {};
+      institutionEdits[id][field] = value;
+    }
+
+    function applyInstEdit(item) {
+      const edit = institutionEdits[item.id];
+      if (!edit || (!edit.name && !edit.city)) return item;
+      return {
+        ...item,
+        institution: {
+          ...(item.institution || {}),
+          name: (edit.name !== undefined && edit.name !== "") ? edit.name : (item.institution && item.institution.name || ""),
+          city: (edit.city !== undefined) ? edit.city : (item.institution && item.institution.city || ""),
+        }
+      };
+    }
+
     function downloadUpdatedEvents() {
       const newVerified = reviewQueue
         .filter(item => getDecision(item) === "verified")
-        .map(item => ({ ...item, verificationStatus: "verified" }));
+        .map(item => ({ ...applyInstEdit(item), verificationStatus: "verified" }));
 
       if (baseEvents.length === 0) {
         const ok = confirm(
@@ -669,10 +708,10 @@
     }
 
     function downloadUpdatedQueue() {
-      // 剩餘佇列：排除 removed，保留 pending + disputed（更新 verificationStatus）
+      // 剩餘佇列：排除 removed，保留 pending + disputed（更新 verificationStatus + 機構編輯）
       const remaining = reviewQueue
         .filter(item => getDecision(item) !== "removed" && getDecision(item) !== "verified")
-        .map(item => ({ ...item, verificationStatus: getDecision(item) || "pending" }));
+        .map(item => ({ ...applyInstEdit(item), verificationStatus: getDecision(item) || "pending" }));
       downloadJson(remaining, "review-queue.json");
     }
 
