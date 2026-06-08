@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>兒少防火牆 | 教育機構風險資訊查詢</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --teal: #0d6b68;
+      --teal-soft: #dcefed;
+      --amber: #b7791f;
+      --amber-soft: #fff0c7;
+      --red: #b42318;
+      --red-soft: #ffe4df;
+      --blue: #315f9f;
+      --green: #357a38;
+      --shadow: 0 18px 55px rgba(23, 32, 42, .14);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    .hero {
+      min-height: 82vh;
+      background:
+        linear-gradient(90deg, rgba(15, 25, 33, .86) 0%, rgba(15, 25, 33, .74) 42%, rgba(15, 25, 33, .22) 76%),
+        url("assets/school-safety-hero.png") center right / cover no-repeat;
+      color: white;
+      display: grid;
+      align-items: center;
+      padding: 28px;
+    }
+
+    .shell {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      inset: 22px 28px auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: white;
+      z-index: 3;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #f4c542;
+      color: #12222f;
+      font-weight: 900;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.88);
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    .nav-links a:hover { background: rgba(255,255,255,.12); }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 620px) minmax(280px, 420px);
+      gap: 40px;
+      align-items: end;
+      padding-top: 74px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.02;
+      max-width: 620px;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0 0 26px;
+      color: rgba(255,255,255,.84);
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 620px;
+    }
+
+    .search-panel {
+      background: rgba(255, 255, 255, .96);
+      color: var(--ink);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.5);
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search-input {
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 14px;
+      outline: none;
+      background: white;
+    }
+
+    .search-input:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13, 107, 104, .13);
+    }
+
+    .icon-btn, .primary-btn, .ghost-btn {
+      min-height: 44px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .primary-btn {
+      background: var(--teal);
+      color: white;
+      padding: 0 18px;
+      font-weight: 700;
+    }
+
+    .ghost-btn {
+      background: white;
+      color: var(--teal);
+      border-color: #a8cfcc;
+      padding: 0 14px;
+      font-weight: 700;
+    }
+
+    .icon-btn {
+      width: 44px;
+      background: white;
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    select {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 12px;
+      background: white;
+      color: var(--ink);
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcfd;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      padding: 28px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .side {
+      position: sticky;
+      top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .panel h2, .panel h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .panel h3 {
+      font-size: 16px;
+    }
+
+    .source-list, .timeline {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .source-list a {
+      display: block;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 10px;
+      background: #fbfcfd;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .source-list small, .timeline small {
+      display: block;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .toolbar h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .view-toggle {
+      display: inline-grid;
+      grid-template-columns: 44px 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .view-toggle button {
+      width: 44px;
+      height: 40px;
+      border: 0;
+      background: white;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .view-toggle button.active {
+      background: var(--teal-soft);
+      color: var(--teal);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .results.map-mode {
+      grid-template-columns: 1fr;
+    }
+
+    .map-board {
+      min-height: 480px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, rgba(13, 107, 104, .08) 1px, transparent 1px),
+        linear-gradient(rgba(49, 95, 159, .08) 1px, transparent 1px),
+        #eef3f1;
+      background-size: 38px 38px;
+      position: relative;
+      overflow: hidden;
+      display: none;
+    }
+
+    .map-mode .map-board { display: block; }
+    .map-mode .institution-card { display: none; }
+
+    .pin {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50% 50% 50% 4px;
+      transform: rotate(-45deg);
+      border: 2px solid white;
+      box-shadow: 0 7px 18px rgba(23, 32, 42, .22);
+      cursor: pointer;
+    }
+
+    .pin span {
+      transform: rotate(45deg);
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      font-weight: 900;
+      color: white;
+    }
+
+    .institution-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 250px;
+      display: grid;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(23, 32, 42, .05);
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .institution-card h3 {
+      margin: 0 0 4px;
+      font-size: 19px;
+      line-height: 1.35;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+
+    .risk-high { background: var(--red-soft); color: var(--red); border-color: #ffc9c0; }
+    .risk-mid { background: var(--amber-soft); color: var(--amber); border-color: #f7d98b; }
+    .risk-low { background: var(--teal-soft); color: var(--teal); border-color: #b4d9d6; }
+    .status-verified { background: #e7f5ec; color: var(--green); border-color: #b9dfc5; }
+    .status-pending { background: var(--amber-soft); color: var(--amber); border-color: #f7d98b; }
+    .status-disputed { background: var(--red-soft); color: var(--red); border-color: #ffc9c0; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px;
+      background: #fbfcfd;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 2px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 5px 8px;
+      font-size: 12px;
+      background: #eef2f6;
+      color: #344054;
+    }
+
+    .card-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .detail {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .detail.hidden { display: none; }
+
+    .event {
+      border-left: 4px solid var(--line);
+      padding-left: 12px;
+    }
+
+    .event.official { border-color: var(--red); }
+    .event.news { border-color: var(--blue); }
+    .event.review { border-color: var(--amber); }
+
+    .event strong {
+      display: block;
+      line-height: 1.45;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 134px;
+    }
+
+    .step b {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--teal);
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      margin: 0 0 7px;
+      font-size: 16px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .notice {
+      margin-top: 16px;
+      background: #fff9e8;
+      border: 1px solid #f1d58c;
+      border-radius: 8px;
+      padding: 14px;
+      color: #67470b;
+      line-height: 1.7;
+    }
+
+    footer {
+      padding: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(23, 32, 42, .54);
+      z-index: 100;
+      overflow-y: auto;
+      padding: 28px 16px;
+    }
+
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+
+    .modal {
+      background: white;
+      border-radius: 10px;
+      padding: 28px;
+      width: min(620px, 100%);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .modal h2 { margin: 0 0 6px; font-size: 20px; }
+    .modal .modal-sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; line-height: 1.6; }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      background: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: var(--muted);
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+    }
+
+    .modal-close:hover { background: #f0f2f4; }
+
+    .modal .field-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .modal .field { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+    .modal .field.full { grid-column: 1 / -1; }
+    .modal input, .modal select, .modal textarea {
+      border: 1px solid var(--line); border-radius: 6px; padding: 10px 11px;
+      font: inherit; color: var(--ink); background: white; width: 100%;
+    }
+    .modal textarea { min-height: 110px; resize: vertical; }
+    .modal .char-hint { font-size: 12px; color: var(--muted); text-align: right; margin-top: 3px; }
+    .modal .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.55; }
+    .modal .consent input[type=checkbox] { width: auto; margin-top: 3px; flex-shrink: 0; }
+    .modal .form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+    .modal .notice-inline {
+      background: #fff9e8; border: 1px solid #f1d58c; border-radius: 6px;
+      padding: 10px 13px; color: #67470b; font-size: 13px; line-height: 1.6; margin-top: 14px;
+    }
+    .modal .success-msg { text-align: center; padding: 28px 0 12px; }
+    .modal .success-msg p { color: var(--muted); font-size: 15px; margin: 8px 0 0; }
+
+    @media (max-width: 940px) {
+      .hero-grid, .dashboard, .detail {
+        grid-template-columns: 1fr;
+      }
+
+      .side { position: static; }
+
+      .results { grid-template-columns: 1fr; }
+
+      .workflow { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .hero, main { padding: 18px; }
+      .nav { inset: 14px 18px auto 18px; }
+      .nav-links { display: none; }
+      .hero-grid { padding-top: 66px; gap: 24px; }
+      .search-row, .filters, .stat-strip, .metrics, .workflow {
+        grid-template-columns: 1fr;
+      }
+      .toolbar { align-items: flex-start; }
+      .toolbar h2 { font-size: 20px; }
+      .card-actions { align-items: stretch; flex-direction: column; }
+      .primary-btn, .ghost-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" aria-label="主導覽">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">防</div>
+      <span>兒少防火牆</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#results">查詢</a>
+      <a href="#sources">資料來源</a>
+      <a href="#update">每日更新</a>
+      <a href="#" id="navReportBtn" onclick="openReportModal(event)">回報問題機構</a>
+      <a href="admin.html">審核後台</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <h1>教育機構風險資訊查詢</h1>
+        <p class="lead">整合立案資料、官方裁罰、新聞紀錄與家長回饋，讓幼兒園、學校、補習班與課後照顧中心的公共資訊更容易被看見。</p>
+      </div>
+
+      <form class="search-panel" id="searchForm">
+        <div class="search-row">
+          <input id="query" class="search-input" type="search" placeholder="輸入機構名稱、地址或關鍵字" autocomplete="off">
+          <button class="primary-btn" type="submit" title="搜尋">搜尋</button>
+        </div>
+        <div class="filters">
+          <select id="city" aria-label="縣市">
+            <option value="">全部縣市</option>
+          </select>
+          <select id="type" aria-label="類型">
+            <option value="">全部類型</option>
+          </select>
+          <select id="risk" aria-label="風險">
+            <option value="">全部風險</option>
+            <option value="high">高關注</option>
+            <option value="mid">需留意</option>
+            <option value="low">資料穩定</option>
+          </select>
+        </div>
+        <div class="stat-strip" aria-label="平台摘要">
+          <div class="stat"><strong id="statCount">0</strong><span>收錄機構</span></div>
+          <div class="stat"><strong id="statPenalty">0</strong><span>已查證裁罰</span></div>
+          <div class="stat"><strong id="statSources">6</strong><span>資料來源</span></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <main>
+    <div class="shell dashboard">
+      <aside class="side">
+        <section class="panel" id="sources">
+          <h2>公開資料</h2>
+          <ul class="source-list">
+            <li><a href="https://data.gov.tw/dataset/6086" target="_blank" rel="noreferrer">幼兒園名錄<small>政府資料開放平台</small></a></li>
+            <li><a href="https://data.gov.tw/dataset/6087" target="_blank" rel="noreferrer">國民小學名錄<small>政府資料開放平台</small></a></li>
+            <li><a href="https://data.gov.tw/dataset/6239" target="_blank" rel="noreferrer">國民中學校別資料<small>政府資料開放平台</small></a></li>
+            <li><a href="https://data.gov.tw/dataset/6089" target="_blank" rel="noreferrer">一般高級中等學校名錄<small>政府資料開放平台</small></a></li>
+            <li><a href="https://data.gov.tw/dataset/16461" target="_blank" rel="noreferrer">全國立案短期補習班基本資料<small>政府資料開放平台</small></a></li>
+            <li><a href="https://data.nat.gov.tw/dataset/63205" target="_blank" rel="noreferrer">司法院裁判書開放 API<small>司法公開資料</small></a></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>資料分級</h2>
+          <ul class="timeline">
+            <li class="event official"><strong>官方裁罰</strong><small>主管機關公告、行政處分、罰鍰紀錄</small></li>
+            <li class="event news"><strong>媒體報導</strong><small>只保留標題、日期、來源與連結</small></li>
+            <li class="event review"><strong>家長回饋</strong><small>需審核、分類、去識別化</small></li>
+          </ul>
+        </section>
+      </aside>
+
+      <section id="results">
+        <div class="toolbar">
+          <div>
+            <h2>查詢結果</h2>
+            <div class="meta" id="resultMeta">依目前條件顯示所有示範資料</div>
+          </div>
+          <div class="view-toggle" aria-label="切換檢視">
+            <button id="listBtn" class="active" type="button" title="列表">☰</button>
+            <button id="mapBtn" type="button" title="地圖">⌖</button>
+          </div>
+        </div>
+
+        <div class="results" id="resultGrid"></div>
+
+        <section class="detail hidden" id="detailPanel">
+          <div class="panel">
+            <h2 id="detailTitle">機構名稱</h2>
+            <div class="meta" id="detailMeta"></div>
+            <h3>事件紀錄</h3>
+            <ul class="timeline" id="eventList"></ul>
+          </div>
+          <aside class="panel">
+            <h3>回報與補充說明</h3>
+            <p class="meta">若您有相關親身經歷、目擊或佐證資料，可透過下方管道回報。所有回饋需經人工審核，並於公開前去識別化。</p>
+            <button class="ghost-btn" type="button" id="detailReportBtn" onclick="openReportModal(event)">回報問題機構</button>
+          </aside>
+        </section>
+      </section>
+    </div>
+
+    <section class="shell" id="update" style="margin-top: 28px;">
+      <div class="panel">
+        <h2>每日定時更新</h2>
+        <div class="workflow">
+          <div class="step"><b>1</b><h3>擷取資料</h3><p>每天凌晨抓取政府開放資料、主管機關公告與新聞索引。</p></div>
+          <div class="step"><b>2</b><h3>正規化</h3><p>比對名稱、地址、代碼與別名，降低同名或改名造成的誤配。</p></div>
+          <div class="step"><b>3</b><h3>審核佇列</h3><p>新增裁罰直接入庫，新聞與使用者回饋進入人工審核。</p></div>
+          <div class="step"><b>4</b><h3>發布索引</h3><p>更新搜尋資料庫、地圖座標、機構頁面與異動紀錄。</p></div>
+        </div>
+        <div class="notice">建議上線架構：Next.js 前台、PostgreSQL + PostGIS、Meilisearch 搜尋、GitHub Actions 或 Cloudflare Cron Triggers 每日排程。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    兒少防火牆原型。公開資訊需標示來源與日期，使用者回饋需審核與去識別化。
+  </footer>
+
+  <!-- 回報問題機構 Modal -->
+  <div class="modal-overlay" id="reportModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" type="button" onclick="closeReportModal()" aria-label="關閉">✕</button>
+
+      <div id="reportFormArea">
+        <h2 id="modalTitle">回報問題機構</h2>
+        <p class="modal-sub">您提供的資訊將進入人工審核流程。公開前會去識別化，不會顯示您的姓名或聯絡方式。</p>
+
+        <!-- 請將 YOUR_FORM_ID 替換為您的 Formspree 表單 ID，或改用其他靜態表單服務 -->
+        <form id="reportForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleReportSubmit(event)">
+          <div class="field-grid">
+            <div class="field full">
+              <label for="rInstitution">機構名稱 <span style="color:var(--red)">*</span></label>
+              <input type="text" id="rInstitution" name="機構名稱" required placeholder="請輸入完整機構名稱">
+            </div>
+            <div class="field">
+              <label for="rCity">縣市 <span style="color:var(--red)">*</span></label>
+              <select id="rCity" name="縣市" required>
+                <option value="">請選擇縣市</option>
+                <option>台北市</option><option>新北市</option><option>基隆市</option>
+                <option>桃園市</option><option>新竹市</option><option>新竹縣</option>
+                <option>苗栗縣</option><option>台中市</option><option>彰化縣</option>
+                <option>南投縣</option><option>雲林縣</option><option>嘉義市</option>
+                <option>嘉義縣</option><option>台南市</option><option>高雄市</option>
+                <option>屏東縣</option><option>宜蘭縣</option><option>花蓮縣</option>
+                <option>台東縣</option><option>澎湖縣</option><option>金門縣</option>
+                <option>連江縣</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rType">機構類型 <span style="color:var(--red)">*</span></label>
+              <select id="rType" name="機構類型" required>
+                <option value="">請選擇類型</option>
+                <option>幼兒園</option>
+                <option>國小</option>
+                <option>國中</option>
+                <option>高中職</option>
+                <option>補習班</option>
+                <option>課後照顧中心</option>
+                <option>其他教育機構</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="rEventType">回報類型 <span style="color:var(--red)">*</span></label>
+              <select id="rEventType" name="回報類型" required>
+                <option value="">請選擇</option>
+                <option value="personal">親身經歷（本人或子女直接受影響）</option>
+                <option value="witnessed">目擊（親眼見到但非當事人）</option>
+                <option value="hearsay">轉述（來自其他家長或媒體）</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rYear">事件發生年份 <span style="color:var(--red)">*</span></label>
+              <input type="number" id="rYear" name="事件年份" required min="2000" max="2030" placeholder="例：2025">
+            </div>
+            <div class="field">
+              <label for="rMonth">事件發生月份</label>
+              <select id="rMonth" name="事件月份">
+                <option value="">不確定</option>
+                <option>1 月</option><option>2 月</option><option>3 月</option><option>4 月</option>
+                <option>5 月</option><option>6 月</option><option>7 月</option><option>8 月</option>
+                <option>9 月</option><option>10 月</option><option>11 月</option><option>12 月</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="rDesc">事件描述 <span style="color:var(--red)">*</span>（至少 50 字）</label>
+              <textarea id="rDesc" name="事件描述" required minlength="50" placeholder="請描述您所知道或親身經歷的具體事件。請勿包含個人姓名或可辨識身份的資訊。" oninput="updateCharCount(this)"></textarea>
+              <div class="char-hint" id="rDescCount">0 字</div>
+            </div>
+            <div class="field full">
+              <label for="rEvidence">佐證說明（選填）</label>
+              <input type="text" id="rEvidence" name="佐證說明" placeholder="例：新聞連結、政府公告 URL、截圖描述等">
+            </div>
+            <div class="field full">
+              <div class="consent">
+                <input type="checkbox" id="rConsent" name="同意去識別化" required value="是">
+                <label for="rConsent">我同意本回報內容在去識別化後，依本平台治理規範進行人工審核，並於通過後公開顯示於查詢結果中。</label>
+              </div>
+            </div>
+          </div>
+          <div class="notice-inline">本平台不儲存任何可辨識個人身份的資訊。所有回饋在發布前均須經過人工審核，並可能聯繫主管機關查證。</div>
+          <div class="form-actions">
+            <button type="button" class="ghost-btn" onclick="closeReportModal()">取消</button>
+            <button type="submit" class="primary-btn">送出回報</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="reportSuccessArea" style="display:none;" class="success-msg">
+        <div style="font-size:48px;">✓</div>
+        <h2>感謝您的回報</h2>
+        <p>您的資訊已進入審核佇列，審核通過後會在查詢結果中顯示。</p>
+        <p style="margin-top:16px;"><button class="ghost-btn" type="button" onclick="closeReportModal()">關閉</button></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/site-data.js"></script>
+  <script>
+    const fallbackInstitutions = [
+      {
+        name: "晴川幼兒園",
+        city: "台北市",
+        district: "大安區",
+        type: "幼兒園",
+        address: "台北市大安區和平東路二段",
+        risk: "high",
+        penalties: 2,
+        news: 3,
+        reviews: 18,
+        updated: "2026-06-08",
+        tags: ["教保服務", "安全管理", "收費爭議"],
+        xy: [22, 36],
+        events: [
+          ["official", "主管機關裁罰：未依規定通報疑似不當對待事件", "2026-05-14"],
+          ["news", "媒體報導：家長反映接送流程與安全管理疑慮", "2026-04-26"],
+          ["review", "家長回饋集中於溝通紀錄不完整與收費說明不足", "2026-03-19"]
+        ]
+      },
+      {
+        name: "明新國民小學",
+        city: "新北市",
+        district: "板橋區",
+        type: "國小",
+        address: "新北市板橋區文化路一段",
+        risk: "mid",
+        penalties: 0,
+        news: 2,
+        reviews: 9,
+        updated: "2026-06-07",
+        tags: ["校園安全", "霸凌通報", "午餐"],
+        xy: [48, 58],
+        events: [
+          ["news", "媒體報導：校園事件後續處理與家長會說明", "2026-05-02"],
+          ["review", "家長回饋提及校方回覆速度落差", "2026-04-18"]
+        ]
+      },
+      {
+        name: "宏林文理短期補習班",
+        city: "桃園市",
+        district: "中壢區",
+        type: "補習班",
+        address: "桃園市中壢區中央西路",
+        risk: "high",
+        penalties: 1,
+        news: 1,
+        reviews: 24,
+        updated: "2026-06-08",
+        tags: ["立案資料", "師資揭露", "退費"],
+        xy: [67, 42],
+        events: [
+          ["official", "地方主管機關裁罰：廣告與實際課程資訊不一致", "2026-02-11"],
+          ["review", "家長回饋集中於退費流程與課程異動通知", "2026-05-28"]
+        ]
+      },
+      {
+        name: "安穩課後照顧中心",
+        city: "台中市",
+        district: "西區",
+        type: "課後照顧中心",
+        address: "台中市西區公益路",
+        risk: "low",
+        penalties: 0,
+        news: 0,
+        reviews: 5,
+        updated: "2026-06-06",
+        tags: ["立案", "接送", "餐點"],
+        xy: [39, 74],
+        events: [
+          ["review", "家長回饋多為接送時間與餐點紀錄建議", "2026-05-09"]
+        ]
+      },
+      {
+        name: "南港國民中學",
+        city: "高雄市",
+        district: "前鎮區",
+        type: "國中",
+        address: "高雄市前鎮區瑞隆路",
+        risk: "mid",
+        penalties: 0,
+        news: 1,
+        reviews: 12,
+        updated: "2026-06-05",
+        tags: ["校園事件", "輔導資源", "交通"],
+        xy: [78, 70],
+        events: [
+          ["news", "媒體報導：校園事件後續輔導與行政處理", "2026-01-22"],
+          ["review", "家長回饋提及交通動線與放學管理", "2026-03-02"]
+        ]
+      }
+    ];
+
+    const institutions = window.SAFETY_WALL_DATA && window.SAFETY_WALL_DATA.institutions && window.SAFETY_WALL_DATA.institutions.length
+      ? window.SAFETY_WALL_DATA.institutions
+      : fallbackInstitutions;
+
+    const riskLabel = {
+      high: "高關注",
+      mid: "需留意",
+      low: "資料穩定"
+    };
+
+    const riskClass = {
+      high: "risk-high",
+      mid: "risk-mid",
+      low: "risk-low"
+    };
+
+    const eventLabel = {
+      official: "官方裁罰",
+      news: "媒體報導",
+      review: "家長回饋"
+    };
+
+    const statusLabel = {
+      verified: "已查證",
+      pending: "待審核",
+      disputed: "有爭議",
+      removed: "已移除",
+      awaiting_capture: "待封存",
+      missing_source: "缺少來源"
+    };
+
+    const state = { mode: "list", items: institutions };
+    const grid = document.querySelector("#resultGrid");
+    const detail = document.querySelector("#detailPanel");
+
+    function populateFilterOptions() {
+      const citySelect = document.querySelector("#city");
+      const typeSelect = document.querySelector("#type");
+      const addOptions = (select, values) => {
+        const existing = new Set(Array.from(select.options).map(option => option.value || option.textContent));
+        values.filter(Boolean).sort((a, b) => a.localeCompare(b, "zh-Hant")).forEach(value => {
+          if (!existing.has(value)) {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent = value;
+            select.appendChild(option);
+            existing.add(value);
+          }
+        });
+      };
+      addOptions(citySelect, [...new Set(institutions.map(item => item.city))]);
+      addOptions(typeSelect, [...new Set(institutions.map(item => item.type))]);
+    }
+
+    function matchesFilters(item) {
+      const q = document.querySelector("#query").value.trim().toLowerCase();
+      const city = document.querySelector("#city").value;
+      const type = document.querySelector("#type").value;
+      const risk = document.querySelector("#risk").value;
+      const haystack = `${item.name} ${item.city} ${item.district} ${item.type} ${item.address} ${item.tags.join(" ")}`.toLowerCase();
+      return (!q || haystack.includes(q)) && (!city || item.city === city) && (!type || item.type === type) && (!risk || item.risk === risk);
+    }
+
+    function render() {
+      state.items = institutions.filter(matchesFilters);
+      grid.className = state.mode === "map" ? "results map-mode" : "results";
+
+      const totalPenalties = institutions.reduce((sum, item) => sum + (item.penalties || 0), 0);
+      const sourceCount = window.SAFETY_WALL_DATA && window.SAFETY_WALL_DATA.sources
+        ? window.SAFETY_WALL_DATA.sources.length : 6;
+      document.querySelector("#statCount").textContent = institutions.length;
+      document.querySelector("#statPenalty").textContent = totalPenalties;
+      document.querySelector("#statSources").textContent = sourceCount;
+      document.querySelector("#resultMeta").textContent = `目前顯示 ${state.items.length} 筆，共收錄 ${institutions.length} 個機構`;
+
+      if (state.mode === "map") {
+        const pins = state.items.map((item, index) => `
+          <button class="pin ${riskClass[item.risk]}" style="left:${item.xy[0]}%;top:${item.xy[1]}%;"
+            onclick="showDetail(${institutions.indexOf(item)})" title="${item.name}">
+            <span>${index + 1}</span>
+          </button>`).join("");
+        grid.innerHTML = `<div class="map-board" aria-label="示意地圖">
+          ${pins}
+          <div style="position:absolute;bottom:10px;right:12px;font-size:12px;color:#667085;background:rgba(255,255,255,.85);padding:4px 8px;border-radius:4px;">
+            地圖為示意，正式版將接入實際地理座標
+          </div>
+        </div>`;
+        return;
+      }
+
+      if (state.items.length === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1;padding:40px 20px;text-align:center;color:var(--muted);">
+          <div style="font-size:32px;margin-bottom:12px;">🔍</div>
+          <div style="font-size:16px;margin-bottom:6px;">找不到符合條件的機構</div>
+          <div style="font-size:14px;">請嘗試更改搜尋關鍵字或篩選條件</div>
+        </div>`;
+        return;
+      }
+
+      grid.innerHTML = state.items.map(item => {
+        const hasEvents = item.events && item.events.length > 0;
+        const hasIssues = (item.penalties || 0) + (item.news || 0) + (item.reviews || 0) > 0;
+        const monitorBadge = !hasIssues
+          ? `<div style="margin-top:6px;font-size:12px;color:var(--muted);">監測中，目前無負面紀錄</div>`
+          : "";
+        return `
+        <article class="institution-card">
+          <div class="card-head">
+            <div>
+              <h3>${item.name}</h3>
+              <div class="meta">${item.city}${item.district || ""} · ${item.type}<br>${item.address || ""}</div>
+            </div>
+            <span class="badge ${riskClass[item.risk]}">${riskLabel[item.risk]}</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><strong>${item.penalties || 0}</strong><span>官方裁罰</span></div>
+            <div class="metric"><strong>${item.news || 0}</strong><span>新聞紀錄</span></div>
+            <div class="metric"><strong>${item.pending || 0}</strong><span>待審事件</span></div>
+          </div>
+          ${monitorBadge}
+          <div class="tags">${(item.tags || []).map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+          <div class="card-actions">
+            <span class="date">更新 ${item.updated || ""}</span>
+            ${hasEvents
+              ? `<button class="ghost-btn" type="button" onclick="showDetail(${institutions.indexOf(item)})">查看紀錄</button>`
+              : `<button class="ghost-btn" type="button" onclick="showDetail(${institutions.indexOf(item)})" style="opacity:.6;">在監測中</button>`
+            }
+          </div>
+        </article>`;
+      }).join("");
+    }
+
+    function normalizeEvent(event) {
+      if (Array.isArray(event)) {
+        return {
+          kind: event[0],
+          title: event[1],
+          date: event[2],
+          summary: "舊版示範資料，正式資料需補上 sourceUrl 後才能進入事件清單。",
+          sourceTitle: "尚未提供佐證來源",
+          sourcePublisher: "待補",
+          sourceUrl: "",
+          snapshotPath: "",
+          capturedAt: "",
+          status: "missing_source"
+        };
+      }
+      return event;
+    }
+
+    function sourceLinks(event) {
+      const evidence = event.evidence && event.evidence.length ? event.evidence : [{
+        title: event.sourceTitle,
+        publisher: event.sourcePublisher,
+        url: event.sourceUrl,
+        snapshotPath: event.snapshotPath,
+        capturedAt: event.capturedAt,
+        status: event.status
+      }];
+      return evidence.map((item, index) => {
+        const label = evidence.length > 1 ? ` ${index + 1}` : "";
+        const original = item.url
+          ? `<a class="ghost-btn" href="${item.url}" target="_blank" rel="noreferrer" style="font-size:13px;">原始來源${label} ↗</a>`
+          : `<span class="badge risk-high">缺少來源</span>`;
+        const capTime = item.capturedAt
+          ? `封存 ${new Date(item.capturedAt).toLocaleDateString("zh-TW")} ↗`
+          : "本站快照 ↗";
+        const snapshot = item.snapshotPath
+          ? `<a class="ghost-btn" href="${item.snapshotPath}" target="_blank" rel="noreferrer" style="font-size:13px;">${capTime}</a>`
+          : `<span class="badge risk-mid">待封存</span>`;
+        return `<div class="card-actions" style="justify-content:flex-start;margin-top:8px;gap:8px;">${original}${snapshot}</div>`;
+      }).join("");
+    }
+
+    function showDetail(index) {
+      const item = institutions[index];
+      detail.classList.remove("hidden");
+      document.querySelector("#detailTitle").textContent = item.name;
+      document.querySelector("#detailMeta").textContent =
+        `${item.city}${item.district || ""} · ${item.type}${item.address ? " · " + item.address : ""}`;
+
+      // 同步回報 modal 的機構名稱欄位
+      const rInst = document.querySelector("#rInstitution");
+      if (rInst) rInst.value = item.name;
+
+      const events = item.events || [];
+      if (events.length === 0) {
+        document.querySelector("#eventList").innerHTML = `
+          <li style="padding:20px 0;color:var(--muted);font-size:14px;list-style:none;">
+            目前無負面事件紀錄。此機構已納入監測範圍，若有新的裁罰、新聞或家長回饋，將自動更新於此。
+          </li>`;
+      } else {
+        document.querySelector("#eventList").innerHTML = events.map(rawEvent => {
+          const event = normalizeEvent(rawEvent);
+          const kind = event.kind || "official";
+          const reviewStatus = event.verificationStatus || "pending";
+          const statusClass = reviewStatus === "verified" ? "status-verified"
+            : reviewStatus === "disputed" ? "status-disputed" : "status-pending";
+          const pendingNote = reviewStatus === "pending"
+            ? `<div style="background:#fff9e8;border:1px solid #f1d58c;border-radius:5px;padding:7px 10px;font-size:12px;color:#67470b;margin-top:7px;">
+                ⚠ 此事項尚待人工查證，內容可能未經完整核實。
+               </div>` : "";
+          return `
+          <li class="event ${kind}">
+            <strong>${eventLabel[kind] || "佐證資料"}：${event.title}</strong>
+            <small>${event.date || "日期待補"} · ${event.sourcePublisher || "來源待補"}</small>
+            <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="badge ${statusClass}">${statusLabel[reviewStatus] || reviewStatus}</span>
+            </div>
+            ${pendingNote}
+            <p class="meta" style="margin-top:8px;">${event.summary || ""}</p>
+            ${sourceLinks(event)}
+          </li>`;
+        }).join("");
+      }
+      detail.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    document.querySelector("#searchForm").addEventListener("submit", event => {
+      event.preventDefault();
+      render();
+    });
+
+    ["query", "city", "type", "risk"].forEach(id => {
+      document.querySelector(`#${id}`).addEventListener("input", render);
+    });
+
+    document.querySelector("#listBtn").addEventListener("click", () => {
+      state.mode = "list";
+      document.querySelector("#listBtn").classList.add("active");
+      document.querySelector("#mapBtn").classList.remove("active");
+      render();
+    });
+
+    document.querySelector("#mapBtn").addEventListener("click", () => {
+      state.mode = "map";
+      document.querySelector("#mapBtn").classList.add("active");
+      document.querySelector("#listBtn").classList.remove("active");
+      render();
+    });
+
+    // --- Modal 邏輯 ---
+
+    function openReportModal(e) {
+      if (e) e.preventDefault();
+      document.querySelector("#reportModal").classList.add("open");
+      document.querySelector("#reportFormArea").style.display = "";
+      document.querySelector("#reportSuccessArea").style.display = "none";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeReportModal() {
+      document.querySelector("#reportModal").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function updateCharCount(el) {
+      document.querySelector("#rDescCount").textContent = `${el.value.length} 字`;
+    }
+
+    function handleReportSubmit(e) {
+      e.preventDefault();
+      const form = document.querySelector("#reportForm");
+      const formspreeId = form.action.includes("YOUR_FORM_ID");
+
+      if (formspreeId) {
+        // Formspree 尚未設定時，顯示成功畫面（示範用）
+        document.querySelector("#reportFormArea").style.display = "none";
+        document.querySelector("#reportSuccessArea").style.display = "";
+        return;
+      }
+
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      }).then(res => {
+        if (res.ok) {
+          document.querySelector("#reportFormArea").style.display = "none";
+          document.querySelector("#reportSuccessArea").style.display = "";
+        } else {
+          alert("送出失敗，請稍後再試或直接聯繫管理員。");
+        }
+      }).catch(() => {
+        alert("網路錯誤，請稍後再試。");
+      });
+    }
+
+    // 點擊 overlay 背景關閉
+    document.querySelector("#reportModal").addEventListener("click", function(e) {
+      if (e.target === this) closeReportModal();
+    });
+
+    // ESC 關閉
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") closeReportModal();
+    });
+
+    window.openReportModal = openReportModal;
+    window.closeReportModal = closeReportModal;
+    window.handleReportSubmit = handleReportSubmit;
+    window.updateCharCount = updateCharCount;
+
+    // --- 主程式 ---
+
+    window.showDetail = showDetail;
+    populateFilterOptions();
+    render();
+  </script>
+</body>
+</html>

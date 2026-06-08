@@ -1,0 +1,86 @@
+name: 每日教育機構資料更新
+
+on:
+  schedule:
+    # 每天凌晨 03:00 台灣時間（UTC+8）= UTC 19:00 前一天
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+    inputs:
+      max_imported:
+        description: "每個政府名錄來源最多匯入幾筆（0 = 全量）"
+        required: false
+        default: "500"
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── Step 1：政府名錄匯入 + 快照 ──────────────────────────────────────
+      - name: 匯入政府名錄並重建 site-data.js
+        shell: pwsh
+        run: |
+          $maxImport = [int]"${{ github.event.inputs.max_imported || '500' }}"
+          if ($maxImport -gt 0) {
+            ./scripts/update-data.ps1 -MaxImportedPerSource $maxImport
+          } else {
+            ./scripts/update-data.ps1
+          }
+
+      # ── Step 2：Google News RSS 新聞抓取 ─────────────────────────────────
+      - name: 抓取 Google News RSS 教育機構相關新聞
+        shell: pwsh
+        run: ./scripts/fetch-news.ps1 -MaxNewPerRun 50 -DelayMs 2000
+
+      # ── Step 3：司法院裁判書 API ──────────────────────────────────────────
+      - name: 抓取司法院裁判書
+        shell: pwsh
+        run: ./scripts/fetch-judicial.ps1 -MaxNewPerRun 40 -DelayMs 1500
+
+      # ── Step 4：政府裁罰公告 ──────────────────────────────────────────────
+      - name: 抓取教育部裁罰公告
+        shell: pwsh
+        run: ./scripts/fetch-penalties.ps1 -DelayMs 2000
+
+      # ── Step 5：重新整合資料（納入新增的 review-queue/events 條目）────────
+      - name: 重新產生前台資料（整合新增事件）
+        shell: pwsh
+        run: |
+          $maxImport = [int]"${{ github.event.inputs.max_imported || '500' }}"
+          if ($maxImport -gt 0) {
+            ./scripts/update-data.ps1 -MaxImportedPerSource $maxImport
+          } else {
+            ./scripts/update-data.ps1
+          }
+
+      # ── Step 6：提交變更 ──────────────────────────────────────────────────
+      - name: 提交資料更新
+        shell: pwsh
+        run: |
+          git config user.name  "education-safety-bot"
+          git config user.email "education-safety-bot@example.invalid"
+
+          # 加入所有可能異動的檔案
+          git add data/site-data.js
+          git add data/institutions.json
+          git add data/review-queue.json
+          git add data/events.json
+          git add data/news-seen.json
+          git add data/judicial-seen.json
+          git add data/penalty-seen.json
+          git add archive/raw
+          git add archive/datasets
+
+          $date = (Get-Date).ToString("yyyy-MM-dd")
+          if (git diff --cached --quiet) {
+            Write-Host "No data changes on $date."
+          } else {
+            git commit -m "chore: daily data update $date"
+            git push
+            Write-Host "Pushed data update for $date."
+          }

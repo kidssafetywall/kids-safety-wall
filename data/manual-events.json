@@ -1,0 +1,53 @@
+[
+  {
+    "id": "seed-kindergarten-directory",
+    "institutionName": "幼兒園名錄資料源",
+    "institutionType": "幼兒園",
+    "city": "全國",
+    "district": "",
+    "address": "政府資料開放平台",
+    "risk": "low",
+    "category": "government_dataset",
+    "title": "教育部統計處幼兒園名錄資料源已納入監測",
+    "summary": "這不是負面事件，而是機構基本資料來源。正式事件必須另有政府裁罰、新聞或司法文書連結佐證。",
+    "eventDate": "2026-01-30",
+    "sourceTitle": "幼兒園名錄",
+    "sourcePublisher": "政府資料開放平台 / 教育部統計處",
+    "sourceUrl": "https://data.gov.tw/dataset/6086",
+    "tags": ["立案資料", "政府資料"]
+  },
+  {
+    "id": "seed-cram-school-directory",
+    "institutionName": "短期補習班基本資料源",
+    "institutionType": "補習班",
+    "city": "全國",
+    "district": "",
+    "address": "政府資料開放平台",
+    "risk": "low",
+    "category": "government_dataset",
+    "title": "全國立案短期補習班基本資料已納入監測",
+    "summary": "補習班基本資料可用於比對名稱、地址與立案狀態；負面事件仍需另有裁罰、新聞或司法文書來源。",
+    "eventDate": "2026-01-29",
+    "sourceTitle": "全國立案短期補習班基本資料",
+    "sourcePublisher": "政府資料開放平台 / 教育部終身教育司",
+    "sourceUrl": "https://data.gov.tw/dataset/16461",
+    "tags": ["立案資料", "補習班", "政府資料"]
+  },
+  {
+    "id": "seed-judicial-api",
+    "institutionName": "司法院裁判書資料源",
+    "institutionType": "司法文書",
+    "city": "全國",
+    "district": "",
+    "address": "政府資料開放平台",
+    "risk": "mid",
+    "category": "government_api",
+    "title": "司法院裁判書開放 API 已納入後續查核資料源",
+    "summary": "司法資料應以機構名稱、負責人、地址與案由多重比對，避免同名誤配。前台需顯示來源與查核狀態。",
+    "eventDate": "2026-01-29",
+    "sourceTitle": "司法院裁判書開放 API",
+    "sourcePublisher": "司法院 / 政府資料開放平台",
+    "sourceUrl": "https://data.nat.gov.tw/dataset/63205",
+    "tags": ["司法文書", "API", "待比對"]
+  }
+]

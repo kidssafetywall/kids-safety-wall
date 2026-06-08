@@ -1,0 +1,7 @@
+# 系統檔
+Thumbs.db
+.DS_Store
+
+# 本機執行用，不需上傳
+update-all.bat
+匯入方式.txt

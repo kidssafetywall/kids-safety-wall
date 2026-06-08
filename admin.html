@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>審核後台 | 兒少防火牆</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --teal: #0d6b68;
+      --amber: #b7791f;
+      --red: #b42318;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); letter-spacing: 0; }
+    header {
+      background: #14212b;
+      color: white;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    header a { color: white; text-decoration: none; opacity: .9; }
+    main { width: min(1180px, calc(100% - 32px)); margin: 22px auto; display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 18px; align-items: start; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+    h1, h2 { margin: 0 0 14px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 10px 11px;
+      font: inherit;
+      color: var(--ink);
+      background: white;
+    }
+    textarea { min-height: 96px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    button, .button {
+      border: 1px solid transparent;
+      border-radius: 6px;
+      min-height: 42px;
+      padding: 0 14px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .primary { background: var(--teal); color: white; }
+    .ghost { background: white; color: var(--teal); border-color: #a8cfcc; }
+    .danger { background: #fff1ef; color: var(--red); border-color: #ffc9c0; }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #111820;
+      color: #eef6f6;
+      border-radius: 8px;
+      padding: 14px;
+      max-height: 520px;
+      overflow: auto;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .hint { color: var(--muted); line-height: 1.7; font-size: 14px; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: #fff0c7;
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .queue { display: grid; gap: 10px; margin-top: 14px; }
+    .queue-item { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: #fbfcfd; }
+    .queue-item strong { display: block; margin-bottom: 4px; }
+    .queue-item small { color: var(--muted); }
+
+    /* 分頁標籤 */
+    .tabs { display: flex; gap: 0; border-bottom: 2px solid var(--line); margin-bottom: 18px; }
+    .tab-btn {
+      border: 0; background: none; cursor: pointer; font: inherit; font-weight: 700;
+      padding: 10px 20px; color: var(--muted); border-bottom: 2px solid transparent;
+      margin-bottom: -2px; font-size: 15px;
+    }
+    .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 18px; align-items: start; }
+    .tab-panel.active.full-width { grid-template-columns: 1fr; }
+
+    /* 審核介面 */
+    .review-toolbar {
+      display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px;
+    }
+    .review-toolbar select { width: auto; min-height: 38px; }
+    .review-toolbar input[type=file] { font-size: 13px; }
+    .review-count { font-size: 14px; color: var(--muted); }
+
+    .review-card {
+      border: 1px solid var(--line); border-radius: 8px; background: white;
+      padding: 14px; display: grid; gap: 8px;
+    }
+    .review-card.status-verified { border-left: 4px solid #357a38; }
+    .review-card.status-disputed { border-left: 4px solid var(--red); }
+    .review-card.status-removed  { opacity: .45; }
+
+    .review-card-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .review-card h3 { margin: 0; font-size: 16px; }
+    .review-card .meta { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .review-card .summary { font-size: 14px; line-height: 1.6; }
+
+    .review-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .approve-btn { background: #e7f5ec; color: #357a38; border-color: #b9dfc5; }
+    .dispute-btn { background: #fff0c7; color: var(--amber); border-color: #f7d98b; }
+    .remove-btn  { background: #fff1ef; color: var(--red); border-color: #ffc9c0; }
+    .undo-btn    { background: #f0f2f4; color: var(--muted); border-color: var(--line); }
+
+    .evidence-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .evidence-links a { font-size: 13px; color: var(--teal); text-decoration: none; }
+    .evidence-links a:hover { text-decoration: underline; }
+
+    .export-bar {
+      position: sticky; bottom: 0; background: white; border: 1px solid var(--line);
+      border-radius: 8px; padding: 14px; display: flex; gap: 10px; flex-wrap: wrap;
+      align-items: center; box-shadow: 0 -4px 18px rgba(23,32,42,.08); margin-top: 14px;
+    }
+    .export-bar span { font-size: 14px; color: var(--muted); flex: 1; }
+
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .filter-bar select { width: auto; min-height: 36px; font-size: 13px; }
+
+    .notice-box {
+      background: #fff9e8; border: 1px solid #f1d58c; border-radius: 6px;
+      padding: 12px 14px; color: #67470b; font-size: 13px; line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .tab-panel.active, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>兒少防火牆 · 審核後台</strong>
+    <nav>
+      <a href="index.html">回前台</a>
+    </nav>
+  </header>
+
+  <main style="display:block;width:min(1180px,calc(100% - 32px));margin:22px auto;">
+    <div class="tabs">
+      <button class="tab-btn active" type="button" onclick="switchTab('add')">新增事件</button>
+      <button class="tab-btn" type="button" onclick="switchTab('review')">審核待審佇列</button>
+    </div>
+
+    <!-- ═══ Tab 1：新增事件 ═══ -->
+    <div class="tab-panel active" id="tabAdd">
+    <section class="panel">
+      <span class="badge">待審事件表單</span>
+      <h1>新增有佐證資料的事件</h1>
+      <p class="hint">此頁會在瀏覽器本機建立待審 JSON。正式上線後，這裡會接後端資料庫；目前可先用匯出的 JSON 放入 `data/review-queue.json`。</p>
+
+      <form id="eventForm" class="grid">
+        <label>事件 ID
+          <input id="id" required placeholder="例如 taipei-kindergarten-2026-001">
+        </label>
+        <label>審核狀態
+          <select id="verificationStatus">
+            <option value="pending">待審核</option>
+            <option value="verified">已查證</option>
+            <option value="disputed">有爭議</option>
+          </select>
+        </label>
+        <label>機構名稱
+          <input id="institutionName" required placeholder="完整名稱">
+        </label>
+        <label>機構類型
+          <select id="institutionType">
+            <option>幼兒園</option>
+            <option>國小</option>
+            <option>國中</option>
+            <option>高中職</option>
+            <option>補習班</option>
+            <option>課後照顧中心</option>
+            <option>司法文書</option>
+          </select>
+        </label>
+        <label>縣市
+          <input id="city" required placeholder="例如 台北市">
+        </label>
+        <label>行政區
+          <input id="district" placeholder="例如 大安區">
+        </label>
+        <label class="full">地址
+          <input id="address" placeholder="來源若未載明可先留空">
+        </label>
+        <label>風險
+          <select id="risk">
+            <option value="mid">需留意</option>
+            <option value="high">高關注</option>
+            <option value="low">資料穩定</option>
+          </select>
+        </label>
+        <label>分類
+          <select id="category">
+            <option value="government_penalty">官方裁罰</option>
+            <option value="news">媒體報導</option>
+            <option value="court">司法文書</option>
+            <option value="parent_review">家長回饋</option>
+            <option value="government_dataset">政府資料</option>
+          </select>
+        </label>
+        <label class="full">事件標題
+          <input id="title" required placeholder="請使用中性、可查證的寫法">
+        </label>
+        <label>事件日期
+          <input id="eventDate" type="date" required>
+        </label>
+        <label>標籤
+          <input id="tags" placeholder="以逗號分隔，例如 裁罰,安全管理">
+        </label>
+        <label class="full">摘要
+          <textarea id="summary" required placeholder="避免定罪語氣，清楚標示來源所載內容。"></textarea>
+        </label>
+        <label>佐證標題
+          <input id="evidenceTitle" required placeholder="例如 臺北市政府裁罰公告">
+        </label>
+        <label>發布單位 / 媒體
+          <input id="evidencePublisher" required placeholder="例如 臺北市政府教育局">
+        </label>
+        <label class="full">佐證 URL
+          <input id="evidenceUrl" required type="url" placeholder="https://...">
+        </label>
+        <div class="actions full">
+          <button class="primary" type="submit">加入待審佇列</button>
+          <button class="ghost" type="button" id="downloadBtn">下載 review-queue.json</button>
+          <button class="danger" type="button" id="clearBtn">清空本機佇列</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="panel">
+      <h2>待審 JSON</h2>
+      <p class="hint">新增後可下載 JSON，再用更新腳本封存來源並重建前台資料。</p>
+      <pre id="output">[]</pre>
+      <div class="queue" id="queue"></div>
+    </aside>
+    </div><!-- /tabAdd -->
+
+    <!-- ═══ Tab 2：審核待審佇列 ═══ -->
+    <div class="tab-panel full-width" id="tabReview">
+      <div>
+        <h1 style="margin-bottom:6px;">審核待審佇列</h1>
+        <p class="hint" style="margin-bottom:18px;">
+          載入 <code>data/review-queue.json</code> 後，可逐筆標記「加入已查證」、「有爭議」或「移除」，
+          最後下載更新後的 <code>events.json</code> 與 <code>review-queue.json</code>。
+        </p>
+
+        <div class="notice-box" style="margin-bottom:16px;">
+          ⚠ 本頁在瀏覽器本機執行，不會自動寫入磁碟。審核完成後請下載兩個 JSON 檔，
+          手動覆蓋 <code>data/</code> 目錄後再執行 <code>update-data.ps1</code> 重建前台資料。
+        </div>
+
+        <div class="review-toolbar">
+          <div>
+            <div style="font-size:13px;color:var(--muted);margin-bottom:5px;">載入 review-queue.json</div>
+            <input type="file" id="queueFile" accept=".json" onchange="loadQueueFile(event)">
+          </div>
+          <div>
+            <div style="font-size:13px;color:var(--muted);margin-bottom:5px;">載入現有 events.json（選填，用於合併）</div>
+            <input type="file" id="eventsFile" accept=".json" onchange="loadEventsFile(event)">
+          </div>
+          <div style="align-self:flex-end;">
+            <button class="ghost" type="button" onclick="pasteQueueJson()">貼上 JSON 文字</button>
+          </div>
+        </div>
+
+        <div class="filter-bar" id="reviewFilterBar" style="display:none;">
+          <select id="filterStatus" onchange="renderReview()">
+            <option value="">全部狀態</option>
+            <option value="pending">待審核</option>
+            <option value="disputed">有爭議</option>
+            <option value="verified">已查證（本次）</option>
+            <option value="removed">已移除</option>
+          </select>
+          <select id="filterType" onchange="renderReview()">
+            <option value="">全部類型</option>
+            <option value="news">新聞</option>
+            <option value="judicial">司法裁判書</option>
+            <option value="penalty">政府裁罰</option>
+            <option value="parent_review">家長回饋</option>
+            <option value="government_dataset">政府名錄</option>
+          </select>
+          <select id="filterSource" onchange="renderReview()">
+            <option value="">全部來源</option>
+            <option value="google-news-rss">Google News RSS</option>
+            <option value="judicial-api">司法院 API</option>
+            <option value="penalty-gov-json">裁罰 JSON</option>
+            <option value="penalty-gov-html">裁罰 HTML</option>
+            <option value="manual">人工輸入</option>
+          </select>
+          <span class="review-count" id="reviewCount"></span>
+        </div>
+
+        <div id="reviewList" style="display:grid;gap:10px;"></div>
+
+        <div class="export-bar" id="exportBar" style="display:none;">
+          <span id="exportSummary"></span>
+          <button class="primary" type="button" onclick="downloadUpdatedEvents()">下載 events.json</button>
+          <button class="ghost"   type="button" onclick="downloadUpdatedQueue()">下載 review-queue.json</button>
+        </div>
+      </div>
+    </div><!-- /tabReview -->
+
+    <!-- Paste JSON 對話框 -->
+    <div id="pasteDialog" style="display:none;position:fixed;inset:0;background:rgba(23,32,42,.5);z-index:200;display:none;align-items:center;justify-content:center;">
+      <div style="background:white;border-radius:10px;padding:24px;width:min(600px,calc(100% - 32px));box-shadow:0 18px 55px rgba(23,32,42,.18);">
+        <h2 style="margin:0 0 10px;">貼上 review-queue.json 內容</h2>
+        <textarea id="pasteArea" style="width:100%;min-height:220px;font-family:monospace;font-size:13px;border:1px solid var(--line);border-radius:6px;padding:10px;" placeholder='[{"id":"..."}]'></textarea>
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px;">
+          <button class="ghost" type="button" onclick="closePasteDialog()">取消</button>
+          <button class="primary" type="button" onclick="confirmPaste()">載入</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const storageKey = "safetyWallReviewQueue";
+    const form = document.querySelector("#eventForm");
+    const output = document.querySelector("#output");
+    const queueEl = document.querySelector("#queue");
+
+    function readQueue() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey) || "[]");
+      } catch {
+        return [];
+      }
+    }
+
+    function writeQueue(queue) {
+      localStorage.setItem(storageKey, JSON.stringify(queue, null, 2));
+      render();
+    }
+
+    function value(id) {
+      return document.querySelector(`#${id}`).value.trim();
+    }
+
+    function render() {
+      const queue = readQueue();
+      output.textContent = JSON.stringify(queue, null, 2);
+      queueEl.innerHTML = queue.map(item => `
+        <div class="queue-item">
+          <strong>${item.title}</strong>
+          <small>${item.institution.name} · ${item.verificationStatus} · ${item.evidence[0].publisher}</small>
+        </div>
+      `).join("");
+    }
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      const item = {
+        id: value("id"),
+        verificationStatus: value("verificationStatus"),
+        institution: {
+          name: value("institutionName"),
+          type: value("institutionType"),
+          city: value("city"),
+          district: value("district"),
+          address: value("address"),
+          code: "",
+          aliases: []
+        },
+        risk: value("risk"),
+        category: value("category"),
+        title: value("title"),
+        summary: value("summary"),
+        eventDate: value("eventDate"),
+        tags: value("tags").split(",").map(tag => tag.trim()).filter(Boolean),
+        evidence: [{
+          title: value("evidenceTitle"),
+          publisher: value("evidencePublisher"),
+          url: value("evidenceUrl"),
+          type: value("category")
+        }]
+      };
+      const queue = readQueue().filter(existing => existing.id !== item.id);
+      queue.push(item);
+      writeQueue(queue);
+      form.reset();
+      document.querySelector("#verificationStatus").value = "pending";
+      document.querySelector("#risk").value = "mid";
+    });
+
+    document.querySelector("#downloadBtn").addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(readQueue(), null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "review-queue.json";
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+
+    document.querySelector("#clearBtn").addEventListener("click", () => {
+      writeQueue([]);
+    });
+
+    render();
+
+    // ──────────────────────────────────────────────────────────────────────
+    // 分頁切換
+    // ──────────────────────────────────────────────────────────────────────
+
+    function switchTab(tab) {
+      document.querySelectorAll(".tab-btn").forEach((btn, i) => {
+        btn.classList.toggle("active", (i === 0 && tab === "add") || (i === 1 && tab === "review"));
+      });
+      document.querySelector("#tabAdd").classList.toggle("active", tab === "add");
+      document.querySelector("#tabReview").classList.toggle("active", tab === "review");
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // 審核佇列狀態
+    // ──────────────────────────────────────────────────────────────────────
+
+    let reviewQueue  = [];   // 載入的 review-queue.json 條目
+    let baseEvents   = [];   // 載入的現有 events.json 條目
+    const decisions  = {};   // id → "verified" | "disputed" | "removed" | null
+
+    const verifiedLabel = { verified:"已查證", pending:"待審核", disputed:"有爭議", removed:"已移除" };
+    const categoryIcon  = { news:"📰", judicial:"⚖️", penalty:"🏛️", parent_review:"💬", government_dataset:"📋" };
+
+    function loadQueueFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try {
+          reviewQueue = JSON.parse(ev.target.result);
+          initReview();
+        } catch {
+          alert("JSON 解析失敗，請確認格式正確。");
+        }
+      };
+      reader.readAsText(file, "UTF-8");
+    }
+
+    function loadEventsFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try { baseEvents = JSON.parse(ev.target.result); } catch {}
+      };
+      reader.readAsText(file, "UTF-8");
+    }
+
+    function pasteQueueJson() {
+      const dialog = document.querySelector("#pasteDialog");
+      dialog.style.display = "flex";
+    }
+
+    function closePasteDialog() {
+      document.querySelector("#pasteDialog").style.display = "none";
+    }
+
+    function confirmPaste() {
+      const text = document.querySelector("#pasteArea").value.trim();
+      try {
+        reviewQueue = JSON.parse(text);
+        closePasteDialog();
+        initReview();
+      } catch {
+        alert("JSON 格式有誤，請重新確認。");
+      }
+    }
+
+    function initReview() {
+      // 重置 decisions，保留現有的（避免重載時清空進度）
+      reviewQueue.forEach(item => {
+        if (!decisions[item.id]) decisions[item.id] = null;
+      });
+      document.querySelector("#reviewFilterBar").style.display = "flex";
+      document.querySelector("#exportBar").style.display = "flex";
+      renderReview();
+    }
+
+    function getDecision(item) {
+      return decisions[item.id] || item.verificationStatus || "pending";
+    }
+
+    function renderReview() {
+      const filterStatus = document.querySelector("#filterStatus").value;
+      const filterType   = document.querySelector("#filterType").value;
+      const filterSource = document.querySelector("#filterSource").value;
+
+      const filtered = reviewQueue.filter(item => {
+        const status = getDecision(item);
+        const src    = item.importSource || (item.autoImported ? "auto" : "manual");
+        return (!filterStatus || status === filterStatus)
+          && (!filterType || item.category === filterType)
+          && (!filterSource || src === filterSource);
+      });
+
+      document.querySelector("#reviewCount").textContent =
+        `顯示 ${filtered.length} 筆（共 ${reviewQueue.length} 筆）`;
+
+      const counts = { verified: 0, disputed: 0, removed: 0, pending: 0 };
+      reviewQueue.forEach(item => { counts[getDecision(item)] = (counts[getDecision(item)] || 0) + 1; });
+      document.querySelector("#exportSummary").textContent =
+        `本次審核：已查證 ${counts.verified}、有爭議 ${counts.disputed}、移除 ${counts.removed}、待審 ${counts.pending}`;
+
+      if (filtered.length === 0 && reviewQueue.length === 0) {
+        document.querySelector("#reviewList").innerHTML =
+          `<div style="padding:32px;text-align:center;color:var(--muted);">請先載入 review-queue.json</div>`;
+        return;
+      }
+
+      if (filtered.length === 0) {
+        document.querySelector("#reviewList").innerHTML =
+          `<div style="padding:24px;text-align:center;color:var(--muted);">此篩選條件無資料</div>`;
+        return;
+      }
+
+      document.querySelector("#reviewList").innerHTML = filtered.map(item => {
+        const decision = getDecision(item);
+        const icon     = categoryIcon[item.category] || "📄";
+        const ev0      = (item.evidence && item.evidence[0]) || {};
+        const sourceLabel = item.importSource ? `自動匯入（${item.importSource}）` : "人工輸入";
+        const evidenceHtml = (item.evidence || []).map((ev, i) => {
+          const origLink = ev.url
+            ? `<a href="${ev.url}" target="_blank" rel="noreferrer">原始來源 ${item.evidence.length > 1 ? i+1 : ""} ↗</a>` : "";
+          const snapLink = ev.snapshotPath
+            ? `<a href="${ev.snapshotPath}" target="_blank" rel="noreferrer">快照 ↗</a>` : "";
+          return [origLink, snapLink].filter(Boolean).join(" · ");
+        }).join(" &nbsp;|&nbsp; ");
+
+        const btnApprove = decision !== "verified"
+          ? `<button class="ghost approve-btn" type="button" onclick="decide('${item.id}','verified')">✓ 加入已查證</button>` : "";
+        const btnDispute = decision !== "disputed"
+          ? `<button class="ghost dispute-btn" type="button" onclick="decide('${item.id}','disputed')">⚠ 有爭議</button>` : "";
+        const btnRemove  = decision !== "removed"
+          ? `<button class="ghost remove-btn"  type="button" onclick="decide('${item.id}','removed')">🗑 移除</button>` : "";
+        const btnUndo    = decision !== "pending"
+          ? `<button class="ghost undo-btn"    type="button" onclick="decide('${item.id}',null)">↩ 還原</button>` : "";
+
+        return `
+        <div class="review-card status-${decision}" id="rc-${item.id.replace(/[^a-z0-9]/gi,'_')}">
+          <div class="review-card-head">
+            <div>
+              <h3>${icon} ${item.title}</h3>
+              <div class="meta">
+                ${item.institution ? `${item.institution.name} · ${item.institution.city || ""}` : ""}
+                &nbsp;·&nbsp; ${item.category || ""}
+                &nbsp;·&nbsp; ${item.eventDate || "日期未知"}
+              </div>
+            </div>
+            <span style="font-size:13px;white-space:nowrap;padding:4px 8px;border-radius:999px;background:#f0f2f4;color:var(--muted);">${verifiedLabel[decision] || decision}</span>
+          </div>
+          <div class="summary">${item.summary || ""}</div>
+          <div class="meta">${sourceLabel}${ev0.publisher ? " · " + ev0.publisher : ""}</div>
+          ${evidenceHtml ? `<div class="evidence-links">${evidenceHtml}</div>` : ""}
+          <div class="review-btns">${btnApprove}${btnDispute}${btnRemove}${btnUndo}</div>
+        </div>`;
+      }).join("");
+    }
+
+    function decide(id, status) {
+      decisions[id] = status;
+      renderReview();
+    }
+
+    function downloadUpdatedEvents() {
+      // 合併現有 events + 本次標記為 verified 的條目
+      const newVerified = reviewQueue
+        .filter(item => getDecision(item) === "verified")
+        .map(item => ({ ...item, verificationStatus: "verified" }));
+      const merged = [...baseEvents, ...newVerified];
+      downloadJson(merged, "events.json");
+    }
+
+    function downloadUpdatedQueue() {
+      // 剩餘佇列：排除 removed，保留 pending + disputed（更新 verificationStatus）
+      const remaining = reviewQueue
+        .filter(item => getDecision(item) !== "removed" && getDecision(item) !== "verified")
+        .map(item => ({ ...item, verificationStatus: getDecision(item) || "pending" }));
+      downloadJson(remaining, "review-queue.json");
+    }
+
+    function downloadJson(data, filename) {
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement("a");
+      a.href     = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

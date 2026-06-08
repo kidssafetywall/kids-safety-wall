@@ -1,0 +1,65 @@
+{
+  "updatedAt": "2026-06-08T00:00:00+08:00",
+  "sources": [
+    {
+      "id": "moe-kindergarten-directory",
+      "type": "government_dataset",
+      "title": "幼兒園名錄",
+      "publisher": "教育部統計處",
+      "datasetUrl": "https://data.gov.tw/dataset/6086",
+      "updateFrequency": "每1年",
+      "entityType": "幼兒園",
+      "license": "政府資料開放授權條款-第1版"
+    },
+    {
+      "id": "moe-elementary-directory",
+      "type": "government_dataset",
+      "title": "國民小學名錄",
+      "publisher": "教育部統計處",
+      "datasetUrl": "https://data.gov.tw/dataset/6087",
+      "updateFrequency": "每1年",
+      "entityType": "國小",
+      "license": "政府資料開放授權條款-第1版"
+    },
+    {
+      "id": "moe-junior-high-profile",
+      "type": "government_dataset",
+      "title": "國民中學校別資料",
+      "publisher": "教育部統計處",
+      "datasetUrl": "https://data.gov.tw/dataset/6239",
+      "updateFrequency": "每1年",
+      "entityType": "國中",
+      "license": "政府資料開放授權條款-第1版"
+    },
+    {
+      "id": "moe-senior-high-directory",
+      "type": "government_dataset",
+      "title": "一般高級中等學校名錄",
+      "publisher": "教育部統計處",
+      "datasetUrl": "https://data.gov.tw/dataset/6089",
+      "updateFrequency": "每1年",
+      "entityType": "高中職",
+      "license": "政府資料開放授權條款-第1版"
+    },
+    {
+      "id": "moe-cram-school-directory",
+      "type": "government_dataset",
+      "title": "全國立案短期補習班基本資料",
+      "publisher": "教育部終身教育司",
+      "datasetUrl": "https://data.gov.tw/dataset/16461",
+      "updateFrequency": "即時或每日",
+      "entityType": "補習班",
+      "license": "政府資料開放授權條款-第1版"
+    },
+    {
+      "id": "judicial-judgment-api",
+      "type": "government_api",
+      "title": "司法院裁判書開放 API",
+      "publisher": "司法院",
+      "datasetUrl": "https://data.nat.gov.tw/dataset/63205",
+      "updateFrequency": "依 API 公告",
+      "entityType": "司法文書",
+      "license": "依資料集公告"
+    }
+  ]
+}
