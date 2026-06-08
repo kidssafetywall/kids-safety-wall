@@ -23,44 +23,44 @@ jobs:
 
       # ── Step 1：政府名錄匯入 + 快照 ──────────────────────────────────────
       - name: 匯入政府名錄並重建 site-data.js
-        shell: pwsh
+        shell: powershell
         run: |
           $maxImport = [int]"${{ github.event.inputs.max_imported || '500' }}"
           if ($maxImport -gt 0) {
-            ./scripts/update-data.ps1 -MaxImportedPerSource $maxImport
+            .\scripts\update-data.ps1 -MaxImportedPerSource $maxImport
           } else {
-            ./scripts/update-data.ps1
+            .\scripts\update-data.ps1
           }
 
       # ── Step 2：Google News RSS 新聞抓取 ─────────────────────────────────
       - name: 抓取 Google News RSS 教育機構相關新聞
-        shell: pwsh
-        run: ./scripts/fetch-news.ps1 -MaxNewPerRun 50 -DelayMs 2000
+        shell: powershell
+        run: .\scripts\fetch-news.ps1 -MaxNewPerRun 50 -DelayMs 2000
 
       # ── Step 3：司法院裁判書 API ──────────────────────────────────────────
       - name: 抓取司法院裁判書
-        shell: pwsh
-        run: ./scripts/fetch-judicial.ps1 -MaxNewPerRun 40 -DelayMs 1500
+        shell: powershell
+        run: .\scripts\fetch-judicial.ps1 -MaxNewPerRun 40 -DelayMs 1500
 
       # ── Step 4：政府裁罰公告 ──────────────────────────────────────────────
       - name: 抓取教育部裁罰公告
-        shell: pwsh
-        run: ./scripts/fetch-penalties.ps1 -DelayMs 2000
+        shell: powershell
+        run: .\scripts\fetch-penalties.ps1 -DelayMs 2000
 
       # ── Step 5：重新整合資料（納入新增的 review-queue/events 條目）────────
       - name: 重新產生前台資料（整合新增事件）
-        shell: pwsh
+        shell: powershell
         run: |
           $maxImport = [int]"${{ github.event.inputs.max_imported || '500' }}"
           if ($maxImport -gt 0) {
-            ./scripts/update-data.ps1 -MaxImportedPerSource $maxImport
+            .\scripts\update-data.ps1 -MaxImportedPerSource $maxImport
           } else {
-            ./scripts/update-data.ps1
+            .\scripts\update-data.ps1
           }
 
       # ── Step 6：提交變更 ──────────────────────────────────────────────────
       - name: 提交資料更新
-        shell: pwsh
+        shell: powershell
         run: |
           git config user.name  "education-safety-bot"
           git config user.email "education-safety-bot@example.invalid"
