@@ -571,6 +571,25 @@
       position: relative;
     }
 
+    .modal.detail-modal {
+      width: min(800px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px 28px 28px;
+    }
+
+    .penalty-detail-box {
+      margin-top: 10px;
+      background: #fff9e8;
+      border: 1px solid #f1d58c;
+      border-radius: 6px;
+      padding: 10px 13px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .penalty-detail-box strong { color: var(--ink); }
+
     .modal h2 { margin: 0 0 6px; font-size: 20px; }
     .modal .modal-sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; line-height: 1.6; }
 
@@ -727,19 +746,6 @@
 
         <div class="results" id="resultGrid"></div>
 
-        <section class="detail hidden" id="detailPanel">
-          <div class="panel">
-            <h2 id="detailTitle">機構名稱</h2>
-            <div class="meta" id="detailMeta"></div>
-            <h3>事件紀錄</h3>
-            <ul class="timeline" id="eventList"></ul>
-          </div>
-          <aside class="panel">
-            <h3>回報與補充說明</h3>
-            <p class="meta">若您有相關親身經歷、目擊或佐證資料，可透過下方管道回報。所有回饋需經人工審核，並於公開前去識別化。</p>
-            <button class="ghost-btn" type="button" id="detailReportBtn" onclick="openReportModal(event)">回報問題機構</button>
-          </aside>
-        </section>
       </section>
     </div>
 
@@ -760,6 +766,14 @@
   <footer>
     兒少防火牆原型。公開資訊需標示來源與日期，使用者回饋需審核與去識別化。
   </footer>
+
+  <!-- 機構詳細紀錄 Modal -->
+  <div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+    <div class="modal detail-modal">
+      <button class="modal-close" type="button" onclick="closeDetailModal()" aria-label="關閉">✕</button>
+      <div id="detailModalContent"></div>
+    </div>
+  </div>
 
   <!-- 回報問題機構 Modal -->
   <div class="modal-overlay" id="reportModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -987,7 +1001,6 @@
 
     const state = { mode: "list", items: institutions };
     const grid = document.querySelector("#resultGrid");
-    const detail = document.querySelector("#detailPanel");
 
     function populateFilterOptions() {
       const citySelect = document.querySelector("#city");
@@ -1128,34 +1141,42 @@
       }).join("");
     }
 
+    function penaltyDetailHtml(event) {
+      const fields = [
+        event.penaltyDocNumber  ? ["裁處文號", event.penaltyDocNumber]  : null,
+        event.penaltyLegalBasis ? ["處分依據", event.penaltyLegalBasis] : null,
+        event.penaltyViolation  ? ["違反規定", event.penaltyViolation]  : null,
+        event.penaltyContent    ? ["處分內容", event.penaltyContent]    : null,
+        event.penaltyRespondent ? ["負責人",   event.penaltyRespondent] : null,
+      ].filter(Boolean);
+      if (fields.length === 0) return "";
+      return `<div class="penalty-detail-box">${
+        fields.map(([k, v]) => `<div><strong>${k}：</strong>${v}</div>`).join("")
+      }</div>`;
+    }
+
     function showDetail(index) {
       const item = institutions[index];
-      detail.classList.remove("hidden");
-      document.querySelector("#detailTitle").textContent = item.name;
-      document.querySelector("#detailMeta").textContent =
-        `${item.city}${item.district || ""} · ${item.type}${item.address ? " · " + item.address : ""}`;
 
       // 同步回報 modal 的機構名稱欄位
       const rInst = document.querySelector("#rInstitution");
       if (rInst) rInst.value = item.name;
 
       const events = item.events || [];
+      let eventsHtml;
       if (events.length === 0) {
-        document.querySelector("#eventList").innerHTML = `
-          <li style="padding:20px 0;color:var(--muted);font-size:14px;list-style:none;">
-            目前無負面事件紀錄。此機構已納入監測範圍，若有新的裁罰、新聞或家長回饋，將自動更新於此。
-          </li>`;
+        eventsHtml = `<li style="padding:20px 0;color:var(--muted);font-size:14px;list-style:none;">
+          目前無負面事件紀錄。此機構已納入監測範圍，若有新的裁罰、新聞或家長回饋，將自動更新於此。
+        </li>`;
       } else {
-        document.querySelector("#eventList").innerHTML = events.map(rawEvent => {
+        eventsHtml = events.map(rawEvent => {
           const event = normalizeEvent(rawEvent);
           const kind = event.kind || "official";
           const reviewStatus = event.verificationStatus || "pending";
           const statusClass = reviewStatus === "verified" ? "status-verified"
             : reviewStatus === "disputed" ? "status-disputed" : "status-pending";
           const pendingNote = reviewStatus === "pending"
-            ? `<div style="background:#fff9e8;border:1px solid #f1d58c;border-radius:5px;padding:7px 10px;font-size:12px;color:#67470b;margin-top:7px;">
-                ⚠ 此事項尚待人工查證，內容可能未經完整核實。
-               </div>` : "";
+            ? `<div style="background:#fff9e8;border:1px solid #f1d58c;border-radius:5px;padding:7px 10px;font-size:12px;color:#67470b;margin-top:7px;">⚠ 此事項尚待人工查證，內容可能未經完整核實。</div>` : "";
           return `
           <li class="event ${kind}">
             <strong>${eventLabel[kind] || "佐證資料"}：${event.title}</strong>
@@ -1164,12 +1185,42 @@
               <span class="badge ${statusClass}">${statusLabel[reviewStatus] || reviewStatus}</span>
             </div>
             ${pendingNote}
+            ${penaltyDetailHtml(event)}
             <p class="meta" style="margin-top:8px;">${event.summary || ""}</p>
             ${sourceLinks(event)}
           </li>`;
         }).join("");
       }
-      detail.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      const addr = item.address ? ` · ${item.address}` : "";
+      const content = `
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;padding-right:32px;">
+          <div>
+            <h2 id="detailModalTitle" style="margin:0 0 5px;font-size:22px;line-height:1.3;">${item.name}</h2>
+            <div class="meta">${item.city}${item.district || ""} · ${item.type}${addr}</div>
+          </div>
+          <span class="badge ${riskClass[item.risk]}" style="flex-shrink:0;">${riskLabel[item.risk]}</span>
+        </div>
+        <div class="metrics" style="margin-bottom:20px;">
+          <div class="metric"><strong>${item.penalties || 0}</strong><span>官方裁罰</span></div>
+          <div class="metric"><strong>${item.news || 0}</strong><span>新聞紀錄</span></div>
+          <div class="metric"><strong>${item.reviews || 0}</strong><span>家長回饋</span></div>
+        </div>
+        <h3 style="margin:0 0 12px;font-size:16px;">事件紀錄</h3>
+        <ul class="timeline" style="margin:0 0 24px;padding:0;list-style:none;">${eventsHtml}</ul>
+        <div style="border-top:1px solid var(--line);padding-top:16px;">
+          <p class="meta" style="margin:0 0 12px;">若您有相關親身經歷、目擊或佐證資料，可透過下方管道回報。所有回饋需經人工審核，並於公開前去識別化。</p>
+          <button class="ghost-btn" type="button" onclick="closeDetailModal();setTimeout(openReportModal,120);">回報問題機構</button>
+        </div>`;
+
+      document.querySelector("#detailModalContent").innerHTML = content;
+      document.querySelector("#detailModal").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDetailModal() {
+      document.querySelector("#detailModal").classList.remove("open");
+      document.body.style.overflow = "";
     }
 
     document.querySelector("#searchForm").addEventListener("submit", event => {
@@ -1247,14 +1298,21 @@
     document.querySelector("#reportModal").addEventListener("click", function(e) {
       if (e.target === this) closeReportModal();
     });
+    document.querySelector("#detailModal").addEventListener("click", function(e) {
+      if (e.target === this) closeDetailModal();
+    });
 
     // ESC 關閉
     document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") closeReportModal();
+      if (e.key === "Escape") {
+        closeDetailModal();
+        closeReportModal();
+      }
     });
 
     window.openReportModal = openReportModal;
     window.closeReportModal = closeReportModal;
+    window.closeDetailModal = closeDetailModal;
     window.handleReportSubmit = handleReportSubmit;
     window.updateCharCount = updateCharCount;
 

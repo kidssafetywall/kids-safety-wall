@@ -11,6 +11,9 @@
        ASP.NET 表單（需兩步驟 GET+POST 取得 VIEWSTATE）
        政府官方公開資料 → 直接匯入為 verified（不需人工審核）
 
+       每筆機構進一步抓取 punish_view.aspx?sch=... 以取得：
+         處分日期、裁處文號、處分依據、違反規定、負責人/行為人、處分內容
+
     2. 教育部幼兒園名錄（政府資料開放平台 dataset/6086）
        用於比對機構名稱，補充地址等資訊
 
@@ -20,7 +23,8 @@
   專案根目錄，預設為本腳本上層目錄。
 
 .PARAMETER DelayMs
-  每次 HTTP 請求之間的等待毫秒。預設 2000。
+  每次搜尋頁 HTTP 請求之間的等待毫秒。預設 2000。
+  詳情頁使用 DelayMs 的一半（最少 500ms）。
 
 .EXAMPLE
   powershell -ExecutionPolicy Bypass -File .\scripts\fetch-penalties.ps1
@@ -155,19 +159,31 @@ Ensure-Directory $datasetDir
 
 $seenPath   = Join-Path $dataDir "penalty-seen.json"
 $eventsPath = Join-Path $dataDir "events.json"
+$detailDelayMs = [Math]::Max(500, [int]($DelayMs / 2))
 
 # ---------------------------------------------------------------------------
 # 載入已知資料
 # ---------------------------------------------------------------------------
 
 $seenRaw = if (Test-Path -LiteralPath $seenPath) {
-  Get-Content -LiteralPath $seenPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $raw = Get-Content -LiteralPath $seenPath -Raw -Encoding UTF8
+  $raw | ConvertFrom-Json
 } else {
-  [pscustomobject]@{ updatedAt = ""; seen = @() }
+  [pscustomobject]@{ version = 2; updatedAt = ""; docs = @(); instSeen = @() }
 }
-$seenSet = [System.Collections.Generic.HashSet[string]]::new([string[]]@($seenRaw.seen))
+
+# 格式升級：v1（只有 seen 陣列）→ v2（docs + instSeen）
+# 清除舊記錄，重新抓取完整裁罰詳情
+if ($null -eq $seenRaw.version -or $seenRaw.version -lt 2) {
+  Write-Host "penalty-seen.json 格式升級（v1→v2）：重新抓取完整裁罰詳情..."
+  $seenRaw = [pscustomobject]@{ version = 2; updatedAt = ""; docs = @(); instSeen = @() }
+}
+
+$seenDocSet  = [System.Collections.Generic.HashSet[string]]::new([string[]]@($seenRaw.docs))
+$seenInstSet = [System.Collections.Generic.HashSet[string]]::new([string[]]@($seenRaw.instSeen))
+
 $existingEvents = Read-JsonArrayFile $eventsPath
-$newVerified = [System.Collections.ArrayList]::new()
+$newVerified    = [System.Collections.ArrayList]::new()
 
 # ---------------------------------------------------------------------------
 # 來源 1：教育部全國教保資訊網 — 裁罰紀錄查詢
@@ -176,7 +192,8 @@ $newVerified = [System.Collections.ArrayList]::new()
 #   所有記錄均為政府公開資料 → verified（無需人工審核）
 # ---------------------------------------------------------------------------
 
-$moeUrl = "https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx"
+$moeUrl    = "https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx"
+$detailBase = "https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx"
 Write-Host "=== 兒少防火牆：裁罰公告抓取 ==="
 Write-Host "`n[來源 1] 教育部幼兒園裁罰紀錄  $moeUrl"
 
@@ -194,12 +211,12 @@ try {
   $getHtml  = $getResp.Content
   Write-Host "  GET 表單成功（$($getHtml.Length) 位元組）"
 
-  # 儲存快照
+  # 儲存搜尋表單快照（作為佐證 URL 基準）
   $snapId   = ConvertTo-Slug $moeUrl
   $snapFile = Join-Path $rawDir "penalty-moe-kg-$snapId.html"
   $snapAt   = (Get-Date).ToUniversalTime().ToString("o")
   [System.IO.File]::WriteAllText($snapFile, "<!--`nsource: $moeUrl`ncaptured_at_utc: $snapAt`n-->`n" + $getHtml, [System.Text.Encoding]::UTF8)
-  # $snapPath not used directly; POST result snapshot is captured below
+  $postSnapPath = $snapFile.Replace($Root, "").TrimStart("\") -replace "\\", "/"
 
   # 提取 VIEWSTATE、VIEWSTATEGENERATOR、EVENTVALIDATION
   $vsMatch   = [regex]::Match($getHtml, 'name="__VIEWSTATE"\s+id="__VIEWSTATE"\s+value="([^"]*)"')
@@ -236,21 +253,23 @@ try {
 
     if ($postHtml.Length -gt 500) {
       # 頁面使用卡片格式（GridView1_lblSchName_N），非傳統 <table>
-      # 逐頁抓取（PageControl1$lbNextPage 換頁），上限 200 頁防無窮迴圈
+      # 逐頁收集機構列表，再批次抓取裁罰詳情
       $currentHtml    = $postHtml
       $currentResp    = $postResp
       $pageNum        = 1
       $maxPages       = 200
       $importedAt     = (Get-Date).ToUniversalTime().ToString("o")
 
-      while ($pageNum -le $maxPages) {
-        # 不另存逐頁快照，由 update-data.ps1 統一建檔
-        $postSnapPath = $snapFile.Replace($Root, "").TrimStart("\") -replace "\\", "/"
+      # 蒐集所有機構（分頁結束後再抓詳情）
+      $allInstitutions = [System.Collections.ArrayList]::new()
 
-        # 解析卡片格式：GridView1_lblSchName_N / lblCity_N / lblArea_N
+      while ($pageNum -le $maxPages) {
+        # 解析卡片格式
         $nameMatches = [regex]::Matches($currentHtml, 'id="GridView1_lblSchName_(\d+)">([^<]+)<')
         $cityMatches = [regex]::Matches($currentHtml, 'id="GridView1_lblCity_(\d+)">([^<]+)<')
         $areaMatches = [regex]::Matches($currentHtml, 'id="GridView1_lblArea_(\d+)">([^<]+)<')
+        # sch 參數：punish_view.aspx?sch=VALUE&#39;
+        $schMatches  = [regex]::Matches($currentHtml, 'punish_view\.aspx\?sch=([A-Za-z0-9+/=]+)&#39;')
         Write-Host "  第 $pageNum 頁：$($nameMatches.Count) 筆"
 
         if ($nameMatches.Count -eq 0) { break }
@@ -259,56 +278,20 @@ try {
           $instName = [System.Web.HttpUtility]::HtmlDecode($nameMatches[$i].Groups[2].Value.Trim())
           $city     = if ($i -lt $cityMatches.Count) { [System.Web.HttpUtility]::HtmlDecode($cityMatches[$i].Groups[2].Value.Trim()) } else { "" }
           $district = if ($i -lt $areaMatches.Count) { [System.Web.HttpUtility]::HtmlDecode($areaMatches[$i].Groups[2].Value.Trim()) } else { "" }
+          $schParam = if ($i -lt $schMatches.Count) { $schMatches[$i].Groups[1].Value } else { "" }
 
           if (-not $instName) { continue }
 
-          $dedupKey = ConvertTo-Slug "$instName|moe-penalty"
-          if ($seenSet.Contains($dedupKey)) { continue }
-
-          $eventId = "penalty-moe-kg-$(ConvertTo-Slug $instName)"
-          # 政府官方公開資料 → 直接 verified（無需人工審核）
-          $penaltyEvent = [ordered]@{
-            id                 = $eventId
-            verificationStatus = "verified"
-            autoImported       = $true
-            importSource       = "penalty-moe-aspx"
-            institution        = [ordered]@{
-              name     = $instName
-              type     = "幼兒園"
-              city     = $city
-              district = $district
-              address  = ""
-              code     = ""
-              aliases  = @()
-            }
-            risk               = "high"
-            category           = "penalty"
-            title              = "主管機關裁罰：$instName"
-            summary            = "此幼兒園列於教育部全國教保資訊網裁罰名單，詳細裁罰事由請查閱官方紀錄。"
-            eventDate          = "unknown"
-            importedAt         = $importedAt
-            tags               = @("政府裁罰", "幼兒園", "已查證")
-            evidence           = @(
-              [ordered]@{
-                title        = "幼兒園裁罰紀錄（全國教保資訊網）"
-                publisher    = "教育部"
-                url          = $moeUrl
-                type         = "government_doc"
-                capturedAt   = $snapAt
-                snapshotPath = $postSnapPath
-                httpStatus   = $currentResp.StatusCode
-                status       = "captured"
-              }
-            )
-          }
-
-          [void]$newVerified.Add($penaltyEvent)
-          [void]$seenSet.Add($dedupKey)
-          Write-Host "  + 幼兒園裁罰（已查證）：$instName（$city $district）"
+          [void]$allInstitutions.Add([ordered]@{
+            name     = $instName
+            city     = $city
+            district = $district
+            sch      = $schParam
+          })
         }
 
-        # 檢查是否有下一頁：按鈕存在且非 aspNetDisabled
-        $hasNextBtn  = [regex]::IsMatch($currentHtml, 'id="PageControl1_lbNextPage"')
+        # 檢查是否有下一頁
+        $hasNextBtn   = [regex]::IsMatch($currentHtml, 'id="PageControl1_lbNextPage"')
         $nextDisabled = [regex]::IsMatch($currentHtml, 'id="PageControl1_lbNextPage"[^>]*class="aspNetDisabled"')
         if (-not $hasNextBtn -or $nextDisabled) {
           Write-Host "  已到最後一頁（共 $pageNum 頁）"
@@ -336,6 +319,198 @@ try {
         $currentHtml = $currentResp.Content
         Write-Host "  換頁回應：$($currentHtml.Length) 位元組"
       }
+
+      Write-Host "`n  共蒐集 $($allInstitutions.Count) 筆機構，開始抓取裁罰詳情..."
+
+      # 逐機構抓取 punish_view.aspx 詳情頁
+      $detailCount    = 0
+      $skipCount      = 0
+      $fallbackCount  = 0
+
+      foreach ($inst in $allInstitutions) {
+        $instName = $inst.name
+        $city     = $inst.city
+        $district = $inst.district
+        $schParam = $inst.sch
+
+        # 若此機構已有詳細紀錄（instSeen 已記錄），跳過重複抓取
+        $instKey = ConvertTo-Slug "$instName|moe-inst"
+        if ($seenInstSet.Contains($instKey)) {
+          $skipCount++
+          continue
+        }
+
+        $penaltyRows = [System.Collections.ArrayList]::new()
+
+        if ($schParam) {
+          try {
+            Start-Sleep -Milliseconds $detailDelayMs
+
+            $viewUrl   = "${detailBase}?sch=${schParam}"
+            $detailHeaders = $postHeaders.Clone()
+            $detailHeaders["Referer"] = $moeUrl
+            $detailResp  = Invoke-WebRequest -Uri $viewUrl -UseBasicParsing -TimeoutSec 30 `
+                             -WebSession $session -Headers $detailHeaders
+            $detailHtml  = $detailResp.Content
+
+            # 儲存詳情快照（以機構名稱 hash 命名）
+            $detailSnapId   = ConvertTo-Slug $instName
+            $detailSnapFile = Join-Path $rawDir "penalty-moe-detail-$detailSnapId.html"
+            $detailSnapAt   = (Get-Date).ToUniversalTime().ToString("o")
+            [System.IO.File]::WriteAllText($detailSnapFile,
+              "<!--`nsource: $viewUrl`ncaptured_at_utc: $detailSnapAt`n-->`n" + $detailHtml,
+              [System.Text.Encoding]::UTF8)
+            $detailSnapPath = $detailSnapFile.Replace($Root, "").TrimStart("\") -replace "\\", "/"
+
+            # 解析裁罰表格：PDate / PGNum / PName / PDetail / PObject / PContent
+            $pDateMs  = [regex]::Matches($detailHtml, 'id="GridView1_lblPDate_(\d+)">([^<]+)<')
+            $pGNumMs  = [regex]::Matches($detailHtml, 'id="GridView1_lblPGNum_(\d+)">([^<]+)<')
+            $pNameMs  = [regex]::Matches($detailHtml, '(?is)id="GridView1_lblPName_(\d+)">(.+?)</span>')
+            $pDetlMs  = [regex]::Matches($detailHtml, '(?is)id="GridView1_lblPDetail_(\d+)">(.+?)</span>')
+            $pObjMs   = [regex]::Matches($detailHtml, '(?is)id="GridView1_lblPObject_(\d+)">(.+?)</span>')
+            $pCntMs   = [regex]::Matches($detailHtml, '(?is)id="GridView1_lblPContent_(\d+)">(.+?)</span>')
+
+            for ($j = 0; $j -lt $pGNumMs.Count; $j++) {
+              $pGNum = [System.Web.HttpUtility]::HtmlDecode($pGNumMs[$j].Groups[2].Value.Trim())
+              if (-not $pGNum) { continue }
+
+              $pDate  = if ($j -lt $pDateMs.Count) { $pDateMs[$j].Groups[2].Value.Trim()    } else { "" }
+              $pLaw   = if ($j -lt $pNameMs.Count) { Strip-Html $pNameMs[$j].Groups[2].Value } else { "" }
+              $pVio   = if ($j -lt $pDetlMs.Count) { Strip-Html $pDetlMs[$j].Groups[2].Value } else { "" }
+              $pWho   = if ($j -lt $pObjMs.Count)  { Strip-Html $pObjMs[$j].Groups[2].Value  } else { "" }
+              $pFine  = if ($j -lt $pCntMs.Count)  { Strip-Html $pCntMs[$j].Groups[2].Value  } else { "" }
+
+              [void]$penaltyRows.Add([ordered]@{
+                GNum      = $pGNum
+                Date      = $pDate
+                Law       = $pLaw
+                Violation = $pVio
+                Who       = $pWho
+                Fine      = $pFine
+                SnapPath  = $detailSnapPath
+                SnapAt    = $detailSnapAt
+                ViewUrl   = $viewUrl
+              })
+            }
+            Write-Host "  + 詳情：$instName（$($penaltyRows.Count) 筆裁罰紀錄）"
+          } catch {
+            Write-Warning "  無法抓取 $instName 詳情：$($_.Exception.Message)"
+          }
+        }
+
+        if ($penaltyRows.Count -gt 0) {
+          # 逐筆裁罰文號建立獨立事件
+          foreach ($row in $penaltyRows) {
+            $docKey = "doc:$($row.GNum)"
+            if ($seenDocSet.Contains($docKey)) { continue }
+
+            $penaltyDate = Normalize-RocDate $row.Date
+
+            # 摘要：整合所有關鍵欄位
+            $summaryParts = [System.Collections.ArrayList]::new()
+            if ($row.Date)      { [void]$summaryParts.Add("處分日期：$($row.Date)") }
+            if ($row.GNum)      { [void]$summaryParts.Add("裁處文號：$($row.GNum)") }
+            if ($row.Violation) { [void]$summaryParts.Add("違反規定：$($row.Violation)") }
+            if ($row.Fine)      { [void]$summaryParts.Add("處分內容：$($row.Fine)") }
+            $summary = $summaryParts -join "｜"
+
+            # 標題：取違反規定前 30 字
+            $titleVio = $row.Violation
+            if ($titleVio -and $titleVio.Length -gt 30) { $titleVio = $titleVio.Substring(0, 30) + "…" }
+            $eventTitle = if ($titleVio) { "主管機關裁罰：$titleVio" } else { "主管機關裁罰：$instName" }
+
+            $eventId = "penalty-moe-doc-$(ConvertTo-Slug $row.GNum)"
+
+            $penaltyEvent = [ordered]@{
+              id                 = $eventId
+              verificationStatus = "verified"
+              autoImported       = $true
+              importSource       = "penalty-moe-aspx"
+              institution        = [ordered]@{
+                name     = $instName
+                type     = "幼兒園"
+                city     = $city
+                district = $district
+                address  = ""
+                code     = ""
+                aliases  = @()
+              }
+              risk               = "high"
+              category           = "penalty"
+              title              = $eventTitle
+              summary            = $summary
+              eventDate          = $penaltyDate
+              penaltyDocNumber   = $row.GNum
+              penaltyLegalBasis  = $row.Law
+              penaltyViolation   = $row.Violation
+              penaltyContent     = $row.Fine
+              penaltyRespondent  = $row.Who
+              importedAt         = $importedAt
+              tags               = @("政府裁罰", "幼兒園", "已查證")
+              evidence           = @(
+                [ordered]@{
+                  title        = "幼兒園裁罰詳情（全國教保資訊網）"
+                  publisher    = "教育部"
+                  url          = $row.ViewUrl
+                  type         = "government_doc"
+                  capturedAt   = $row.SnapAt
+                  snapshotPath = $row.SnapPath
+                  httpStatus   = 200
+                  status       = "captured"
+                }
+              )
+            }
+
+            [void]$newVerified.Add($penaltyEvent)
+            [void]$seenDocSet.Add($docKey)
+            $detailCount++
+            Write-Host "    ✓ $($row.Date) $($row.GNum)（$($row.Fine)）"
+          }
+
+          # 標記此機構已完整擷取詳情（下次跳過）
+          [void]$seenInstSet.Add($instKey)
+        } else {
+          # 詳情抓取失敗，回退為基本事件
+          $fallbackKey = ConvertTo-Slug "$instName|moe-penalty"
+          if (-not $seenDocSet.Contains($fallbackKey)) {
+            $eventId = "penalty-moe-kg-$(ConvertTo-Slug $instName)"
+            $penaltyEvent = [ordered]@{
+              id                 = $eventId
+              verificationStatus = "verified"
+              autoImported       = $true
+              importSource       = "penalty-moe-aspx"
+              institution        = [ordered]@{
+                name = $instName; type = "幼兒園"; city = $city; district = $district
+                address = ""; code = ""; aliases = @()
+              }
+              risk               = "high"
+              category           = "penalty"
+              title              = "主管機關裁罰：$instName"
+              summary            = "此幼兒園列於教育部全國教保資訊網裁罰名單，詳細裁罰事由請查閱官方紀錄。"
+              eventDate          = "unknown"
+              importedAt         = $importedAt
+              tags               = @("政府裁罰", "幼兒園", "已查證")
+              evidence           = @(
+                [ordered]@{
+                  title        = "幼兒園裁罰紀錄（全國教保資訊網）"
+                  publisher    = "教育部"
+                  url          = $moeUrl
+                  type         = "government_doc"
+                  capturedAt   = $snapAt
+                  snapshotPath = $postSnapPath
+                  httpStatus   = 200
+                  status       = "captured"
+                }
+              )
+            }
+            [void]$newVerified.Add($penaltyEvent)
+            [void]$seenDocSet.Add($fallbackKey)
+            $fallbackCount++
+          }
+        }
+      }
+
+      Write-Host "`n  詳情抓取完成：新增 $detailCount 筆、略過（已有）$skipCount 筆、回退 $fallbackCount 筆"
     } else {
       Write-Warning "  POST 回應過小（$($postHtml.Length) 位元組），可能遭防火牆封鎖"
     }
@@ -348,7 +523,7 @@ Start-Sleep -Milliseconds $DelayMs
 
 # ---------------------------------------------------------------------------
 # 來源 2：教育部政府資料開放平台 — 幼兒園名錄（dataset/6086）
-#   用途：提供 JSON 格式裁罰資料（若有）；同時補充機構地址資訊
+#   用途：補充機構地址資訊，不產生裁罰事件
 # ---------------------------------------------------------------------------
 
 $src2Url = "https://data.gov.tw/dataset/6086"
@@ -371,14 +546,13 @@ try {
       $bytes  = $client.DownloadData($jsonResUrl)
       [System.IO.File]::WriteAllBytes($resourcePath, $bytes)
       Write-Host "  下載完成，儲存至：$resourcePath"
-      # 此為名錄資料，供機構比對使用，不產生裁罰事件
       $dirItems = Read-JsonArrayFile $resourcePath
       Write-Host "  共 $($dirItems.Count) 筆幼兒園名錄記錄（供機構比對用）"
     } catch {
       Write-Warning "  無法下載 JSON 資源：$($_.Exception.Message)"
     }
   } else {
-    Write-Host "  頁面中未找到 JSON 資源連結（名錄資料來源僅供參考）"
+    Write-Host "  頁面中未找到 JSON 資源連結"
   }
 } catch {
   Write-Warning "來源 2 幼兒園名錄抓取失敗：$($_.Exception.Message)"
@@ -393,17 +567,21 @@ Start-Sleep -Milliseconds $DelayMs
 Write-Host "`n=== 結果 ==="
 
 if ($newVerified.Count -gt 0) {
-  $mergedEvents = @($existingEvents) + @($newVerified)
+  # 取代所有舊的 penalty-moe-aspx 事件（確保詳情升級）
+  $otherEvents  = @($existingEvents | Where-Object { $_["importSource"] -ne "penalty-moe-aspx" })
+  $mergedEvents = @($otherEvents) + @($newVerified)
   $eventsJson   = $mergedEvents | ConvertTo-Json -Depth 18
   [System.IO.File]::WriteAllText($eventsPath, $eventsJson, [System.Text.Encoding]::UTF8)
-  Write-Host "已新增 $($newVerified.Count) 筆已查證裁罰至 $eventsPath"
+  Write-Host "已寫入 $($newVerified.Count) 筆裁罰事件（含 $detailCount 筆有詳細原因）至 $eventsPath"
 } else {
   Write-Host "本次無新裁罰記錄（來源 1 可能遭 WAF 封鎖，需人工確認）。"
 }
 
 $seenOutput = [ordered]@{
+  version   = 2
   updatedAt = (Get-Date).ToUniversalTime().ToString("o")
-  seen      = @($seenSet)
+  docs      = @($seenDocSet)
+  instSeen  = @($seenInstSet)
 }
 [System.IO.File]::WriteAllText($seenPath, ($seenOutput | ConvertTo-Json -Depth 4), [System.Text.Encoding]::UTF8)
-Write-Host "已更新 $seenPath（已知去重鍵：$($seenSet.Count) 筆）"
+Write-Host "已更新 $seenPath（已知裁罰文號：$($seenDocSet.Count) 筆，已擷取詳情機構：$($seenInstSet.Count) 筆）"
