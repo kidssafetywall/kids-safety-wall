@@ -299,8 +299,12 @@
             <input type="file" id="queueFile" accept=".json" onchange="loadQueueFile(event)">
           </div>
           <div>
-            <div style="font-size:13px;color:var(--muted);margin-bottom:5px;">載入現有 events.json（選填，用於合併）</div>
+            <div style="font-size:13px;margin-bottom:5px;">
+              <span style="color:#c0392b;font-weight:700;">⚠ 必填</span>
+              <span style="color:var(--muted);"> 載入現有 events.json（未載入時下載會清空裁罰記錄！）</span>
+            </div>
             <input type="file" id="eventsFile" accept=".json" onchange="loadEventsFile(event)">
+            <span id="eventsFileStatus" style="font-size:12px;color:var(--muted);margin-left:6px;"></span>
           </div>
           <div style="align-self:flex-end;">
             <button class="ghost" type="button" onclick="pasteQueueJson()">貼上 JSON 文字</button>
@@ -518,7 +522,13 @@
       if (!file) return;
       const reader = new FileReader();
       reader.onload = ev => {
-        try { baseEvents = JSON.parse(ev.target.result); } catch {}
+        try {
+          baseEvents = JSON.parse(ev.target.result);
+          const status = document.querySelector("#eventsFileStatus");
+          if (status) status.textContent = `✓ 已載入 ${baseEvents.length} 筆`;
+        } catch {
+          alert("events.json 解析失敗，請確認格式正確。");
+        }
       };
       reader.readAsText(file, "UTF-8");
     }
@@ -639,10 +649,21 @@
     }
 
     function downloadUpdatedEvents() {
-      // 合併現有 events + 本次標記為 verified 的條目
       const newVerified = reviewQueue
         .filter(item => getDecision(item) === "verified")
         .map(item => ({ ...item, verificationStatus: "verified" }));
+
+      if (baseEvents.length === 0) {
+        const ok = confirm(
+          "⚠ 警告：你尚未載入現有的 events.json！\n\n" +
+          "如果繼續，下載的檔案只會包含本次核准的 " + newVerified.length + " 筆新聞，\n" +
+          "所有現有裁罰記錄、司法記錄將全部消失。\n\n" +
+          "建議：取消後先載入 data/events.json，再重新下載。\n\n" +
+          "確定要繼續（僅下載新核准項目）？"
+        );
+        if (!ok) return;
+      }
+
       const merged = [...baseEvents, ...newVerified];
       downloadJson(merged, "events.json");
     }

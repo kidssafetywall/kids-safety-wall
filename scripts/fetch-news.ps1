@@ -170,6 +170,18 @@ foreach ($inst in $knownInstitutions.Values) {
   })
 }
 
+# 機構名稱快查表（用於從新聞標題自動辨識機構，減少「待人工分類」數量）
+$institutionsPath = Join-Path $dataDir "institutions.json"
+$allInstitutions  = Read-JsonArrayFile $institutionsPath
+$instNameLookup   = [ordered]@{}
+foreach ($inst in $allInstitutions) {
+  $n = "$($inst["name"])"
+  if ($n.Length -ge 4 -and -not $instNameLookup.Contains($n)) {
+    $instNameLookup[$n] = $inst
+  }
+}
+Write-Host "機構名稱快查表：$($instNameLookup.Count) 筆"
+
 Write-Host "=== 兒少防火牆：新聞抓取 ==="
 Write-Host "通用查詢：6 筆  專項查詢：$($knownInstitutions.Count) 筆  上限：$MaxNewPerRun 筆新事件"
 
@@ -251,6 +263,23 @@ foreach ($entry in $queries) {
 
     $instCity = if ($entry.ContainsKey("city") -and $entry.city) { $entry.city } else { "" }
 
+    # 嘗試從標題自動辨識機構（僅對通用查詢「待人工分類」有效）
+    $autoInst = $null
+    if ($entry.name -eq "待人工分類" -and $instNameLookup.Count -gt 0) {
+      foreach ($iName in $instNameLookup.Keys) {
+        if ($title.Contains($iName)) {
+          $autoInst = $instNameLookup[$iName]
+          break
+        }
+      }
+    }
+
+    $resolvedName = if ($autoInst) { "$($autoInst["name"])" } else { $entry.name }
+    $resolvedType = if ($autoInst) { "$($autoInst["type"])" } else { $entry.type }
+    $resolvedCity = if ($autoInst) { "$($autoInst["city"])" } else { $instCity }
+    $resolvedDist = if ($autoInst) { "$($autoInst["district"])" } else { "" }
+    $autoTag      = if ($autoInst) { Write-Host "  → 自動辨識：$resolvedName（$resolvedCity）"; "自動辨識" } else { $null }
+
     $newEvent = [ordered]@{
       id                 = $eventId
       verificationStatus = "pending"
@@ -258,10 +287,10 @@ foreach ($entry in $queries) {
       importSource       = "google-news-rss"
       searchQuery        = $entry.q
       institution        = [ordered]@{
-        name     = $entry.name
-        type     = $entry.type
-        city     = $instCity
-        district = ""
+        name     = $resolvedName
+        type     = $resolvedType
+        city     = $resolvedCity
+        district = $resolvedDist
         address  = ""
         code     = ""
         aliases  = @()
@@ -272,7 +301,7 @@ foreach ($entry in $queries) {
       summary            = $summary
       eventDate          = $eventDate
       importedAt         = $importedAt
-      tags               = @("自動匯入", "新聞", $entry.type)
+      tags               = @("自動匯入", "新聞", $resolvedType) + @(if ($autoTag) { $autoTag } else { @() })
       evidence           = @(
         [ordered]@{
           title        = $title
