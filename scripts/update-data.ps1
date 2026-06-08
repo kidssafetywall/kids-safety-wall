@@ -126,7 +126,7 @@ function Get-RiskFromRank([int]$Rank) {
 
 function Get-InstitutionKey($Institution) {
   if ($Institution["code"]) { return [string]$Institution["code"] }
-  $city = "$($Institution["city"])".Replace("臺","台").Replace("　"," ").Trim()
+  $city = Format-City $Institution["city"]
   $name = "$($Institution["name"])".Trim()
   return ConvertTo-Slug "$city|$name"
 }
@@ -141,11 +141,12 @@ function Get-Prop($Item, [string[]]$Names) {
 }
 
 function Normalize-ImportedText([string]$Value) {
-  if (-not $Value) {
-    return ""
-  }
-
+  if (-not $Value) { return "" }
   return (($Value -replace '^\[[^\]]+\]', '')).Trim()
+}
+
+function Format-City([string]$Value) {
+  return "$Value".Replace("臺","台").Replace("　"," ").Trim()
 }
 
 function U([int[]]$Codes) {
@@ -233,7 +234,7 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
       continue
     }
 
-    $city = Normalize-ImportedText (Get-Prop $item $cityKeys)
+    $city = Format-City (Normalize-ImportedText (Get-Prop $item $cityKeys))
     $district = Normalize-ImportedText (Get-Prop $item $districtKeys)
     $address = Normalize-ImportedText (Get-Prop $item $addressKeys)
     $code = Get-Prop $item $codeKeys
@@ -383,7 +384,7 @@ foreach ($event in $allEvents) {
     $institutionMap[$key] = [ordered]@{
       key = $key
       name = $institution["name"]
-      city = $institution["city"]
+      city = Format-City $institution["city"]
       district = $institution["district"]
       type = $institution["type"]
       address = $institution["address"]
