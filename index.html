@@ -1236,10 +1236,10 @@
           document.querySelector("#reportFormArea").style.display = "none";
           document.querySelector("#reportSuccessArea").style.display = "";
         } else {
-          alert("送出失敗，請稍後再試或直接聯繫管理員。");
+          res.text().then(t => alert("送出失敗 (HTTP " + res.status + ")：" + t.substring(0, 200)));
         }
-      }).catch(() => {
-        alert("網路錯誤，請稍後再試。");
+      }).catch(err => {
+        alert("網路錯誤：" + err.message);
       });
     }
 
