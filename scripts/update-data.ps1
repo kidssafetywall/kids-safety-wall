@@ -126,8 +126,9 @@ function Get-RiskFromRank([int]$Rank) {
 
 function Get-InstitutionKey($Institution) {
   if ($Institution["code"]) { return [string]$Institution["code"] }
-  $raw = "$($Institution["city"])|$($Institution["name"])|$($Institution["address"])"
-  return ConvertTo-Slug $raw
+  $city = "$($Institution["city"])".Replace("臺","台").Replace("　"," ").Trim()
+  $name = "$($Institution["name"])".Trim()
+  return ConvertTo-Slug "$city|$name"
 }
 
 function Get-Prop($Item, [string[]]$Names) {
