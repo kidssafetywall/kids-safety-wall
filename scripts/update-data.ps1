@@ -240,6 +240,12 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
     $website = Get-Prop $item $websiteKeys
     $type = if ($Source.entityType) { "$($Source.entityType)" } else { "教育機構" }
     $key = if ($code) { "$($Source.id)-$code" } else { ConvertTo-Slug "$($Source.id)|$city|$name|$address" }
+
+    # Extract 公/私立 category; detect 非營利 from name
+    $catRaw = Get-Prop $item @((U @(0x516c, 0x002f, 0x79c1, 0x7acb)))
+    $nonProfit = U @(0x975e, 0x71df, 0x5229)
+    $instCategory = if ($name -match [regex]::Escape($nonProfit)) { $nonProfit } elseif ($catRaw) { $catRaw } else { "" }
+
     $count++
 
     $rows += [ordered]@{
@@ -251,6 +257,7 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
       address = $address
       code = $code
       aliases = @()
+      instCategory = $instCategory
       risk = "low"
       penalties = 0
       news = 0
@@ -381,6 +388,7 @@ foreach ($event in $allEvents) {
       address = $institution["address"]
       code = $institution["code"]
       aliases = @($institution["aliases"])
+      instCategory = if ($institution["instCategory"]) { "$($institution['instCategory'])" } else { "" }
       risk = "low"
       riskRank = 1
       penalties = 0
@@ -431,6 +439,11 @@ foreach ($event in $allEvents) {
     snapshotPath = $capturedEvidence[0].snapshotPath
     httpStatus = $capturedEvidence[0].httpStatus
     status = $capturedEvidence[0].status
+    penaltyDocNumber  = if ($event["penaltyDocNumber"])  { "$($event['penaltyDocNumber'])" }  else { $null }
+    penaltyLegalBasis = if ($event["penaltyLegalBasis"]) { "$($event['penaltyLegalBasis'])" } else { $null }
+    penaltyViolation  = if ($event["penaltyViolation"])  { "$($event['penaltyViolation'])" }  else { $null }
+    penaltyContent    = if ($event["penaltyContent"])    { "$($event['penaltyContent'])" }    else { $null }
+    penaltyRespondent = if ($event["penaltyRespondent"]) { "$($event['penaltyRespondent'])" } else { $null }
   }
 }
 

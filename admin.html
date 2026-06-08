@@ -157,6 +157,21 @@
   </style>
 </head>
 <body>
+
+  <!-- ══ 登入遮罩 ══════════════════════════════════════════════════════ -->
+  <div id="loginOverlay" style="display:none;position:fixed;inset:0;background:#0d1a24;z-index:9999;align-items:center;justify-content:center;">
+    <div style="background:white;border-radius:12px;padding:36px 32px;width:min(380px,calc(100% - 32px));box-shadow:0 20px 60px rgba(0,0,0,.4);">
+      <div style="font-weight:900;font-size:20px;margin-bottom:6px;">兒少防火牆 · 審核後台</div>
+      <div style="color:#667085;font-size:14px;margin-bottom:24px;">請輸入管理員密碼以繼續</div>
+      <form id="loginForm" onsubmit="doLogin(event)">
+        <input id="loginPwd" type="password" placeholder="密碼" autocomplete="current-password"
+          style="width:100%;border:1px solid #d8dee8;border-radius:6px;padding:11px 13px;font:inherit;font-size:15px;margin-bottom:12px;outline:none;">
+        <div id="loginErr" style="display:none;color:#b42318;font-size:13px;margin-bottom:10px;">密碼錯誤，請再試一次。</div>
+        <button type="submit" style="width:100%;background:#0d6b68;color:white;border:0;border-radius:6px;padding:12px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;">登入</button>
+      </form>
+    </div>
+  </div>
+
   <header>
     <strong>兒少防火牆 · 審核後台</strong>
     <nav>
@@ -342,6 +357,38 @@
     </div>
 
   </main>
+
+  <script>
+    // ── 登入驗證 ──────────────────────────────────────────────────────
+    // 預設密碼：admin2025
+    // 修改方式：在瀏覽器 console 執行下列指令取得新密碼的 SHA-256，再更新 ADMIN_HASH：
+    //   crypto.subtle.digest('SHA-256', new TextEncoder().encode('你的新密碼'))
+    //     .then(b => console.log(Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')))
+    const ADMIN_HASH = "0e89f223e226ae63268cf39152ab75722e811b89d29efb22a852f1667bd22ae0";
+
+    async function doLogin(e) {
+      e.preventDefault();
+      const pwd = document.querySelector("#loginPwd").value;
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pwd));
+      const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+      if (hash === ADMIN_HASH) {
+        sessionStorage.setItem("adminAuth", "1");
+        document.querySelector("#loginOverlay").style.display = "none";
+      } else {
+        document.querySelector("#loginErr").style.display = "";
+        document.querySelector("#loginPwd").value = "";
+        document.querySelector("#loginPwd").focus();
+      }
+    }
+
+    (function checkAuth() {
+      if (!sessionStorage.getItem("adminAuth")) {
+        const overlay = document.querySelector("#loginOverlay");
+        overlay.style.display = "flex";
+        setTimeout(() => document.querySelector("#loginPwd").focus(), 50);
+      }
+    })();
+  </script>
 
   <script>
     const storageKey = "safetyWallReviewQueue";

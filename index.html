@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>兒少防火牆 | 教育機構風險資訊查詢</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <style>
     :root {
       --ink: #17202a;
@@ -664,9 +665,6 @@
       <span>兒少防火牆</span>
     </div>
     <nav class="nav-links">
-      <a href="#results">查詢</a>
-      <a href="#sources">資料來源</a>
-      <a href="#update">每日更新</a>
       <a href="#" id="navReportBtn" onclick="openReportModal(event)">回報問題機構</a>
       <a href="admin.html">審核後台</a>
     </nav>
@@ -684,12 +682,24 @@
           <input id="query" class="search-input" type="search" placeholder="輸入機構名稱、地址或關鍵字" autocomplete="off">
           <button class="primary-btn" type="submit" title="搜尋">搜尋</button>
         </div>
-        <div class="filters">
+        <div class="filters" style="grid-template-columns:1fr 1fr;">
           <select id="city" aria-label="縣市">
             <option value="">全部縣市</option>
           </select>
+          <select id="district" aria-label="鄉鎮市區" disabled>
+            <option value="">全部鄉鎮市區</option>
+          </select>
+        </div>
+        <div class="filters" style="margin-top:0;">
           <select id="type" aria-label="類型">
             <option value="">全部類型</option>
+          </select>
+          <select id="instCategory" aria-label="公私立">
+            <option value="">全部公私立</option>
+            <option value="公立">公立</option>
+            <option value="非營利">非營利</option>
+            <option value="準公共">準公共</option>
+            <option value="私立">私立</option>
           </select>
           <select id="risk" aria-label="風險">
             <option value="">全部風險</option>
@@ -719,6 +729,7 @@
             <li><a href="https://data.gov.tw/dataset/6089" target="_blank" rel="noreferrer">一般高級中等學校名錄<small>政府資料開放平台</small></a></li>
             <li><a href="https://data.gov.tw/dataset/16461" target="_blank" rel="noreferrer">全國立案短期補習班基本資料<small>政府資料開放平台</small></a></li>
             <li><a href="https://data.nat.gov.tw/dataset/63205" target="_blank" rel="noreferrer">司法院裁判書開放 API<small>司法公開資料</small></a></li>
+            <li><a href="https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx" target="_blank" rel="noreferrer">教育部幼兒園裁罰公告<small>全國教保資訊網</small></a></li>
           </ul>
         </section>
 
@@ -745,6 +756,9 @@
         </div>
 
         <div class="results" id="resultGrid"></div>
+        <div id="mapContainer" style="display:none;margin-top:4px;">
+          <div id="leafletMap" style="width:100%;height:520px;border:1px solid var(--line);border-radius:8px;z-index:0;"></div>
+        </div>
 
       </section>
     </div>
@@ -758,7 +772,6 @@
           <div class="step"><b>3</b><h3>審核佇列</h3><p>新增裁罰直接入庫，新聞與使用者回饋進入人工審核。</p></div>
           <div class="step"><b>4</b><h3>發布索引</h3><p>更新搜尋資料庫、地圖座標、機構頁面與異動紀錄。</p></div>
         </div>
-        <div class="notice">建議上線架構：Next.js 前台、PostgreSQL + PostGIS、Meilisearch 搜尋、GitHub Actions 或 Cloudflare Cron Triggers 每日排程。</div>
       </div>
     </section>
   </main>
@@ -873,6 +886,7 @@
     </div>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPeM=" crossorigin=""></script>
   <script src="data/site-data.js"></script>
   <script>
     const fallbackInstitutions = [
@@ -1001,33 +1015,81 @@
 
     const state = { mode: "list", items: institutions };
     const grid = document.querySelector("#resultGrid");
+    const mapContainer = document.querySelector("#mapContainer");
+
+    const COUNTY_COORDS = {
+      "台北市": [25.0330, 121.5654], "新北市": [25.0127, 121.4670],
+      "基隆市": [25.1283, 121.7419], "桃園市": [24.9936, 121.3009],
+      "新竹市": [24.8038, 120.9717], "新竹縣": [24.6951, 121.1563],
+      "苗栗縣": [24.5602, 120.8214], "台中市": [24.1477, 120.6736],
+      "彰化縣": [24.0518, 120.5161], "南投縣": [23.9610, 120.9718],
+      "雲林縣": [23.7092, 120.4313], "嘉義市": [23.4801, 120.4491],
+      "嘉義縣": [23.4518, 120.2554], "台南市": [23.1417, 120.2513],
+      "高雄市": [22.6273, 120.3014], "屏東縣": [22.5519, 120.5487],
+      "宜蘭縣": [24.7021, 121.7377], "花蓮縣": [23.9871, 121.6015],
+      "台東縣": [22.7583, 121.1444], "澎湖縣": [23.5711, 119.5793],
+      "金門縣": [24.4493, 118.3767], "連江縣": [26.1505, 119.9497]
+    };
+
+    let leafletMap = null;
+    let leafletMarkers = [];
+
+    // Pre-compute city→district map
+    const cityDistrictMap = {};
+    institutions.forEach(item => {
+      if (!item.city) return;
+      if (!cityDistrictMap[item.city]) cityDistrictMap[item.city] = new Set();
+      if (item.district) cityDistrictMap[item.city].add(item.district);
+    });
+
+    function addOptions(select, values) {
+      const existing = new Set(Array.from(select.options).map(o => o.value || o.textContent));
+      values.filter(Boolean).sort((a, b) => a.localeCompare(b, "zh-Hant")).forEach(value => {
+        if (!existing.has(value)) {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = value;
+          select.appendChild(option);
+          existing.add(value);
+        }
+      });
+    }
+
+    function updateDistrictOptions(city) {
+      const districtSel = document.querySelector("#district");
+      districtSel.innerHTML = '<option value="">全部鄉鎮市區</option>';
+      districtSel.disabled = !city;
+      if (city && cityDistrictMap[city]) {
+        addOptions(districtSel, [...cityDistrictMap[city]]);
+      }
+    }
 
     function populateFilterOptions() {
-      const citySelect = document.querySelector("#city");
-      const typeSelect = document.querySelector("#type");
-      const addOptions = (select, values) => {
-        const existing = new Set(Array.from(select.options).map(option => option.value || option.textContent));
-        values.filter(Boolean).sort((a, b) => a.localeCompare(b, "zh-Hant")).forEach(value => {
-          if (!existing.has(value)) {
-            const option = document.createElement("option");
-            option.value = value;
-            option.textContent = value;
-            select.appendChild(option);
-            existing.add(value);
-          }
-        });
-      };
-      addOptions(citySelect, [...new Set(institutions.map(item => item.city))]);
-      addOptions(typeSelect, [...new Set(institutions.map(item => item.type))]);
+      addOptions(document.querySelector("#city"),  [...new Set(institutions.map(i => i.city))]);
+      addOptions(document.querySelector("#type"),  [...new Set(institutions.map(i => i.type))]);
     }
 
     function matchesFilters(item) {
-      const q = document.querySelector("#query").value.trim().toLowerCase();
-      const city = document.querySelector("#city").value;
-      const type = document.querySelector("#type").value;
-      const risk = document.querySelector("#risk").value;
-      const haystack = `${item.name} ${item.city} ${item.district} ${item.type} ${item.address} ${item.tags.join(" ")}`.toLowerCase();
-      return (!q || haystack.includes(q)) && (!city || item.city === city) && (!type || item.type === type) && (!risk || item.risk === risk);
+      const q        = document.querySelector("#query").value.trim().toLowerCase();
+      const city     = document.querySelector("#city").value;
+      const district = document.querySelector("#district").value;
+      const type     = document.querySelector("#type").value;
+      const category = document.querySelector("#instCategory").value;
+      const risk     = document.querySelector("#risk").value;
+
+      // Include penalty respondent names in full-text search
+      const respondents = (item.events || [])
+        .map(e => typeof e === "object" ? (e.penaltyRespondent || "").replace(/^負責人[：:]/,"") : "")
+        .filter(Boolean).join(" ");
+
+      const haystack = `${item.name} ${item.city} ${item.district || ""} ${item.type} ${item.address || ""} ${(item.tags || []).join(" ")} ${respondents}`.toLowerCase();
+
+      return (!q        || haystack.includes(q))
+          && (!city     || item.city === city)
+          && (!district || item.district === district)
+          && (!type     || item.type === type)
+          && (!category || item.instCategory === category)
+          && (!risk     || item.risk === risk);
     }
 
     function render() {
@@ -1043,19 +1105,13 @@
       document.querySelector("#resultMeta").textContent = `目前顯示 ${state.items.length} 筆，共收錄 ${institutions.length} 個機構`;
 
       if (state.mode === "map") {
-        const pins = state.items.map((item, index) => `
-          <button class="pin ${riskClass[item.risk]}" style="left:${item.xy[0]}%;top:${item.xy[1]}%;"
-            onclick="showDetail(${institutions.indexOf(item)})" title="${item.name}">
-            <span>${index + 1}</span>
-          </button>`).join("");
-        grid.innerHTML = `<div class="map-board" aria-label="示意地圖">
-          ${pins}
-          <div style="position:absolute;bottom:10px;right:12px;font-size:12px;color:#667085;background:rgba(255,255,255,.85);padding:4px 8px;border-radius:4px;">
-            地圖為示意，正式版將接入實際地理座標
-          </div>
-        </div>`;
+        grid.style.display = "none";
+        mapContainer.style.display = "";
+        initOrUpdateMap(state.items);
         return;
       }
+      grid.style.display = "";
+      mapContainer.style.display = "none";
 
       if (state.items.length === 0) {
         grid.innerHTML = `<div style="grid-column:1/-1;padding:40px 20px;text-align:center;color:var(--muted);">
@@ -1097,6 +1153,60 @@
           </div>
         </article>`;
       }).join("");
+    }
+
+    function initOrUpdateMap(items) {
+      if (!leafletMap) {
+        leafletMap = L.map("leafletMap").setView([23.7, 120.9], 7);
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
+        }).addTo(leafletMap);
+      }
+
+      leafletMarkers.forEach(m => m.remove());
+      leafletMarkers = [];
+
+      // Group items by county
+      const byCounty = {};
+      items.forEach(item => {
+        const c = item.city || "全國";
+        if (!byCounty[c]) byCounty[c] = [];
+        byCounty[c].push(item);
+      });
+
+      Object.entries(byCounty).forEach(([city, list]) => {
+        const coords = COUNTY_COORDS[city];
+        if (!coords) return;
+        const hasHigh = list.some(i => i.risk === "high");
+        const hasMid  = list.some(i => i.risk === "mid");
+        const color   = hasHigh ? "#b42318" : hasMid ? "#b7791f" : "#0d6b68";
+        const count   = list.length;
+        const icon = L.divIcon({
+          className: "",
+          html: `<div style="width:40px;height:40px;border-radius:50%;background:${color};border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.28);display:grid;place-items:center;color:white;font-weight:900;font-size:12px;font-family:inherit;">${count > 99 ? "99+" : count}</div>`,
+          iconSize: [40, 40], iconAnchor: [20, 20]
+        });
+        const top = list.slice(0, 8);
+        const rows = top.map(item => {
+          const idx = institutions.indexOf(item);
+          const dot = `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${item.risk==="high"?"#b42318":item.risk==="mid"?"#b7791f":"#0d6b68"};margin-right:5px;vertical-align:middle;"></span>`;
+          return `<div style="font-size:12px;line-height:1.8;">${dot}<a href="#" onclick="closeMap();showDetail(${idx});return false;" style="color:var(--teal);">${item.name}</a>${item.district ? ` <span style="color:#667085">(${item.district})</span>` : ""}</div>`;
+        }).join("");
+        const more = count > 8 ? `<div style="font-size:12px;color:#667085;margin-top:4px;">…另有 ${count - 8} 個機構</div>` : "";
+        const popup = `<div style="min-width:200px;"><strong>${city}</strong>（${count} 個機構）<div style="margin-top:6px;">${rows}${more}</div></div>`;
+        const m = L.marker(coords, { icon }).bindPopup(popup, { maxWidth: 280 }).addTo(leafletMap);
+        leafletMarkers.push(m);
+      });
+
+      setTimeout(() => leafletMap.invalidateSize(), 80);
+    }
+
+    function closeMap() {
+      state.mode = "list";
+      document.querySelector("#listBtn").classList.add("active");
+      document.querySelector("#mapBtn").classList.remove("active");
+      render();
     }
 
     function normalizeEvent(event) {
@@ -1228,7 +1338,14 @@
       render();
     });
 
-    ["query", "city", "type", "risk"].forEach(id => {
+    // City change cascades district dropdown then re-renders
+    document.querySelector("#city").addEventListener("change", () => {
+      updateDistrictOptions(document.querySelector("#city").value);
+      document.querySelector("#district").value = "";
+      render();
+    });
+
+    ["query", "type", "risk", "district", "instCategory"].forEach(id => {
       document.querySelector(`#${id}`).addEventListener("input", render);
     });
 
@@ -1313,6 +1430,7 @@
     window.openReportModal = openReportModal;
     window.closeReportModal = closeReportModal;
     window.closeDetailModal = closeDetailModal;
+    window.closeMap = closeMap;
     window.handleReportSubmit = handleReportSubmit;
     window.updateCharCount = updateCharCount;
 
