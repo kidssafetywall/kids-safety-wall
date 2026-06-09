@@ -105,6 +105,30 @@
     .tab-panel.active { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 18px; align-items: start; }
     .tab-panel.active.full-width { grid-template-columns: 1fr; }
 
+    /* 機構管理介面 */
+    .mgmt-search-bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+    .mgmt-search-bar input { flex:1; min-width:160px; padding:8px 10px; border:1px solid var(--line); border-radius:6px; font:inherit; font-size:14px; }
+    .mgmt-search-bar select { padding:8px 10px; border:1px solid var(--line); border-radius:6px; font:inherit; font-size:14px; cursor:pointer; }
+    .mgmt-card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin-bottom:10px; display:flex; align-items:center; gap:12px; }
+    .mgmt-card.is-closed { background:#fff8f8; border-color:#f5c6c6; }
+    .mgmt-card-info { flex:1; min-width:0; }
+    .mgmt-card-info .inst-name { font-weight:700; font-size:14px; }
+    .mgmt-card-info .inst-meta { font-size:12px; color:var(--muted); margin-top:2px; }
+    .mgmt-card-actions { display:flex; flex-direction:column; align-items:flex-end; gap:6px; flex-shrink:0; }
+    .mgmt-note-row { display:flex; gap:6px; align-items:center; }
+    .mgmt-note-row input { font:inherit; font-size:12px; padding:4px 8px; border:1px solid var(--line); border-radius:4px; width:180px; }
+    .badge-closed { background:#fdecea; color:#c62828; font-size:11px; padding:2px 8px; border-radius:999px; }
+    .badge-open { background:#e7f5ec; color:#357a38; font-size:11px; padding:2px 8px; border-radius:999px; }
+    .btn-close-inst { background:#fdecea; color:#c62828; border:1px solid #f5c6c6; border-radius:6px; padding:5px 12px; font:inherit; font-size:12px; cursor:pointer; white-space:nowrap; }
+    .btn-open-inst  { background:#e7f5ec; color:#357a38; border:1px solid #c3e6cb; border-radius:6px; padding:5px 12px; font:inherit; font-size:12px; cursor:pointer; white-space:nowrap; }
+    .mgmt-footer { display:flex; align-items:center; justify-content:space-between; padding:12px 0 4px; border-top:1px solid var(--line); margin-top:12px; }
+    .mgmt-page-info { font-size:13px; color:var(--muted); }
+    .mgmt-pg-btns { display:flex; gap:6px; }
+    .mgmt-pg-btn { background:#fff; border:1px solid var(--line); border-radius:6px; padding:4px 12px; font:inherit; font-size:13px; cursor:pointer; }
+    .mgmt-pg-btn:disabled { opacity:.4; cursor:default; }
+    .mgmt-pg-btn.active { background:var(--teal); color:#fff; border-color:var(--teal); }
+    .mgmt-actions-bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:14px; padding:10px 12px; background:#f8f9fa; border-radius:6px; border:1px solid var(--line); }
+
     /* 審核介面 */
     .review-toolbar {
       display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 14px;
@@ -198,6 +222,7 @@
     <div class="tabs">
       <button class="tab-btn active" type="button" onclick="switchTab('add')">新增事件</button>
       <button class="tab-btn" type="button" onclick="switchTab('review')">審核待審佇列</button>
+      <button class="tab-btn" type="button" onclick="switchTab('mgmt')">機構管理</button>
     </div>
 
     <!-- ═══ Tab 1：新增事件 ═══ -->
@@ -321,6 +346,11 @@
             <input type="file" id="eventsFile" accept=".json" onchange="loadEventsFile(event)">
             <span id="eventsFileStatus" style="font-size:12px;color:var(--muted);margin-left:6px;"></span>
           </div>
+          <div>
+            <div style="font-size:13px;color:var(--muted);margin-bottom:5px;">載入 institutions.json（讓縣市/機構下拉更完整）</div>
+            <input type="file" id="institutionsFile" accept=".json" onchange="loadInstitutionsFile(event)">
+            <span id="institutionsFileStatus" style="font-size:12px;color:var(--muted);margin-left:6px;"></span>
+          </div>
           <div style="align-self:flex-end;">
             <button class="ghost" type="button" onclick="pasteQueueJson()">貼上 JSON 文字</button>
           </div>
@@ -368,6 +398,54 @@
         </div>
       </div>
     </div><!-- /tabReview -->
+
+    <!-- ═══ Tab 3：機構管理 ═══ -->
+    <div class="tab-panel full-width" id="tabMgmt">
+      <section class="panel">
+        <h2 style="margin-bottom:4px;">機構狀態管理</h2>
+        <p style="color:var(--muted);font-size:13px;margin-bottom:14px;">搜尋機構並手動標記已歇業／停辦。完成後下載 institution-overrides.json 放到 data/ 資料夾再部署。</p>
+
+        <div class="mgmt-actions-bar">
+          <label style="font-size:13px;font-weight:600;">載入資料：</label>
+          <label style="font-size:13px;cursor:pointer;color:var(--teal);">
+            institutions.json
+            <input type="file" accept=".json" style="display:none" onchange="loadInstitutionsMgmt(event)">
+          </label>
+          <span id="mgmtInstStatus" style="font-size:12px;color:var(--muted);"></span>
+          <span style="color:var(--line);">|</span>
+          <label style="font-size:13px;cursor:pointer;color:var(--teal);">
+            institution-overrides.json（現有）
+            <input type="file" accept=".json" style="display:none" onchange="loadOverridesFile(event)">
+          </label>
+          <span id="mgmtOverridesStatus" style="font-size:12px;color:var(--muted);"></span>
+          <span style="flex:1"></span>
+          <button class="btn" onclick="downloadOverrides()" style="font-size:13px;padding:6px 14px;">下載 institution-overrides.json (<span id="overrideCount">0</span>)</button>
+        </div>
+
+        <div class="mgmt-search-bar">
+          <input type="search" id="mgmtQuery" placeholder="機構名稱關鍵字…" oninput="renderMgmt(true)">
+          <select id="mgmtCityFilter" onchange="renderMgmt(true)">
+            <option value="">全部縣市</option>
+          </select>
+          <select id="mgmtTypeFilter" onchange="renderMgmt(true)">
+            <option value="">全部類型</option>
+            <option>幼兒園</option><option>國小</option><option>國中</option>
+            <option>高中職</option><option>補習班</option><option>課後照顧中心</option>
+          </select>
+          <select id="mgmtStatusFilter" onchange="renderMgmt(true)">
+            <option value="">全部狀態</option>
+            <option value="closed">已歇業</option>
+            <option value="open">營業中</option>
+          </select>
+        </div>
+
+        <div id="mgmtList"></div>
+        <div class="mgmt-footer" id="mgmtFooter" style="display:none;">
+          <span class="mgmt-page-info" id="mgmtPageInfo"></span>
+          <div class="mgmt-pg-btns" id="mgmtPgBtns"></div>
+        </div>
+      </section>
+    </div><!-- /tabMgmt -->
 
     <!-- Paste JSON 對話框 -->
     <div id="pasteDialog" style="display:none;position:fixed;inset:0;background:rgba(23,32,42,.5);z-index:200;display:none;align-items:center;justify-content:center;">
@@ -505,11 +583,204 @@
     // ──────────────────────────────────────────────────────────────────────
 
     function switchTab(tab) {
+      const tabMap = { add: 0, review: 1, mgmt: 2 };
       document.querySelectorAll(".tab-btn").forEach((btn, i) => {
-        btn.classList.toggle("active", (i === 0 && tab === "add") || (i === 1 && tab === "review"));
+        btn.classList.toggle("active", tabMap[tab] === i);
       });
       document.querySelector("#tabAdd").classList.toggle("active", tab === "add");
       document.querySelector("#tabReview").classList.toggle("active", tab === "review");
+      document.querySelector("#tabMgmt").classList.toggle("active", tab === "mgmt");
+      if (tab === "mgmt" && mgmtAllInstitutions.length === 0 && institutionsData.length > 0) {
+        initMgmt();
+      }
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // 機構管理 Tab
+    // ──────────────────────────────────────────────────────────────────────
+
+    let mgmtAllInstitutions = [];   // 從 institutions.json 載入（或同享 institutionsData）
+    let mgmtOverrides = {};         // key → { closed, closedNote, updatedAt }
+    const MGMT_PAGE = 30;
+    let mgmtPage = 1;
+    let mgmtFiltered = [];
+
+    function loadInstitutionsMgmt(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try {
+          mgmtAllInstitutions = JSON.parse(ev.target.result);
+          const status = document.getElementById("mgmtInstStatus");
+          if (status) status.textContent = `✓ 已載入 ${mgmtAllInstitutions.length} 筆`;
+          populateMgmtCityFilter();
+          renderMgmt(true);
+        } catch {
+          alert("institutions.json 解析失敗");
+        }
+      };
+      reader.readAsText(file, "UTF-8");
+    }
+
+    function loadOverridesFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try {
+          const arr = JSON.parse(ev.target.result);
+          mgmtOverrides = {};
+          arr.forEach(o => { if (o.key) mgmtOverrides[o.key] = { closed: !!o.closed, closedNote: o.closedNote || "", updatedAt: o.updatedAt || "" }; });
+          const status = document.getElementById("mgmtOverridesStatus");
+          if (status) status.textContent = `✓ 已載入 ${arr.length} 筆覆蓋`;
+          updateOverrideCount();
+          if (mgmtAllInstitutions.length) renderMgmt(false);
+        } catch {
+          alert("institution-overrides.json 解析失敗");
+        }
+      };
+      reader.readAsText(file, "UTF-8");
+    }
+
+    function initMgmt() {
+      if (institutionsData.length > 0 && mgmtAllInstitutions.length === 0) {
+        mgmtAllInstitutions = institutionsData;
+        const status = document.getElementById("mgmtInstStatus");
+        if (status) status.textContent = `✓ 已載入 ${mgmtAllInstitutions.length} 筆（來自審核頁）`;
+        populateMgmtCityFilter();
+      }
+      renderMgmt(true);
+    }
+
+    function populateMgmtCityFilter() {
+      const sel = document.getElementById("mgmtCityFilter");
+      if (!sel) return;
+      const cities = [...new Set(mgmtAllInstitutions.map(i => normCityAdmin(i.city || "")).filter(Boolean))].sort((a,b) => a.localeCompare(b,"zh-Hant"));
+      sel.innerHTML = '<option value="">全部縣市</option>' + cities.map(c => `<option>${c}</option>`).join("");
+    }
+
+    function updateOverrideCount() {
+      const el = document.getElementById("overrideCount");
+      if (el) el.textContent = Object.keys(mgmtOverrides).length;
+    }
+
+    function renderMgmt(resetPage) {
+      if (resetPage) mgmtPage = 1;
+      const src = mgmtAllInstitutions.length ? mgmtAllInstitutions : institutionsData;
+      if (!src.length) {
+        document.getElementById("mgmtList").innerHTML = '<p style="color:var(--muted);font-size:14px;">請先載入 institutions.json</p>';
+        document.getElementById("mgmtFooter").style.display = "none";
+        return;
+      }
+      const query  = (document.getElementById("mgmtQuery")?.value || "").trim().toLowerCase();
+      const city   = (document.getElementById("mgmtCityFilter")?.value || "");
+      const type   = (document.getElementById("mgmtTypeFilter")?.value || "");
+      const status = (document.getElementById("mgmtStatusFilter")?.value || "");
+
+      mgmtFiltered = src.filter(inst => {
+        const isClosed = !!(mgmtOverrides[inst.key] && mgmtOverrides[inst.key].closed);
+        if (status === "closed" && !isClosed) return false;
+        if (status === "open"   &&  isClosed) return false;
+        const c = normCityAdmin(inst.city || "");
+        if (city && c !== city) return false;
+        if (type && (inst.type || "") !== type) return false;
+        if (query) {
+          const haystack = ((inst.name || "") + (inst.city || "") + (inst.district || "")).toLowerCase();
+          if (!haystack.includes(query)) return false;
+        }
+        return true;
+      });
+
+      const total = mgmtFiltered.length;
+      const pages = Math.max(1, Math.ceil(total / MGMT_PAGE));
+      if (mgmtPage > pages) mgmtPage = pages;
+      const start = (mgmtPage - 1) * MGMT_PAGE;
+      const slice = mgmtFiltered.slice(start, start + MGMT_PAGE);
+
+      document.getElementById("mgmtList").innerHTML = slice.length
+        ? slice.map(inst => renderMgmtCard(inst)).join("")
+        : '<p style="color:var(--muted);font-size:14px;">沒有符合的結果</p>';
+
+      const footer = document.getElementById("mgmtFooter");
+      const pageInfo = document.getElementById("mgmtPageInfo");
+      const pgBtns = document.getElementById("mgmtPgBtns");
+      footer.style.display = total ? "flex" : "none";
+      if (pageInfo) pageInfo.textContent = `第 ${start+1}–${Math.min(start+MGMT_PAGE, total)} 筆 / 共 ${total} 筆`;
+      if (pgBtns) {
+        const btns = [];
+        btns.push(`<button class="mgmt-pg-btn" onclick="mgmtGo(${mgmtPage-1})" ${mgmtPage<=1?"disabled":""}>&#8592;</button>`);
+        for (let p = 1; p <= pages; p++) {
+          if (pages <= 8 || p === 1 || p === pages || Math.abs(p - mgmtPage) <= 1) {
+            btns.push(`<button class="mgmt-pg-btn${p===mgmtPage?" active":""}" onclick="mgmtGo(${p})">${p}</button>`);
+          } else if (Math.abs(p - mgmtPage) === 2) {
+            btns.push(`<span style="padding:0 4px;color:var(--muted);">…</span>`);
+          }
+        }
+        btns.push(`<button class="mgmt-pg-btn" onclick="mgmtGo(${mgmtPage+1})" ${mgmtPage>=pages?"disabled":""}>&#8594;</button>`);
+        pgBtns.innerHTML = btns.join("");
+      }
+    }
+
+    function mgmtGo(p) {
+      const pages = Math.max(1, Math.ceil(mgmtFiltered.length / MGMT_PAGE));
+      mgmtPage = Math.max(1, Math.min(p, pages));
+      renderMgmt(false);
+    }
+
+    function renderMgmtCard(inst) {
+      const isClosed = !!(mgmtOverrides[inst.key] && mgmtOverrides[inst.key].closed);
+      const note = (mgmtOverrides[inst.key] && mgmtOverrides[inst.key].closedNote) || "";
+      const keyEsc = inst.key.replace(/'/g, "\\'");
+      const city = normCityAdmin(inst.city || "");
+      const meta = [city, inst.district, inst.type].filter(Boolean).join(" · ");
+      const events = (inst.penalties || 0) + (inst.news || 0) + (inst.pending || 0);
+      return `
+        <div class="mgmt-card${isClosed ? " is-closed" : ""}" id="mc-${inst.key}">
+          <div class="mgmt-card-info">
+            <div class="inst-name">${inst.name || "(無名)"}</div>
+            <div class="inst-meta">${meta}${events ? ` · ${events} 筆紀錄` : ""}</div>
+            ${isClosed && note ? `<div style="font-size:12px;color:#c62828;margin-top:3px;">備註：${note}</div>` : ""}
+          </div>
+          <div class="mgmt-card-actions">
+            <span class="${isClosed ? "badge-closed" : "badge-open"}">${isClosed ? "已歇業" : "營業中"}</span>
+            <div class="mgmt-note-row">
+              <input type="text" placeholder="歇業備註（選填）" value="${note.replace(/"/g,'&quot;')}" oninput="setMgmtNote('${keyEsc}',this.value)" style="${isClosed ? "" : "display:none"}">
+              ${isClosed
+                ? `<button class="btn-open-inst" onclick="toggleMgmtClosed('${keyEsc}')">恢復營業</button>`
+                : `<button class="btn-close-inst" onclick="toggleMgmtClosed('${keyEsc}')">標記歇業</button>`}
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function toggleMgmtClosed(key) {
+      const isClosed = !!(mgmtOverrides[key] && mgmtOverrides[key].closed);
+      if (isClosed) {
+        delete mgmtOverrides[key];
+      } else {
+        mgmtOverrides[key] = { closed: true, closedNote: "", updatedAt: new Date().toISOString().slice(0,10) };
+      }
+      updateOverrideCount();
+      renderMgmt(false);
+    }
+
+    function setMgmtNote(key, val) {
+      if (mgmtOverrides[key]) mgmtOverrides[key].closedNote = val;
+    }
+
+    function downloadOverrides() {
+      const arr = Object.entries(mgmtOverrides).map(([key, v]) => ({
+        key,
+        closed: v.closed,
+        closedNote: v.closedNote || "",
+        updatedAt: v.updatedAt || new Date().toISOString().slice(0,10)
+      })).sort((a,b) => a.key.localeCompare(b.key));
+      const blob = new Blob([JSON.stringify(arr, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "institution-overrides.json";
+      a.click();
     }
 
     // ──────────────────────────────────────────────────────────────────────
@@ -521,24 +792,38 @@
     const decisions  = {};   // id → "verified" | "disputed" | "removed" | null
     const institutionEdits = {}; // id → {name, city, district} 使用者在審核時修改的機構資訊
 
-    let instByCity = {};     // 正規化縣市 → 鄉鎮 → [{name, type, city, district}]
+    let instByCity = {};      // 正規化縣市 → 鄉鎮 → [{name, type, city, district}]
     let cityOptionsHtml = ""; // 縣市 <option> HTML，卡片渲染時使用
+    let institutionsData = []; // 從 institutions.json 載入的政府名錄
 
-    function normCityAdmin(s) { return (s || "").replace(/臺/g, "台"); }
+    function normCityAdmin(s) { return (s || "").replace(/臺/g, "台").replace(/政府$/, ""); }
+    const typeOptions = ["幼兒園","國小","國中","高中職","補習班","課後照顧中心"].map(t =>
+      `<option value="${t}">${t}</option>`).join("");
 
     function buildInstLookup() {
       instByCity = {};
+
+      function addEntry(name, type, city, dist) {
+        if (!name || name === "待人工分類") return;
+        const c = normCityAdmin(city || "");
+        const d = dist || "";
+        if (!instByCity[c]) instByCity[c] = {};
+        if (!instByCity[c][d]) instByCity[c][d] = [];
+        if (!instByCity[c][d].find(i => i.name === name))
+          instByCity[c][d].push({ name, type: type || "", city: c, district: d });
+      }
+
+      // 來源 1：events.json 裡的機構（已有事件紀錄）
       baseEvents.forEach(event => {
         const inst = event.institution;
-        if (!inst || !inst.name || inst.name === "待人工分類") return;
-        const city = normCityAdmin(inst.city || "");
-        const dist = inst.district || "";
-        if (!instByCity[city]) instByCity[city] = {};
-        if (!instByCity[city][dist]) instByCity[city][dist] = [];
-        if (!instByCity[city][dist].find(i => i.name === inst.name)) {
-          instByCity[city][dist].push({ name: inst.name, type: inst.type || "", city, district: dist });
-        }
+        if (inst) addEntry(inst.name, inst.type, inst.city, inst.district);
       });
+
+      // 來源 2：institutions.json 政府名錄（全縣市、全學校類型）
+      institutionsData.forEach(inst => {
+        addEntry(inst.name, inst.type, inst.city, inst.district);
+      });
+
       cityOptionsHtml = Object.keys(instByCity).sort((a,b) => a.localeCompare(b,"zh-Hant"))
         .map(c => `<option value="${c.replace(/"/g,'&quot;')}">${c || '（其他）'}</option>`)
         .join("");
@@ -581,9 +866,10 @@
       if (!instSel || !instSel.value) return;
       try {
         const inst = JSON.parse(instSel.value);
-        editInst(id, "name", inst.name);
-        editInst(id, "city", inst.city);
+        editInst(id, "name",     inst.name);
+        editInst(id, "city",     inst.city);
         editInst(id, "district", inst.district || "");
+        editInst(id, "type",     inst.type || "");
         renderReview();
         renderReclassify();
       } catch(e) {}
@@ -602,6 +888,26 @@
           initReview();
         } catch {
           alert("JSON 解析失敗，請確認格式正確。");
+        }
+      };
+      reader.readAsText(file, "UTF-8");
+    }
+
+    function loadInstitutionsFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = ev => {
+        try {
+          institutionsData = JSON.parse(ev.target.result);
+          buildInstLookup();
+          const status = document.querySelector("#institutionsFileStatus");
+          if (status) status.textContent = `✓ 已載入 ${institutionsData.length} 筆`;
+          // 重新渲染審核列表使城市下拉更新
+          if (reviewQueue.length) renderReview();
+          if (baseEvents.length) renderReclassify();
+        } catch {
+          alert("institutions.json 解析失敗，請確認格式正確。");
         }
       };
       reader.readAsText(file, "UTF-8");
@@ -636,7 +942,10 @@
         const ev0 = (item.evidence && item.evidence[0]) || {};
         const editedName = (institutionEdits[item.id] && institutionEdits[item.id].name !== undefined) ? institutionEdits[item.id].name : "待人工分類";
         const editedCity = (institutionEdits[item.id] && institutionEdits[item.id].city !== undefined) ? institutionEdits[item.id].city : (item.institution.city || "");
+        const editedType = (institutionEdits[item.id] && institutionEdits[item.id].type !== undefined) ? institutionEdits[item.id].type : (item.institution.type || "");
         const assigned = editedName !== "待人工分類" && editedName;
+        const typeOptionsWithSel = ["幼兒園","國小","國中","高中職","補習班","課後照顧中心"].map(t =>
+          `<option value="${t}"${t===editedType?" selected":""}>${t}</option>`).join("");
         return `
         <div class="reclassify-card">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
@@ -657,6 +966,10 @@
               value="${editedCity.replace(/"/g,'&quot;')}"
               oninput="editInst('${item.id}','city',this.value)"
               title="縣市">
+            <select title="機構類型"
+              onchange="editInst('${item.id}','type',this.value)">
+              <option value="">類型…</option>${typeOptionsWithSel}
+            </select>
           </div>
           <details class="inst-lookup-panel">
             <summary>🔍 從名錄選取縣市 → 鄉鎮 → 機構</summary>
@@ -770,8 +1083,11 @@
         const rawCity  = item.institution ? (item.institution.city || "") : "";
         const editedName = (institutionEdits[item.id] && institutionEdits[item.id].name !== undefined) ? institutionEdits[item.id].name : rawName;
         const editedCity = (institutionEdits[item.id] && institutionEdits[item.id].city !== undefined) ? institutionEdits[item.id].city : rawCity;
+        const editedType = (institutionEdits[item.id] && institutionEdits[item.id].type !== undefined) ? institutionEdits[item.id].type : (item.institution ? (item.institution.type || "") : "");
         const needsEdit  = editedName === "待人工分類" || !editedName;
         const safeId     = item.id.replace(/'/g, "\\'");
+        const typeOptionsWithSel = ["幼兒園","國小","國中","高中職","補習班","課後照顧中心"].map(t =>
+          `<option value="${t}"${t===editedType?" selected":""}>${t}</option>`).join("");
 
         return `
         <div class="review-card status-${decision}" id="rc-${item.id.replace(/[^a-z0-9]/gi,'_')}">
@@ -789,6 +1105,10 @@
                   value="${editedCity.replace(/"/g,'&quot;')}"
                   oninput="editInst('${safeId}','city',this.value)"
                   title="縣市（可留空）">
+                <select title="機構類型"
+                  onchange="editInst('${safeId}','type',this.value)">
+                  <option value="">類型…</option>${typeOptionsWithSel}
+                </select>
                 <span class="meta">${item.category || ""} · ${item.eventDate || "日期未知"}</span>
               </div>
             </div>
@@ -829,15 +1149,16 @@
 
     function applyInstEdit(item) {
       const edit = institutionEdits[item.id];
-      if (!edit || (!edit.name && !edit.city && !edit.district)) return item;
+      if (!edit || (!edit.name && !edit.city && !edit.district && !edit.type)) return item;
       const base = item.institution || {};
       return {
         ...item,
         institution: {
           ...base,
           name:     (edit.name !== undefined && edit.name !== "") ? edit.name : (base.name || ""),
-          city:     (edit.city !== undefined)     ? edit.city     : (base.city || ""),
+          city:     (edit.city     !== undefined) ? edit.city     : (base.city     || ""),
           district: (edit.district !== undefined) ? edit.district : (base.district || ""),
+          type:     (edit.type     !== undefined && edit.type !== "") ? edit.type : (base.type || ""),
         }
       };
     }

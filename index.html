@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>兒少防火牆 | 教育機構風險資訊查詢</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <style>
     :root {
       --ink: #17202a;
@@ -205,6 +205,12 @@
       padding: 0 12px;
       background: white;
       color: var(--ink);
+    }
+
+    .filters select {
+      font-size: 13px;
+      padding: 0 6px;
+      min-height: 38px;
     }
 
     .stat-strip {
@@ -422,6 +428,11 @@
     .status-pending { background: var(--amber-soft); color: var(--amber); border-color: #f7d98b; }
     .status-disputed { background: var(--red-soft); color: var(--red); border-color: #ffc9c0; }
 
+    .cat-public    { background: #e7f5ec; color: #2d7a4f; border-color: #b9dfc5; font-weight: 600; }
+    .cat-nonprofit { background: #f0e7f5; color: #6b3a8c; border-color: #d9b9e0; font-weight: 600; }
+    .cat-private   { background: #f0f4f8; color: #4a6080; border-color: #c8d8e8; font-weight: 600; }
+    .cat-quasi     { background: #fff3e7; color: #8c5a1a; border-color: #f0c890; font-weight: 600; }
+
     .metrics {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -621,6 +632,25 @@
 
     .modal-close:hover { background: #f0f2f4; }
 
+    #pagination { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; }
+    .pg-btn {
+      padding: 6px 14px; border-radius: 6px; border: 1px solid var(--line);
+      background: white; color: var(--ink); font-size: 14px; cursor: pointer; font-family: inherit;
+    }
+    .pg-btn:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+    .pg-btn.active { background: var(--teal); color: white; border-color: var(--teal); font-weight: 700; }
+    .pg-btn:disabled { opacity: .35; cursor: default; }
+    .pg-info { font-size: 13px; color: var(--muted); padding: 0 6px; }
+
+    .year-filter-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .year-btn {
+      padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line);
+      background: white; color: var(--muted); font-size: 13px; cursor: pointer;
+      font-family: inherit; transition: all .15s;
+    }
+    .year-btn:hover { border-color: var(--teal); color: var(--teal); }
+    .year-btn.active { background: var(--teal); color: white; border-color: var(--teal); font-weight: 600; }
+
     .modal .field-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .modal .field { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
     .modal .field.full { grid-column: 1 / -1; }
@@ -687,6 +717,11 @@
       </div>
 
       <form class="search-panel" id="searchForm">
+        <div class="stat-strip" aria-label="平台摘要">
+          <div class="stat"><strong id="statCount">0</strong><span>收錄機構</span></div>
+          <div class="stat"><strong id="statPenalty">0</strong><span>已查證裁罰</span></div>
+          <div class="stat"><strong id="statSources">6</strong><span>資料來源</span></div>
+        </div>
         <div class="search-row">
           <input id="query" class="search-input" type="search" placeholder="輸入機構名稱、地址或關鍵字" autocomplete="off">
           <button class="primary-btn" type="submit" title="搜尋">搜尋</button>
@@ -699,7 +734,7 @@
             <option value="">全部鄉鎮市區</option>
           </select>
         </div>
-        <div class="filters" style="margin-top:0;">
+        <div class="filters" style="margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;">
           <select id="type" aria-label="類型">
             <option value="">全部類型</option>
           </select>
@@ -716,11 +751,9 @@
             <option value="mid">需留意</option>
             <option value="low">資料穩定</option>
           </select>
-        </div>
-        <div class="stat-strip" aria-label="平台摘要">
-          <div class="stat"><strong id="statCount">0</strong><span>收錄機構</span></div>
-          <div class="stat"><strong id="statPenalty">0</strong><span>已查證裁罰</span></div>
-          <div class="stat"><strong id="statSources">6</strong><span>資料來源</span></div>
+          <select id="yearFilter" aria-label="事件年份">
+            <option value="">全部年份</option>
+          </select>
         </div>
       </form>
     </div>
@@ -771,6 +804,7 @@
         </div>
 
         <div class="results" id="resultGrid"></div>
+        <div id="pagination" style="display:none;margin-top:18px;"></div>
         <div id="mapContainer" style="display:none;margin-top:4px;">
           <div id="leafletMap" style="width:100%;height:520px;border:1px solid var(--line);border-radius:8px;z-index:0;"></div>
         </div>
@@ -901,7 +935,7 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPeM=" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="data/site-data.js"></script>
   <script>
     const fallbackInstitutions = [
@@ -1028,7 +1062,15 @@
       missing_source: "缺少來源"
     };
 
-    const state = { mode: "list", items: institutions };
+    const PAGE_SIZE = 24;
+    const state = { mode: "list", items: institutions, page: 1 };
+    const paginationEl = document.querySelector("#pagination");
+
+    function goPage(p) {
+      state.page = p;
+      render();
+      document.querySelector("#dashboard").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
     const grid = document.querySelector("#resultGrid");
     const mapContainer = document.querySelector("#mapContainer");
 
@@ -1047,6 +1089,31 @@
       "宜蘭縣": [24.7021, 121.7377], "花蓮縣": [23.9871, 121.6015],
       "台東縣": [22.7583, 121.1444], "澎湖縣": [23.5711, 119.5793],
       "金門縣": [24.4493, 118.3767], "連江縣": [26.1505, 119.9497]
+    };
+
+    const DISTRICT_COORDS = {
+      "台北市":{"中正區":[25.0427,121.5166],"大同區":[25.0635,121.5140],"中山區":[25.0691,121.5339],"松山區":[25.0497,121.5775],"大安區":[25.0264,121.5436],"萬華區":[25.0346,121.4994],"信義區":[25.0324,121.5636],"士林區":[25.0929,121.5231],"北投區":[25.1320,121.4981],"內湖區":[25.0836,121.5862],"南港區":[25.0538,121.6068],"文山區":[24.9977,121.5722]},
+      "新北市":{"板橋區":[25.0120,121.4630],"三重區":[25.0618,121.4887],"中和區":[24.9970,121.4946],"永和區":[25.0085,121.5163],"新莊區":[25.0397,121.4497],"新店區":[24.9677,121.5396],"樹林區":[24.9896,121.4158],"鶯歌區":[24.9524,121.3424],"三峽區":[24.9340,121.3716],"淡水區":[25.1701,121.4427],"汐止區":[25.0663,121.6617],"瑞芳區":[25.1095,121.8025],"土城區":[24.9718,121.4445],"蘆洲區":[25.0824,121.4710],"五股區":[25.0769,121.4305],"泰山區":[25.0610,121.4257],"林口區":[25.0784,121.3895],"深坑區":[24.9777,121.6140],"石碇區":[24.9650,121.6640],"坪林區":[24.9326,121.7166],"三芝區":[25.2514,121.5007],"石門區":[25.2901,121.5680],"八里區":[25.1521,121.4112],"平溪區":[25.0260,121.7449],"雙溪區":[25.0401,121.8636],"貢寮區":[25.0249,121.9064],"金山區":[25.2226,121.6402],"萬里區":[25.1803,121.6780],"烏來區":[24.8689,121.5508]},
+      "桃園市":{"桃園區":[24.9936,121.3009],"中壢區":[24.9649,121.2248],"大溪區":[24.8871,121.2847],"楊梅區":[24.9110,121.1415],"蘆竹區":[25.0588,121.2960],"大園區":[25.0569,121.2308],"龜山區":[25.0338,121.3449],"八德區":[24.9547,121.2921],"龍潭區":[24.8700,121.2217],"平鎮區":[24.9451,121.2166],"新屋區":[24.9750,121.0873],"觀音區":[25.0296,121.1174],"復興區":[24.7818,121.3455]},
+      "基隆市":{"仁愛區":[25.1275,121.7419],"信義區":[25.1235,121.7631],"中正區":[25.1290,121.7414],"中山區":[25.1333,121.7324],"安樂區":[25.1278,121.7049],"暖暖區":[25.1046,121.7769],"七堵區":[25.0834,121.7349]},
+      "新竹市":{"東區":[24.8055,120.9723],"北區":[24.8263,120.9687],"香山區":[24.7592,120.9375]},
+      "新竹縣":{"竹北市":[24.8417,121.0146],"湖口鄉":[24.8953,121.0491],"新豐鄉":[24.9387,121.0476],"新埔鎮":[24.8284,121.0740],"關西鎮":[24.7997,121.1713],"芎林鄉":[24.7750,121.0727],"寶山鄉":[24.7657,121.0182],"竹東鎮":[24.7350,121.0834],"五峰鄉":[24.6523,121.1114],"橫山鄉":[24.7419,121.1088],"尖石鄉":[24.6881,121.2349],"北埔鄉":[24.7003,121.0559],"峨眉鄉":[24.6861,121.0258]},
+      "苗栗縣":{"苗栗市":[24.5618,120.8197],"苑裡鎮":[24.4388,120.6639],"通霄鎮":[24.4798,120.6899],"竹南鎮":[24.6875,120.8742],"頭份市":[24.6940,120.8972],"三灣鄉":[24.6432,120.8754],"南庄鄉":[24.6181,121.0087],"獅潭鄉":[24.5705,120.9756],"後龍鎮":[24.6158,120.7904],"西湖鄉":[24.5143,120.7886],"銅鑼鄉":[24.5095,120.8026],"三義鄉":[24.4220,120.7518],"泰安鄉":[24.4268,120.9466],"大湖鄉":[24.4624,120.9048],"卓蘭鎮":[24.3782,120.8714],"造橋鄉":[24.6126,120.8470],"頭屋鄉":[24.5878,120.8570],"公館鄉":[24.5151,120.8274]},
+      "台中市":{"中區":[24.1417,120.6774],"東區":[24.1411,120.7000],"南區":[24.1219,120.6716],"西區":[24.1452,120.6598],"北區":[24.1568,120.6840],"北屯區":[24.1745,120.7010],"西屯區":[24.1650,120.6370],"南屯區":[24.1322,120.6466],"太平區":[24.1201,120.7352],"大里區":[24.0897,120.6895],"霧峰區":[24.0536,120.7231],"烏日區":[24.1005,120.6412],"豐原區":[24.2499,120.7228],"后里區":[24.3145,120.7034],"石岡區":[24.2720,120.7717],"東勢區":[24.2567,120.8219],"和平區":[24.3630,121.0673],"新社區":[24.2210,120.8068],"潭子區":[24.1889,120.7340],"大雅區":[24.2079,120.6748],"神岡區":[24.2454,120.6949],"大肚區":[24.1446,120.5635],"沙鹿區":[24.2241,120.5858],"龍井區":[24.1704,120.5545],"梧棲區":[24.2576,120.5418],"清水區":[24.2672,120.5718],"大甲區":[24.3516,120.6228],"外埔區":[24.3118,120.6544],"大安區":[24.3936,120.5841]},
+      "彰化縣":{"彰化市":[24.0759,120.5460],"鹿港鎮":[24.0479,120.4362],"和美鎮":[24.1171,120.4989],"線西鄉":[24.1475,120.4750],"伸港鄉":[24.1661,120.5115],"福興鄉":[24.0989,120.4892],"秀水鄉":[24.0727,120.5233],"花壇鄉":[24.0489,120.5552],"芬園鄉":[24.0065,120.5802],"員林市":[23.9596,120.5734],"溪湖鎮":[24.0488,120.4786],"田中鎮":[23.8776,120.5766],"大村鄉":[24.0087,120.5512],"埔鹽鄉":[24.0231,120.4980],"埔心鄉":[23.9964,120.5538],"永靖鄉":[23.9732,120.5369],"社頭鄉":[23.9276,120.5462],"二水鄉":[23.8155,120.6038],"北斗鎮":[23.8724,120.5285],"二林鎮":[23.9231,120.3930],"田尾鄉":[23.9125,120.5221],"埤頭鄉":[23.8762,120.4990],"芳苑鄉":[23.9824,120.3519],"大城鄉":[23.9004,120.3527],"竹塘鄉":[23.9472,120.4403],"溪州鄉":[23.8555,120.5073]},
+      "南投縣":{"南投市":[23.9175,120.6841],"中寮鄉":[23.8505,120.6978],"草屯鎮":[24.0633,120.6632],"國姓鄉":[24.0822,120.8661],"埔里鎮":[23.9586,120.9722],"仁愛鄉":[24.0561,121.1478],"名間鄉":[23.8484,120.6424],"集集鎮":[23.8359,120.7964],"水里鄉":[23.8098,120.8558],"魚池鄉":[23.8987,120.9311],"信義鄉":[23.7022,120.9162],"竹山鎮":[23.7558,120.6740],"鹿谷鄉":[23.7660,120.7793]},
+      "雲林縣":{"斗六市":[23.7078,120.5429],"斗南鎮":[23.6756,120.4761],"虎尾鎮":[23.7051,120.4361],"西螺鎮":[23.7985,120.4671],"土庫鎮":[23.6682,120.3911],"北港鎮":[23.5679,120.3015],"古坑鄉":[23.6540,120.6159],"大埤鄉":[23.6421,120.5097],"莿桐鄉":[23.7355,120.5247],"林內鄉":[23.7624,120.6067],"二崙鄉":[23.7630,120.4231],"崙背鄉":[23.7523,120.3879],"麥寮鄉":[23.7577,120.2588],"東勢鄉":[23.6976,120.3128],"褒忠鄉":[23.6850,120.3435],"台西鄉":[23.6996,120.2121],"元長鄉":[23.6280,120.3539],"四湖鄉":[23.6532,120.2366],"口湖鄉":[23.5929,120.1840],"水林鄉":[23.5722,120.2897]},
+      "嘉義市":{"東區":[23.4801,120.4491],"西區":[23.4618,120.4283]},
+      "嘉義縣":{"太保市":[23.4651,120.3330],"朴子市":[23.4619,120.2475],"布袋鎮":[23.3770,120.1761],"大林鎮":[23.6044,120.4725],"民雄鄉":[23.5460,120.4302],"溪口鄉":[23.5851,120.4716],"新港鄉":[23.5448,120.3449],"六腳鄉":[23.4525,120.3177],"東石鄉":[23.4480,120.1502],"義竹鄉":[23.3981,120.2459],"鹿草鄉":[23.4213,120.3213],"水上鄉":[23.4521,120.3778],"中埔鄉":[23.4029,120.5107],"竹崎鄉":[23.4726,120.5380],"梅山鄉":[23.5751,120.5590],"番路鄉":[23.4385,120.5611],"大埔鄉":[23.3001,120.5803],"阿里山鄉":[23.5028,120.7060]},
+      "台南市":{"中西區":[23.1172,120.2018],"東區":[23.1278,120.2190],"南區":[23.0946,120.2088],"北區":[23.1415,120.2126],"安平區":[23.0985,120.1714],"安南區":[23.1635,120.1715],"永康區":[23.0487,120.2638],"歸仁區":[23.0001,120.2957],"新化區":[23.0366,120.3109],"左鎮區":[23.0063,120.3721],"玉井區":[23.1171,120.4481],"楠西區":[23.1585,120.4611],"南化區":[23.1021,120.5012],"仁德區":[22.9833,120.2271],"關廟區":[22.9703,120.3148],"龍崎區":[22.9503,120.3579],"官田區":[23.1397,120.3396],"麻豆區":[23.1737,120.2585],"佳里區":[23.1710,120.1783],"西港區":[23.1453,120.2174],"七股區":[23.1449,120.1044],"將軍區":[23.2092,120.1282],"學甲區":[23.2271,120.2109],"北門區":[23.2675,120.1097],"新營區":[23.3061,120.3126],"後壁區":[23.3596,120.3446],"白河區":[23.3524,120.4249],"東山區":[23.2817,120.4461],"六甲區":[23.2222,120.3814],"下營區":[23.2455,120.2987],"柳營區":[23.2760,120.3449],"鹽水區":[23.3116,120.2609],"善化區":[23.1418,120.3063],"新市區":[23.0873,120.3043],"安定區":[23.1017,120.2531],"山上區":[23.0573,120.3612],"大內區":[23.0869,120.3952]},
+      "高雄市":{"楠梓區":[22.7290,120.3192],"左營區":[22.6940,120.2980],"鼓山區":[22.6668,120.2877],"三民區":[22.6574,120.3252],"鹽埕區":[22.6262,120.2813],"前金區":[22.6282,120.2987],"苓雅區":[22.6167,120.3120],"前鎮區":[22.5969,120.3185],"旗津區":[22.5929,120.2740],"小港區":[22.5673,120.3475],"鳳山區":[22.6272,120.3681],"林園區":[22.5009,120.3861],"大寮區":[22.5741,120.4073],"大樹區":[22.6631,120.4385],"大社區":[22.7100,120.3620],"仁武區":[22.6900,120.3491],"鳥松區":[22.6456,120.3765],"岡山區":[22.7962,120.2986],"橋頭區":[22.7566,120.3024],"燕巢區":[22.7437,120.3669],"田寮區":[22.8044,120.3836],"阿蓮區":[22.8771,120.3170],"路竹區":[22.8593,120.2718],"湖內區":[22.9052,120.2124],"茄萣區":[22.9194,120.1962],"永安區":[22.9285,120.2395],"彌陀區":[22.9450,120.2468],"梓官區":[22.9635,120.2688],"旗山區":[22.8851,120.4819],"美濃區":[22.8901,120.5426],"六龜區":[22.9855,120.6527],"甲仙區":[23.0849,120.5830],"杉林區":[23.0248,120.5258],"內門區":[22.9558,120.4712],"茂林區":[22.8979,120.6702],"桃源區":[23.1659,120.7729],"那瑪夏區":[23.2512,120.7100]},
+      "屏東縣":{"屏東市":[22.6693,120.4877],"三地門鄉":[22.6948,120.6282],"霧台鄉":[22.6896,120.7200],"瑪家鄉":[22.6442,120.5834],"九如鄉":[22.7374,120.4864],"里港鄉":[22.7750,120.4704],"高樹鄉":[22.8105,120.5370],"鹽埔鄉":[22.7303,120.5133],"長治鄉":[22.6992,120.5138],"麟洛鄉":[22.6672,120.5285],"竹田鄉":[22.6137,120.4972],"內埔鄉":[22.6155,120.5595],"萬丹鄉":[22.5764,120.4879],"潮州鎮":[22.5463,120.5395],"泰武鄉":[22.6066,120.6353],"來義鄉":[22.5612,120.6471],"萬巒鄉":[22.5888,120.5740],"崁頂鄉":[22.5403,120.4842],"新埤鄉":[22.5145,120.5430],"南州鄉":[22.4947,120.4961],"林邊鄉":[22.4386,120.5027],"東港鎮":[22.4668,120.4524],"琉球鄉":[22.3431,120.3758],"佳冬鄉":[22.4337,120.5327],"新園鄉":[22.5279,120.4279],"枋寮鄉":[22.3616,120.5834],"枋山鄉":[22.2778,120.6273],"春日鄉":[22.4108,120.6325],"獅子鄉":[22.3551,120.7077],"車城鄉":[21.9696,120.7096],"牡丹鄉":[22.1237,120.7544],"恆春鎮":[21.9418,120.7454],"滿州鄉":[22.0491,120.8260]},
+      "宜蘭縣":{"宜蘭市":[24.7574,121.7549],"頭城鎮":[24.8658,121.8238],"礁溪鄉":[24.8209,121.7742],"壯圍鄉":[24.7645,121.8161],"員山鄉":[24.7484,121.7014],"羅東鎮":[24.6744,121.7640],"三星鄉":[24.6716,121.6556],"大同鄉":[24.6283,121.6025],"五結鄉":[24.6837,121.8012],"冬山鄉":[24.6497,121.7793],"蘇澳鎮":[24.5969,121.8488],"南澳鄉":[24.4502,121.8138]},
+      "花蓮縣":{"花蓮市":[23.9871,121.6015],"新城鄉":[24.1282,121.6449],"秀林鄉":[24.0868,121.6018],"吉安鄉":[23.9691,121.5981],"壽豐鄉":[23.8668,121.5530],"鳳林鎮":[23.7446,121.4758],"光復鄉":[23.6582,121.4400],"豐濱鄉":[23.5325,121.4912],"瑞穗鄉":[23.5046,121.4291],"富里鄉":[23.3267,121.2992],"玉里鎮":[23.3314,121.3189],"卓溪鄉":[23.4415,121.2978]},
+      "台東縣":{"台東市":[22.7579,121.1418],"長濱鄉":[23.3392,121.4547],"太麻里鄉":[22.6127,121.0138],"東河鄉":[23.0904,121.3471],"成功鎮":[23.0964,121.3717],"關山鎮":[23.0527,121.1690],"卑南鄉":[22.7430,121.0889],"鹿野鄉":[22.9166,121.1529],"池上鄉":[23.1145,121.2196],"綠島鄉":[22.6564,121.4950],"延平鄉":[23.0456,121.0630],"海端鄉":[23.1688,121.0698],"達仁鄉":[22.3905,120.9189],"金峰鄉":[22.5244,120.9768],"大武鄉":[22.3535,120.8949],"蘭嶼鄉":[22.0502,121.5497]},
+      "澎湖縣":{"馬公市":[23.5658,119.5678],"西嶼鄉":[23.6173,119.5068],"望安鄉":[23.3637,119.5038],"七美鄉":[23.2088,119.4287],"白沙鄉":[23.6609,119.6022],"湖西鄉":[23.5949,119.6628]},
+      "金門縣":{"金城鎮":[24.4317,118.3190],"金湖鎮":[24.4485,118.3919],"金沙鎮":[24.4867,118.4294],"金寧鄉":[24.4677,118.3166],"烈嶼鄉":[24.3862,118.2253],"烏坵鄉":[24.9961,119.4627]},
+      "連江縣":{"南竿鄉":[26.1530,119.9432],"北竿鄉":[26.2226,120.0099],"莒光鄉":[25.9787,120.0396],"東引鄉":[26.3630,120.4859]}
     };
 
     let leafletMap = null;
@@ -1086,6 +1153,21 @@
     function populateFilterOptions() {
       addOptions(document.querySelector("#city"),  [...new Set(institutions.map(i => normCity(i.city)))]);
       addOptions(document.querySelector("#type"),  [...new Set(institutions.map(i => i.type))]);
+
+      // Populate year filter from all events
+      const allYears = [...new Set(institutions.flatMap(inst =>
+        (inst.events || []).map(e => {
+          const ev = normalizeEvent(e);
+          return ev.date ? ev.date.substring(0, 4) : null;
+        }).filter(Boolean)
+      ))].sort().reverse();
+      const yearSel = document.querySelector("#yearFilter");
+      allYears.forEach(y => {
+        const opt = document.createElement("option");
+        opt.value = y;
+        opt.textContent = y + " 年";
+        yearSel.appendChild(opt);
+      });
     }
 
     function matchesFilters(item) {
@@ -1095,6 +1177,7 @@
       const type     = document.querySelector("#type").value;
       const category = document.querySelector("#instCategory").value;
       const risk     = document.querySelector("#risk").value;
+      const year     = document.querySelector("#yearFilter").value;
 
       // Include penalty respondent names in full-text search
       const respondents = (item.events || [])
@@ -1103,12 +1186,18 @@
 
       const haystack = `${item.name} ${item.city} ${item.district || ""} ${item.type} ${item.address || ""} ${(item.tags || []).join(" ")} ${respondents}`.toLowerCase();
 
+      const matchesYear = !year || (item.events || []).some(e => {
+        const ev = normalizeEvent(e);
+        return ev.date && ev.date.startsWith(year);
+      });
+
       return (!q        || haystack.includes(q))
           && (!city     || normCity(item.city) === city)
           && (!district || item.district === district)
           && (!type     || item.type === type)
           && (!category || item.instCategory === category)
-          && (!risk     || item.risk === risk);
+          && (!risk     || item.risk === risk)
+          && matchesYear;
     }
 
     const CLOSED_KEYWORDS = ["廢止設立許可", "令其停辦", "撤銷設立許可", "廢止立案"];
@@ -1129,11 +1218,26 @@
       return dates[0] || "";
     }
 
+    function isDefaultView() {
+      return !document.querySelector("#query").value.trim()
+          && !document.querySelector("#city").value
+          && !document.querySelector("#type").value
+          && !document.querySelector("#instCategory").value
+          && !document.querySelector("#risk").value
+          && !document.querySelector("#yearFilter").value;
+    }
+
     function render() {
-      state.items = institutions.filter(matchesFilters);
+      let filtered = institutions.filter(matchesFilters);
+
+      // Default view: only show institutions with events
+      const defaultView = isDefaultView();
+      if (defaultView) {
+        filtered = filtered.filter(i => (i.penalties || 0) + (i.news || 0) + (i.pending || 0) > 0);
+      }
 
       // Keep "待人工分類" items but show them last
-      state.items.sort((a, b) => {
+      filtered.sort((a, b) => {
         if (a.name === "待人工分類" && b.name !== "待人工分類") return 1;
         if (a.name !== "待人工分類" && b.name === "待人工分類") return -1;
         return 0;
@@ -1141,10 +1245,16 @@
 
       const sortBy = document.querySelector("#sortBy").value;
       if (sortBy === "penalty_date") {
-        state.items = [...state.items].sort((a, b) =>
+        filtered = [...filtered].sort((a, b) =>
           getLatestPenaltyDate(b).localeCompare(getLatestPenaltyDate(a))
         );
       }
+
+      state.items = filtered;
+
+      // Clamp page
+      const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+      if (state.page > totalPages) state.page = totalPages;
 
       grid.className = state.mode === "map" ? "results map-mode" : "results";
 
@@ -1154,28 +1264,36 @@
       document.querySelector("#statCount").textContent = institutions.length;
       document.querySelector("#statPenalty").textContent = totalPenalties;
       document.querySelector("#statSources").textContent = sourceCount;
-      document.querySelector("#resultMeta").textContent = `目前顯示 ${state.items.length} 筆，共收錄 ${institutions.length} 個機構`;
+
+      const showing = defaultView
+        ? `顯示有紀錄的機構 ${filtered.length} 筆（共收錄 ${institutions.length} 個），<a href="#" onclick="showAll();return false;" style="color:var(--teal);">查看全部</a>`
+        : `共 ${filtered.length} 筆，第 ${state.page} / ${totalPages} 頁`;
+      document.querySelector("#resultMeta").innerHTML = showing;
 
       if (state.mode === "map") {
         grid.style.display = "none";
+        paginationEl.style.display = "none";
         mapContainer.style.display = "";
-        // Double rAF ensures the browser has finished layout before Leaflet reads container size
         requestAnimationFrame(() => requestAnimationFrame(() => initOrUpdateMap(state.items)));
         return;
       }
       grid.style.display = "";
       mapContainer.style.display = "none";
 
-      if (state.items.length === 0) {
+      if (filtered.length === 0) {
         grid.innerHTML = `<div style="grid-column:1/-1;padding:40px 20px;text-align:center;color:var(--muted);">
           <div style="font-size:32px;margin-bottom:12px;">🔍</div>
           <div style="font-size:16px;margin-bottom:6px;">找不到符合條件的機構</div>
           <div style="font-size:14px;">請嘗試更改搜尋關鍵字或篩選條件</div>
         </div>`;
+        paginationEl.style.display = "none";
         return;
       }
 
-      grid.innerHTML = state.items.map(item => {
+      // Slice to current page
+      const pageItems = filtered.slice((state.page - 1) * PAGE_SIZE, state.page * PAGE_SIZE);
+
+      grid.innerHTML = pageItems.map(item => {
         const hasEvents = item.events && item.events.length > 0;
         const hasIssues = (item.penalties || 0) + (item.news || 0) + (item.reviews || 0) > 0;
         const closed = isClosed(item);
@@ -1190,6 +1308,11 @@
         const displayMeta = isUnclassified
           ? `新聞事件（機構尚未確認）`
           : `${item.city}${item.district || ""} · ${item.type}<br>${item.address || ""}`;
+        const catMap = { "公立": "cat-public", "非營利": "cat-nonprofit", "準公共": "cat-quasi", "私立": "cat-private" };
+        const catClass = catMap[item.instCategory] || "";
+        const catBadge = !isUnclassified && catClass
+          ? `<span class="badge ${catClass}" style="margin-top:4px;">${item.instCategory}</span>`
+          : "";
         return `
         <article class="institution-card" ${closed ? 'style="opacity:.75;"' : ""} ${isUnclassified ? 'style="border-left:3px solid #e8b84b;opacity:.85;"' : ""}>
           <div class="card-head">
@@ -1197,7 +1320,10 @@
               <h3>${displayName}</h3>
               <div class="meta">${displayMeta}</div>
             </div>
-            <span class="badge ${riskClass[item.risk]}">${riskLabel[item.risk]}</span>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+              <span class="badge ${riskClass[item.risk]}">${riskLabel[item.risk]}</span>
+              ${catBadge}
+            </div>
           </div>
           <div class="metrics">
             <div class="metric"><strong>${item.penalties || 0}</strong><span>官方裁罰</span></div>
@@ -1215,6 +1341,37 @@
           </div>
         </article>`;
       }).join("");
+
+      // Render pagination
+      if (totalPages <= 1) {
+        paginationEl.style.display = "none";
+      } else {
+        paginationEl.style.display = "flex";
+        const cur = state.page;
+        let pages = [];
+        if (totalPages <= 7) {
+          pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+        } else {
+          pages = [1];
+          if (cur > 3) pages.push("…");
+          for (let p = Math.max(2, cur - 1); p <= Math.min(totalPages - 1, cur + 1); p++) pages.push(p);
+          if (cur < totalPages - 2) pages.push("…");
+          pages.push(totalPages);
+        }
+        paginationEl.innerHTML = `
+          <button class="pg-btn" onclick="goPage(${cur - 1})" ${cur === 1 ? "disabled" : ""}>← 上頁</button>
+          ${pages.map(p => p === "…"
+            ? `<span class="pg-info">…</span>`
+            : `<button class="pg-btn ${p === cur ? "active" : ""}" onclick="goPage(${p})">${p}</button>`
+          ).join("")}
+          <button class="pg-btn" onclick="goPage(${cur + 1})" ${cur === totalPages ? "disabled" : ""}>下頁 →</button>`;
+      }
+    }
+
+    function showAll() {
+      document.querySelector("#risk").value = "";
+      state.page = 1;
+      render();
     }
 
     function initOrUpdateMap(items) {
@@ -1229,39 +1386,81 @@
       leafletMarkers.forEach(m => m.remove());
       leafletMarkers = [];
 
-      // Group items by county
-      const byCounty = {};
-      items.forEach(item => {
-        const c = normCity(item.city) || "全國";
-        if (!byCounty[c]) byCounty[c] = [];
-        byCounty[c].push(item);
-      });
+      const INDIVIDUAL_THRESHOLD = 500;
+      const useIndividual = items.length <= INDIVIDUAL_THRESHOLD;
 
-      Object.entries(byCounty).forEach(([city, list]) => {
-        const coords = COUNTY_COORDS[city];
-        if (!coords) return;
-        const hasHigh = list.some(i => i.risk === "high");
-        const hasMid  = list.some(i => i.risk === "mid");
-        const color   = hasHigh ? "#b42318" : hasMid ? "#b7791f" : "#0d6b68";
-        const count   = list.length;
-        const icon = L.divIcon({
-          className: "",
-          html: `<div style="width:40px;height:40px;border-radius:50%;background:${color};border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.28);display:grid;place-items:center;color:white;font-weight:900;font-size:12px;font-family:inherit;">${count > 99 ? "99+" : count}</div>`,
-          iconSize: [40, 40], iconAnchor: [20, 20]
+      if (useIndividual) {
+        // Individual markers (circle) for each institution using lat/lng if available
+        const byAreaFallback = {};
+        items.forEach(item => {
+          if (item.lat && item.lng) {
+            const hasHigh = item.risk === "high";
+            const hasMid  = item.risk === "mid";
+            const color   = hasHigh ? "#b42318" : hasMid ? "#b7791f" : "#0d6b68";
+            const idx = institutions.indexOf(item);
+            const m = L.circleMarker([item.lat, item.lng], {
+              radius: 9, fillColor: color, color: "white",
+              weight: 2, opacity: 1, fillOpacity: 0.9
+            }).bindPopup(
+              `<div style="min-width:180px;"><strong>${item.name}</strong><div style="font-size:12px;color:#667085;margin:2px 0;">${item.city}${item.district ? " " + item.district : ""}</div><a href="#" onclick="closeMap();showDetail(${idx});return false;" style="font-size:12px;color:var(--teal);">查看紀錄 →</a></div>`
+            ).addTo(leafletMap);
+            leafletMarkers.push(m);
+          } else {
+            const city = normCity(item.city) || "全國";
+            const dist = item.district || "";
+            const key  = city + "|" + dist;
+            if (!byAreaFallback[key]) byAreaFallback[key] = { city, dist, list: [] };
+            byAreaFallback[key].list.push(item);
+          }
         });
-        const top = list.slice(0, 8);
-        const rows = top.map(item => {
-          const idx = institutions.indexOf(item);
-          const dot = `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${item.risk==="high"?"#b42318":item.risk==="mid"?"#b7791f":"#0d6b68"};margin-right:5px;vertical-align:middle;"></span>`;
-          return `<div style="font-size:12px;line-height:1.8;">${dot}<a href="#" onclick="closeMap();showDetail(${idx});return false;" style="color:var(--teal);">${item.name}</a>${item.district ? ` <span style="color:#667085">(${item.district})</span>` : ""}</div>`;
-        }).join("");
-        const more = count > 8 ? `<div style="font-size:12px;color:#667085;margin-top:4px;">…另有 ${count - 8} 個機構</div>` : "";
-        const popup = `<div style="min-width:200px;"><strong>${city}</strong>（${count} 個機構）<div style="margin-top:6px;">${rows}${more}</div></div>`;
-        const m = L.marker(coords, { icon }).bindPopup(popup, { maxWidth: 280 }).addTo(leafletMap);
-        leafletMarkers.push(m);
-      });
+        // Cluster fallback for items without coords
+        Object.values(byAreaFallback).forEach(({ city, dist, list }) => {
+          const coords = (DISTRICT_COORDS[city] && dist && DISTRICT_COORDS[city][dist]) || COUNTY_COORDS[city];
+          if (!coords) return;
+          const color = list.some(i=>i.risk==="high") ? "#b42318" : list.some(i=>i.risk==="mid") ? "#b7791f" : "#667085";
+          const icon = L.divIcon({ className: "", html: `<div style="width:34px;height:34px;border-radius:50%;background:${color};border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.25);display:grid;place-items:center;color:white;font-weight:700;font-size:11px;">${list.length > 99?"99+":list.length}</div>`, iconSize:[34,34], iconAnchor:[17,17] });
+          const rows = list.slice(0,6).map(i=>`<div style="font-size:12px;line-height:1.8;"><a href="#" onclick="closeMap();showDetail(${institutions.indexOf(i)});return false;" style="color:var(--teal);">${i.name}</a></div>`).join("");
+          const more = list.length > 6 ? `<div style="font-size:12px;color:#667085;">…另有 ${list.length-6} 個</div>` : "";
+          const m = L.marker(coords, { icon }).bindPopup(`<div style="min-width:180px;"><strong>${dist||city}</strong>（${list.length} 個機構）<div style="margin-top:4px;">${rows}${more}</div></div>`, { maxWidth: 260 }).addTo(leafletMap);
+          leafletMarkers.push(m);
+        });
+      } else {
+        // Cluster view: group by city + district
+        const byArea = {};
+        items.forEach(item => {
+          const city = normCity(item.city) || "全國";
+          const dist = item.district || "";
+          const key  = city + "|" + dist;
+          if (!byArea[key]) byArea[key] = { city, dist, list: [] };
+          byArea[key].list.push(item);
+        });
+        Object.values(byArea).forEach(({ city, dist, list }) => {
+          const coords = (DISTRICT_COORDS[city] && dist && DISTRICT_COORDS[city][dist]) || COUNTY_COORDS[city];
+          if (!coords) return;
+          const hasHigh = list.some(i => i.risk === "high");
+          const hasMid  = list.some(i => i.risk === "mid");
+          const color   = hasHigh ? "#b42318" : hasMid ? "#b7791f" : "#0d6b68";
+          const count   = list.length;
+          const icon = L.divIcon({
+            className: "",
+            html: `<div style="width:40px;height:40px;border-radius:50%;background:${color};border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,.28);display:grid;place-items:center;color:white;font-weight:900;font-size:12px;font-family:inherit;">${count > 99 ? "99+" : count}</div>`,
+            iconSize: [40, 40], iconAnchor: [20, 20]
+          });
+          const top = list.slice(0, 8);
+          const rows = top.map(item => {
+            const idx = institutions.indexOf(item);
+            const dot = `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${item.risk==="high"?"#b42318":item.risk==="mid"?"#b7791f":"#0d6b68"};margin-right:5px;vertical-align:middle;"></span>`;
+            return `<div style="font-size:12px;line-height:1.8;">${dot}<a href="#" onclick="closeMap();showDetail(${idx});return false;" style="color:var(--teal);">${item.name}</a></div>`;
+          }).join("");
+          const more = count > 8 ? `<div style="font-size:12px;color:#667085;margin-top:4px;">…另有 ${count - 8} 個機構</div>` : "";
+          const areaLabel = dist ? `${city} ${dist}` : city;
+          const popup = `<div style="min-width:200px;"><strong>${areaLabel}</strong>（${count} 個機構）<div style="margin-top:6px;">${rows}${more}</div></div>`;
+          const m = L.marker(coords, { icon }).bindPopup(popup, { maxWidth: 280 }).addTo(leafletMap);
+          leafletMarkers.push(m);
+        });
+      }
 
-      setTimeout(() => leafletMap.invalidateSize(), 80);
+      setTimeout(() => leafletMap.invalidateSize(), 300);
     }
 
     function closeMap() {
@@ -1336,11 +1535,25 @@
 
       const events = item.events || [];
       let eventsHtml;
+      let yearFilterHtml = "";
       if (events.length === 0) {
         eventsHtml = `<li style="padding:20px 0;color:var(--muted);font-size:14px;list-style:none;">
           目前無負面事件紀錄。此機構已納入監測範圍，若有新的裁罰、新聞或家長回饋，將自動更新於此。
         </li>`;
       } else {
+        const years = [...new Set(events.map(r => {
+          const ev = normalizeEvent(r);
+          return ev.date ? ev.date.substring(0, 4) : null;
+        }).filter(Boolean))].sort().reverse();
+        if (years.length > 1) {
+          const btns = years.map(y =>
+            `<button type="button" class="year-btn" data-year="${y}" onclick="filterDetailYear('${y}',this)">${y}</button>`
+          ).join("");
+          yearFilterHtml = `<div class="year-filter-row">
+            <button type="button" class="year-btn active" data-year="all" onclick="filterDetailYear('all',this)">全部</button>
+            ${btns}
+          </div>`;
+        }
         eventsHtml = events.map(rawEvent => {
           const event = normalizeEvent(rawEvent);
           const kind = event.kind || "official";
@@ -1349,8 +1562,9 @@
             : reviewStatus === "disputed" ? "status-disputed" : "status-pending";
           const pendingNote = reviewStatus === "pending"
             ? `<div style="background:#fff9e8;border:1px solid #f1d58c;border-radius:5px;padding:7px 10px;font-size:12px;color:#67470b;margin-top:7px;">⚠ 此事項尚待人工查證，內容可能未經完整核實。</div>` : "";
+          const evYear = event.date ? event.date.substring(0, 4) : "";
           return `
-          <li class="event ${kind}">
+          <li class="event ${kind}" data-year="${evYear}">
             <strong>${eventLabel[kind] || "佐證資料"}：${event.title}</strong>
             <small>${event.date || "日期待補"} · ${event.sourcePublisher || "來源待補"}</small>
             <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
@@ -1365,12 +1579,24 @@
       }
 
       const addr = item.address ? ` · ${item.address}` : "";
+      const catMapD = { "公立": "cat-public", "非營利": "cat-nonprofit", "準公共": "cat-quasi", "私立": "cat-private" };
+      const catClassD = catMapD[item.instCategory] || "";
+      const catBadgeD = catClassD
+        ? `<span class="badge ${catClassD}" style="margin-right:4px;">${item.instCategory}</span>`
+        : "";
+      const phoneLine = item.phone
+        ? `<div class="meta" style="margin-top:4px;">📞 <a href="tel:${item.phone.replace(/[^0-9+]/g,'')}" style="color:inherit;">${item.phone}</a></div>`
+        : "";
       const content = `
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;padding-right:32px;">
           <div>
             <h2 id="detailModalTitle" style="margin:0 0 5px;font-size:22px;line-height:1.3;">${item.name}</h2>
             <div class="meta">${item.city}${item.district || ""} · ${item.type}${addr}</div>
-            ${isClosed(item) ? '<span class="badge tag-closed" style="margin-top:5px;display:inline-block;">已停業</span>' : ""}
+            ${phoneLine}
+            <div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:4px;">
+              ${catBadgeD}
+              ${isClosed(item) ? '<span class="badge tag-closed">已停業</span>' : ""}
+            </div>
           </div>
           <span class="badge ${riskClass[item.risk]}" style="flex-shrink:0;">${riskLabel[item.risk]}</span>
         </div>
@@ -1379,7 +1605,10 @@
           <div class="metric"><strong>${item.news || 0}</strong><span>新聞紀錄</span></div>
           <div class="metric"><strong>${item.reviews || 0}</strong><span>家長回饋</span></div>
         </div>
-        <h3 style="margin:0 0 12px;font-size:16px;">事件紀錄</h3>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <h3 style="margin:0;font-size:16px;">事件紀錄</h3>
+          ${yearFilterHtml}
+        </div>
         <ul class="timeline" style="margin:0 0 24px;padding:0;list-style:none;">${eventsHtml}</ul>
         <div style="border-top:1px solid var(--line);padding-top:16px;">
           <p class="meta" style="margin:0 0 12px;">若您有相關親身經歷、目擊或佐證資料，可透過下方管道回報。所有回饋需經人工審核，並於公開前去識別化。</p>
@@ -1396,6 +1625,14 @@
       document.body.style.overflow = "";
     }
 
+    function filterDetailYear(year, btn) {
+      document.querySelectorAll(".year-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.querySelectorAll(".timeline li[data-year]").forEach(li => {
+        li.style.display = (year === "all" || li.dataset.year === year) ? "" : "none";
+      });
+    }
+
     document.querySelector("#searchForm").addEventListener("submit", event => {
       event.preventDefault();
       render();
@@ -1405,11 +1642,12 @@
     document.querySelector("#city").addEventListener("change", () => {
       updateDistrictOptions(document.querySelector("#city").value);
       document.querySelector("#district").value = "";
+      state.page = 1;
       render();
     });
 
-    ["query", "type", "risk", "district", "instCategory", "sortBy"].forEach(id => {
-      document.querySelector(`#${id}`).addEventListener("input", render);
+    ["query", "type", "risk", "district", "instCategory", "yearFilter", "sortBy"].forEach(id => {
+      document.querySelector(`#${id}`).addEventListener("input", () => { state.page = 1; render(); });
     });
 
     document.querySelector("#listBtn").addEventListener("click", () => {

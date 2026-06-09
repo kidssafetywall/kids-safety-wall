@@ -47,7 +47,12 @@ jobs:
         shell: powershell
         run: .\scripts\fetch-penalties.ps1 -DelayMs 2000
 
-      # ── Step 5：重新整合資料（納入新增的 review-queue/events 條目）────────
+      # ── Step 5：地址 Geocoding（每天 200 筆，增量累積）──────────────────────
+      - name: 地址轉座標（Nominatim OSM，免費）
+        shell: powershell
+        run: .\scripts\geocode-institutions.ps1 -MaxRequests 200 -DelayMs 1500
+
+      # ── Step 6：重新整合資料（納入新增的 review-queue/events 條目）────────
       - name: 重新產生前台資料（整合新增事件）
         shell: powershell
         run: |
@@ -73,6 +78,8 @@ jobs:
           git add data/news-seen.json
           git add data/judicial-seen.json
           git add data/penalty-seen.json
+          git add data/geocache.json
+          git add data/institution-overrides.json
           git add archive/raw
           git add archive/datasets
 

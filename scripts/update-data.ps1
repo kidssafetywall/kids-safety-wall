@@ -146,45 +146,75 @@ function Normalize-ImportedText([string]$Value) {
 }
 
 function Format-City([string]$Value) {
-  return "$Value".Replace("臺","台").Replace("　"," ").Trim()
+  return ("$Value".Replace("臺","台").Replace("　"," ").Trim() -replace '政府$', '')
 }
 
 function U([int[]]$Codes) {
   return -join ($Codes | ForEach-Object { [char]$_ })
 }
 
-function Get-LatestJsonResourceUrl([string]$Html) {
-  $matches = [regex]::Matches($Html, '"contentUrl"\s*:\s*"([^"]+\.json)"')
-  if ($matches.Count -eq 0) {
-    return $null
+function Get-AllJsonResourceUrls([string]$Html) {
+  $m    = [regex]::Matches($Html, '"contentUrl"\s*:\s*"([^"]+)"')
+  $urls = [System.Collections.ArrayList]::new()
+  foreach ($match in $m) {
+    $url = $match.Groups[1].Value.Replace("\/", "/")
+    # Accept .json files AND JSP endpoints that serve JSON (e.g. afterschool_json.jsp?city=XX)
+    if ($url -match '\.json($|[?#])' -or $url -match 'json\.jsp') {
+      [void]$urls.Add($url)
+    }
   }
-
-  return $matches[$matches.Count - 1].Groups[1].Value.Replace("\/", "/")
+  return @($urls | Select-Object -Unique)
 }
 
 function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$DatasetDir, [int]$Limit) {
-  $resourceUrl = Get-LatestJsonResourceUrl $DatasetHtml
-  if (-not $resourceUrl) {
+  $resourceUrls = Get-AllJsonResourceUrls $DatasetHtml
+  if ($resourceUrls.Count -eq 0) {
     return @()
   }
 
-  $resourceId = ConvertTo-Slug $resourceUrl
-  $resourcePath = Join-Path $DatasetDir "$($Source.id)-$resourceId.json"
-  try {
-    $client = New-Object System.Net.WebClient
-    $bytes = $client.DownloadData($resourceUrl)
-    [System.IO.File]::WriteAllBytes($resourcePath, $bytes)
-  } catch {
-    if (-not (Test-Path -LiteralPath $resourcePath)) {
-      Write-Warning "Cannot download resource for $($Source.id): $($_.Exception.Message)"
-      return @()
+  # Download every resource URL and collect items tagged with their source URL
+  $taggedItems = [System.Collections.ArrayList]::new()
+  foreach ($resourceUrl in $resourceUrls) {
+    $resourceId   = ConvertTo-Slug $resourceUrl
+    $resourcePath = Join-Path $DatasetDir "$($Source.id)-$resourceId.json"
+    try {
+      $client = New-Object System.Net.WebClient
+      $bytes  = $client.DownloadData($resourceUrl)
+      [System.IO.File]::WriteAllBytes($resourcePath, $bytes)
+    } catch {
+      if (-not (Test-Path -LiteralPath $resourcePath)) {
+        Write-Warning "Cannot download resource $resourceUrl for $($Source.id): $($_.Exception.Message)"
+        continue
+      }
+    }
+    $fileItems = Read-JsonArrayFile $resourcePath
+    Write-Host "  [$($Source.id)] $resourceUrl → $($fileItems.Count) rows"
+    foreach ($fi in $fileItems) {
+      [void]$taggedItems.Add(@{ item = $fi; url = $resourceUrl })
     }
   }
 
-  $items = Read-JsonArrayFile $resourcePath
+  # 多學年資料集去重：每個代碼只保留最新學年（幼兒園/國中等資料集有 11 年 × N 所 = 數萬筆）
+  $yearField = (U @(0x5b78,0x5e74,0x5ea6))  # 學年度
+  $codeField = (U @(0x4ee3,0x78bc))          # 代碼
+  $firstItem = if ($taggedItems.Count -gt 0) { $taggedItems[0]["item"] } else { $null }
+  if ($firstItem -and $firstItem.ContainsKey($yearField)) {
+    $sorted    = @($taggedItems) | Sort-Object { [int]"0$($_['item'][$yearField])" } -Descending
+    $seenCodes = [System.Collections.Generic.HashSet[string]]::new()
+    $deduped   = [System.Collections.ArrayList]::new()
+    foreach ($ti in $sorted) {
+      $c = if ($ti["item"].ContainsKey($codeField)) { "$($ti['item'][$codeField])" } else { "" }
+      if (-not $c -or $seenCodes.Add($c)) { [void]$deduped.Add($ti) }
+    }
+    $taggedItems = $deduped
+    Write-Host "  [$($Source.id)] 多學年去重後：$($taggedItems.Count) 筆唯一機構"
+  }
+
   $rows = @()
   $count = 0
-  foreach ($item in $items) {
+  foreach ($tagged in $taggedItems) {
+    $item        = $tagged["item"]
+    $resourceUrl = $tagged["url"]
     if ($Limit -gt 0 -and $count -ge $Limit) {
       break
     }
@@ -453,6 +483,42 @@ $institutions = @($institutionMap.Values | ForEach-Object {
   $_.Remove("riskRank")
   $_
 } | Sort-Object name)
+
+# Apply institution-overrides.json (manual closed/歇業 flags)
+$overridesPath = Join-Path $dataDir "institution-overrides.json"
+if (Test-Path $overridesPath) {
+  $overridesArr = ([IO.File]::ReadAllText($overridesPath, [Text.Encoding]::UTF8)) | ConvertFrom-Json
+  $overrideDict = @{}
+  foreach ($o in $overridesArr) { $overrideDict["$($o.key)"] = $o }
+  $overrideApplied = 0
+  foreach ($inst in $institutions) {
+    $k = "$($inst.key)"
+    if ($overrideDict.ContainsKey($k)) {
+      $ov = $overrideDict[$k]
+      $inst["closed"] = if ($ov.closed) { $true } else { $false }
+      if ($ov.closedNote) { $inst["closedNote"] = "$($ov.closedNote)" }
+      $overrideApplied++
+    }
+  }
+  if ($overrideApplied -gt 0) { Write-Host "  Applied $overrideApplied institution overrides (closed flags)" }
+}
+
+# Merge geocache coordinates
+$geocachePath = Join-Path $dataDir "geocache.json"
+if (Test-Path $geocachePath) {
+  $geoObj = ([IO.File]::ReadAllText($geocachePath, [Text.Encoding]::UTF8)) | ConvertFrom-Json
+  $geoMerged = 0
+  foreach ($inst in $institutions) {
+    $k = "$($inst.key)"
+    $entry = $geoObj.PSObject.Properties[$k]
+    if ($entry) {
+      $inst["lat"] = [double]$entry.Value.lat
+      $inst["lng"] = [double]$entry.Value.lng
+      $geoMerged++
+    }
+  }
+  if ($geoMerged -gt 0) { Write-Host "  Merged $geoMerged geocache coordinates" }
+}
 
 $payload = [ordered]@{
   generatedAt = (Get-Date).ToString("o")
