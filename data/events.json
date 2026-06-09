@@ -72727,5 +72727,161 @@
         "status": "captured"
       }
     ]
+  },
+  {
+    "id": "news-bd37ee9637dc76f1",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
+    "institution": {
+      "name": "臺北市私立培諾米達信義幼兒園",
+      "type": "幼兒園",
+      "city": "台北市",
+      "district": "信義區",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "北市幼兒園性侵案 毛畯珅另涉侵犯幼童一審判30年",
+    "summary": "北市幼兒園性侵案 毛畯珅另涉侵犯幼童一審判30年 中央社 CNA",
+    "eventDate": "2025-09-24",
+    "importedAt": "2026-06-09T01:57:56.7871374Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "北市幼兒園性侵案 毛畯珅另涉侵犯幼童一審判30年",
+        "publisher": "中央社 CNA",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5MSHNIeXFpd2ZCV00xQ3pSZTdKWDRWT1p0cTFfSTk2LWdMT0FOaEV4aGxwUFZMcVNydU1mS3psWVd0UlBTN0JBS1hpLTJ5eUxubng0Q1BjNmpUalFtQlB3?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-09T01:57:54.6392020Z",
+        "snapshotPath": "archive/raw/news-9a0bba7257ecde00.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-c02a3be83447487a",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
+    "institution": {
+      "name": "臺北市私立培諾米達信義幼兒園",
+      "type": "幼兒園",
+      "city": "台北市",
+      "district": "信義區",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "幼兒園長之子毛畯珅強掰女童私處手機偷拍 法院再判賠100萬元",
+    "summary": "幼兒園長之子毛畯珅強掰女童私處手機偷拍 法院再判賠100萬元 UDN",
+    "eventDate": "2026-05-21",
+    "importedAt": "2026-06-09T01:58:05.5137113Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "幼兒園長之子毛畯珅強掰女童私處手機偷拍 法院再判賠100萬元",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1uM1h4X0pqVjJPcUM4YTFJUjR4eFNmc2F0YmRtb2F1NGgxWV95RzVKWmU2TmxRam9aS05XNmRUQXpJbE9GUmRURmpkX2hyUnRj0gFWQVVfeXFMUExwTWY2d2F3bTM4TjVWRkQ2SFJuNzd5N0dud0FoSlBEQVg2TS1iMnZHOWZXUDFfaE9pRFkxZEJ6TG9GYm03NUdON2pCcE5VRXJlRC1Wa2c?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-09T01:58:03.6249527Z",
+        "snapshotPath": "archive/raw/news-07e4b68e2e4b4bee.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-560503abbebd4297",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
+    "institution": {
+      "name": "金城國中",
+      "type": "國中",
+      "city": "金門縣",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "段考題驚見不雅字眼！金城國中教師涉性平爭議 上月遭解聘",
+    "summary": "段考題驚見不雅字眼！金城國中教師涉性平爭議 上月遭解聘 UDN",
+    "eventDate": "2025-12-22",
+    "importedAt": "2026-06-09T02:00:07.4283651Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "段考題驚見不雅字眼！金城國中教師涉性平爭議 上月遭解聘",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1WRjMwS1lBbTgtS0hGY3pxMkZzMHlSLXFKYndVRGVVU2YtMkRXNk85OFllYXpMSjNFOUtDcGJsaWswLU9zVEw4WTRlaXJFeXVx0gFWQVVfeXFMTWhGMlROQ3JiLU9mM1pOTm1PdUtUU0ZEUjNmX1Z2UGNFUXF2UjdoS2hvZnNqLTQ5cVBRUXBickV3YmJWeFdJMGROYVZFVTJXcllXNGRHNVE?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-09T02:00:05.5492656Z",
+        "snapshotPath": "archive/raw/news-89200b14afcb28f7.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-d3014e75f76193c3",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
+    "institution": {
+      "name": "金城國中",
+      "type": "國中",
+      "city": "金門縣",
+      "district": "",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "家長氣炸！國中考題驚見「精液豆漿、綠茶婊」 老師工作丟了「4年不得聘任」",
+    "summary": "家長氣炸！國中考題驚見「精液豆漿、綠茶婊」 老師工作丟了「4年不得聘任」 鏡週刊Mirror Media",
+    "eventDate": "2025-12-22",
+    "importedAt": "2026-06-09T02:00:09.3001907Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "國中"
+    ],
+    "evidence": [
+      {
+        "title": "家長氣炸！國中考題驚見「精液豆漿、綠茶婊」 老師工作丟了「4年不得聘任」",
+        "publisher": "鏡週刊Mirror Media",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE84aVVsU3VZOFFYazF4bjVVeGhHVUJEeHZzamhyTXhSMExmbHhYY0poUkZldEVmYzVIVXNSRlBEX281Z2FIZGlkVm1leHg3a2hTMUZxWXNwc2ZvcW_SAWBBVV95cUxNQXVBYlZEcFA4U2c3cWVhV0tnSDNSREcxTDBMUjJzUlVGODFFX2pfTlU4eG14THlCTHRVbWt0a1lSTUpPODBPUW1zT0tsNmFHR0p3WjNBQURzWFA4ZXRWR2s?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-09T02:00:07.4440978Z",
+        "snapshotPath": "archive/raw/news-6d1ff2ef465582a6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
   }
 ]
