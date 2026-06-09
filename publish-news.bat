@@ -17,7 +17,7 @@ echo Done.
 echo.
 
 echo [2/3] Staging changed files...
-git add data/events.json data/review-queue.json data/site-data.js data/institutions.json data/institution-overrides.json
+git add data/events.json data/review-queue.json data/site-data.js data/institutions.json data/institution-overrides.json data/quasi-public.json
 if %errorlevel% neq 0 (
     echo FAILED: git add
     cmd /k

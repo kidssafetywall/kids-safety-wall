@@ -484,6 +484,29 @@ $institutions = @($institutionMap.Values | ForEach-Object {
   $_
 } | Sort-Object name)
 
+# Apply quasi-public.json — tag matching 私立 institutions as 準公共
+$quasiPath = Join-Path $dataDir "quasi-public.json"
+if (Test-Path $quasiPath) {
+  $quasiArr = ([IO.File]::ReadAllText($quasiPath, [Text.Encoding]::UTF8)) | ConvertFrom-Json
+  # Build lookup by normalized name
+  $quasiNames = @{}
+  foreach ($q in $quasiArr) {
+    $n = "$($q.name)".Replace("臺","台").Trim()
+    $quasiNames[$n] = $true
+  }
+  $quasiTagged = 0
+  foreach ($inst in $institutions) {
+    if ($inst["instCategory"] -eq "私立") {
+      $n = "$($inst.name)".Replace("臺","台").Trim()
+      if ($quasiNames.ContainsKey($n)) {
+        $inst["instCategory"] = "準公共"
+        $quasiTagged++
+      }
+    }
+  }
+  if ($quasiTagged -gt 0) { Write-Host "  Tagged $quasiTagged institutions as 準公共" }
+}
+
 # Apply institution-overrides.json (manual closed/歇業 flags)
 $overridesPath = Join-Path $dataDir "institution-overrides.json"
 if (Test-Path $overridesPath) {

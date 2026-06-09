@@ -47,7 +47,12 @@ jobs:
         shell: powershell
         run: .\scripts\fetch-penalties.ps1 -DelayMs 2000
 
-      # ── Step 5：地址 Geocoding（每天 200 筆，增量累積）──────────────────────
+      # ── Step 5：準公共幼兒園清單（每週更新）────────────────────────────────
+      - name: 抓取準公共幼兒園清單
+        shell: powershell
+        run: .\scripts\fetch-quasi-public.ps1 -DelayMs 800
+
+      # ── Step 5b：地址 Geocoding（每天 200 筆，增量累積）─────────────────────
       - name: 地址轉座標（Nominatim OSM，免費）
         shell: powershell
         run: .\scripts\geocode-institutions.ps1 -MaxRequests 200 -DelayMs 1500
@@ -80,6 +85,7 @@ jobs:
           git add data/penalty-seen.json
           git add data/geocache.json
           git add data/institution-overrides.json
+          git add data/quasi-public.json
           git add archive/raw
           git add archive/datasets
 
