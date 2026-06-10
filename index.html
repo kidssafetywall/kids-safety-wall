@@ -1243,7 +1243,7 @@
 
       return (!q        || haystack.includes(q))
           && (!city     || normCity(item.city) === city)
-          && (!district || item.district === district)
+          && (!district || item.district === district || !item.district)
           && (!type     || item.type === type)
           && (!category || item.instCategory === category)
           && (!risk     || item.risk === risk)
