@@ -1192,8 +1192,10 @@
       }
 
       const updatedBase = baseEvents.map(item => applyInstEdit(item));
-      const merged = [...updatedBase, ...newVerified];
-      downloadJson(merged, "events.json");
+      // Deduplicate by ID; newVerified takes precedence over baseEvents for same ID
+      const seen = new Map();
+      [...updatedBase, ...newVerified].forEach(item => seen.set(item.id, item));
+      downloadJson([...seen.values()], "events.json");
     }
 
     function downloadUpdatedQueue() {
