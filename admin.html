@@ -853,12 +853,16 @@
       instSel.innerHTML = '<option value="">機構名稱…</option>';
       const bucket = instByCity[city] && instByCity[city][dist];
       if (!bucket) return;
-      bucket.sort((a,b) => a.name.localeCompare(b.name,"zh-Hant")).forEach(inst => {
-        const o = document.createElement("option");
-        o.value = JSON.stringify({name:inst.name, city:inst.city, district:inst.district});
-        o.textContent = inst.name + (inst.type ? ` (${inst.type})` : "");
-        instSel.appendChild(o);
-      });
+      const typeFilter = document.getElementById(`lk-t-${id}`)?.value || "";
+      bucket
+        .filter(inst => !typeFilter || inst.type === typeFilter)
+        .sort((a,b) => a.name.localeCompare(b.name,"zh-Hant"))
+        .forEach(inst => {
+          const o = document.createElement("option");
+          o.value = JSON.stringify({name:inst.name, city:inst.city, district:inst.district});
+          o.textContent = inst.name + (inst.type ? ` (${inst.type})` : "");
+          instSel.appendChild(o);
+        });
     }
 
     function lkApply(id) {
@@ -1105,7 +1109,7 @@
                   value="${editedCity.replace(/"/g,'&quot;')}"
                   oninput="editInst('${safeId}','city',this.value)"
                   title="縣市（可留空）">
-                <select title="機構類型"
+                <select title="機構類型" id="lk-t-${item.id}"
                   onchange="editInst('${safeId}','type',this.value)">
                   <option value="">類型…</option>${typeOptionsWithSel}
                 </select>
