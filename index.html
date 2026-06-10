@@ -480,6 +480,11 @@
       border: 1px solid #d8dee8;
     }
 
+    .recent-clean { font-size: 11px; color: #357a38; background: #e7f5ec; border: 1px solid #c3e6cb; border-radius: 999px; padding: 2px 8px; white-space: nowrap; display: inline-block; }
+    .recent-warn  { font-size: 11px; color: #c62828; background: #fdecea; border: 1px solid #f5c6c6; border-radius: 999px; padding: 2px 8px; white-space: nowrap; display: inline-block; }
+    .recent-year  { font-size: 11px; color: var(--muted); background: #f0f4f8; border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; white-space: nowrap; display: inline-block; }
+    .risk-sub     { font-size: 10px; color: var(--muted); text-align: right; max-width: 130px; line-height: 1.3; margin-top: 2px; }
+
     .card-actions {
       display: flex;
       justify-content: space-between;
@@ -751,8 +756,11 @@
             <option value="mid">需留意</option>
             <option value="low">資料穩定</option>
           </select>
-          <select id="yearFilter" aria-label="事件年份">
-            <option value="">全部年份</option>
+          <select id="timeRange" aria-label="事件期間">
+            <option value="">全部時間</option>
+            <option value="1">近 1 年內</option>
+            <option value="3">近 3 年內</option>
+            <option value="5">近 5 年內</option>
           </select>
         </div>
       </form>
@@ -826,7 +834,7 @@
   </main>
 
   <footer>
-    兒少防火牆原型。公開資訊需標示來源與日期，使用者回饋需審核與去識別化。
+    公開資訊將標示來源與日期，使用者回饋會審核與去識別化。
   </footer>
 
   <!-- 機構詳細紀錄 Modal -->
@@ -1047,6 +1055,24 @@
       low: "risk-low"
     };
 
+    const riskExplain = {
+      high: "含重大裁罰或撤銷立案等高風險事件",
+      mid: "含官方裁罰或負面新聞等中度風險事件",
+      low: "僅有低度風險事件紀錄"
+    };
+
+    function getLatestEventYear(item) {
+      let latest = null;
+      for (const e of (item.events || [])) {
+        const ev = normalizeEvent(e);
+        if (ev.date && ev.date.length >= 4) {
+          const y = ev.date.substring(0, 4);
+          if (!latest || y > latest) latest = y;
+        }
+      }
+      return latest;
+    }
+
     const eventLabel = {
       official: "官方裁罰",
       news: "媒體報導",
@@ -1153,21 +1179,6 @@
     function populateFilterOptions() {
       addOptions(document.querySelector("#city"),  [...new Set(institutions.map(i => normCity(i.city)))]);
       addOptions(document.querySelector("#type"),  [...new Set(institutions.map(i => i.type))]);
-
-      // Populate year filter from all events
-      const allYears = [...new Set(institutions.flatMap(inst =>
-        (inst.events || []).map(e => {
-          const ev = normalizeEvent(e);
-          return ev.date ? ev.date.substring(0, 4) : null;
-        }).filter(Boolean)
-      ))].sort().reverse();
-      const yearSel = document.querySelector("#yearFilter");
-      allYears.forEach(y => {
-        const opt = document.createElement("option");
-        opt.value = y;
-        opt.textContent = y + " 年";
-        yearSel.appendChild(opt);
-      });
     }
 
     function matchesFilters(item) {
@@ -1176,8 +1187,8 @@
       const district = document.querySelector("#district").value;
       const type     = document.querySelector("#type").value;
       const category = document.querySelector("#instCategory").value;
-      const risk     = document.querySelector("#risk").value;
-      const year     = document.querySelector("#yearFilter").value;
+      const risk      = document.querySelector("#risk").value;
+      const timeRange = document.querySelector("#timeRange").value;
 
       // Include penalty respondent names in full-text search
       const respondents = (item.events || [])
@@ -1186,10 +1197,13 @@
 
       const haystack = `${item.name} ${item.city} ${item.district || ""} ${item.type} ${item.address || ""} ${(item.tags || []).join(" ")} ${respondents}`.toLowerCase();
 
-      const matchesYear = !year || (item.events || []).some(e => {
-        const ev = normalizeEvent(e);
-        return ev.date && ev.date.startsWith(year);
-      });
+      const matchesTime = !timeRange || (() => {
+        const cutoff = String(new Date().getFullYear() - parseInt(timeRange));
+        return (item.events || []).some(e => {
+          const ev = normalizeEvent(e);
+          return ev.date && ev.date.substring(0, 4) >= cutoff;
+        });
+      })();
 
       return (!q        || haystack.includes(q))
           && (!city     || normCity(item.city) === city)
@@ -1197,7 +1211,7 @@
           && (!type     || item.type === type)
           && (!category || item.instCategory === category)
           && (!risk     || item.risk === risk)
-          && matchesYear;
+          && matchesTime;
     }
 
     const CLOSED_KEYWORDS = ["廢止設立許可", "令其停辦", "撤銷設立許可", "廢止立案"];
@@ -1224,7 +1238,7 @@
           && !document.querySelector("#type").value
           && !document.querySelector("#instCategory").value
           && !document.querySelector("#risk").value
-          && !document.querySelector("#yearFilter").value;
+          && !document.querySelector("#timeRange").value;
     }
 
     function render() {
@@ -1313,6 +1327,16 @@
         const catBadge = !isUnclassified && catClass
           ? `<span class="badge ${catClass}" style="margin-top:4px;">${item.instCategory}</span>`
           : "";
+        const latestYear = getLatestEventYear(item);
+        const thisYear = new Date().getFullYear();
+        const yearsAgo = latestYear ? thisYear - parseInt(latestYear) : null;
+        const recentBadge = hasIssues && latestYear ? (
+          yearsAgo >= 3
+            ? `<span class="recent-clean">近 3 年無新紀錄</span>`
+            : yearsAgo <= 1
+              ? `<span class="recent-warn">最近紀錄：${latestYear} 年</span>`
+              : `<span class="recent-year">最近紀錄：${latestYear} 年</span>`
+        ) : "";
         return `
         <article class="institution-card" ${closed ? 'style="opacity:.75;"' : ""} ${isUnclassified ? 'style="border-left:3px solid #e8b84b;opacity:.85;"' : ""}>
           <div class="card-head">
@@ -1322,6 +1346,7 @@
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
               <span class="badge ${riskClass[item.risk]}">${riskLabel[item.risk]}</span>
+              ${item.risk ? `<div class="risk-sub">${riskExplain[item.risk] || ""}</div>` : ""}
               ${catBadge}
             </div>
           </div>
@@ -1330,6 +1355,7 @@
             <div class="metric"><strong>${item.news || 0}</strong><span>新聞紀錄</span></div>
             <div class="metric"><strong>${item.pending || 0}</strong><span>待審事件</span></div>
           </div>
+          <div style="margin-top:6px;min-height:18px;">${recentBadge}</div>
           ${closedBadge}${monitorBadge}
           <div class="tags">${(item.tags || []).map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
           <div class="card-actions">
