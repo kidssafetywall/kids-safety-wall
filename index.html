@@ -1635,7 +1635,7 @@
           return `
           <li class="event ${kind}" data-year="${evYear}">
             <strong>${eventLabel[kind] || "佐證資料"}：${event.title}</strong>
-            <small>${event.date || "日期待補"} · ${event.sourcePublisher || "來源待補"}</small>
+            <small>${resolveDate(event) || "日期待補"} · ${event.sourcePublisher || "來源待補"}</small>
             <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
               <span class="badge ${statusClass}">${statusLabel[reviewStatus] || reviewStatus}</span>
             </div>
