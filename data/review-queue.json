@@ -1,44 +1,5 @@
 [
   {
-    "id": "news-499b34445a59466c",
-    "verificationStatus": "disputed",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "新莊幼兒園疑虐童！監視器畫面不完整惹議園方致歉認疏失- 生活",
-    "summary": "新莊幼兒園疑虐童！監視器畫面不完整惹議園方致歉認疏失- 生活 工商時報",
-    "eventDate": "2026-04-13",
-    "importedAt": "2026-06-08T12:14:40.6137688Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "新莊幼兒園疑虐童！監視器畫面不完整惹議園方致歉認疏失- 生活",
-        "publisher": "工商時報",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFByQVVfcVQyd2wtXzhiZWhNTFdEXzRENFNhMU5pbUhZOHZIQmxFT29Ld2xNVjRqeDZOMFViWnZZYTlDd2lfOVFOaFBwcjhtTmlzbkJtaXNCN2JSUEVZWTJv?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-08T12:14:37.9411019Z",
-        "snapshotPath": "archive/raw/news-943ada97034aafaa.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
     "id": "news-323464cd3972a382",
     "verificationStatus": "disputed",
     "autoImported": true,
@@ -1131,45 +1092,6 @@
     ]
   },
   {
-    "id": "news-81e2e51e2938d6d5",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "英國華裔男子教保員性侵幼兒園學童當庭認26起罪行| 國際",
-    "summary": "英國華裔男子教保員性侵幼兒園學童當庭認26起罪行| 國際 Newtalk新聞",
-    "eventDate": "2025-12-03",
-    "importedAt": "2026-06-09T01:58:33.3694852Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "英國華裔男子教保員性侵幼兒園學童當庭認26起罪行| 國際",
-        "publisher": "Newtalk新聞",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zUkdsMHNlQUxOY05hQnRDR0s4VW5hTTRHbzVmOWJaLXA2NG1lT3Ytb2RzakxVeFNTN01GWVIzMFJXazFuMkc0WF9OVnNPd1VISUp3Q041NFNIZ1E?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:58:31.5007948Z",
-        "snapshotPath": "archive/raw/news-9530f6581ac4899f.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
     "id": "news-5a4eabb56da57497",
     "verificationStatus": "pending",
     "autoImported": true,
@@ -1203,84 +1125,6 @@
         "type": "news",
         "capturedAt": "2026-06-09T01:58:33.3907966Z",
         "snapshotPath": "archive/raw/news-8d07647fa1f00db0.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-e3521e6961efb3a7",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "獨家／挨告妨礙自由！杜秉澄上火線反控徐巧芯「護航性侵幼兒園」",
-    "summary": "獨家／挨告妨礙自由！杜秉澄上火線反控徐巧芯「護航性侵幼兒園」 民視新聞網",
-    "eventDate": "2026-04-23",
-    "importedAt": "2026-06-09T01:58:37.1384483Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "獨家／挨告妨礙自由！杜秉澄上火線反控徐巧芯「護航性侵幼兒園」",
-        "publisher": "民視新聞網",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5IOWpnZGVQVHhzeTd0dUoyWDVVdTFHeVUwajI0TmdCYmF2cVJKQUg0WUEtODFQMnl5SUpTR3BzTTVuTjBsSFdUcWNNYWI1RkppTXdDOXpYQmtJVHFIWTRPZA?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:58:35.2231499Z",
-        "snapshotPath": "archive/raw/news-e97b4e3d6855c97b.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-40862a0d7bec9f71",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "許淑華控幼兒園性侵案壓新聞 北市府：並無此事 | 自由電子報",
-    "summary": "許淑華控幼兒園性侵案壓新聞 北市府：並無此事 | 自由電子報 LINE TODAY",
-    "eventDate": "2026-01-06",
-    "importedAt": "2026-06-09T01:58:39.0680719Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "許淑華控幼兒園性侵案壓新聞 北市府：並無此事 | 自由電子報",
-        "publisher": "LINE TODAY",
-        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5fdTZLVHZiZmhTVnhMMFN1ZUFnWGI1d1U0VWtpdzJQenY5VHlaWnJCM1N4TDF4UE1BdXZWeHVpc3pyTFdrWG1sSHVGVURRMUxNU3Z1ZlZn?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:58:37.1539806Z",
-        "snapshotPath": "archive/raw/news-8779e4a72b4e5cd0.html",
         "httpStatus": 200,
         "status": "captured"
       }
@@ -1365,84 +1209,6 @@
     ]
   },
   {
-    "id": "news-4ac31cc3d956f63b",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "LIVE／挨告妨礙自由！杜秉澄親赴警局 控徐巧芯護航性侵幼兒園",
-    "summary": "LIVE／挨告妨礙自由！杜秉澄親赴警局 控徐巧芯護航性侵幼兒園 民視新聞網",
-    "eventDate": "2026-04-23",
-    "importedAt": "2026-06-09T01:58:46.7061736Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "LIVE／挨告妨礙自由！杜秉澄親赴警局 控徐巧芯護航性侵幼兒園",
-        "publisher": "民視新聞網",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBoaV9lVUpLNzdwRUp1X3FaMG5tWkJNdG05eFVsUkZpWTlidWtzZTU2MzgyMnR1YnJlWUpFclFhelUzQUdncmYtbzFzY2VoSC1jcXVkNmU3NEdyMThLMUxKeg?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:58:44.7748365Z",
-        "snapshotPath": "archive/raw/news-109c5aa332f83a90.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-7d479c8efab87785",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "再次重判！教保員毛畯珅性侵39童判刑30年 還要併科罰金5億元",
-    "summary": "再次重判！教保員毛畯珅性侵39童判刑30年 還要併科罰金5億元 UDN",
-    "eventDate": "2025-09-24",
-    "importedAt": "2026-06-09T01:58:48.5892304Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "再次重判！教保員毛畯珅性侵39童判刑30年 還要併科罰金5億元",
-        "publisher": "UDN",
-        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5KczhLV2p1dGxqX2wzSlE5cVFaV1BTejZqRWFDbnZCRkl5bmZLVVZrcFN2RWN2MERzZm42bU9ad1RiN2xQcXhTT3J4Z0EzaEdf0gFWQVVfeXFMTlVtVjdFaVQ5OFRBQkVMOWJqWVotNVUyNkREdW5aTlNlOEt2R0ZMYlQ4ODhGWGk3SnR0X3h4VmtiT00yU2tZVk9uc0RFTTA0ZG5TYXdId3c?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:58:46.7205283Z",
-        "snapshotPath": "archive/raw/news-76f80324aa22fe39.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
     "id": "news-fa408eb5a57e3df9",
     "verificationStatus": "pending",
     "autoImported": true,
@@ -1476,84 +1242,6 @@
         "type": "news",
         "capturedAt": "2026-06-09T01:58:48.6053028Z",
         "snapshotPath": "archive/raw/news-7eaaef19c808311f.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-4b461bfe1eaad867",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "性侵兒童拍逾2.5萬影像 英幼兒園華裔員工認26罪",
-    "summary": "性侵兒童拍逾2.5萬影像 英幼兒園華裔員工認26罪 Yahoo",
-    "eventDate": "2025-12-03",
-    "importedAt": "2026-06-09T01:58:52.6462757Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "性侵兒童拍逾2.5萬影像 英幼兒園華裔員工認26罪",
-        "publisher": "Yahoo",
-        "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxOYWxtV2xqR2RCUWowaFFCTUtlRXBkbFhQVjJpNmRwaFN3aGUwNHJSS0ZUUDBNWWNkVTEyNjVqZXlTblNhVXl0Yk5RdGhVSm9salh6MkkxcFB0TEhRdkYwbG9MOWYxTEdDYVFzQWwtZ1dQaG5fcFl5OWwxQjg5YzhLNUNoWFpCbTNaeHJVVU8yV2lGdDlLUzUtcjgzQVQ4d0xsLTRtMExDNk5ob2tCUk9jUXJZVm5vVEh4X0VYVnp1VkVoc0ozT2ZPZ0xRcnNLMXlxSGh1MFNjQWFVOTRqYkVsT1JhZUc1SnJJc2hRdDNDdTk1WmlpTUdDUjB6dXJ4UmRXUFZ0REJYVnlwQ1lIYzlJZE1PXzI3V1c3aGhqVExBOHdRV3ExcG53SzZ3WTBzRlhmcGRkdkJLdFI5dWhvMk5F?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:58:50.7097695Z",
-        "snapshotPath": "archive/raw/news-5bfa649b6258710c.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-014f0f64d434ed62",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "幼兒園",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "網紅控幼兒園長性侵敗訴 超慘痛代價曝光",
-    "summary": "網紅控幼兒園長性侵敗訴 超慘痛代價曝光 鏡週刊Mirror Media",
-    "eventDate": "2026-03-03",
-    "importedAt": "2026-06-09T01:58:54.5995026Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "幼兒園"
-    ],
-    "evidence": [
-      {
-        "title": "網紅控幼兒園長性侵敗訴 超慘痛代價曝光",
-        "publisher": "鏡週刊Mirror Media",
-        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5aYmJLMTU1QWF1dzRiR2xwWHVzWXl6akJ4Z2RVSk9PZWNncmFVTmZvbjFQNVMyOFdncW1wY1BCMEFfUnRDOWhrb0M1R2hqd0ZCRkl6LTBFMEMtRDFi0gFiQVVfeXFMTnRabWdSTk1qWDFEcmZOU2Y3d2JMX1Y4VGdJRGhWTUJ0cnFBWnFPZmJkdWdlYUt4VmVwTGwwV2ZNT2JOQ1lKVXRzTERyY0ZyYXBLMzRPdTNMWDVoZ2phSjY1aXc?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:58:52.6736980Z",
-        "snapshotPath": "archive/raw/news-b0062c88e28d1e97.html",
         "httpStatus": 200,
         "status": "captured"
       }
@@ -1827,45 +1515,6 @@
         "type": "news",
         "capturedAt": "2026-06-09T01:59:09.1183014Z",
         "snapshotPath": "archive/raw/news-5d7057d6d5d9d9ce.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-663787dea1efe436",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國小 OR 國民小學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國小",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "古志成議員再掀爭議質詢警察攔撿與質疑測速照相機、武陵國小監察院糾正性平違法案與延平鄉觀光開罰亂象成攻防焦點",
-    "summary": "古志成議員再掀爭議質詢警察攔撿與質疑測速照相機、武陵國小監察院糾正性平違法案與延平鄉觀光開罰亂象成攻防焦點 互傳媒",
-    "eventDate": "2026-05-28",
-    "importedAt": "2026-06-09T01:59:12.8318817Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國小"
-    ],
-    "evidence": [
-      {
-        "title": "古志成議員再掀爭議質詢警察攔撿與質疑測速照相機、武陵國小監察院糾正性平違法案與延平鄉觀光開罰亂象成攻防焦點",
-        "publisher": "互傳媒",
-        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE8waHhMaHVyVUJZRnpMX19DYWNobVp6VE5DRDF0NFgtMUVITUxxajRfWUtFS0w2b0EwRmN0UFI4Y1EyMVVwWW9xOWdZWHQ2Y0RHU2RHbA?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:59:10.9743366Z",
-        "snapshotPath": "archive/raw/news-718582a51b8b4071.html",
         "httpStatus": 200,
         "status": "captured"
       }
@@ -2412,84 +2061,6 @@
         "type": "news",
         "capturedAt": "2026-06-09T01:59:46.4261591Z",
         "snapshotPath": "archive/raw/news-89970a42c8da27e8.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-6c6106e02a1cb20d",
-    "verificationStatus": "disputed",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國中",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "屏東某國中傳性騷擾案 校方竟發文要申訴人「自重自愛」",
-    "summary": "屏東某國中傳性騷擾案 校方竟發文要申訴人「自重自愛」 Yahoo新聞",
-    "eventDate": "2026-06-03",
-    "importedAt": "2026-06-09T01:59:50.1021194Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國中"
-    ],
-    "evidence": [
-      {
-        "title": "屏東某國中傳性騷擾案 校方竟發文要申訴人「自重自愛」",
-        "publisher": "Yahoo新聞",
-        "url": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxPYk5XVXVtYkN5OWQya29PRVF5ckdLbkRxWmc1Rkx0VWdQUzJvNzNva2UyM0VQdzdQc1hPdzFnU0JQazd4LXU2czVQWnFWRHpFNTVoSlY1bUxyLUJTQlhWMGRCVFFQZzBwS2pPLTlRc3o0MThZV09saGdIblpCeVlpWlR1U0ZzQ05tQkNzb3k5NXFkdEs5T3hCZTZ5aUN2bDF6dW9aUHB2aldCeUV5cy0tV3ZxRkZQQ3RTU2s4VHpqaEJiRm9OS3lSOEJoR3BSVnJtMy0wa282YUhESzlfd1hnVmVwblJBRTJtYWJ2X3VndTRyUHI0SHY2YzN1bHU5TmJPYktWcTJqZEFkV0R5dy0wNDB0bXR2RFVxeDJRbmJnWXdaLU5xNGdTUGJFc1RxVGNpcHNBZWFUZmZNdFdhckFZWXUzVHR4dHg4ZW1qY3JGaTYybEw3NXpnenZoRl90ZU1zYUVmQXVzb1RnZw?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:59:48.2459848Z",
-        "snapshotPath": "archive/raw/news-128f3ac9eeca21d1.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-809772c4c22fd147",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國中",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "別讓玩笑變悲劇！揭開校園霸凌與性騷擾的法律界線 家長必知的應對之道",
-    "summary": "別讓玩笑變悲劇！揭開校園霸凌與性騷擾的法律界線 家長必知的應對之道 四季線上4gTV",
-    "eventDate": "2026-05-13",
-    "importedAt": "2026-06-09T01:59:55.8757880Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國中"
-    ],
-    "evidence": [
-      {
-        "title": "別讓玩笑變悲劇！揭開校園霸凌與性騷擾的法律界線 家長必知的應對之道",
-        "publisher": "四季線上4gTV",
-        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFAtZU5GcnM5emo2emY2NVJFb2ZjVFpsbFFSQUdkeUFfRm9zQ3VxY1pIQnptMWEwVjJUNVRlbkRlNWpmMUNEVUVwZ1c0RWRWck1XMEtlTWl6UQ?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T01:59:53.9433128Z",
-        "snapshotPath": "archive/raw/news-632557ba36714cec.html",
         "httpStatus": 200,
         "status": "captured"
       }
@@ -3360,9 +2931,9 @@
     "importSource": "google-news-rss",
     "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
     "institution": {
-      "name": "待人工分類",
+      "name": "新北市立自強國民中學",
       "type": "國中",
-      "city": "",
+      "city": "新北市",
       "district": "",
       "address": "",
       "code": "",
@@ -3387,45 +2958,6 @@
         "type": "news",
         "capturedAt": "2026-06-09T02:00:50.2350791Z",
         "snapshotPath": "archive/raw/news-0d97ce615d762f11.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-c77485b1c9539083",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國中",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "教育部贈國中小新生1本新書性平議題多書入選| 生活",
-    "summary": "教育部贈國中小新生1本新書性平議題多書入選| 生活 中央社 CNA",
-    "eventDate": "2025-08-29",
-    "importedAt": "2026-06-09T02:00:53.9806205Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國中"
-    ],
-    "evidence": [
-      {
-        "title": "教育部贈國中小新生1本新書性平議題多書入選| 生活",
-        "publisher": "中央社 CNA",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9qQzZuanAybkxJMGtiVTU5RTNNcTRMa1JIUXVFem52QkVvQmFMNG9QRTJScGlkSjJTMUFGbXEyODRXX0hYVWNNbFpfdm1JbzM1d0drMXU5NzQ4bEdHMW84?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T02:00:52.1316402Z",
-        "snapshotPath": "archive/raw/news-3fa307cfcbf28665.html",
         "httpStatus": 200,
         "status": "captured"
       }
@@ -3471,45 +3003,6 @@
     ]
   },
   {
-    "id": "news-f9828bdfa39b769a",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國中",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "男大生誘國中女拍私密照傳IG 遭判刑1年6月",
-    "summary": "男大生誘國中女拍私密照傳IG 遭判刑1年6月 UDN",
-    "eventDate": "2025-08-21",
-    "importedAt": "2026-06-09T02:00:57.8253971Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國中"
-    ],
-    "evidence": [
-      {
-        "title": "男大生誘國中女拍私密照傳IG 遭判刑1年6月",
-        "publisher": "UDN",
-        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBxSmpYLU1lVzlfaTV5U1Y1eHN1U2RzV0Vfa2hSclR2UTY0XzhpUF9rdWdUSEtmQVRVQzlvQzhCSUJqb2hxd3N6aHBzOVVJQURt0gFWQVVfeXFMTWpXUlUyeVU4NWN2RHgtR3VubWVwRWcxckFSMG5lcHRtaHZnZ2ZlYlJkWVp2ekNMdGFHTFhkdHdNTVdES1JocFl2WGtGbVdyZnRBTUE4MWc?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T02:00:55.9446020Z",
-        "snapshotPath": "archive/raw/news-9ace2251ee795c11.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
     "id": "news-21f24ce8086ef3bc",
     "verificationStatus": "pending",
     "autoImported": true,
@@ -3543,45 +3036,6 @@
         "type": "news",
         "capturedAt": "2026-06-09T02:00:57.8493904Z",
         "snapshotPath": "archive/raw/news-2e88a92798392081.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-760a400e93229bd0",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國中",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "桃園男當公車癡漢！GG貼女國中生臀部射精 法院判刑3年4月",
-    "summary": "桃園男當公車癡漢！GG貼女國中生臀部射精 法院判刑3年4月 商傳媒",
-    "eventDate": "2025-11-12",
-    "importedAt": "2026-06-09T02:01:01.6186881Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國中"
-    ],
-    "evidence": [
-      {
-        "title": "桃園男當公車癡漢！GG貼女國中生臀部射精 法院判刑3年4月",
-        "publisher": "商傳媒",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPb2dJdDdPeHJzTlBSMUgxYXcwUHFIY1Q0U0JrV0RLUkZJRlJ0ZGJKX2s2VGI4SjRnTERaeko3YkRTWDF4RlAyRnIzbXZKTG1kX0wwTnRZR1I4ZmhmZXJzREJ6MDBHbUk1Q3FtTHpBS1hyZkR2WjFBSFN2Ri0xMWR4clhvalZEY1U3TnFmTVFsZGFhdFk0YzhKeFQ5UjlCbzBmQnJEU2xGWGVpcXAtWFE?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T02:00:59.7471913Z",
-        "snapshotPath": "archive/raw/news-4175ddbd801e658c.html",
         "httpStatus": 200,
         "status": "captured"
       }
@@ -3699,45 +3153,6 @@
         "type": "news",
         "capturedAt": "2026-06-09T02:01:05.5099646Z",
         "snapshotPath": "archive/raw/news-617c158efd5f0d32.html",
-        "httpStatus": 200,
-        "status": "captured"
-      }
-    ]
-  },
-  {
-    "id": "news-f33ae6ec59e69c63",
-    "verificationStatus": "pending",
-    "autoImported": true,
-    "importSource": "google-news-rss",
-    "searchQuery": "國中 OR 國民中學 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
-    "institution": {
-      "name": "待人工分類",
-      "type": "國中",
-      "city": "",
-      "district": "",
-      "address": "",
-      "code": "",
-      "aliases": []
-    },
-    "risk": "mid",
-    "category": "news",
-    "title": "誣陷老師開黃腔遭求償 國中生賠5萬",
-    "summary": "誣陷老師開黃腔遭求償 國中生賠5萬 UDN",
-    "eventDate": "2025-06-30",
-    "importedAt": "2026-06-09T02:01:09.3415010Z",
-    "tags": [
-      "自動匯入",
-      "新聞",
-      "國中"
-    ],
-    "evidence": [
-      {
-        "title": "誣陷老師開黃腔遭求償 國中生賠5萬",
-        "publisher": "UDN",
-        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1xSWc3LXJGMkVaOVNkaUgzWjZfS2dTN2p0bXU4dGZHR3J2SjA4WkJoTWdDZ1VfN1ZVLUVhQ1NjWnBGMGthVWtUZWlMWmwzTEM20gFWQVVfeXFMUGYxRVF2bDB1cTlpazlzWUstVlRBTnoydWNxU2IwZTBRNjIweEpuNEEzb3pLMDhqaXVtYV9KM0tXZTMyOXlZNUowQ1ZYZ2RvUnkxZ290bEE?oc=5",
-        "type": "news",
-        "capturedAt": "2026-06-09T02:01:07.4402064Z",
-        "snapshotPath": "archive/raw/news-8ab638465ef8fc6e.html",
         "httpStatus": 200,
         "status": "captured"
       }

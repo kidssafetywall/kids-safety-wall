@@ -64584,10 +64584,10 @@
     "importSource": "google-news-rss",
     "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
     "institution": {
-      "name": "待人工分類",
+      "name": "新北市私立吉尼爾幼兒園",
       "type": "幼兒園",
-      "city": "",
-      "district": "",
+      "city": "新北市",
+      "district": "新莊區",
       "address": "",
       "code": "",
       "aliases": []
@@ -72879,6 +72879,84 @@
         "type": "news",
         "capturedAt": "2026-06-09T02:00:07.4440978Z",
         "snapshotPath": "archive/raw/news-6d1ff2ef465582a6.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-499b34445a59466c",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影)",
+    "institution": {
+      "name": "新北市私立吉尼爾幼兒園",
+      "type": "幼兒園",
+      "city": "新北市",
+      "district": "新莊區",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "新莊幼兒園疑虐童！監視器畫面不完整惹議園方致歉認疏失- 生活",
+    "summary": "新莊幼兒園疑虐童！監視器畫面不完整惹議園方致歉認疏失- 生活 工商時報",
+    "eventDate": "2026-04-13",
+    "importedAt": "2026-06-08T12:14:40.6137688Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "新莊幼兒園疑虐童！監視器畫面不完整惹議園方致歉認疏失- 生活",
+        "publisher": "工商時報",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFByQVVfcVQyd2wtXzhiZWhNTFdEXzRENFNhMU5pbUhZOHZIQmxFT29Ld2xNVjRqeDZOMFViWnZZYTlDd2lfOVFOaFBwcjhtTmlzbkJtaXNCN2JSUEVZWTJv?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-08T12:14:37.9411019Z",
+        "snapshotPath": "archive/raw/news-943ada97034aafaa.html",
+        "httpStatus": 200,
+        "status": "captured"
+      }
+    ]
+  },
+  {
+    "id": "news-7d479c8efab87785",
+    "verificationStatus": "verified",
+    "autoImported": true,
+    "importSource": "google-news-rss",
+    "searchQuery": "幼兒園 (裁罰 OR 停辦 OR 撤銷立案 OR 廢止立案 OR 勒令停辦 OR 廢園 OR 判決確定 OR 判刑 OR 罰款 OR 行政處分 OR 坦承 OR 認罪 OR 自首 OR 監視器畫面 OR 監視器錄影 OR 性平 OR 性騷擾 OR 性侵害 OR 性霸凌 OR 霸凌 OR 不當管教 OR 體罰 OR 辱罵 OR 解聘 OR 停聘 OR 不續聘 OR 不適任 OR 記過 OR 申誡 OR 監察院糾正)",
+    "institution": {
+      "name": "臺北市私立培諾米達信義幼兒園",
+      "type": "幼兒園",
+      "city": "台北市",
+      "district": "信義區",
+      "address": "",
+      "code": "",
+      "aliases": []
+    },
+    "risk": "mid",
+    "category": "news",
+    "title": "再次重判！教保員毛畯珅性侵39童判刑30年 還要併科罰金5億元",
+    "summary": "再次重判！教保員毛畯珅性侵39童判刑30年 還要併科罰金5億元 UDN",
+    "eventDate": "2025-09-24",
+    "importedAt": "2026-06-09T01:58:48.5892304Z",
+    "tags": [
+      "自動匯入",
+      "新聞",
+      "幼兒園"
+    ],
+    "evidence": [
+      {
+        "title": "再次重判！教保員毛畯珅性侵39童判刑30年 還要併科罰金5億元",
+        "publisher": "UDN",
+        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5KczhLV2p1dGxqX2wzSlE5cVFaV1BTejZqRWFDbnZCRkl5bmZLVVZrcFN2RWN2MERzZm42bU9ad1RiN2xQcXhTT3J4Z0EzaEdf0gFWQVVfeXFMTlVtVjdFaVQ5OFRBQkVMOWJqWVotNVUyNkREdW5aTlNlOEt2R0ZMYlQ4ODhGWGk3SnR0X3h4VmtiT00yU2tZVk9uc0RFTTA0ZG5TYXdId3c?oc=5",
+        "type": "news",
+        "capturedAt": "2026-06-09T01:58:46.7205283Z",
+        "snapshotPath": "archive/raw/news-76f80324aa22fe39.html",
         "httpStatus": 200,
         "status": "captured"
       }
