@@ -367,6 +367,15 @@ $institutionMap = @{}
 foreach ($institution in $importedInstitutions) {
   $institutionMap[$institution.key] = $institution
 }
+
+# Build name+city reverse-lookup so events can find existing directory institutions
+# (prevents creating duplicate entries when key formats differ)
+$nameCityLookup = @{}
+foreach ($inst in $institutionMap.Values) {
+  $nk = "$(Format-City $inst.city)|$("$($inst.name)".Replace('臺','台').Trim())"
+  if (-not $nameCityLookup.ContainsKey($nk)) { $nameCityLookup[$nk] = $inst.key }
+}
+
 foreach ($event in $allEvents) {
   if ($event["verificationStatus"] -eq "removed") {
     continue
@@ -410,6 +419,12 @@ foreach ($event in $allEvents) {
   }
 
   $key = Get-InstitutionKey $institution
+  # Prefer existing directory institution if name+city matches (avoids duplicates)
+  $nkCity = Format-City $institution["city"]
+  $nkName = "$($institution["name"])".Replace('臺','台').Trim()
+  $nk = "$nkCity|$nkName"
+  if ($nameCityLookup.ContainsKey($nk)) { $key = $nameCityLookup[$nk] }
+
   if (-not $institutionMap.ContainsKey($key)) {
     $institutionMap[$key] = [ordered]@{
       key = $key
