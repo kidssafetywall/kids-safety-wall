@@ -1605,10 +1605,15 @@
           目前無負面事件紀錄。此機構已納入監測範圍，若有新的裁罰、新聞或家長回饋，將自動更新於此。
         </li>`;
       } else {
-        const years = [...new Set(events.map(r => {
-          const ev = normalizeEvent(r);
-          return ev.date ? ev.date.substring(0, 4) : null;
-        }).filter(Boolean))].sort().reverse();
+        const sortedEvents = [...events].sort((a, b) => {
+          const da = resolveDate(normalizeEvent(a)) || "0000";
+          const db = resolveDate(normalizeEvent(b)) || "0000";
+          return db.localeCompare(da);
+        });
+        const years = [...new Set(sortedEvents.map(r => {
+          const d = resolveDate(normalizeEvent(r));
+          return d ? d.substring(0, 4) : null;
+        }).filter(Boolean))];
         if (years.length > 1) {
           const btns = years.map(y =>
             `<button type="button" class="year-btn" data-year="${y}" onclick="filterDetailYear('${y}',this)">${y}</button>`
@@ -1618,7 +1623,7 @@
             ${btns}
           </div>`;
         }
-        eventsHtml = events.map(rawEvent => {
+        eventsHtml = sortedEvents.map(rawEvent => {
           const event = normalizeEvent(rawEvent);
           const kind = event.kind || "official";
           const reviewStatus = event.verificationStatus || "pending";
@@ -1626,7 +1631,7 @@
             : reviewStatus === "disputed" ? "status-disputed" : "status-pending";
           const pendingNote = reviewStatus === "pending"
             ? `<div style="background:#fff9e8;border:1px solid #f1d58c;border-radius:5px;padding:7px 10px;font-size:12px;color:#67470b;margin-top:7px;">⚠ 此事項尚待人工查證，內容可能未經完整核實。</div>` : "";
-          const evYear = event.date ? event.date.substring(0, 4) : "";
+          const evYear = resolveDate(event) ? resolveDate(event).substring(0, 4) : "";
           return `
           <li class="event ${kind}" data-year="${evYear}">
             <strong>${eventLabel[kind] || "佐證資料"}：${event.title}</strong>
