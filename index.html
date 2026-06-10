@@ -1699,7 +1699,7 @@
       render();
     });
 
-    ["query", "type", "risk", "district", "instCategory", "yearFilter", "sortBy"].forEach(id => {
+    ["query", "type", "risk", "district", "instCategory", "timeRange", "sortBy"].forEach(id => {
       document.querySelector(`#${id}`).addEventListener("input", () => { state.page = 1; render(); });
     });
 
