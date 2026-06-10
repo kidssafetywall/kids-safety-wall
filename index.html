@@ -1088,12 +1088,21 @@
       low: "僅有低度風險事件紀錄"
     };
 
+    function resolveDate(ev) {
+      if (ev.date && ev.date !== "unknown") return ev.date.replace(/\//g, "-");
+      if (ev.summary) {
+        const m = ev.summary.match(/處分日期：(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/);
+        if (m) return `${m[1]}-${m[2].padStart(2,"0")}-${m[3].padStart(2,"0")}`;
+      }
+      return "";
+    }
+
     function getLatestEventYear(item) {
       let latest = null;
       for (const e of (item.events || [])) {
-        const ev = normalizeEvent(e);
-        if (ev.date && ev.date.length >= 4) {
-          const y = ev.date.substring(0, 4);
+        const d = resolveDate(normalizeEvent(e));
+        if (d.length >= 4) {
+          const y = d.substring(0, 4);
           if (!latest || y > latest) latest = y;
         }
       }
@@ -1227,8 +1236,8 @@
       const matchesTime = !timeRange || (() => {
         const cutoff = String(new Date().getFullYear() - parseInt(timeRange));
         return (item.events || []).some(e => {
-          const ev = normalizeEvent(e);
-          return ev.date && ev.date.substring(0, 4) >= cutoff;
+          const d = resolveDate(normalizeEvent(e));
+          return d && d.substring(0, 4) >= cutoff;
         });
       })();
 
@@ -1254,8 +1263,10 @@
 
     function getLatestPenaltyDate(item) {
       const dates = (item.events || [])
-        .filter(e => typeof e === "object" && e.kind === "official" && e.date && e.date !== "unknown")
-        .map(e => e.date).sort().reverse();
+        .filter(e => typeof e === "object" && e.kind === "official")
+        .map(e => resolveDate(e))
+        .filter(Boolean)
+        .sort().reverse();
       return dates[0] || "";
     }
 

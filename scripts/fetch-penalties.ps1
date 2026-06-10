@@ -104,6 +104,10 @@ function Normalize-RocDate([string]$Value) {
     return "$y-$($Matches[2])-$($Matches[3])"
   }
   if ($Value -match '^\d{4}-\d{2}-\d{2}$') { return $Value }
+  # Western date with slashes e.g. 2025/07/02
+  if ($Value -match '^(\d{4})/(\d{1,2})/(\d{1,2})$') {
+    return "$($Matches[1])-$($Matches[2].PadLeft(2,'0'))-$($Matches[3].PadLeft(2,'0'))"
+  }
   return "unknown"
 }
 
