@@ -851,18 +851,26 @@
       if (!citySel || !distSel || !instSel) return;
       const city = citySel.value, dist = distSel.value;
       instSel.innerHTML = '<option value="">機構名稱…</option>';
-      const bucket = instByCity[city] && instByCity[city][dist];
-      if (!bucket) return;
       const typeFilter = document.getElementById(`lk-t-${id}`)?.value || "";
-      bucket
-        .filter(inst => !typeFilter || inst.type === typeFilter)
-        .sort((a,b) => a.name.localeCompare(b.name,"zh-Hant"))
-        .forEach(inst => {
-          const o = document.createElement("option");
-          o.value = JSON.stringify({name:inst.name, city:inst.city, district:inst.district});
-          o.textContent = inst.name + (inst.type ? ` (${inst.type})` : "");
-          instSel.appendChild(o);
-        });
+
+      // Primary: city + district match
+      const primary = ((instByCity[city] && instByCity[city][dist]) || [])
+        .filter(inst => !typeFilter || inst.type === typeFilter);
+
+      // Supplement: same city, no district data, matching type (國小/國中/高中職 have no district)
+      const noDistBucket = (instByCity[city] && instByCity[city][""]) || [];
+      const primaryNames = new Set(primary.map(i => i.name));
+      const supplement = noDistBucket
+        .filter(inst => (!typeFilter || inst.type === typeFilter) && !primaryNames.has(inst.name));
+
+      const all = [...primary, ...supplement];
+      if (all.length === 0) return;
+      all.sort((a,b) => a.name.localeCompare(b.name,"zh-Hant")).forEach(inst => {
+        const o = document.createElement("option");
+        o.value = JSON.stringify({name:inst.name, city:inst.city, district:inst.district});
+        o.textContent = inst.name + (inst.type ? ` (${inst.type})` : "");
+        instSel.appendChild(o);
+      });
     }
 
     function lkApply(id) {
