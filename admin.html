@@ -978,7 +978,7 @@
               value="${editedCity.replace(/"/g,'&quot;')}"
               oninput="editInst('${item.id}','city',this.value)"
               title="縣市">
-            <select title="機構類型"
+            <select title="機構類型" id="lk-t-${item.id}"
               onchange="editInst('${item.id}','type',this.value)">
               <option value="">類型…</option>${typeOptionsWithSel}
             </select>
