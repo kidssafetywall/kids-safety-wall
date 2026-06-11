@@ -1231,6 +1231,11 @@
     };
 
     const PAGE_SIZE = 24;
+
+    function escapeHtml(s) {
+      return String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+    }
+    const h = escapeHtml;
     const state = { mode: "list", items: institutions, page: 1 };
 
     // Pre-compute abuse flag for each institution
@@ -1475,10 +1480,10 @@
           ? `<span class="badge tag-closed" style="margin-top:6px;display:inline-block;">已停業</span>`
           : "";
         const isUnclassified = item.name === "待人工分類";
-        const displayName = isUnclassified ? "未知機構（待補充）" : item.name;
+        const displayName = isUnclassified ? "未知機構（待補充）" : h(item.name);
         const displayMeta = isUnclassified
           ? `新聞事件（機構尚未確認）`
-          : `${item.city}${item.district || ""} · ${item.type}<br>${item.address || ""}`;
+          : `${h(item.city)}${h(item.district || "")} · ${h(item.type)}<br>${h(item.address || "")}`;
         const catMap = { "公立": "cat-public", "非營利": "cat-nonprofit", "準公共": "cat-quasi", "私立": "cat-private" };
         const catClass = catMap[item.instCategory] || "";
         const catBadge = !isUnclassified && catClass
@@ -1514,7 +1519,7 @@
           </div>
           <div style="margin-top:6px;min-height:18px;display:flex;flex-wrap:wrap;gap:4px;">${recentBadge}${item._hasAbuse ? '<span class="abuse-badge">含不當對待／虐待紀錄</span>' : ""}</div>
           ${closedBadge}${monitorBadge}
-          <div class="tags">${(item.tags || []).map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+          <div class="tags">${(item.tags || []).map(tag => `<span class="tag">${h(tag)}</span>`).join("")}</div>
           <div class="card-actions">
             <span class="date">更新 ${item.updated || ""}</span>
             ${hasEvents
@@ -1585,7 +1590,7 @@
               radius: 9, fillColor: color, color: "white",
               weight: 2, opacity: 1, fillOpacity: 0.9
             }).bindPopup(
-              `<div style="min-width:180px;"><strong>${item.name}</strong><div style="font-size:12px;color:#667085;margin:2px 0;">${item.city}${item.district ? " " + item.district : ""}</div><a href="#" onclick="closeMap();showDetail(${idx});return false;" style="font-size:12px;color:var(--teal);">查看紀錄 →</a></div>`
+              `<div style="min-width:180px;"><strong>${h(item.name)}</strong><div style="font-size:12px;color:#667085;margin:2px 0;">${h(item.city)}${item.district ? " " + h(item.district) : ""}</div><a href="#" onclick="closeMap();showDetail(${idx});return false;" style="font-size:12px;color:var(--teal);">查看紀錄 →</a></div>`
             ).addTo(leafletMap);
             leafletMarkers.push(m);
           } else {
@@ -1602,9 +1607,9 @@
           if (!coords) return;
           const color = list.some(i=>i.risk==="high") ? "#b42318" : list.some(i=>i.risk==="mid") ? "#b7791f" : "#667085";
           const icon = L.divIcon({ className: "", html: `<div style="width:34px;height:34px;border-radius:50%;background:${color};border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.25);display:grid;place-items:center;color:white;font-weight:700;font-size:11px;">${list.length > 99?"99+":list.length}</div>`, iconSize:[34,34], iconAnchor:[17,17] });
-          const rows = list.slice(0,6).map(i=>`<div style="font-size:12px;line-height:1.8;"><a href="#" onclick="closeMap();showDetail(${institutions.indexOf(i)});return false;" style="color:var(--teal);">${i.name}</a></div>`).join("");
+          const rows = list.slice(0,6).map(i=>`<div style="font-size:12px;line-height:1.8;"><a href="#" onclick="closeMap();showDetail(${institutions.indexOf(i)});return false;" style="color:var(--teal);">${h(i.name)}</a></div>`).join("");
           const more = list.length > 6 ? `<div style="font-size:12px;color:#667085;">…另有 ${list.length-6} 個</div>` : "";
-          const m = L.marker(coords, { icon }).bindPopup(`<div style="min-width:180px;"><strong>${dist||city}</strong>（${list.length} 個機構）<div style="margin-top:4px;">${rows}${more}</div></div>`, { maxWidth: 260 }).addTo(leafletMap);
+          const m = L.marker(coords, { icon }).bindPopup(`<div style="min-width:180px;"><strong>${h(dist||city)}</strong>（${list.length} 個機構）<div style="margin-top:4px;">${rows}${more}</div></div>`, { maxWidth: 260 }).addTo(leafletMap);
           leafletMarkers.push(m);
         });
       } else {
@@ -1633,10 +1638,10 @@
           const rows = top.map(item => {
             const idx = institutions.indexOf(item);
             const dot = `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${item.risk==="high"?"#b42318":item.risk==="mid"?"#b7791f":"#0d6b68"};margin-right:5px;vertical-align:middle;"></span>`;
-            return `<div style="font-size:12px;line-height:1.8;">${dot}<a href="#" onclick="closeMap();showDetail(${idx});return false;" style="color:var(--teal);">${item.name}</a></div>`;
+            return `<div style="font-size:12px;line-height:1.8;">${dot}<a href="#" onclick="closeMap();showDetail(${idx});return false;" style="color:var(--teal);">${h(item.name)}</a></div>`;
           }).join("");
           const more = count > 8 ? `<div style="font-size:12px;color:#667085;margin-top:4px;">…另有 ${count - 8} 個機構</div>` : "";
-          const areaLabel = dist ? `${city} ${dist}` : city;
+          const areaLabel = dist ? `${h(city)} ${h(dist)}` : h(city);
           const popup = `<div style="min-width:200px;"><strong>${areaLabel}</strong>（${count} 個機構）<div style="margin-top:6px;">${rows}${more}</div></div>`;
           const m = L.marker(coords, { icon }).bindPopup(popup, { maxWidth: 280 }).addTo(leafletMap);
           leafletMarkers.push(m);
@@ -1705,7 +1710,7 @@
       ].filter(Boolean);
       if (fields.length === 0) return "";
       return `<div class="penalty-detail-box">${
-        fields.map(([k, v]) => `<div><strong>${k}：</strong>${v}</div>`).join("")
+        fields.map(([k, v]) => `<div><strong>${k}：</strong>${h(v)}</div>`).join("")
       }</div>`;
     }
 
@@ -1753,33 +1758,33 @@
           const evYear = resolveDate(event) ? resolveDate(event).substring(0, 4) : "";
           return `
           <li class="event ${kind}" data-year="${evYear}">
-            <strong>${eventLabel[kind] || "佐證資料"}：${event.title}</strong>
-            <small>${resolveDate(event) || "日期待補"} · ${event.sourcePublisher || "來源待補"}</small>
+            <strong>${eventLabel[kind] || "佐證資料"}：${h(event.title)}</strong>
+            <small>${resolveDate(event) || "日期待補"} · ${h(event.sourcePublisher) || "來源待補"}</small>
             <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
               <span class="badge ${statusClass}">${statusLabel[reviewStatus] || reviewStatus}</span>
             </div>
             ${pendingNote}
             ${penaltyDetailHtml(event)}
-            <p class="meta" style="margin-top:8px;">${event.summary || ""}</p>
+            <p class="meta" style="margin-top:8px;">${h(event.summary || "")}</p>
             ${sourceLinks(event)}
           </li>`;
         }).join("");
       }
 
-      const addr = item.address ? ` · ${item.address}` : "";
+      const addr = item.address ? ` · ${h(item.address)}` : "";
       const catMapD = { "公立": "cat-public", "非營利": "cat-nonprofit", "準公共": "cat-quasi", "私立": "cat-private" };
       const catClassD = catMapD[item.instCategory] || "";
       const catBadgeD = catClassD
         ? `<span class="badge ${catClassD}" style="margin-right:4px;">${item.instCategory}</span>`
         : "";
       const phoneLine = item.phone
-        ? `<div class="meta" style="margin-top:4px;">📞 <a href="tel:${item.phone.replace(/[^0-9+]/g,'')}" style="color:inherit;">${item.phone}</a></div>`
+        ? `<div class="meta" style="margin-top:4px;">📞 <a href="tel:${item.phone.replace(/[^0-9+]/g,'')}" style="color:inherit;">${h(item.phone)}</a></div>`
         : "";
       const content = `
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;padding-right:32px;">
           <div>
-            <h2 id="detailModalTitle" style="margin:0 0 5px;font-size:22px;line-height:1.3;">${item.name}</h2>
-            <div class="meta">${item.city}${item.district || ""} · ${item.type}${addr}</div>
+            <h2 id="detailModalTitle" style="margin:0 0 5px;font-size:22px;line-height:1.3;">${h(item.name)}</h2>
+            <div class="meta">${h(item.city)}${h(item.district || "")} · ${h(item.type)}${addr}</div>
             ${phoneLine}
             <div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:4px;">
               ${catBadgeD}
@@ -1802,7 +1807,7 @@
           <p class="meta" style="margin:0 0 12px;">若您有相關親身經歷、目擊或佐證資料，可透過下方管道回報。所有回饋需經人工審核，並於公開前去識別化。</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <button class="ghost-btn" type="button" onclick="closeDetailModal();setTimeout(openReportModal,120);">回報問題機構</button>
-            <button class="ghost-btn" type="button" onclick="openErrorReportModal(null,'${item.name.replace(/'/g,"\\'")}')">回報資料錯誤</button>
+            <button class="ghost-btn" type="button" data-name="${h(item.name)}" onclick="openErrorReportModal(null,this.dataset.name)">回報資料錯誤</button>
           </div>
         </div>`;
 
