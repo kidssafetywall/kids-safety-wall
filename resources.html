@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>家長資源中心 | 兒少防火牆</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --teal: #0d6b68;
+      --teal-soft: #dcefed;
+      --amber: #b7791f;
+      --amber-soft: #fff0c7;
+      --red: #b42318;
+      --red-soft: #ffe4df;
+      --blue: #315f9f;
+      --blue-soft: #e8eef8;
+      --green: #357a38;
+      --green-soft: #e7f5ec;
+      --shadow: 0 18px 55px rgba(23, 32, 42, .14);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: #12222f;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 18px; color: white; text-decoration: none;
+    }
+    .mark {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: #f4c542; color: #12222f; font-weight: 900;
+      box-shadow: 0 4px 12px rgba(0,0,0,.22);
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: rgba(255,255,255,.8); font-size: 14px;
+      padding: 8px 10px; border-radius: 6px;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.1); }
+    .nav-links a.active { color: white; font-weight: 600; }
+
+    /* ── Page header ── */
+    .page-header {
+      background: linear-gradient(135deg, #0d6b68 0%, #0a4f4d 100%);
+      color: white; padding: 52px 28px 48px;
+    }
+    .page-header .shell { max-width: 860px; margin: 0 auto; }
+    .page-header h1 { margin: 0 0 10px; font-size: 32px; font-weight: 800; }
+    .page-header p  { margin: 0; font-size: 16px; line-height: 1.7; opacity: .88; max-width: 600px; }
+
+    /* ── Layout ── */
+    .shell { width: min(1000px, 100%); margin: 0 auto; padding: 0 24px; }
+    main { padding: 48px 0 64px; }
+
+    /* ── Section titles ── */
+    .section-title {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 20px; font-weight: 800; margin: 0 0 18px;
+      padding-bottom: 12px; border-bottom: 2px solid var(--line);
+    }
+    .section-title .icon {
+      width: 34px; height: 34px; border-radius: 8px;
+      display: grid; place-items: center; font-size: 18px; flex-shrink: 0;
+    }
+    section.res-section { margin-bottom: 48px; }
+
+    /* ── Emergency cards ── */
+    .hotline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .hotline-card {
+      background: white; border-radius: 12px; padding: 20px 18px;
+      border: 1px solid var(--line); text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .hotline-card .number {
+      font-size: 36px; font-weight: 900; line-height: 1;
+      margin-bottom: 6px;
+    }
+    .hotline-card .label { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .hotline-card .desc  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .hotline-card.urgent .number { color: var(--red); }
+    .hotline-card.protect .number { color: #c0392b; }
+    .hotline-card.edu .number { color: var(--blue); }
+    .hotline-card.welfare .number { color: var(--teal); }
+
+    /* ── Channel cards ── */
+    .channel-group { margin-bottom: 24px; }
+    .channel-group-title {
+      font-size: 14px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .05em;
+      margin: 0 0 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .channel-group-title::after {
+      content: ""; flex: 1; height: 1px; background: var(--line);
+    }
+    .channel-list { display: flex; flex-direction: column; gap: 10px; }
+    .channel-card {
+      background: white; border-radius: 10px; padding: 16px 18px;
+      border: 1px solid var(--line); display: flex; align-items: flex-start;
+      gap: 14px; text-decoration: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .channel-card:hover { border-color: var(--teal); box-shadow: 0 2px 12px rgba(13,107,104,.1); }
+    .channel-card .ch-icon {
+      width: 40px; height: 40px; border-radius: 8px; flex-shrink: 0;
+      display: grid; place-items: center; font-size: 20px;
+    }
+    .channel-card .ch-body { flex: 1; min-width: 0; }
+    .channel-card .ch-name { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+    .channel-card .ch-org  { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .channel-card .ch-desc { font-size: 13px; color: var(--ink); line-height: 1.6; }
+    .channel-card .ch-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+    .ch-tag {
+      font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid;
+    }
+    .ch-tag.tag-urgent { background: #fde8e8; color: var(--red);  border-color: #f5a3a3; }
+    .ch-tag.tag-edu    { background: var(--blue-soft); color: var(--blue); border-color: #c5d4ed; }
+    .ch-tag.tag-legal  { background: #ede8f5; color: #5b3a8c; border-color: #c9b5e0; }
+    .ch-tag.tag-ngo    { background: var(--teal-soft); color: var(--teal); border-color: #a8d5d2; }
+    .ch-tag.tag-online { background: var(--green-soft); color: var(--green); border-color: #b2d8b5; }
+    .channel-card .ch-arrow {
+      color: var(--muted); font-size: 18px; flex-shrink: 0; align-self: center; margin-left: 4px;
+    }
+
+    /* ── Law cards ── */
+    .law-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .law-card {
+      background: white; border-radius: 10px; padding: 16px 18px;
+      border: 1px solid var(--line); text-decoration: none;
+      display: flex; flex-direction: column; gap: 4px;
+      transition: border-color .15s;
+    }
+    .law-card:hover { border-color: var(--teal); }
+    .law-card .law-name { font-weight: 700; font-size: 14px; }
+    .law-card .law-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .law-card .law-link { font-size: 12px; color: var(--teal); margin-top: 4px; }
+
+    /* ── Notice box ── */
+    .notice-box {
+      background: var(--amber-soft); border: 1px solid #f1d58c;
+      border-radius: 10px; padding: 16px 18px; margin-bottom: 32px;
+      font-size: 14px; line-height: 1.8; color: #67470b;
+    }
+    .notice-box strong { font-weight: 700; }
+
+    /* ── Steps ── */
+    .steps { display: flex; flex-direction: column; gap: 12px; }
+    .step {
+      background: white; border-radius: 10px; padding: 16px 18px;
+      border: 1px solid var(--line); display: flex; gap: 14px; align-items: flex-start;
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      background: var(--teal); color: white; font-weight: 800; font-size: 15px;
+      display: grid; place-items: center;
+    }
+    .step-body { flex: 1; }
+    .step-body strong { font-size: 15px; display: block; margin-bottom: 3px; }
+    .step-body span { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── Footer ── */
+    footer {
+      padding: 28px; color: var(--muted); font-size: 14px; text-align: center;
+      border-top: 1px solid var(--line);
+    }
+    footer a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 640px) {
+      .page-header h1 { font-size: 24px; }
+      .hotline-grid { grid-template-columns: repeat(2, 1fr); }
+      .hotline-card .number { font-size: 28px; }
+      .site-nav { padding: 14px 16px; }
+      .shell { padding: 0 16px; }
+      main { padding: 32px 0 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="主導覽">
+    <a href="index.html" class="brand">
+      <div class="mark" aria-hidden="true">防</div>
+      <span>兒少防火牆</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">機構查詢</a>
+      <a href="resources.html" class="active">家長資源</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="shell">
+      <h1>家長資源中心</h1>
+      <p>當您發現孩子在教育機構遭受不當對待，以下資源提供申訴管道、法律協助與緊急求助資訊。遇到緊急狀況請優先撥打 110 或 113。</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="shell">
+
+      <!-- 緊急求助 -->
+      <section class="res-section" aria-labelledby="sec-emergency">
+        <h2 class="section-title" id="sec-emergency">
+          <span class="icon" style="background:#fde8e8;">🚨</span>
+          緊急求助專線
+        </h2>
+        <div class="notice-box">
+          <strong>什麼時候應該打電話？</strong><br>
+          若孩子遭受體罰致傷、性侵害、嚴重虐待，或有立即人身安全危險，請立即撥打 <strong>110</strong> 報警，同時可通報 <strong>113</strong> 啟動兒保程序。
+        </div>
+        <div class="hotline-grid">
+          <div class="hotline-card urgent">
+            <div class="number">110</div>
+            <div class="label">警察報案</div>
+            <div class="desc">涉及刑事（體罰致傷、性侵、嚴重虐待）請優先報警</div>
+          </div>
+          <div class="hotline-card protect">
+            <div class="number">113</div>
+            <div class="label">保護專線</div>
+            <div class="desc">兒少保護、性侵害、家庭暴力 24 小時，含校園不當對待</div>
+          </div>
+          <div class="hotline-card edu">
+            <div class="number" style="font-size:22px;padding-top:6px;">0800-200-885</div>
+            <div class="label">教育部校安專線</div>
+            <div class="desc">校園安全、霸凌、緊急事件通報</div>
+          </div>
+          <div class="hotline-card welfare">
+            <div class="number" style="font-size:28px;padding-top:4px;">1957</div>
+            <div class="label">社福諮詢</div>
+            <div class="desc">不確定要找誰時，可先撥此線詢問轉介</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 申訴投訴管道 -->
+      <section class="res-section" aria-labelledby="sec-channels">
+        <h2 class="section-title" id="sec-channels">
+          <span class="icon" style="background:#e8eef8;">📋</span>
+          申訴與投訴管道
+        </h2>
+
+        <div class="channel-group">
+          <div class="channel-group-title">依機構類型申訴</div>
+          <div class="channel-list">
+
+            <a class="channel-card" href="https://ap.ece.moe.edu.tw/" target="_blank" rel="noreferrer">
+              <div class="ch-icon" style="background:#fde8e8;">🏫</div>
+              <div class="ch-body">
+                <div class="ch-name">全國教保資訊網 — 幼兒園申訴</div>
+                <div class="ch-org">教育部</div>
+                <div class="ch-desc">幼兒園不當對待、裁罰申訴、教保人員違規，可於此查詢裁罰紀錄並向地方主管機關申訴。</div>
+                <div class="ch-tags">
+                  <span class="ch-tag tag-edu">幼兒園</span>
+                  <span class="ch-tag tag-online">線上申訴</span>
+                </div>
+              </div>
+              <span class="ch-arrow">↗</span>
+            </a>
+
+            <a class="channel-card" href="https://stustp.moe.edu.tw/" target="_blank" rel="noreferrer">
+              <div class="ch-icon" style="background:#e8eef8;">🏛️</div>
+              <div class="ch-body">
+                <div class="ch-name">學生申訴平台</div>
+                <div class="ch-org">教育部</div>
+                <div class="ch-desc">國中小、高中職學生遭受不公平對待、體罰、霸凌等事件，可線上提出申訴。</div>
+                <div class="ch-tags">
+                  <span class="ch-tag tag-edu">國中小</span>
+                  <span class="ch-tag tag-edu">高中職</span>
+                  <span class="ch-tag tag-online">線上申訴</span>
+                </div>
+              </div>
+              <span class="ch-arrow">↗</span>
+            </a>
+
+            <a class="channel-card" href="https://csrc.edu.tw/" target="_blank" rel="noreferrer">
+              <div class="ch-icon" style="background:#e8eef8;">🔔</div>
+              <div class="ch-body">
+                <div class="ch-name">校園安全暨災害防救通報處理中心</div>
+                <div class="ch-org">教育部 · 0800-200-885</div>
+                <div class="ch-desc">校園安全事件（霸凌、性平事件、不當管教）通報及後續追蹤，含線上填報系統。</div>
+                <div class="ch-tags">
+                  <span class="ch-tag tag-edu">各級學校</span>
+                  <span class="ch-tag tag-online">線上通報</span>
+                </div>
+              </div>
+              <span class="ch-arrow">↗</span>
+            </a>
+
+            <div class="channel-card" style="cursor:default;">
+              <div class="ch-icon" style="background:#fff0c7;">📚</div>
+              <div class="ch-body">
+                <div class="ch-name">補習班申訴 — 縣市教育局（處）</div>
+                <div class="ch-org">各縣市政府教育局</div>
+                <div class="ch-desc">補習班由各縣市教育局管轄。若發現違規，請洽所在縣市教育局。台北市請洽北市教育局；新北市請洽新北市教育局，其他縣市依此類推。</div>
+                <div class="ch-tags">
+                  <span class="ch-tag tag-edu">補習班</span>
+                  <span class="ch-tag tag-edu">課後照顧</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="channel-group">
+          <div class="channel-group-title">性別平等與性侵害專屬管道</div>
+          <div class="channel-list">
+
+            <a class="channel-card" href="https://www.gender.edu.tw/" target="_blank" rel="noreferrer">
+              <div class="ch-icon" style="background:#f5e8f5;">⚖️</div>
+              <div class="ch-body">
+                <div class="ch-name">教育部性別平等教育資訊網 — 申訴</div>
+                <div class="ch-org">教育部</div>
+                <div class="ch-desc">校園性騷擾、性侵害、性霸凌事件，依性別平等教育法提出申訴。學校有義務在知悉後 24 小時內通報。</div>
+                <div class="ch-tags">
+                  <span class="ch-tag tag-urgent">性平事件</span>
+                  <span class="ch-tag tag-edu">各級學校</span>
+                </div>
+              </div>
+              <span class="ch-arrow">↗</span>
+            </a>
+
+            <a class="channel-card" href="https://www.mohw.gov.tw/" target="_blank" rel="noreferrer">
+              <div class="ch-icon" style="background:#fde8e8;">🛡️</div>
+              <div class="ch-body">
+                <div class="ch-name">衛生福利部保護服務司 — 113 保護專線</div>
+                <div class="ch-org">衛生福利部 · 24 小時</div>
+                <div class="ch-desc">兒少受到教職員性侵、性騷擾或不當對待，撥打 113 可啟動兒少保護調查程序，並轉介社工介入。</div>
+                <div class="ch-tags">
+                  <span class="ch-tag tag-urgent">24 小時</span>
+                  <span class="ch-tag tag-urgent">免費</span>
+                </div>
+              </div>
+              <span class="ch-arrow">↗</span>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 建議處理步驟 -->
+      <section class="res-section" aria-labelledby="sec-steps">
+        <h2 class="section-title" id="sec-steps">
+          <span class="icon" style="background:#e7f5ec;">✅</span>
+          發現問題時的建議步驟
+        </h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <strong>確保孩子安全</strong>
+              <span>若有立即危險，先撥 110 報警，或帶孩子離開現場。</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <strong>保留證據</strong>
+              <span>拍下傷痕照片（含日期）、保存通訊紀錄、請學校提供事件報告，或請兒科醫師開立傷勢診斷書。</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <strong>向主管機關申訴</strong>
+              <span>依機構類型向縣市教育局或全國教保資訊網提出正式申訴。性平事件可向學校性平會或教育部申訴。</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <strong>通報兒少保護</strong>
+              <span>若涉及肢體虐待、性侵、嚴重疏忽，撥打 113 啟動社工介入與調查程序，與行政申訴可並行進行。</span>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <strong>尋求法律協助（如需要）</strong>
+              <span>若考慮提出刑事告訴或民事求償，可聯繫法律扶助基金會，低收入家庭可免費獲得律師協助。</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 法律與 NGO 資源 -->
+      <section class="res-section" aria-labelledby="sec-ngo">
+        <h2 class="section-title" id="sec-ngo">
+          <span class="icon" style="background:#ede8f5;">🤝</span>
+          法律與民間支援資源
+        </h2>
+        <div class="channel-list">
+
+          <a class="channel-card" href="https://www.laf.org.tw/" target="_blank" rel="noreferrer">
+            <div class="ch-icon" style="background:#ede8f5;">⚖️</div>
+            <div class="ch-body">
+              <div class="ch-name">法律扶助基金會</div>
+              <div class="ch-org">全台各地均設有服務處 · (02)412-8518</div>
+              <div class="ch-desc">提供低收入或弱勢民眾免費法律諮詢與訴訟代理。若需提出刑事告訴或民事求償，可申請法律扶助。</div>
+              <div class="ch-tags">
+                <span class="ch-tag tag-legal">免費諮詢</span>
+                <span class="ch-tag tag-legal">訴訟代理</span>
+              </div>
+            </div>
+            <span class="ch-arrow">↗</span>
+          </a>
+
+          <a class="channel-card" href="https://www.children.org.tw/" target="_blank" rel="noreferrer">
+            <div class="ch-icon" style="background:var(--teal-soft);">👶</div>
+            <div class="ch-body">
+              <div class="ch-name">兒童福利聯盟文教基金會</div>
+              <div class="ch-org">0800-003-123</div>
+              <div class="ch-desc">兒童保護、親職諮詢、受虐兒童服務，提供兒少保護相關資訊與社工轉介協助。</div>
+              <div class="ch-tags">
+                <span class="ch-tag tag-ngo">兒童保護</span>
+                <span class="ch-tag tag-ngo">社工諮詢</span>
+              </div>
+            </div>
+            <span class="ch-arrow">↗</span>
+          </a>
+
+          <a class="channel-card" href="https://www.twrf.org.tw/" target="_blank" rel="noreferrer">
+            <div class="ch-icon" style="background:#fde8e8;">💜</div>
+            <div class="ch-body">
+              <div class="ch-name">婦女救援基金會</div>
+              <div class="ch-org">(02)2555-8595</div>
+              <div class="ch-desc">性侵害、性騷擾被害者服務，提供心理諮商、法律協助、陪同出庭等支援。</div>
+              <div class="ch-tags">
+                <span class="ch-tag tag-urgent">性侵害</span>
+                <span class="ch-tag tag-ngo">心理支援</span>
+              </div>
+            </div>
+            <span class="ch-arrow">↗</span>
+          </a>
+
+          <a class="channel-card" href="https://www.icpf.org.tw/" target="_blank" rel="noreferrer">
+            <div class="ch-icon" style="background:var(--teal-soft);">🌐</div>
+            <div class="ch-body">
+              <div class="ch-name">國際兒童人權協會（台灣）</div>
+              <div class="ch-org">倡議兒童人權 · 資源轉介</div>
+              <div class="ch-desc">提供兒童權利相關資訊、倡議教育政策，並協助連結社會資源。</div>
+              <div class="ch-tags">
+                <span class="ch-tag tag-ngo">倡議</span>
+                <span class="ch-tag tag-ngo">資源轉介</span>
+              </div>
+            </div>
+            <span class="ch-arrow">↗</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- 官方查詢工具 -->
+      <section class="res-section" aria-labelledby="sec-lookup">
+        <h2 class="section-title" id="sec-lookup">
+          <span class="icon" style="background:var(--green-soft);">🔍</span>
+          官方立案與查詢工具
+        </h2>
+        <div class="channel-list">
+
+          <a class="channel-card" href="https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx" target="_blank" rel="noreferrer">
+            <div class="ch-icon" style="background:#fde8e8;">📋</div>
+            <div class="ch-body">
+              <div class="ch-name">幼兒園裁罰查詢</div>
+              <div class="ch-org">全國教保資訊網 · 教育部</div>
+              <div class="ch-desc">查詢各縣市幼兒園的行政裁罰紀錄，包含違規類型、裁罰金額與日期。</div>
+              <div class="ch-tags"><span class="ch-tag tag-edu">幼兒園</span><span class="ch-tag tag-online">線上查詢</span></div>
+            </div>
+            <span class="ch-arrow">↗</span>
+          </a>
+
+          <a class="channel-card" href="https://bsb.kh.edu.tw/afterschool/webMain.aspx?sys=100&otype=1" target="_blank" rel="noreferrer">
+            <div class="ch-icon" style="background:#fff0c7;">📚</div>
+            <div class="ch-body">
+              <div class="ch-name">補習班立案查詢</div>
+              <div class="ch-org">全國短期補習班資訊系統 · 教育部</div>
+              <div class="ch-desc">查詢補習班是否合法立案、立案科目、負責人等基本資料。</div>
+              <div class="ch-tags"><span class="ch-tag tag-edu">補習班</span><span class="ch-tag tag-online">線上查詢</span></div>
+            </div>
+            <span class="ch-arrow">↗</span>
+          </a>
+
+          <a class="channel-card" href="https://data.gov.tw/dataset/6086" target="_blank" rel="noreferrer">
+            <div class="ch-icon" style="background:var(--teal-soft);">📊</div>
+            <div class="ch-body">
+              <div class="ch-name">幼兒園、學校名錄開放資料</div>
+              <div class="ch-org">政府資料開放平台 · 教育部</div>
+              <div class="ch-desc">下載幼兒園、國中小、高中職的完整立案名錄，含地址、電話、立案狀態。</div>
+              <div class="ch-tags"><span class="ch-tag tag-online">開放資料</span></div>
+            </div>
+            <span class="ch-arrow">↗</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- 相關法規 -->
+      <section class="res-section" aria-labelledby="sec-laws">
+        <h2 class="section-title" id="sec-laws">
+          <span class="icon" style="background:#e8eef8;">📜</span>
+          相關法規參考
+        </h2>
+        <div class="law-grid">
+
+          <a class="law-card" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070031" target="_blank" rel="noreferrer">
+            <div class="law-name">幼兒教育及照顧法</div>
+            <div class="law-note">規範幼兒園設立、教保人員資格與不當對待之裁罰，第 33 條為對幼兒不當對待之處分依據。</div>
+            <div class="law-link">全國法規資料庫 ↗</div>
+          </a>
+
+          <a class="law-card" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0050001" target="_blank" rel="noreferrer">
+            <div class="law-name">兒童及少年福利與權益保障法</div>
+            <div class="law-note">保障 18 歲以下兒少基本權益，規定任何人不得虐待、疏忽或剝削兒少。</div>
+            <div class="law-link">全國法規資料庫 ↗</div>
+          </a>
+
+          <a class="law-card" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0080067" target="_blank" rel="noreferrer">
+            <div class="law-name">性別平等教育法</div>
+            <div class="law-note">規範校園性騷擾、性侵害、性霸凌之調查、申訴程序，學校有強制通報義務。</div>
+            <div class="law-link">全國法規資料庫 ↗</div>
+          </a>
+
+          <a class="law-card" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0050071" target="_blank" rel="noreferrer">
+            <div class="law-name">家庭暴力防治法</div>
+            <div class="law-note">保護家庭成員免受暴力侵害，含對兒少之保護令申請，與 113 保護專線緊密連動。</div>
+            <div class="law-link">全國法規資料庫 ↗</div>
+          </a>
+
+          <a class="law-card" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0080079" target="_blank" rel="noreferrer">
+            <div class="law-name">性侵害犯罪防治法</div>
+            <div class="law-note">規範性侵害案件調查、被害人保護措施，及強制通報義務（知悉後 24 小時內）。</div>
+            <div class="law-link">全國法規資料庫 ↗</div>
+          </a>
+
+          <a class="law-card" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070073" target="_blank" rel="noreferrer">
+            <div class="law-name">教師法</div>
+            <div class="law-note">規範教師資格、解聘與停聘事由，對學生不當對待可作為要求解聘之法律依據。</div>
+            <div class="law-link">全國法規資料庫 ↗</div>
+          </a>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>本頁連結僅供參考，實際申訴流程以各主管機關最新公告為準。</div>
+    <div style="margin-top:8px;">
+      <a href="index.html">回機構查詢</a>
+      &nbsp;·&nbsp;
+      <a href="#" onclick="event.preventDefault();" style="color:var(--muted);">免責聲明</a>
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:#aab4c0;">© 兒少防火牆 · 資料來源：政府公開資料</div>
+  </footer>
+
+</body>
+</html>
