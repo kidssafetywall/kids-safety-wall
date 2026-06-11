@@ -52,6 +52,17 @@
       "license": "政府資料開放授權條款-第1版"
     },
     {
+      "id": "bsb-cram-revocation",
+      "type": "government_html",
+      "title": "短期補習班廢止/註銷名單",
+      "publisher": "教育部／各縣市政府教育局（高雄市政府代管系統）",
+      "datasetUrl": "https://bsb.kh.edu.tw/inquire.jsp?m=2",
+      "updateFrequency": "即時",
+      "entityType": "補習班",
+      "notes": "涵蓋全台 22 縣市共約 19,120 筆廢止/註銷記錄。廢止=主管機關強制撤銷（高風險）；註銷=業者自行申請（低風險）。以 GET 分頁方式抓取，每頁 15 筆。",
+      "license": "政府公開資料"
+    },
+    {
       "id": "judicial-judgment-api",
       "type": "government_api",
       "title": "司法院裁判書開放 API",
