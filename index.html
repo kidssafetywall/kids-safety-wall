@@ -861,7 +861,12 @@
   </main>
 
   <footer>
-    公開資訊將標示來源與日期，使用者回饋會審核與去識別化。
+    <div>公開資訊將標示來源與日期，使用者回饋會審核與去識別化。</div>
+    <div style="margin-top:10px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;">
+      <a href="#" onclick="openDisclaimerModal(event)" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">免責聲明</a>
+      <a href="#" onclick="openErrorReportModal(event,'')" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px;">錯誤回報</a>
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:#aab4c0;">© 兒少防火牆 · 資料來源：政府公開資料 · 本平台不儲存個人識別資訊</div>
   </footer>
 
   <!-- 機構詳細紀錄 Modal -->
@@ -966,6 +971,101 @@
         <h2>感謝您的回報</h2>
         <p>您的資訊已進入審核佇列，審核通過後會在查詢結果中顯示。</p>
         <p style="margin-top:16px;"><button class="ghost-btn" type="button" onclick="closeReportModal()">關閉</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 免責聲明 Modal -->
+  <div class="modal-overlay" id="disclaimerModal" role="dialog" aria-modal="true" aria-labelledby="disclaimerTitle">
+    <div class="modal" style="width:min(680px,100%);">
+      <button class="modal-close" type="button" onclick="closeDisclaimerModal()" aria-label="關閉">✕</button>
+      <h2 id="disclaimerTitle">免責聲明</h2>
+      <p class="modal-sub">最後更新：2026 年 6 月</p>
+      <div style="font-size:14px;line-height:1.9;color:var(--ink);max-height:65vh;overflow-y:auto;padding-right:4px;">
+        <h3 style="font-size:15px;margin:0 0 6px;">一、資料來源</h3>
+        <p style="margin:0 0 16px;">本平台整合以下公開資料：政府教育主管機關之立案名錄、全國教保資訊網公告之行政裁罰紀錄、司法院裁判書開放 API，以及經審核之媒體報導摘要與家長回饋。所有資料均標注來源與截取日期。</p>
+
+        <h3 style="font-size:15px;margin:0 0 6px;">二、資料準確性與時效性</h3>
+        <p style="margin:0 0 16px;">本平台資料由自動化程序定期匯入，並輔以人工審核。惟資料更新存在時間差，實際狀態請以各主管機關官方公告為準。機構名稱、地址、營業狀態等資訊可能已發生變更而尚未反映於本站。</p>
+
+        <h3 style="font-size:15px;margin:0 0 6px;">三、免責條款</h3>
+        <p style="margin:0 0 8px;">本平台提供資訊查詢服務，不提供法律、醫療、財務或任何專業建議。使用者應自行核實相關資訊後，再據以做出決策。本平台對於以下情形不負任何責任：</p>
+        <ul style="margin:0 0 16px;padding-left:20px;line-height:2;">
+          <li>資料延誤、不完整或錯誤所導致之損失</li>
+          <li>使用者依本平台資訊所做之決策結果</li>
+          <li>第三方網站或資料來源之內容</li>
+          <li>不可抗力因素導致服務中斷</li>
+        </ul>
+
+        <h3 style="font-size:15px;margin:0 0 6px;">四、隱私與個人資料</h3>
+        <p style="margin:0 0 16px;">本平台不主動收集使用者個人識別資訊。使用者自願提交之回饋內容，在公開前將進行去識別化處理，移除可辨識個人身份之資訊。本平台不出售、出租或交換任何使用者資訊。</p>
+
+        <h3 style="font-size:15px;margin:0 0 6px;">五、著作權</h3>
+        <p style="margin:0 0 16px;">本平台彙整之政府公開資料依各主管機關授權條款使用。平台自行製作之內容（分析、整理、介面設計）受著作權保護，非經授權不得轉載。</p>
+
+        <h3 style="font-size:15px;margin:0 0 6px;">六、資料更正</h3>
+        <p style="margin:0;">若您發現本平台資料有誤，歡迎透過「<a href="#" onclick="closeDisclaimerModal();setTimeout(()=>openErrorReportModal(null,''),120);return false;" style="color:var(--teal);">錯誤回報</a>」功能通知我們，我們將儘速審核並更正。</p>
+      </div>
+      <div class="form-actions" style="margin-top:20px;">
+        <button class="primary-btn" type="button" onclick="closeDisclaimerModal()">我已閱讀</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 錯誤回報 Modal -->
+  <div class="modal-overlay" id="errorReportModal" role="dialog" aria-modal="true" aria-labelledby="errorReportTitle">
+    <div class="modal">
+      <button class="modal-close" type="button" onclick="closeErrorReportModal()" aria-label="關閉">✕</button>
+
+      <div id="errorReportFormArea">
+        <h2 id="errorReportTitle">回報資料錯誤</h2>
+        <p class="modal-sub">若您發現本站資料有誤（如機構已停業、紀錄不正確），請填寫下方表單，我們將盡速審核。</p>
+
+        <form id="errorReportForm" action="https://formspree.io/f/mpqedqpz" method="POST" onsubmit="handleErrorReportSubmit(event)">
+          <input type="hidden" name="回報性質" value="資料錯誤回報">
+          <div class="field-grid">
+            <div class="field full">
+              <label for="erInstitution">機構名稱 <span style="color:var(--red)">*</span></label>
+              <input type="text" id="erInstitution" name="機構名稱" required placeholder="請輸入機構名稱">
+            </div>
+            <div class="field full">
+              <label for="erType">錯誤類型 <span style="color:var(--red)">*</span></label>
+              <select id="erType" name="錯誤類型" required>
+                <option value="">請選擇</option>
+                <option value="closed">機構已停業 / 撤銷立案</option>
+                <option value="moved">機構已遷址或更名</option>
+                <option value="wrong_record">紀錄資訊有誤（日期、金額、內容）</option>
+                <option value="not_found">機構不存在或登記有誤</option>
+                <option value="duplicate">重複登錄</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="erDesc">錯誤說明 <span style="color:var(--red)">*</span></label>
+              <textarea id="erDesc" name="錯誤說明" required minlength="10" placeholder="請具體說明哪裡有誤，以及正確資訊為何。"></textarea>
+            </div>
+            <div class="field full">
+              <label for="erSource">佐證來源（選填）</label>
+              <input type="text" id="erSource" name="佐證來源" placeholder="例：官方公告連結、政府網站 URL">
+            </div>
+            <div class="field full">
+              <label for="erContact">聯絡方式（選填，供必要時聯繫）</label>
+              <input type="text" id="erContact" name="聯絡方式" placeholder="Email 或其他聯絡方式">
+            </div>
+          </div>
+          <div class="notice-inline">錯誤回報不會公開您的聯絡資訊，僅用於確認資料正確性。</div>
+          <div class="form-actions">
+            <button type="button" class="ghost-btn" onclick="closeErrorReportModal()">取消</button>
+            <button type="submit" class="primary-btn">送出回報</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="errorReportSuccessArea" style="display:none;" class="success-msg">
+        <div style="font-size:48px;">✓</div>
+        <h2>感謝您的回報</h2>
+        <p>我們已收到您的錯誤回報，將盡速審核並更正相關資料。</p>
+        <p style="margin-top:16px;"><button class="ghost-btn" type="button" onclick="closeErrorReportModal()">關閉</button></p>
       </div>
     </div>
   </div>
@@ -1681,7 +1781,10 @@
         <ul class="timeline" style="margin:0 0 24px;padding:0;list-style:none;">${eventsHtml}</ul>
         <div style="border-top:1px solid var(--line);padding-top:16px;">
           <p class="meta" style="margin:0 0 12px;">若您有相關親身經歷、目擊或佐證資料，可透過下方管道回報。所有回饋需經人工審核，並於公開前去識別化。</p>
-          <button class="ghost-btn" type="button" onclick="closeDetailModal();setTimeout(openReportModal,120);">回報問題機構</button>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="ghost-btn" type="button" onclick="closeDetailModal();setTimeout(openReportModal,120);">回報問題機構</button>
+            <button class="ghost-btn" type="button" onclick="openErrorReportModal(null,'${item.name.replace(/'/g,"\\'")}')">回報資料錯誤</button>
+          </div>
         </div>`;
 
       document.querySelector("#detailModalContent").innerHTML = content;
@@ -1748,6 +1851,48 @@
       document.body.style.overflow = "";
     }
 
+    function openDisclaimerModal(e) {
+      if (e) e.preventDefault();
+      document.querySelector("#disclaimerModal").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDisclaimerModal() {
+      document.querySelector("#disclaimerModal").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function openErrorReportModal(e, institutionName) {
+      if (e) e.preventDefault();
+      document.querySelector("#errorReportFormArea").style.display = "";
+      document.querySelector("#errorReportSuccessArea").style.display = "none";
+      const nameField = document.querySelector("#erInstitution");
+      if (nameField) nameField.value = institutionName || "";
+      document.querySelector("#errorReportModal").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeErrorReportModal() {
+      document.querySelector("#errorReportModal").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function handleErrorReportSubmit(e) {
+      e.preventDefault();
+      const form = document.querySelector("#errorReportForm");
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      }).then(r => {
+        if (r.ok) {
+          document.querySelector("#errorReportFormArea").style.display = "none";
+          document.querySelector("#errorReportSuccessArea").style.display = "";
+          form.reset();
+        }
+      });
+    }
+
     function updateCharCount(el) {
       document.querySelector("#rDescCount").textContent = `${el.value.length} 字`;
     }
@@ -1787,6 +1932,12 @@
     });
     document.querySelector("#detailModal").addEventListener("click", function(e) {
       if (e.target === this) closeDetailModal();
+    });
+    document.querySelector("#disclaimerModal").addEventListener("click", function(e) {
+      if (e.target === this) closeDisclaimerModal();
+    });
+    document.querySelector("#errorReportModal").addEventListener("click", function(e) {
+      if (e.target === this) closeErrorReportModal();
     });
 
     // ESC 關閉
