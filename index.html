@@ -969,7 +969,23 @@
             </div>
             <div class="field full">
               <label for="rEvidence">佐證說明（選填）</label>
-              <input type="text" id="rEvidence" name="佐證說明" placeholder="例：新聞連結、政府公告 URL、截圖描述等">
+              <input type="text" id="rEvidence" name="佐證說明" placeholder="例：新聞連結、政府公告 URL、Imgur 圖片連結等">
+              <div class="char-hint" style="margin-top:6px;">
+                有截圖或照片？請先上傳至
+                <a href="https://imgur.com/upload" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:underline;">Imgur（免登入上傳）</a>，
+                再將產生的連結貼到此欄。
+                <a href="#imgurHelp" onclick="toggleImgurHelp(event)" style="color:var(--teal);text-decoration:underline;">查看步驟說明</a>
+              </div>
+              <div id="imgurHelp" style="display:none;margin-top:10px;padding:12px 14px;background:var(--teal-soft);border-radius:8px;font-size:0.85rem;line-height:1.7;">
+                <strong>如何用 Imgur 上傳截圖：</strong>
+                <ol style="margin:6px 0 0 16px;padding:0;">
+                  <li>點上方連結前往 Imgur，或直接開啟 <code>imgur.com/upload</code></li>
+                  <li>點「Browse」或直接把圖片拖進頁面</li>
+                  <li>上傳完成後，複製瀏覽器網址列的連結（格式為 <code>imgur.com/xxxxx</code>）</li>
+                  <li>將連結貼回上方「佐證說明」欄位即可</li>
+                </ol>
+                <div style="margin-top:8px;color:var(--muted);">提醒：上傳前請確認截圖中未包含您或子女的姓名、地址等個人資訊。</div>
+              </div>
             </div>
             <div class="field full">
               <div class="consent">
@@ -1927,7 +1943,11 @@
           document.querySelector("#errorReportFormArea").style.display = "none";
           document.querySelector("#errorReportSuccessArea").style.display = "";
           form.reset();
+        } else {
+          r.text().then(t => alert("送出失敗 (HTTP " + r.status + ")：" + t.substring(0, 200)));
         }
+      }).catch(err => {
+        alert("網路錯誤：" + err.message);
       });
     }
 
@@ -1987,6 +2007,13 @@
     });
 
     window.openReportModal = openReportModal;
+
+    function toggleImgurHelp(e) {
+      e.preventDefault();
+      const el = document.getElementById('imgurHelp');
+      el.style.display = el.style.display === 'none' ? '' : 'none';
+    }
+    window.toggleImgurHelp = toggleImgurHelp;
     window.closeReportModal = closeReportModal;
     window.closeDetailModal = closeDetailModal;
     window.closeMap = closeMap;
