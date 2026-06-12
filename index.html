@@ -878,6 +878,18 @@
         </div>
       </div>
     </section>
+
+    <section class="shell" style="margin-top:0;padding-top:0;">
+      <div class="panel">
+        <details id="changelogDetails">
+          <summary style="cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-size:18px;font-weight:600;">資料更新紀錄</span>
+            <span id="changelogMeta" style="font-size:13px;font-weight:400;color:var(--muted);flex-shrink:0;"></span>
+          </summary>
+          <div id="changelogContent" style="margin-top:16px;font-size:14px;color:var(--muted);">載入中…</div>
+        </details>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -2025,6 +2037,53 @@
     window.showDetail = showDetail;
     populateFilterOptions();
     render();
+
+    // --- 資料更新紀錄 ---
+    (function renderChangelog() {
+      const data = window.SAFETY_WALL_DATA;
+      if (!data) return;
+
+      const kindLabel = { penalty: '裁罰', judicial: '司法判決', news: '新聞', review: '家長回饋' };
+      const kindOrder = ['penalty', 'judicial', 'news', 'review'];
+      const monthMap = {};
+
+      (data.institutions || []).forEach(inst => {
+        (inst.events || []).forEach(rawEv => {
+          const ev = Array.isArray(rawEv) ? { kind: rawEv[0], date: rawEv[2] } : rawEv;
+          if (!ev) return;
+          const dateStr = ev.capturedAt || ev.date || ev.penaltyDate || '';
+          if (dateStr.length < 7) return;
+          const month = dateStr.substring(0, 7);
+          if (!monthMap[month]) monthMap[month] = {};
+          monthMap[month][ev.kind || 'other'] = (monthMap[month][ev.kind || 'other'] || 0) + 1;
+        });
+      });
+
+      const genDate = data.generatedAt ? new Date(data.generatedAt) : null;
+      if (genDate) {
+        document.querySelector('#changelogMeta').textContent =
+          `資料截至 ${genDate.getFullYear()}年${genDate.getMonth()+1}月${genDate.getDate()}日`;
+      }
+
+      const months = Object.keys(monthMap).sort().reverse().slice(0, 6);
+      if (!months.length) {
+        document.querySelector('#changelogContent').textContent = '暫無資料';
+        return;
+      }
+
+      const rows = months.map(month => {
+        const [y, m] = month.split('-');
+        const parts = kindOrder.filter(k => monthMap[month][k])
+          .map(k => `${kindLabel[k]} <strong>${monthMap[month][k]}</strong> 筆`);
+        return `<tr>
+          <td style="padding:5px 20px 5px 0;white-space:nowrap;">${y}年${parseInt(m)}月</td>
+          <td style="padding:5px 0;">${parts.join('　')}</td>
+        </tr>`;
+      }).join('');
+
+      document.querySelector('#changelogContent').innerHTML =
+        `<table style="border-collapse:collapse;">${rows}</table>`;
+    })();
   </script>
 </body>
 </html>
