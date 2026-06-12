@@ -1620,7 +1620,7 @@
               radius: 9, fillColor: color, color: "white",
               weight: 2, opacity: 1, fillOpacity: 0.9
             }).bindPopup(
-              `<div style="min-width:180px;"><strong>${h(item.name)}</strong><div style="font-size:12px;color:#667085;margin:2px 0;">${h(item.city)}${item.district ? " " + h(item.district) : ""}</div><a href="#" onclick="closeMap();showDetail(${idx});return false;" style="font-size:12px;color:var(--teal);">查看紀錄 →</a></div>`
+              `<div style="min-width:180px;"><strong>${h(item.name)}</strong><div style="font-size:12px;color:#667085;margin:2px 0;">${item.address ? h(item.address) : h(item.city) + (item.district ? " " + h(item.district) : "")}</div><a href="#" onclick="showDetail(${idx});return false;" style="font-size:12px;color:var(--teal);">查看紀錄 →</a></div>`
             ).addTo(leafletMap);
             leafletMarkers.push(m);
           } else {
@@ -1637,7 +1637,7 @@
           if (!coords) return;
           const color = list.some(i=>i.risk==="high") ? "#b42318" : list.some(i=>i.risk==="mid") ? "#b7791f" : "#667085";
           const icon = L.divIcon({ className: "", html: `<div style="width:34px;height:34px;border-radius:50%;background:${color};border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.25);display:grid;place-items:center;color:white;font-weight:700;font-size:11px;">${list.length > 99?"99+":list.length}</div>`, iconSize:[34,34], iconAnchor:[17,17] });
-          const rows = list.slice(0,6).map(i=>`<div style="font-size:12px;line-height:1.8;"><a href="#" onclick="closeMap();showDetail(${institutions.indexOf(i)});return false;" style="color:var(--teal);">${h(i.name)}</a></div>`).join("");
+          const rows = list.slice(0,6).map(i=>`<div style="font-size:12px;line-height:1.8;"><a href="#" onclick="showDetail(${institutions.indexOf(i)});return false;" style="color:var(--teal);">${h(i.name)}</a></div>`).join("");
           const more = list.length > 6 ? `<div style="font-size:12px;color:#667085;">…另有 ${list.length-6} 個</div>` : "";
           const m = L.marker(coords, { icon }).bindPopup(`<div style="min-width:180px;"><strong>${h(dist||city)}</strong>（${list.length} 個機構）<div style="margin-top:4px;">${rows}${more}</div></div>`, { maxWidth: 260 }).addTo(leafletMap);
           leafletMarkers.push(m);
@@ -1668,7 +1668,7 @@
           const rows = top.map(item => {
             const idx = institutions.indexOf(item);
             const dot = `<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${item.risk==="high"?"#b42318":item.risk==="mid"?"#b7791f":"#0d6b68"};margin-right:5px;vertical-align:middle;"></span>`;
-            return `<div style="font-size:12px;line-height:1.8;">${dot}<a href="#" onclick="closeMap();showDetail(${idx});return false;" style="color:var(--teal);">${h(item.name)}</a></div>`;
+            return `<div style="font-size:12px;line-height:1.8;">${dot}<a href="#" onclick="showDetail(${idx});return false;" style="color:var(--teal);">${h(item.name)}</a></div>`;
           }).join("");
           const more = count > 8 ? `<div style="font-size:12px;color:#667085;margin-top:4px;">…另有 ${count - 8} 個機構</div>` : "";
           const areaLabel = dist ? `${h(city)} ${h(dist)}` : h(city);
