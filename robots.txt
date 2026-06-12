@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /kids-safety-wall/admin.html
+Disallow: /kids-safety-wall/archive/
+
+Sitemap: https://kidssafetywall.github.io/kids-safety-wall/sitemap.xml
