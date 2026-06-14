@@ -460,7 +460,7 @@ try {
                 [ordered]@{
                   title        = "幼兒園裁罰詳情（全國教保資訊網）"
                   publisher    = "教育部"
-                  url          = $row.ViewUrl
+                  url          = $moeUrl
                   type         = "government_doc"
                   capturedAt   = $row.SnapAt
                   snapshotPath = $row.SnapPath
