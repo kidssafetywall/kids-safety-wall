@@ -196,6 +196,14 @@
     .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
     .card-head h3 { margin: 0 0 3px; font-size: 17px; line-height: 1.35; font-weight: 800; }
     .card-meta { color: var(--muted); font-size: 13px; }
+    .card-addr { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 2px; }
+    .ins-badge {
+      font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px;
+      white-space: nowrap; margin-top: 2px;
+    }
+    .ins-badge.health  { background: var(--green-soft); color: var(--green); border: 1px solid #b2d8b5; }
+    .ins-badge.private { background: var(--paper);      color: var(--muted); border: 1px solid var(--line); }
+    .date { color: var(--muted); font-size: 13px; }
 
     .inst-type-badge {
       flex-shrink: 0; display: inline-block; font-size: 11px; font-weight: 700;
@@ -229,7 +237,6 @@
 
     /* card actions */
     .card-actions { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-    .card-addr { color: var(--muted); font-size: 12px; line-height: 1.5; flex: 1; min-width: 0; }
 
     .ghost-btn {
       min-height: 38px; padding: 0 14px; border-radius: 6px;
@@ -540,29 +547,35 @@
       }).join("");
 
       const locParts = [inst.city, inst.district].filter(Boolean).join(" · ");
-      const insLabel = inst.insurance === "健保" ? "健保" : (inst.insurance || "—");
+      const isHealth  = inst.insurance === "健保";
+      const insBadge  = `<span class="ins-badge ${isHealth ? 'health' : 'private'}">${isHealth ? '健保特約' : (inst.insurance || '自費')}</span>`;
       const tel = inst.phone
         ? `<a class="btn-phone" href="tel:${esc(inst.phone.replace(/[^0-9+]/g,""))}">${esc(inst.phone)}</a>`
         : "";
       const hasRecord = (inst.penalties > 0 || inst.news > 0);
+      const updated   = inst.updatedAt ? `<span class="date">更新 ${esc(inst.updatedAt)}</span>` : "";
 
       return `
         <article class="inst-card ${meta.cls}">
           <div class="card-head">
             <div>
               <h3>${esc(inst.name)}</h3>
-              ${locParts ? `<div class="card-meta">${esc(locParts)}</div>` : ""}
+              ${locParts    ? `<div class="card-meta">${esc(locParts)}</div>`    : ""}
+              ${inst.address? `<div class="card-addr">${esc(inst.address)}</div>`: ""}
             </div>
-            <span class="inst-type-badge">${esc(meta.label)}</span>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+              <span class="inst-type-badge">${esc(meta.label)}</span>
+              ${insBadge}
+            </div>
           </div>
           <div class="metrics">
             <div class="metric"><strong>${inst.penalties || 0}</strong><span>裁罰紀錄</span></div>
             <div class="metric"><strong>${inst.news || 0}</strong><span>相關新聞</span></div>
-            <div class="metric"><strong>${esc(insLabel)}</strong><span>保險</span></div>
+            <div class="metric"><strong>${inst.reviews || 0}</strong><span>家長回饋</span></div>
           </div>
           <div class="svc-tags">${svcs}</div>
           <div class="card-actions">
-            <span class="card-addr">${esc(inst.address || "")}</span>
+            ${updated}
             <div style="display:flex;gap:8px;flex-shrink:0;">
               ${tel}
               <button class="ghost-btn${hasRecord ? ' has-record' : ''}"

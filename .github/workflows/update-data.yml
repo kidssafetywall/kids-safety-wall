@@ -57,6 +57,16 @@ jobs:
         shell: powershell
         run: .\scripts\geocode-institutions.ps1 -MaxRequests 200 -DelayMs 1500
 
+      # ── Step 5c：早療機構（健保署特約治療診所）────────────────────────────
+      - name: 抓取健保署特約治療機構
+        shell: powershell
+        run: .\scripts\fetch-therapy-clinics.ps1 -DelayMs 1500
+
+      # ── Step 5d：聯合評估中心 / 早期療育機構 ──────────────────────────────
+      - name: 抓取聯合評估中心與早療機構
+        shell: powershell
+        run: .\scripts\fetch-early-intervention-centers.ps1 -DelayMs 1500
+
       # ── Step 6：重新整合資料（納入新增的 review-queue/events 條目）────────
       - name: 重新產生前台資料（整合新增事件）
         shell: powershell
@@ -86,6 +96,7 @@ jobs:
           git add data/geocache.json
           git add data/institution-overrides.json
           git add data/quasi-public.json
+          git add data/therapy-institutions.json
           git add archive/raw
           git add archive/datasets
 
