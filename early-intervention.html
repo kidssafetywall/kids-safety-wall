@@ -109,32 +109,40 @@
       text-transform: uppercase; letter-spacing: .06em;
     }
 
-    /* Service toggle chips */
+    /* Service toggle chips — <label class="svc-chip"> wraps <input> */
     .svc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .svc-chip input[type="checkbox"] { display: none; }
-    .svc-chip label {
-      display: flex; align-items: center; gap: 6px; cursor: pointer;
-      padding: 8px 14px; border-radius: 999px; border: 2px solid var(--line);
+    .svc-chip {
+      display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+      padding: 8px 16px; border-radius: 999px; border: 2px solid var(--line);
       font-size: 14px; font-weight: 600; transition: all .15s; user-select: none;
-      background: white; color: var(--ink);
+      background: white;
     }
-    .svc-chip input:checked + label {
-      border-color: currentColor; background: currentColor;
+    .svc-chip input[type="checkbox"] { display: none; }
+
+    /* per-type accent colour via CSS variable */
+    .svc-chip.st  { --ac: var(--blue);   }
+    .svc-chip.ot  { --ac: var(--teal);   }
+    .svc-chip.pt  { --ac: var(--green);  }
+    .svc-chip.psy { --ac: var(--purple); }
+    .svc-chip.ev  { --ac: var(--amber);  }
+    .svc-chip.ei  { --ac: #c05621;       }
+
+    .svc-chip         { color: var(--ac, var(--ink)); }
+    .svc-chip:hover   { border-color: var(--ac, #aab4c0); background: #f5f6f8; }
+
+    /* checked state */
+    .svc-chip:has(input:checked) {
+      background: var(--ac, var(--ink));
+      border-color: var(--ac, var(--ink));
+      color: white;
     }
-    .svc-chip input:checked + label span.chip-text { color: white; }
-    .svc-chip label:hover { border-color: #aab4c0; }
+    .svc-chip:has(input:checked) .chip-dot  { background: white; }
+    .svc-chip:has(input:checked) .chip-text { color: white; }
 
-    .svc-chip.st  label { color: var(--blue);   }
-    .svc-chip.ot  label { color: var(--teal);   }
-    .svc-chip.pt  label { color: var(--green);  }
-    .svc-chip.psy label { color: var(--purple); }
-    .svc-chip.ev  label { color: var(--amber);  }
-    .svc-chip.ei  label { color: #c05621;       }
-
-    .svc-chip input:checked + label .chip-dot { background: white; }
     .chip-dot {
       width: 8px; height: 8px; border-radius: 50%;
       background: currentColor; flex-shrink: 0;
+      transition: background .15s;
     }
 
     .filter-divider { width: 1px; background: var(--line); align-self: stretch; }
