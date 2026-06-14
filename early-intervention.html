@@ -576,8 +576,9 @@
 
       const hasRecord = (inst.penalties > 0 || inst.news > 0);
       const negRecord = `<button class="btn-record${hasRecord ? ' has-record' : ''}"
-        onclick="showSafety(${JSON.stringify(inst.name)},${inst.penalties||0},${inst.news||0})"
-        >${hasRecord ? '⚠ 安全紀錄' : '安全紀錄'}</button>`;
+        data-name="${esc(inst.name)}" data-penalties="${inst.penalties||0}" data-news="${inst.news||0}"
+        onclick="showSafety(this)"
+        >${hasRecord ? '⚠ 查看紀錄' : '查看紀錄'}</button>`;
 
       return `
         <article class="inst-card ${meta.cls}">
@@ -604,7 +605,10 @@
         .replace(/"/g,"&quot;");
     }
 
-    function showSafety(name, penalties, news) {
+    function showSafety(btn) {
+      const name     = btn.dataset.name;
+      const penalties = parseInt(btn.dataset.penalties) || 0;
+      const news      = parseInt(btn.dataset.news)      || 0;
       document.getElementById("modalName").textContent = name;
       const body = document.getElementById("modalBody");
       if (penalties === 0 && news === 0) {
