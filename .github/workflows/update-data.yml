@@ -67,6 +67,11 @@ jobs:
         shell: powershell
         run: .\scripts\fetch-early-intervention-centers.ps1 -DelayMs 1500
 
+      # ── Step 5e：行政院公報醫療衛生裁處 ───────────────────────────────────
+      - name: 抓取行政院公報醫療裁處紀錄
+        shell: powershell
+        run: .\scripts\fetch-gazette-penalties.ps1 -LookbackDays 7 -DelayMs 2000
+
       # ── Step 6：重新整合資料（納入新增的 review-queue/events 條目）────────
       - name: 重新產生前台資料（整合新增事件）
         shell: powershell
@@ -97,6 +102,7 @@ jobs:
           git add data/institution-overrides.json
           git add data/quasi-public.json
           git add data/therapy-institutions.json
+          git add data/gazette-seen.json
           git add archive/raw
           git add archive/datasets
 
