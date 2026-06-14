@@ -695,11 +695,16 @@
         grid-template-columns: 1fr;
       }
 
-      .side { position: static; }
+      /* Move sidebar below results so search is immediately reachable */
+      .side { position: static; order: 2; }
+      #results { order: 1; }
 
       .results { grid-template-columns: 1fr; }
 
       .workflow { grid-template-columns: repeat(2, 1fr); }
+
+      /* Collapse 公開資料 by default on mobile */
+      #sources details:not([open]) ul { display: none; }
     }
 
     @media (max-width: 640px) {
@@ -819,20 +824,22 @@
     <div class="shell dashboard">
       <aside class="side">
         <section class="panel" id="sources">
-          <h2>公開資料</h2>
-          <ul class="source-list">
-            <li><a href="https://data.gov.tw/dataset/6086" target="_blank" rel="noreferrer">幼兒園名錄<small>政府資料開放平台</small></a></li>
-            <li><a href="https://data.gov.tw/dataset/6087" target="_blank" rel="noreferrer">國民小學名錄<small>政府資料開放平台</small></a></li>
-            <li><a href="https://data.gov.tw/dataset/6239" target="_blank" rel="noreferrer">國民中學校別資料<small>政府資料開放平台</small></a></li>
-            <li><a href="https://data.gov.tw/dataset/6089" target="_blank" rel="noreferrer">一般高級中等學校名錄<small>政府資料開放平台</small></a></li>
-            <li><a href="https://data.gov.tw/dataset/16461" target="_blank" rel="noreferrer">全國立案短期補習班基本資料<small>政府資料開放平台</small></a></li>
-            <li><a href="https://ap.ece.moe.edu.tw/webecems/pubSearch.aspx" target="_blank" rel="noreferrer">準公共幼兒園名單<small>全國教保資訊網</small></a></li>
-            <li><a href="https://data.gov.tw/dataset/39283" target="_blank" rel="noreferrer">健保署特約醫事機構（診所）<small>政府資料開放平台・健保署</small></a></li>
-            <li><a href="https://www.sfaa.gov.tw/SFAA/Pages/Detail.aspx?nodeid=269&pid=316" target="_blank" rel="noreferrer">早期療育服務資源（聯合評估中心）<small>衛福部社家署</small></a></li>
-            <li><a href="https://gazette.nat.gov.tw/egFront/advancedSearchResult.do?action=doQuery&styleL=5" target="_blank" rel="noreferrer">行政院公報（處分類）<small>行政院公報資訊網</small></a></li>
-            <li><a href="https://data.nat.gov.tw/dataset/63205" target="_blank" rel="noreferrer">司法院裁判書開放 API<small>司法公開資料</small></a></li>
-            <li><a href="https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx" target="_blank" rel="noreferrer">教育部幼兒園裁罰公告<small>全國教保資訊網</small></a></li>
-          </ul>
+          <details>
+            <summary><h2 style="display:inline;font-size:inherit;">公開資料</h2></summary>
+            <ul class="source-list" style="margin-top:10px;">
+              <li><a href="https://data.gov.tw/dataset/6086" target="_blank" rel="noreferrer">幼兒園名錄<small>政府資料開放平台</small></a></li>
+              <li><a href="https://data.gov.tw/dataset/6087" target="_blank" rel="noreferrer">國民小學名錄<small>政府資料開放平台</small></a></li>
+              <li><a href="https://data.gov.tw/dataset/6239" target="_blank" rel="noreferrer">國民中學校別資料<small>政府資料開放平台</small></a></li>
+              <li><a href="https://data.gov.tw/dataset/6089" target="_blank" rel="noreferrer">一般高級中等學校名錄<small>政府資料開放平台</small></a></li>
+              <li><a href="https://data.gov.tw/dataset/16461" target="_blank" rel="noreferrer">全國立案短期補習班基本資料<small>政府資料開放平台</small></a></li>
+              <li><a href="https://ap.ece.moe.edu.tw/webecems/pubSearch.aspx" target="_blank" rel="noreferrer">準公共幼兒園名單<small>全國教保資訊網</small></a></li>
+              <li><a href="https://data.gov.tw/dataset/39283" target="_blank" rel="noreferrer">健保署特約醫事機構（診所）<small>政府資料開放平台・健保署</small></a></li>
+              <li><a href="https://www.sfaa.gov.tw/SFAA/Pages/Detail.aspx?nodeid=269&pid=316" target="_blank" rel="noreferrer">早期療育服務資源（聯合評估中心）<small>衛福部社家署</small></a></li>
+              <li><a href="https://gazette.nat.gov.tw/egFront/advancedSearchResult.do?action=doQuery&styleL=5" target="_blank" rel="noreferrer">行政院公報（處分類）<small>行政院公報資訊網</small></a></li>
+              <li><a href="https://data.nat.gov.tw/dataset/63205" target="_blank" rel="noreferrer">司法院裁判書開放 API<small>司法公開資料</small></a></li>
+              <li><a href="https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx" target="_blank" rel="noreferrer">教育部幼兒園裁罰公告<small>全國教保資訊網</small></a></li>
+            </ul>
+          </details>
         </section>
 
         <section class="panel">
