@@ -342,7 +342,7 @@
         <div class="filter-row">
 
           <div class="filter-group" style="flex:1;min-width:260px;">
-            <div class="filter-label">孩子需要哪些服務？（可複選，同時顯示全部符合的機構）</div>
+            <div class="filter-label">孩子需要哪些治療？（可複選，同時符合才顯示）</div>
             <div class="svc-chips">
               <label class="svc-chip st">
                 <input type="checkbox" value="語言治療" onchange="applyFilter()">
@@ -355,18 +355,6 @@
               <label class="svc-chip pt">
                 <input type="checkbox" value="物理治療" onchange="applyFilter()">
                 <span><span class="chip-dot"></span><span class="chip-text">物理治療</span></span>
-              </label>
-              <label class="svc-chip psy">
-                <input type="checkbox" value="心理評估" onchange="applyFilter()">
-                <span><span class="chip-dot"></span><span class="chip-text">心理評估</span></span>
-              </label>
-              <label class="svc-chip ev">
-                <input type="checkbox" value="聯合評估" onchange="applyFilter()">
-                <span><span class="chip-dot"></span><span class="chip-text">聯合評估</span></span>
-              </label>
-              <label class="svc-chip ei">
-                <input type="checkbox" value="早療課程" onchange="applyFilter()">
-                <span><span class="chip-dot"></span><span class="chip-text">早療課程</span></span>
               </label>
             </div>
           </div>
@@ -399,8 +387,8 @@
 
         </div>
         <div class="filter-note">
-          勾選多項服務時，只顯示<strong>同時提供所有所選服務</strong>的機構。
-          若沒有符合結果，可能該縣市尚無單一機構提供全部所需服務，需至多間機構分別接受療育。
+          勾選多項治療時，只顯示<strong>同時提供所有所選服務</strong>的機構。
+          若無符合結果，該縣市可能沒有單一機構提供全部治療，可分別至不同機構接受療育。
         </div>
       </div>
 
