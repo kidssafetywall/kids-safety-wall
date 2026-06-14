@@ -582,7 +582,7 @@
       return `
         <article class="inst-card ${meta.cls}">
           <div class="inst-card-header">
-            <div class="inst-type-icon" aria-hidden="true">${meta.icon}</div>
+            ${meta.icon ? `<div class="inst-type-icon" aria-hidden="true">${meta.icon}</div>` : ""}
             <div>
               <div class="inst-name">${esc(inst.name)}</div>
               <span class="inst-type-badge">${esc(meta.label)}</span>
