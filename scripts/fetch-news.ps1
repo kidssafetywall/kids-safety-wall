@@ -71,8 +71,21 @@ function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix) {
   try {
     $headers  = @{ "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" }
     $resp     = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 30 -Headers $headers
+    $content  = $resp.Content
+
+    # Skip Google News relay pages — they contain a JS redirect, not the article
+    if ($content -match '<base\s+href="https://news\.google\.com/' -or
+        $content -match 'window\.location\.replace\(' -and $Url -match 'news\.google\.com') {
+      return @{
+        capturedAt    = $capturedAt
+        snapshotPath  = $null
+        httpStatus    = $resp.StatusCode
+        captureStatus = "skipped_relay_page"
+      }
+    }
+
     $comment  = "<!--`nsource: $Url`ncaptured_at_utc: $capturedAt`nstatus_code: $($resp.StatusCode)`n-->`n"
-    [System.IO.File]::WriteAllText($file, $comment + $resp.Content, [System.Text.Encoding]::UTF8)
+    [System.IO.File]::WriteAllText($file, $comment + $content, [System.Text.Encoding]::UTF8)
     return @{
       capturedAt    = $capturedAt
       snapshotPath  = ($file.Replace($Root, "").TrimStart("\") -replace "\\", "/")
