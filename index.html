@@ -1452,7 +1452,7 @@
       // Default view: only show institutions with events
       const defaultView = isDefaultView();
       if (defaultView) {
-        filtered = filtered.filter(i => (i.penalties || 0) + (i.news || 0) + (i.pending || 0) > 0);
+        filtered = filtered.filter(i => (i.penalties || 0) + (i.news || 0) + (i.reviews || 0) > 0);
       }
 
       // Keep "待人工分類" items but show them last
@@ -1558,7 +1558,7 @@
           <div class="metrics">
             <div class="metric"><strong>${item.penalties || 0}</strong><span>官方裁罰</span></div>
             <div class="metric"><strong>${item.news || 0}</strong><span>新聞紀錄</span></div>
-            <div class="metric"><strong>${item.pending || 0}</strong><span>待審事件</span></div>
+            <div class="metric"><strong>${item.reviews || 0}</strong><span>家長回饋</span></div>
           </div>
           <div style="margin-top:6px;min-height:18px;display:flex;flex-wrap:wrap;gap:4px;">${recentBadge}${item._hasAbuse ? '<span class="abuse-badge">含不當對待／虐待紀錄</span>' : ""}</div>
           ${closedBadge}${monitorBadge}
