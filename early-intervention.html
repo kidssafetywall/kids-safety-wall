@@ -396,7 +396,7 @@
 
           <div class="filter-group">
             <div class="filter-label">縣市</div>
-            <select class="filter-select" id="citySelect" onchange="applyFilter()">
+            <select class="filter-select" id="citySelect" onchange="onCityChange()">
               <option value="">全台</option>
               <option>台北市</option><option>新北市</option><option>桃園市</option>
               <option>台中市</option><option>台南市</option><option>高雄市</option>
@@ -406,6 +406,13 @@
               <option>屏東縣</option><option>宜蘭縣</option><option>花蓮縣</option>
               <option>台東縣</option><option>澎湖縣</option><option>金門縣</option>
               <option>連江縣</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-label">行政區</div>
+            <select class="filter-select" id="districtSelect" onchange="applyFilter()" disabled>
+              <option value="">不限</option>
             </select>
           </div>
 
@@ -498,15 +505,40 @@
       });
 
     // ── 篩選邏輯 ──
+    function onCityChange() {
+      const city = document.getElementById("citySelect").value;
+      const distSel = document.getElementById("districtSelect");
+      distSel.innerHTML = '<option value="">不限</option>';
+      if (city) {
+        const districts = [...new Set(
+          allInstitutions
+            .filter(i => i.city === city && i.district)
+            .map(i => i.district)
+        )].sort((a, b) => a.localeCompare(b, "zh-Hant"));
+        districts.forEach(d => {
+          const opt = document.createElement("option");
+          opt.value = d;
+          opt.textContent = d;
+          distSel.appendChild(opt);
+        });
+        distSel.disabled = districts.length === 0;
+      } else {
+        distSel.disabled = true;
+      }
+      applyFilter();
+    }
+
     function applyFilter() {
       const selected = [...document.querySelectorAll('.svc-chip input:checked')].map(c => c.value);
       const city     = document.getElementById("citySelect").value;
+      const district = document.getElementById("districtSelect").value;
       const ins      = document.getElementById("insuranceSelect").value;
 
       const filtered = allInstitutions.filter(inst => {
         // AND 邏輯：機構需提供所有勾選服務
         if (selected.length > 0 && !selected.every(s => inst.services && inst.services.includes(s))) return false;
         if (city && inst.city !== city) return false;
+        if (district && inst.district !== district) return false;
         if (ins === "健保" && inst.insurance !== "健保") return false;
         if (ins === "自費" && inst.insurance !== "自費") return false;
         return true;
@@ -518,6 +550,9 @@
     function clearFilter() {
       document.querySelectorAll('.svc-chip input').forEach(c => c.checked = false);
       document.getElementById("citySelect").value = "";
+      const distSel = document.getElementById("districtSelect");
+      distSel.innerHTML = '<option value="">不限</option>';
+      distSel.disabled = true;
       document.getElementById("insuranceSelect").value = "";
       applyFilter();
     }
