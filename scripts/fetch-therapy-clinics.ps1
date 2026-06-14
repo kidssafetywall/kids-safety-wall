@@ -178,16 +178,23 @@ $nhDatasets = @(
 # 主程序
 # ---------------------------------------------------------------------------
 
-$dataDir    = Join-Path $Root "data"
-$outputPath = Join-Path $dataDir "therapy-institutions.json"
+$dataDir      = Join-Path $Root "data"
+$outputPath   = Join-Path $dataDir "therapy-institutions.json"
+$snapshotPath = Join-Path $dataDir "nhi-therapy-snapshot.json"
 
 $existing = @(Read-JsonArrayFile $outputPath)
-$kept     = @($existing | Where-Object { "$($_["dataSource"])" -ne "nhi-therapy-registry" })
+$kept     = @($existing | Where-Object { "$($_["dataSource"])" -ne "nhi-therapy-registry" -and "$($_["dataSource"])" -ne "nhi-therapy-registry-terminated" })
 $fresh    = [System.Collections.ArrayList]::new()
 $seenKeys = [System.Collections.Generic.HashSet[string]]::new([string[]]@($kept | ForEach-Object { "$($_["key"])" }))
 
+# 載入上次快照（用於偵測消失的機構）
+$prevSnapshot   = @(Read-JsonArrayFile $snapshotPath)
+$prevByKey      = [System.Collections.Generic.Dictionary[string,object]]::new()
+foreach ($s in $prevSnapshot) { $prevByKey["$($s["key"])"] = $s }
+
 Write-Host "=== 兒少防火牆：治療機構清單（健保署特約資料）==="
 Write-Host "保留既有非健保系統條目：$($kept.Count) 筆"
+Write-Host "上次快照：$($prevSnapshot.Count) 筆"
 
 foreach ($ds in $nhDatasets) {
   Write-Host ""
@@ -282,14 +289,88 @@ foreach ($ds in $nhDatasets) {
   Start-Sleep -Milliseconds $DelayMs
 }
 
-$merged = @($kept) + @($fresh)
+$merged = [System.Collections.ArrayList]::new(@(@($kept) + @($fresh)))
 
 # ---------------------------------------------------------------------------
-# 回填新聞計數（從 review-queue.json + events.json 統計機構被提到的次數）
+# 歷史比對：與上次快照比較，偵測消失（可能被終止合約）的機構
 # ---------------------------------------------------------------------------
 
 $queuePath  = Join-Path $dataDir "review-queue.json"
 $eventsPath = Join-Path $dataDir "events.json"
+
+if ($prevSnapshot.Count -gt 0) {
+  # 建立本次抓到的 key 集合
+  $freshKeySet = [System.Collections.Generic.HashSet[string]]::new()
+  foreach ($inst in $fresh) { [void]$freshKeySet.Add("$($inst["key"])") }
+
+  # 載入 review-queue（避免重複建立事件）
+  $queue    = [System.Collections.ArrayList]::new(@(Read-JsonArrayFile $queuePath))
+  $queueIds = [System.Collections.Generic.HashSet[string]]::new()
+  foreach ($q in $queue) { [void]$queueIds.Add("$($q["id"])") }
+
+  $disappearedCount = 0
+  foreach ($prev in $prevSnapshot) {
+    $prevKey  = "$($prev["key"])"
+    $prevName = "$($prev["name"])"
+    if ($freshKeySet.Contains($prevKey)) { continue }
+
+    Write-Host "  ⚠ 機構從健保名冊消失：$prevName [$($prev["city"])]（上次合約到期日：$($prev["contractEndDate"])）"
+
+    # 把該機構以「已終止」狀態加回資料（讓使用者能看到警告）
+    [void]$merged.Add([ordered]@{
+      key               = $prevKey
+      name              = $prevName
+      type              = "$($prev["type"])"
+      city              = "$($prev["city"])"
+      district          = "$($prev["district"])"
+      address           = "$($prev["address"])"
+      phone             = "$($prev["phone"])"
+      services          = @($prev["services"] | ForEach-Object { "$_" })
+      referralRequired  = $false
+      insurance         = "健保"
+      ageMax            = $null
+      website           = "$($prev["website"])"
+      penalties         = 1
+      news              = [int]"$($prev["news"])"
+      reviews           = 0
+      nhiTerminated     = $true
+      nhiTerminatedDate = (Get-Date).ToString("yyyy-MM-dd")
+      dataSource        = "nhi-therapy-registry-terminated"
+      updatedAt         = (Get-Date).ToString("yyyy-MM-dd")
+    })
+
+    # 建立 review-queue 事件
+    $eventId = "nhi-removed-$prevKey"
+    if (-not $queueIds.Contains($eventId)) {
+      [void]$queue.Add([ordered]@{
+        id          = $eventId
+        type        = "nhi-contract-removed"
+        title       = "$prevName 已從健保特約名冊移除"
+        date        = (Get-Date).ToString("yyyy-MM-dd")
+        url         = "https://info.nhi.gov.tw/"
+        source      = "健保署特約資料（每日差異比對）"
+        institution = [ordered]@{
+          key  = $prevKey
+          name = $prevName
+          type = "$($prev["type"])"
+          city = "$($prev["city"])"
+        }
+        summary     = "此機構（$prevName）出現在上次健保特約名冊（快照日：$($prev["snapshotDate"])），但本次已不在名冊中。可能原因：健保署終止特約、機構自行歇業、或換發醫事機構代碼。請查閱健保署網站確認。"
+        status      = "pending"
+        createdAt   = (Get-Date).ToString("yyyy-MM-dd")
+      })
+      [void]$queueIds.Add($eventId)
+    }
+    $disappearedCount++
+  }
+
+  if ($disappearedCount -gt 0) {
+    Write-Host "發現 $disappearedCount 筆機構從健保名冊消失，已加入 review-queue 待確認"
+    Write-JsonArrayFile $queuePath @($queue)
+  } else {
+    Write-Host "比對快照：無機構消失（健保名冊穩定）"
+  }
+}
 
 $allEvents = @()
 if (Test-Path -LiteralPath $queuePath)  { $allEvents += @(Read-JsonArrayFile $queuePath) }
@@ -317,7 +398,33 @@ if ($allEvents.Count -gt 0) {
   Write-Host "新聞計數回填：$updated 筆機構有相關事件（共掃描 $($allEvents.Count) 則事件）"
 }
 
-Write-JsonArrayFile $outputPath $merged
+Write-JsonArrayFile $outputPath @($merged)
+
+# ---------------------------------------------------------------------------
+# 儲存本次快照（僅記錄現役健保機構，供下次比對用）
+# ---------------------------------------------------------------------------
+
+$snapshot = [System.Collections.ArrayList]::new()
+$today    = (Get-Date).ToString("yyyy-MM-dd")
+foreach ($inst in $fresh) {
+  [void]$snapshot.Add([ordered]@{
+    key             = "$($inst["key"])"
+    name            = "$($inst["name"])"
+    type            = "$($inst["type"])"
+    city            = "$($inst["city"])"
+    district        = "$($inst["district"])"
+    address         = "$($inst["address"])"
+    phone           = "$($inst["phone"])"
+    services        = @($inst["services"] | ForEach-Object { "$_" })
+    website         = "$($inst["website"])"
+    news            = [int]"$($inst["news"])"
+    contractEndDate = "$($inst["nhiTerminatedDate"])"
+    snapshotDate    = $today
+  })
+}
+Write-JsonArrayFile $snapshotPath @($snapshot)
+Write-Host "快照更新：$($snapshot.Count) 筆現役機構 → nhi-therapy-snapshot.json"
+
 Write-Host ""
 $terminated = @($merged | Where-Object { "$($_["nhiTerminated"])" -eq "True" }).Count
 Write-Host "完成：therapy-institutions.json 共 $($merged.Count) 筆（健保資料：$($fresh.Count) 筆，停約：$terminated 筆）"

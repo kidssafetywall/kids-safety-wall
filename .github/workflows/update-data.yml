@@ -102,6 +102,7 @@ jobs:
           git add data/institution-overrides.json
           git add data/quasi-public.json
           git add data/therapy-institutions.json
+          git add data/nhi-therapy-snapshot.json
           git add data/gazette-seen.json
           git add archive/raw
           git add archive/datasets
