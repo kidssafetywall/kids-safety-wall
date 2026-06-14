@@ -185,45 +185,40 @@
       gap: 16px;
     }
     .inst-card {
-      background: white; border-radius: 12px; border: 1px solid var(--line);
-      padding: 20px; display: flex; flex-direction: column; gap: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,.04);
-      transition: border-color .15s, box-shadow .15s;
+      background: white; border: 1px solid var(--line); border-radius: 8px;
+      padding: 16px; display: grid; gap: 12px;
+      box-shadow: 0 8px 24px rgba(23,32,42,.05);
+      transition: border-color .15s;
     }
-    .inst-card:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(49,95,159,.1); }
+    .inst-card:hover { border-color: var(--teal); }
 
-    .inst-card-header { display: flex; align-items: flex-start; gap: 10px; }
-    .inst-type-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      display: grid; place-items: center; font-size: 18px; flex-shrink: 0;
-    }
-    .inst-name { font-weight: 800; font-size: 15px; line-height: 1.4; flex: 1; }
+    /* card head */
+    .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .card-head h3 { margin: 0 0 3px; font-size: 17px; line-height: 1.35; font-weight: 800; }
+    .card-meta { color: var(--muted); font-size: 13px; }
+
     .inst-type-badge {
-      display: inline-block; font-size: 11px; font-weight: 700;
-      padding: 3px 9px; border-radius: 999px; white-space: nowrap;
-      margin-top: 3px;
+      flex-shrink: 0; display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 999px; white-space: nowrap;
     }
+    .type-st    .inst-type-badge { background: var(--blue-soft);   color: var(--blue);   border: 1px solid #c5d4ed; }
+    .type-ot    .inst-type-badge { background: var(--teal-soft);   color: var(--teal);   border: 1px solid #a8d5d2; }
+    .type-pt    .inst-type-badge { background: var(--green-soft);  color: var(--green);  border: 1px solid #b2d8b5; }
+    .type-ev    .inst-type-badge { background: var(--amber-soft);  color: var(--amber);  border: 1px solid #f1d58c; }
+    .type-ei    .inst-type-badge { background: #fce8d8;            color: #c05621;       border: 1px solid #f5c0a0; }
+    .type-rehab .inst-type-badge { background: var(--purple-soft); color: var(--purple); border: 1px solid #c9b5e0; }
 
-    /* Type colors */
-    .type-st     .inst-type-icon { background: var(--blue-soft);   }
-    .type-ot     .inst-type-icon { background: var(--teal-soft);   }
-    .type-pt     .inst-type-icon { background: var(--green-soft);  }
-    .type-ev     .inst-type-icon { background: var(--amber-soft);  }
-    .type-ei     .inst-type-icon { background: #fce8d8;            }
-    .type-rehab  .inst-type-icon { background: var(--purple-soft); }
+    /* metrics */
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .metric { border: 1px solid var(--line); border-radius: 6px; padding: 9px; background: #fbfcfd; }
+    .metric strong { display: block; font-size: 20px; margin-bottom: 2px; }
+    .metric span   { color: var(--muted); font-size: 12px; }
 
-    .type-st     .inst-type-badge { background: var(--blue-soft);   color: var(--blue);   border: 1px solid #c5d4ed; }
-    .type-ot     .inst-type-badge { background: var(--teal-soft);   color: var(--teal);   border: 1px solid #a8d5d2; }
-    .type-pt     .inst-type-badge { background: var(--green-soft);  color: var(--green);  border: 1px solid #b2d8b5; }
-    .type-ev     .inst-type-badge { background: var(--amber-soft);  color: var(--amber);  border: 1px solid #f1d58c; }
-    .type-ei     .inst-type-badge { background: #fce8d8;            color: #c05621;       border: 1px solid #f5c0a0; }
-    .type-rehab  .inst-type-badge { background: var(--purple-soft); color: var(--purple); border: 1px solid #c9b5e0; }
-
-    /* Services row */
-    .svc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    /* service tags */
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .svc-tag {
-      font-size: 11px; font-weight: 600; padding: 2px 9px;
-      border-radius: 999px; border: 1px solid;
+      font-size: 11px; font-weight: 600; padding: 3px 11px;
+      border-radius: 999px; border: 1px solid; line-height: 1.6;
     }
     .svc-tag.st  { background: var(--blue-soft);   color: var(--blue);   border-color: #c5d4ed; }
     .svc-tag.ot  { background: var(--teal-soft);   color: var(--teal);   border-color: #a8d5d2; }
@@ -232,45 +227,26 @@
     .svc-tag.ev  { background: var(--amber-soft);  color: var(--amber);  border-color: #f1d58c; }
     .svc-tag.ei  { background: #fce8d8;            color: #c05621;       border-color: #f5c0a0; }
 
-    /* Info rows */
-    .inst-info { display: flex; flex-direction: column; gap: 5px; }
-    .inst-info-row {
-      display: flex; gap: 8px; align-items: flex-start; font-size: 13px;
-    }
-    .inst-info-row .icon { color: var(--muted); flex-shrink: 0; width: 14px; text-align: center; margin-top: 1px; }
-    .inst-info-row .val  { color: var(--ink); line-height: 1.5; }
-    .inst-info-row .val.muted { color: var(--muted); }
+    /* card actions */
+    .card-actions { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .card-addr { color: var(--muted); font-size: 12px; line-height: 1.5; flex: 1; min-width: 0; }
 
-    /* Insurance / referral badges */
-    .inst-meta { display: flex; gap: 6px; flex-wrap: wrap; }
-    .meta-badge {
-      font-size: 11px; padding: 2px 8px; border-radius: 999px;
-      border: 1px solid var(--line); color: var(--muted); background: var(--paper);
+    .ghost-btn {
+      min-height: 38px; padding: 0 14px; border-radius: 6px;
+      border: 1px solid #a8cfcc; background: white; color: var(--teal);
+      font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer;
+      white-space: nowrap; display: inline-flex; align-items: center;
+      transition: background .15s;
     }
-    .meta-badge.health  { background: var(--green-soft); color: var(--green); border-color: #b2d8b5; }
-    .meta-badge.referral{ background: var(--amber-soft); color: var(--amber); border-color: #f1d58c; }
-    .meta-badge.age     { background: var(--blue-soft);  color: var(--blue);  border-color: #c5d4ed; }
+    .ghost-btn:hover { background: var(--teal-soft); }
+    .ghost-btn.has-record { border-color: #f5b0a8; background: var(--red-soft); color: var(--red); }
+    .ghost-btn.has-record:hover { background: #ffd5d0; }
 
-    /* Actions */
-    /* 不設 align-items → 預設 stretch，兩子元素強制等高 */
-    .inst-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
-    .btn-record, .btn-phone {
-      display: flex; align-items: center; justify-content: center;
-      padding: 10px 16px; border-radius: 8px; border: 1.5px solid transparent;
-      font-size: 13px; font-weight: 600; font-family: inherit; line-height: 1;
-      text-decoration: none; white-space: nowrap; cursor: pointer;
-      box-sizing: border-box; appearance: none; -webkit-appearance: none;
-    }
-    .btn-record {
-      flex: 1; border-color: var(--red); background: white; color: var(--red);
-      transition: background .15s, color .15s;
-    }
-    .btn-record:hover { background: var(--red); color: white; }
-    .btn-record.has-record { background: var(--red); color: white; }
-    .btn-record.has-record:hover { background: #8b1a12; }
     .btn-phone {
-      border-color: var(--line); background: white; color: var(--ink);
-      transition: border-color .15s;
+      min-height: 38px; padding: 0 14px; border-radius: 6px;
+      border: 1px solid var(--line); background: white; color: var(--ink);
+      font-size: 13px; font-weight: 600; display: inline-flex; align-items: center;
+      text-decoration: none; white-space: nowrap; transition: border-color .15s;
     }
     .btn-phone:hover { border-color: #aab4c0; }
 
@@ -556,47 +532,43 @@
     }
 
     function buildCard(inst, selectedSvcs) {
-      const meta   = TYPE_META[inst.type] || { cls: "type-ei", icon: "🏥", label: inst.type };
-      const svcs   = (inst.services || []).map(s => {
-        const highlight = selectedSvcs && selectedSvcs.includes(s) ? ' style="font-weight:800;"' : '';
-        return `<span class="svc-tag ${SVC_CLS[s] || 'st'}"${highlight}>${s}</span>`;
+      const meta = TYPE_META[inst.type] || { cls: "type-rehab", label: inst.type };
+
+      const svcs = (inst.services || []).map(s => {
+        const hi = selectedSvcs && selectedSvcs.includes(s) ? ' style="font-weight:800;"' : '';
+        return `<span class="svc-tag ${SVC_CLS[s] || 'st'}"${hi}>${s}</span>`;
       }).join("");
 
       const locParts = [inst.city, inst.district].filter(Boolean).join(" · ");
-      const loc = locParts ? `<div class="inst-info-row"><span class="icon">📍</span><span class="val">${esc(locParts)}</span></div>` : "";
-      const addr = inst.address ? `<div class="inst-info-row"><span class="icon" style="opacity:.5">⠀</span><span class="val muted">${esc(inst.address)}</span></div>` : "";
-      const tel  = inst.phone ? `<a class="btn-phone" href="tel:${esc(inst.phone.replace(/[^0-9+]/g,""))}">${esc(inst.phone)}</a>` : "";
-
-      const metaBadges = [
-        inst.insurance === "健保" ? `<span class="meta-badge health">健保特約</span>` : `<span class="meta-badge">自費</span>`,
-        inst.referralRequired     ? `<span class="meta-badge referral">需醫師轉介</span>` : "",
-        inst.ageMax               ? `<span class="meta-badge age">${inst.ageMax} 歲以下</span>` : "",
-      ].filter(Boolean).join("");
-
-      // 主站查詢連結
-      const searchLink = `index.html?q=${encodeURIComponent(inst.name)}`;
-
+      const insLabel = inst.insurance === "健保" ? "健保" : (inst.insurance || "—");
+      const tel = inst.phone
+        ? `<a class="btn-phone" href="tel:${esc(inst.phone.replace(/[^0-9+]/g,""))}">${esc(inst.phone)}</a>`
+        : "";
       const hasRecord = (inst.penalties > 0 || inst.news > 0);
-      const negRecord = `<button class="btn-record${hasRecord ? ' has-record' : ''}"
-        data-name="${esc(inst.name)}" data-penalties="${inst.penalties||0}" data-news="${inst.news||0}"
-        onclick="showSafety(this)"
-        >${hasRecord ? '⚠ 查看紀錄' : '查看紀錄'}</button>`;
 
       return `
         <article class="inst-card ${meta.cls}">
-          <div class="inst-card-header">
-            ${meta.icon ? `<div class="inst-type-icon" aria-hidden="true">${meta.icon}</div>` : ""}
+          <div class="card-head">
             <div>
-              <div class="inst-name">${esc(inst.name)}</div>
-              <span class="inst-type-badge">${esc(meta.label)}</span>
+              <h3>${esc(inst.name)}</h3>
+              ${locParts ? `<div class="card-meta">${esc(locParts)}</div>` : ""}
             </div>
+            <span class="inst-type-badge">${esc(meta.label)}</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><strong>${inst.penalties || 0}</strong><span>裁罰紀錄</span></div>
+            <div class="metric"><strong>${inst.news || 0}</strong><span>相關新聞</span></div>
+            <div class="metric"><strong>${esc(insLabel)}</strong><span>保險</span></div>
           </div>
           <div class="svc-tags">${svcs}</div>
-          <div class="inst-info">${loc}${addr}</div>
-          <div class="inst-meta">${metaBadges}</div>
-          <div class="inst-actions">
-            ${negRecord}
-            ${tel}
+          <div class="card-actions">
+            <span class="card-addr">${esc(inst.address || "")}</span>
+            <div style="display:flex;gap:8px;flex-shrink:0;">
+              ${tel}
+              <button class="ghost-btn${hasRecord ? ' has-record' : ''}"
+                data-name="${esc(inst.name)}" data-penalties="${inst.penalties||0}" data-news="${inst.news||0}"
+                onclick="showSafety(this)">${hasRecord ? '⚠ 查看紀錄' : '查看紀錄'}</button>
+            </div>
           </div>
         </article>`;
     }
