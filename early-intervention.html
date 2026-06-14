@@ -257,10 +257,12 @@
       flex: 1; min-width: 130px; padding: 9px 14px; border-radius: 8px;
       border: 1.5px solid var(--red); background: white;
       color: var(--red); font-size: 13px; font-weight: 700;
-      text-decoration: none; text-align: center; cursor: pointer;
-      transition: background .15s, color .15s;
+      text-align: center; cursor: pointer; font-family: inherit;
+      transition: background .15s, color .15s, border-color .15s;
     }
     .btn-record:hover { background: var(--red); color: white; }
+    .btn-record.has-record { background: var(--red); color: white; border-color: var(--red); }
+    .btn-record.has-record:hover { background: #8b1a12; border-color: #8b1a12; }
     .btn-phone {
       padding: 9px 14px; border-radius: 8px;
       border: 1.5px solid var(--line); background: white;
@@ -277,6 +279,47 @@
     .state-box .state-icon { font-size: 48px; margin-bottom: 14px; }
     .state-box h3 { font-size: 18px; margin: 0 0 8px; color: var(--ink); }
     .state-box p  { font-size: 14px; margin: 0; line-height: 1.7; }
+
+    /* ── Safety modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.45);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100; padding: 24px;
+    }
+    .modal-box {
+      background: white; border-radius: 16px; width: min(480px, 100%);
+      box-shadow: 0 20px 60px rgba(0,0,0,.2); overflow: hidden;
+    }
+    .modal-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; padding: 22px 22px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .modal-name  { font-weight: 800; font-size: 17px; line-height: 1.4; }
+    .modal-close {
+      flex-shrink: 0; background: none; border: none; cursor: pointer;
+      font-size: 18px; color: var(--muted); padding: 2px 6px; border-radius: 6px;
+      line-height: 1;
+    }
+    .modal-close:hover { background: var(--paper); }
+    .modal-body  { padding: 20px 22px 24px; }
+    .modal-ok    {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--green-soft); border: 1px solid #b2d8b5;
+      color: var(--green); border-radius: 10px; padding: 14px 16px;
+      font-weight: 700; font-size: 14px;
+    }
+    .modal-warn  {
+      display: flex; flex-direction: column; gap: 10px;
+      background: var(--red-soft); border: 1px solid #f5b0a8;
+      color: var(--red); border-radius: 10px; padding: 14px 16px;
+      font-weight: 700; font-size: 14px;
+    }
+    .modal-warn a {
+      display: inline-block; margin-top: 4px; font-size: 13px; font-weight: 600;
+      color: var(--red); text-decoration: underline; text-underline-offset: 3px;
+    }
+    .modal-sub   { margin-top: 14px; font-size: 12px; color: var(--muted); line-height: 1.6; }
 
     /* ── Footer ── */
     footer {
@@ -404,6 +447,17 @@
     </div>
   </main>
 
+  <!-- 安全紀錄浮層 -->
+  <div id="safetyModal" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <div class="modal-header">
+        <div class="modal-name" id="modalName"></div>
+        <button class="modal-close" onclick="closeModal()" aria-label="關閉">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
   <footer>
     <div>資料來源：衛生福利部醫事機構基本資料、衛福部社家署早期療育資源。本頁資料定期自動更新，以政府最新公告為準。</div>
     <div style="margin-top:8px;">
@@ -419,10 +473,10 @@
     const TYPE_META = {
       "語言治療所":  { cls: "type-st",    icon: "🗣️", label: "語言治療所"    },
       "職能治療所":  { cls: "type-ot",    icon: "🤲", label: "職能治療所"    },
-      "物理治療所":  { cls: "type-pt",    icon: "🦽", label: "物理治療所"    },
+      "物理治療所":  { cls: "type-pt",    icon: "",    label: "物理治療所"    },
       "聯合評估中心":{ cls: "type-ev",    icon: "🔬", label: "聯合評估中心"  },
       "早療機構":    { cls: "type-ei",    icon: "🌱", label: "早期療育機構"  },
-      "復健科診所":  { cls: "type-rehab", icon: "🏃", label: "復健科診所"    },
+      "復健科診所":  { cls: "type-rehab", icon: "",    label: "復健科診所"    },
       "醫療院所":    { cls: "type-rehab", icon: "🏥", label: "醫療院所"      },
     };
 
@@ -520,9 +574,10 @@
       // 主站查詢連結
       const searchLink = `index.html?q=${encodeURIComponent(inst.name)}`;
 
-      const negRecord = (inst.penalties > 0 || inst.news > 0)
-        ? `<a class="btn-record" href="${searchLink}" style="background:var(--red);color:white;">⚠ 有負面紀錄</a>`
-        : `<a class="btn-record" href="${searchLink}">查詢安全紀錄</a>`;
+      const hasRecord = (inst.penalties > 0 || inst.news > 0);
+      const negRecord = `<button class="btn-record${hasRecord ? ' has-record' : ''}"
+        onclick="showSafety(${JSON.stringify(inst.name)},${inst.penalties||0},${inst.news||0})"
+        >${hasRecord ? '⚠ 安全紀錄' : '安全紀錄'}</button>`;
 
       return `
         <article class="inst-card ${meta.cls}">
@@ -548,6 +603,32 @@
         .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
         .replace(/"/g,"&quot;");
     }
+
+    function showSafety(name, penalties, news) {
+      document.getElementById("modalName").textContent = name;
+      const body = document.getElementById("modalBody");
+      if (penalties === 0 && news === 0) {
+        body.innerHTML = `
+          <div class="modal-ok">✓ 目前查無裁罰或負面新聞紀錄</div>
+          <div class="modal-sub">資料來源：衛福部裁罰公告、Google 新聞。本站定期更新，如有疑慮仍建議自行查詢主管機關。</div>`;
+      } else {
+        body.innerHTML = `
+          <div class="modal-warn">
+            <div>⚠ 發現負面紀錄：裁罰 ${penalties} 筆・相關新聞 ${news} 則</div>
+            <a href="index.html?q=${encodeURIComponent(name)}" target="_blank">查看詳細紀錄 →</a>
+          </div>
+          <div class="modal-sub">資料來源：衛福部裁罰公告、Google 新聞。點選上方連結可在機構查詢頁瀏覽完整紀錄。</div>`;
+      }
+      document.getElementById("safetyModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("safetyModal").style.display = "none";
+    }
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeModal();
+    });
   </script>
 </body>
 </html>
