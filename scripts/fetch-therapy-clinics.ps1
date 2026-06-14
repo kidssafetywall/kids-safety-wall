@@ -229,12 +229,21 @@ foreach ($ds in $nhDatasets) {
     # 只要有語言/職能/物理治療業務
     if ($svcItems -notmatch "語言治療業務|職能治療業務|物理治療業務") { continue }
 
-    $code     = "$($row."醫事機構代碼")".Trim()
-    $name     = "$($row."醫事機構名稱")".Trim()
-    $phone    = "$($row."電話")".Trim()
-    $address  = "$($row."地址")".Trim() -replace '^臺','台'
+    $code          = "$($row."醫事機構代碼")".Trim()
+    $name          = "$($row."醫事機構名稱")".Trim()
+    $phone         = "$($row."電話")".Trim()
+    $address       = "$($row."地址")".Trim() -replace '^臺','台'
+    $terminatedRaw = "$($row."終止合約或歇業日期")".Trim()
 
     if (-not $name) { continue }
+
+    # 判斷健保特約是否已終止（日期為過去日期）
+    $isTerminated  = $false
+    $terminatedDate = ""
+    if ($terminatedRaw -match '^\d{8}$') {
+      $terminatedDate = "$($terminatedRaw.Substring(0,4))-$($terminatedRaw.Substring(4,2))-$($terminatedRaw.Substring(6,2))"
+      $isTerminated   = ([int]$terminatedRaw) -lt ([int](Get-Date).ToString("yyyyMMdd"))
+    }
 
     $parsed   = Parse-CityDistrict $address
     $city     = $parsed.city
@@ -258,8 +267,11 @@ foreach ($ds in $nhDatasets) {
       insurance        = "健保"
       ageMax           = $null
       website          = ""
-      penalties        = 0
+      penalties        = if ($isTerminated) { 1 } else { 0 }
       news             = 0
+      reviews          = 0
+      nhiTerminated    = $isTerminated
+      nhiTerminatedDate= $terminatedDate
       dataSource       = "nhi-therapy-registry"
       updatedAt        = (Get-Date).ToString("yyyy-MM-dd")
     })
@@ -271,6 +283,41 @@ foreach ($ds in $nhDatasets) {
 }
 
 $merged = @($kept) + @($fresh)
+
+# ---------------------------------------------------------------------------
+# 回填新聞計數（從 review-queue.json + events.json 統計機構被提到的次數）
+# ---------------------------------------------------------------------------
+
+$queuePath  = Join-Path $dataDir "review-queue.json"
+$eventsPath = Join-Path $dataDir "events.json"
+
+$allEvents = @()
+if (Test-Path -LiteralPath $queuePath)  { $allEvents += @(Read-JsonArrayFile $queuePath) }
+if (Test-Path -LiteralPath $eventsPath) { $allEvents += @(Read-JsonArrayFile $eventsPath) }
+
+if ($allEvents.Count -gt 0) {
+  $newsCountByName = [System.Collections.Generic.Dictionary[string,int]]::new()
+  foreach ($ev in $allEvents) {
+    $evInst = $ev["institution"]
+    if (-not $evInst) { continue }
+    $evName = "$($evInst["name"])".Trim()
+    if (-not $evName -or $evName -eq "待人工分類") { continue }
+    if ($newsCountByName.ContainsKey($evName)) { $newsCountByName[$evName]++ }
+    else { $newsCountByName[$evName] = 1 }
+  }
+
+  $updated = 0
+  foreach ($inst in $merged) {
+    $name = "$($inst["name"])".Trim()
+    if ($newsCountByName.ContainsKey($name)) {
+      $inst["news"] = $newsCountByName[$name]
+      $updated++
+    }
+  }
+  Write-Host "新聞計數回填：$updated 筆機構有相關事件（共掃描 $($allEvents.Count) 則事件）"
+}
+
 Write-JsonArrayFile $outputPath $merged
 Write-Host ""
-Write-Host "完成：therapy-institutions.json 共 $($merged.Count) 筆（健保資料：$($fresh.Count) 筆）"
+$terminated = @($merged | Where-Object { "$($_["nhiTerminated"])" -eq "True" }).Count
+Write-Host "完成：therapy-institutions.json 共 $($merged.Count) 筆（健保資料：$($fresh.Count) 筆，停約：$terminated 筆）"

@@ -212,7 +212,23 @@ foreach ($inst in $allInstitutions) {
     $instNameLookup[$n] = $inst
   }
 }
-Write-Host "機構名稱快查表：$($instNameLookup.Count) 筆"
+
+# 早療機構也納入快查表
+$therapyPath = Join-Path $dataDir "therapy-institutions.json"
+if (Test-Path -LiteralPath $therapyPath) {
+  $therapyInsts = Read-JsonArrayFile $therapyPath
+  $therapyAdded = 0
+  foreach ($inst in $therapyInsts) {
+    $n = "$($inst["name"])"
+    if ($n.Length -ge 4 -and -not $instNameLookup.Contains($n)) {
+      $instNameLookup[$n] = $inst
+      $therapyAdded++
+    }
+  }
+  Write-Host "早療機構加入快查表：$therapyAdded 筆"
+}
+
+Write-Host "機構名稱快查表：$($instNameLookup.Count) 筆（含早療機構）"
 
 Write-Host "=== 兒少防火牆：新聞抓取 ==="
 Write-Host "通用查詢：6 筆  專項查詢：$($knownInstitutions.Count) 筆  上限：$MaxNewPerRun 筆新事件"

@@ -222,6 +222,11 @@
     .metric strong { display: block; font-size: 20px; margin-bottom: 2px; }
     .metric span   { color: var(--muted); font-size: 12px; }
 
+    .terminated-warn {
+      font-size: 12px; font-weight: 600; color: var(--amber); background: var(--amber-soft);
+      border: 1px solid #f1d58c; border-radius: 6px; padding: 6px 10px; line-height: 1.4;
+    }
+
     /* service tags */
     .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .svc-tag {
@@ -573,6 +578,7 @@
             <div class="metric"><strong>${inst.news || 0}</strong><span>相關新聞</span></div>
             <div class="metric"><strong>${inst.reviews || 0}</strong><span>家長回饋</span></div>
           </div>
+          ${inst.nhiTerminated ? `<div class="terminated-warn">⚠ 健保特約已終止（${esc(inst.nhiTerminatedDate || "")}），請向機構確認仍在營業</div>` : ""}
           <div class="svc-tags">${svcs}</div>
           <div class="card-actions">
             ${updated}
