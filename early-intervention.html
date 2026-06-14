@@ -252,13 +252,14 @@
     .meta-badge.age     { background: var(--blue-soft);  color: var(--blue);  border-color: #c5d4ed; }
 
     /* Actions */
-    .inst-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; align-items: center; }
+    /* 不設 align-items → 預設 stretch，兩子元素強制等高 */
+    .inst-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
     .btn-record, .btn-phone {
+      display: flex; align-items: center; justify-content: center;
       padding: 10px 16px; border-radius: 8px; border: 1.5px solid transparent;
       font-size: 13px; font-weight: 600; font-family: inherit; line-height: 1;
-      text-decoration: none; text-align: center; white-space: nowrap; cursor: pointer;
+      text-decoration: none; white-space: nowrap; cursor: pointer;
       box-sizing: border-box; appearance: none; -webkit-appearance: none;
-      display: block;
     }
     .btn-record {
       flex: 1; border-color: var(--red); background: white; color: var(--red);
