@@ -1449,18 +1449,17 @@
     function render() {
       let filtered = institutions.filter(matchesFilters);
 
+      // Remove system/meta records that are not real institutions
+      filtered = filtered.filter(i =>
+        i.name !== "待人工分類" &&
+        !(i.key && i.key.startsWith("source-"))
+      );
+
       // Default view: only show institutions with events
       const defaultView = isDefaultView();
       if (defaultView) {
         filtered = filtered.filter(i => (i.penalties || 0) + (i.news || 0) + (i.reviews || 0) > 0);
       }
-
-      // Keep "待人工分類" items but show them last
-      filtered.sort((a, b) => {
-        if (a.name === "待人工分類" && b.name !== "待人工分類") return 1;
-        if (a.name !== "待人工分類" && b.name === "待人工分類") return -1;
-        return 0;
-      });
 
       const sortBy = document.querySelector("#sortBy").value;
       if (sortBy === "penalty_date") {
@@ -1522,14 +1521,11 @@
         const closedBadge = closed
           ? `<span class="badge tag-closed" style="margin-top:6px;display:inline-block;">已停業</span>`
           : "";
-        const isUnclassified = item.name === "待人工分類";
-        const displayName = isUnclassified ? "未知機構（待補充）" : h(item.name);
-        const displayMeta = isUnclassified
-          ? `新聞事件（機構尚未確認）`
-          : `${h(item.city)}${h(item.district || "")} · ${h(item.type)}<br>${h(item.address || "")}`;
+        const displayName = h(item.name);
+        const displayMeta = `${h(item.city)}${h(item.district || "")} · ${h(item.type)}<br>${h(item.address || "")}`;
         const catMap = { "公立": "cat-public", "非營利": "cat-nonprofit", "準公共": "cat-quasi", "私立": "cat-private" };
         const catClass = catMap[item.instCategory] || "";
-        const catBadge = !isUnclassified && catClass
+        const catBadge = catClass
           ? `<span class="badge ${catClass}" style="margin-top:4px;">${item.instCategory}</span>`
           : "";
         const latestYear = getLatestEventYear(item);
