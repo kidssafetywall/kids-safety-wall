@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>早療資源查詢 | 兒少防火牆</title>
+  <meta name="description" content="查詢台灣各縣市語言治療所、職能治療所、物理治療所、聯合評估中心與早期療育機構，同時可確認機構是否有裁罰或負面紀錄。">
+  <meta name="keywords" content="早療資源,語言治療,職能治療,物理治療,聯合評估,早期療育,發展遲緩,台灣">
+  <link rel="canonical" href="https://kidssafetywall.github.io/kids-safety-wall/early-intervention.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kidssafetywall.github.io/kids-safety-wall/early-intervention.html">
+  <meta property="og:title" content="早療資源查詢 | 兒少防火牆">
+  <meta property="og:description" content="查詢台灣各縣市語言治療所、職能治療所、物理治療所、聯合評估中心，並確認機構是否有負面紀錄。">
+  <meta property="og:locale" content="zh_TW">
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --teal: #0d6b68;
+      --teal-soft: #dcefed;
+      --amber: #b7791f;
+      --amber-soft: #fff0c7;
+      --red: #b42318;
+      --red-soft: #ffe4df;
+      --blue: #315f9f;
+      --blue-soft: #e8eef8;
+      --green: #357a38;
+      --green-soft: #e7f5ec;
+      --purple: #5b3a8c;
+      --purple-soft: #ede8f5;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+
+    /* ── Nav ── */
+    .site-nav {
+      background: #12222f; padding: 16px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 18px; color: white; text-decoration: none;
+    }
+    .mark {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: #f4c542; color: #12222f; font-weight: 900;
+      box-shadow: 0 4px 12px rgba(0,0,0,.22); flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: rgba(255,255,255,.8); font-size: 14px;
+      padding: 8px 10px; border-radius: 6px;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.1); }
+    .nav-links a.active { color: white; font-weight: 600; }
+
+    /* ── Page header ── */
+    .page-header {
+      background: linear-gradient(135deg, #315f9f 0%, #1e3d6e 100%);
+      color: white; padding: 52px 28px 48px;
+    }
+    .page-header .shell { max-width: 900px; margin: 0 auto; }
+    .page-header h1 { margin: 0 0 10px; font-size: 32px; font-weight: 800; }
+    .page-header p  { margin: 0; font-size: 16px; line-height: 1.7; opacity: .88; max-width: 620px; }
+
+    /* ── Layout ── */
+    .shell { width: min(1100px, 100%); margin: 0 auto; padding: 0 24px; }
+    main { padding: 40px 0 64px; }
+
+    /* ── Guidance box ── */
+    .guidance-box {
+      background: var(--amber-soft); border: 1px solid #f1d58c;
+      border-radius: 12px; padding: 20px 24px; margin-bottom: 32px;
+    }
+    .guidance-box h3 {
+      margin: 0 0 10px; font-size: 16px; font-weight: 800; color: #67470b;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .guidance-steps {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px;
+    }
+    .guidance-step {
+      display: flex; align-items: center; gap: 8px;
+      background: white; border-radius: 8px; padding: 8px 14px;
+      border: 1px solid #f1d58c; font-size: 13px; color: #67470b;
+    }
+    .guidance-step .num {
+      width: 22px; height: 22px; border-radius: 50%; background: var(--amber);
+      color: white; font-weight: 800; font-size: 12px;
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+
+    /* ── Filter panel ── */
+    .filter-panel {
+      background: white; border-radius: 14px; border: 1px solid var(--line);
+      padding: 24px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+    .filter-group { display: flex; flex-direction: column; gap: 8px; }
+    .filter-label {
+      font-size: 12px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+
+    /* Service toggle chips */
+    .svc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .svc-chip input[type="checkbox"] { display: none; }
+    .svc-chip label {
+      display: flex; align-items: center; gap: 6px; cursor: pointer;
+      padding: 8px 14px; border-radius: 999px; border: 2px solid var(--line);
+      font-size: 14px; font-weight: 600; transition: all .15s; user-select: none;
+      background: white; color: var(--ink);
+    }
+    .svc-chip input:checked + label {
+      border-color: currentColor; background: currentColor;
+    }
+    .svc-chip input:checked + label span.chip-text { color: white; }
+    .svc-chip label:hover { border-color: #aab4c0; }
+
+    .svc-chip.st  label { color: var(--blue);   }
+    .svc-chip.ot  label { color: var(--teal);   }
+    .svc-chip.pt  label { color: var(--green);  }
+    .svc-chip.psy label { color: var(--purple); }
+    .svc-chip.ev  label { color: var(--amber);  }
+    .svc-chip.ei  label { color: #c05621;       }
+
+    .svc-chip input:checked + label .chip-dot { background: white; }
+    .chip-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: currentColor; flex-shrink: 0;
+    }
+
+    .filter-divider { width: 1px; background: var(--line); align-self: stretch; }
+
+    /* Dropdowns */
+    .filter-select {
+      height: 42px; padding: 0 36px 0 12px; border-radius: 8px;
+      border: 1.5px solid var(--line); background: white; font-size: 14px;
+      cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23667085' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center;
+      min-width: 140px;
+    }
+    .filter-select:focus { outline: none; border-color: var(--blue); }
+
+    /* Filter logic note */
+    .filter-note {
+      font-size: 12px; color: var(--muted); margin-top: 14px;
+      padding-top: 12px; border-top: 1px solid var(--line);
+    }
+
+    /* ── Results bar ── */
+    .results-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 18px; flex-wrap: wrap; gap: 10px;
+    }
+    .results-count { font-size: 15px; font-weight: 700; }
+    .results-count span { color: var(--blue); }
+    .clear-btn {
+      font-size: 13px; color: var(--muted); background: none;
+      border: 1px solid var(--line); border-radius: 6px;
+      padding: 6px 12px; cursor: pointer;
+    }
+    .clear-btn:hover { border-color: #aab4c0; color: var(--ink); }
+
+    /* ── Institution cards ── */
+    .inst-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .inst-card {
+      background: white; border-radius: 12px; border: 1px solid var(--line);
+      padding: 20px; display: flex; flex-direction: column; gap: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.04);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .inst-card:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(49,95,159,.1); }
+
+    .inst-card-header { display: flex; align-items: flex-start; gap: 10px; }
+    .inst-type-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: grid; place-items: center; font-size: 18px; flex-shrink: 0;
+    }
+    .inst-name { font-weight: 800; font-size: 15px; line-height: 1.4; flex: 1; }
+    .inst-type-badge {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+      margin-top: 3px;
+    }
+
+    /* Type colors */
+    .type-st     .inst-type-icon { background: var(--blue-soft);   }
+    .type-ot     .inst-type-icon { background: var(--teal-soft);   }
+    .type-pt     .inst-type-icon { background: var(--green-soft);  }
+    .type-ev     .inst-type-icon { background: var(--amber-soft);  }
+    .type-ei     .inst-type-icon { background: #fce8d8;            }
+    .type-rehab  .inst-type-icon { background: var(--purple-soft); }
+
+    .type-st     .inst-type-badge { background: var(--blue-soft);   color: var(--blue);   border: 1px solid #c5d4ed; }
+    .type-ot     .inst-type-badge { background: var(--teal-soft);   color: var(--teal);   border: 1px solid #a8d5d2; }
+    .type-pt     .inst-type-badge { background: var(--green-soft);  color: var(--green);  border: 1px solid #b2d8b5; }
+    .type-ev     .inst-type-badge { background: var(--amber-soft);  color: var(--amber);  border: 1px solid #f1d58c; }
+    .type-ei     .inst-type-badge { background: #fce8d8;            color: #c05621;       border: 1px solid #f5c0a0; }
+    .type-rehab  .inst-type-badge { background: var(--purple-soft); color: var(--purple); border: 1px solid #c9b5e0; }
+
+    /* Services row */
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .svc-tag {
+      font-size: 11px; font-weight: 600; padding: 2px 9px;
+      border-radius: 999px; border: 1px solid;
+    }
+    .svc-tag.st  { background: var(--blue-soft);   color: var(--blue);   border-color: #c5d4ed; }
+    .svc-tag.ot  { background: var(--teal-soft);   color: var(--teal);   border-color: #a8d5d2; }
+    .svc-tag.pt  { background: var(--green-soft);  color: var(--green);  border-color: #b2d8b5; }
+    .svc-tag.psy { background: var(--purple-soft); color: var(--purple); border-color: #c9b5e0; }
+    .svc-tag.ev  { background: var(--amber-soft);  color: var(--amber);  border-color: #f1d58c; }
+    .svc-tag.ei  { background: #fce8d8;            color: #c05621;       border-color: #f5c0a0; }
+
+    /* Info rows */
+    .inst-info { display: flex; flex-direction: column; gap: 5px; }
+    .inst-info-row {
+      display: flex; gap: 8px; align-items: flex-start; font-size: 13px;
+    }
+    .inst-info-row .icon { color: var(--muted); flex-shrink: 0; width: 14px; text-align: center; margin-top: 1px; }
+    .inst-info-row .val  { color: var(--ink); line-height: 1.5; }
+    .inst-info-row .val.muted { color: var(--muted); }
+
+    /* Insurance / referral badges */
+    .inst-meta { display: flex; gap: 6px; flex-wrap: wrap; }
+    .meta-badge {
+      font-size: 11px; padding: 2px 8px; border-radius: 999px;
+      border: 1px solid var(--line); color: var(--muted); background: var(--paper);
+    }
+    .meta-badge.health  { background: var(--green-soft); color: var(--green); border-color: #b2d8b5; }
+    .meta-badge.referral{ background: var(--amber-soft); color: var(--amber); border-color: #f1d58c; }
+    .meta-badge.age     { background: var(--blue-soft);  color: var(--blue);  border-color: #c5d4ed; }
+
+    /* Actions */
+    .inst-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .btn-record {
+      flex: 1; min-width: 130px; padding: 9px 14px; border-radius: 8px;
+      border: 1.5px solid var(--red); background: white;
+      color: var(--red); font-size: 13px; font-weight: 700;
+      text-decoration: none; text-align: center; cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+    .btn-record:hover { background: var(--red); color: white; }
+    .btn-phone {
+      padding: 9px 14px; border-radius: 8px;
+      border: 1.5px solid var(--line); background: white;
+      color: var(--ink); font-size: 13px; font-weight: 600;
+      text-decoration: none; text-align: center;
+      transition: border-color .15s;
+    }
+    .btn-phone:hover { border-color: #aab4c0; }
+
+    /* ── Empty / loading states ── */
+    .state-box {
+      text-align: center; padding: 64px 24px; color: var(--muted);
+    }
+    .state-box .state-icon { font-size: 48px; margin-bottom: 14px; }
+    .state-box h3 { font-size: 18px; margin: 0 0 8px; color: var(--ink); }
+    .state-box p  { font-size: 14px; margin: 0; line-height: 1.7; }
+
+    /* ── Footer ── */
+    footer {
+      padding: 28px; color: var(--muted); font-size: 14px; text-align: center;
+      border-top: 1px solid var(--line);
+    }
+    footer a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 640px) {
+      .page-header h1 { font-size: 24px; }
+      .site-nav { padding: 14px 16px; }
+      .shell { padding: 0 16px; }
+      main { padding: 28px 0 48px; }
+      .filter-panel { padding: 18px; }
+      .filter-row { flex-direction: column; gap: 14px; }
+      .filter-divider { display: none; }
+      .inst-grid { grid-template-columns: 1fr; }
+      .guidance-steps { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="主導覽">
+    <a href="index.html" class="brand">
+      <div class="mark" aria-hidden="true">防</div>
+      <span>兒少防火牆</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">機構查詢</a>
+      <a href="early-intervention.html" class="active">早療資源</a>
+      <a href="resources.html">家長資源</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="shell">
+      <h1>早療資源查詢</h1>
+      <p>依孩子的需求選擇服務類型，快速找到全台語言治療所、職能治療所、物理治療所、聯合評估中心與早期療育機構，並可同步確認機構是否有負面紀錄。</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="shell">
+
+      <!-- 早療流程說明 -->
+      <div class="guidance-box" role="note">
+        <h3>💡 不確定孩子需要什麼？先做「聯合評估」</h3>
+        <p style="margin:0 0 4px;font-size:13px;color:#67470b;line-height:1.7;">
+          若孩子有發展疑慮但尚未確診，建議先至縣市「發展遲緩兒童聯合評估中心」由多科醫師共同評估，
+          再依報告進行針對性療育，0–6 歲符合資格者可申請政府補助。
+        </p>
+        <div class="guidance-steps">
+          <div class="guidance-step"><span class="num">1</span>向縣市社會局通報轉介</div>
+          <div class="guidance-step"><span class="num">2</span>至聯合評估中心多科會診</div>
+          <div class="guidance-step"><span class="num">3</span>依報告選擇療育機構</div>
+          <div class="guidance-step"><span class="num">4</span>申請政府療育補助</div>
+        </div>
+      </div>
+
+      <!-- 篩選器 -->
+      <div class="filter-panel">
+        <div class="filter-row">
+
+          <div class="filter-group" style="flex:1;min-width:260px;">
+            <div class="filter-label">孩子需要哪些服務？（可複選，同時顯示全部符合的機構）</div>
+            <div class="svc-chips">
+              <label class="svc-chip st">
+                <input type="checkbox" value="語言治療" onchange="applyFilter()">
+                <span><span class="chip-dot"></span><span class="chip-text">語言治療</span></span>
+              </label>
+              <label class="svc-chip ot">
+                <input type="checkbox" value="職能治療" onchange="applyFilter()">
+                <span><span class="chip-dot"></span><span class="chip-text">職能治療</span></span>
+              </label>
+              <label class="svc-chip pt">
+                <input type="checkbox" value="物理治療" onchange="applyFilter()">
+                <span><span class="chip-dot"></span><span class="chip-text">物理治療</span></span>
+              </label>
+              <label class="svc-chip psy">
+                <input type="checkbox" value="心理評估" onchange="applyFilter()">
+                <span><span class="chip-dot"></span><span class="chip-text">心理評估</span></span>
+              </label>
+              <label class="svc-chip ev">
+                <input type="checkbox" value="聯合評估" onchange="applyFilter()">
+                <span><span class="chip-dot"></span><span class="chip-text">聯合評估</span></span>
+              </label>
+              <label class="svc-chip ei">
+                <input type="checkbox" value="早療課程" onchange="applyFilter()">
+                <span><span class="chip-dot"></span><span class="chip-text">早療課程</span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-divider" aria-hidden="true"></div>
+
+          <div class="filter-group">
+            <div class="filter-label">縣市</div>
+            <select class="filter-select" id="citySelect" onchange="applyFilter()">
+              <option value="">全台</option>
+              <option>台北市</option><option>新北市</option><option>桃園市</option>
+              <option>台中市</option><option>台南市</option><option>高雄市</option>
+              <option>基隆市</option><option>新竹市</option><option>嘉義市</option>
+              <option>新竹縣</option><option>苗栗縣</option><option>彰化縣</option>
+              <option>南投縣</option><option>雲林縣</option><option>嘉義縣</option>
+              <option>屏東縣</option><option>宜蘭縣</option><option>花蓮縣</option>
+              <option>台東縣</option><option>澎湖縣</option><option>金門縣</option>
+              <option>連江縣</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-label">健保</div>
+            <select class="filter-select" id="insuranceSelect" onchange="applyFilter()">
+              <option value="">不限</option>
+              <option value="健保">有健保</option>
+              <option value="自費">純自費</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="filter-note">
+          勾選多項服務時，只顯示<strong>同時提供所有所選服務</strong>的機構。
+          若沒有符合結果，可能該縣市尚無單一機構提供全部所需服務，需至多間機構分別接受療育。
+        </div>
+      </div>
+
+      <!-- 結果列 -->
+      <div class="results-bar">
+        <div class="results-count" id="resultsCount">載入中…</div>
+        <button class="clear-btn" onclick="clearFilter()">清除篩選</button>
+      </div>
+
+      <!-- 機構列表 -->
+      <div id="instGrid" class="inst-grid" aria-live="polite" aria-label="機構清單"></div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>資料來源：衛生福利部醫事機構基本資料、衛福部社家署早期療育資源。本頁資料定期自動更新，以政府最新公告為準。</div>
+    <div style="margin-top:8px;">
+      <a href="index.html">機構安全紀錄查詢</a>
+      &nbsp;·&nbsp;
+      <a href="resources.html">家長資源中心</a>
+    </div>
+    <div style="margin-top:8px;font-size:12px;color:#aab4c0;">© 兒少防火牆 · 資料來源：政府公開資料</div>
+  </footer>
+
+  <script>
+    // ── 機構類型 → 顯示設定 ──
+    const TYPE_META = {
+      "語言治療所":  { cls: "type-st",    icon: "🗣️", label: "語言治療所"    },
+      "職能治療所":  { cls: "type-ot",    icon: "🤲", label: "職能治療所"    },
+      "物理治療所":  { cls: "type-pt",    icon: "🦽", label: "物理治療所"    },
+      "聯合評估中心":{ cls: "type-ev",    icon: "🔬", label: "聯合評估中心"  },
+      "早療機構":    { cls: "type-ei",    icon: "🌱", label: "早期療育機構"  },
+      "復健科診所":  { cls: "type-rehab", icon: "🏃", label: "復健科診所"    },
+      "醫療院所":    { cls: "type-rehab", icon: "🏥", label: "醫療院所"      },
+    };
+
+    const SVC_CLS = {
+      "語言治療": "st", "職能治療": "ot", "物理治療": "pt",
+      "心理評估": "psy", "聯合評估": "ev", "早療課程": "ei"
+    };
+
+    let allInstitutions = [];
+
+    // ── 載入資料 ──
+    fetch("data/therapy-institutions.json")
+      .then(r => {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(data => {
+        allInstitutions = data;
+        applyFilter();
+      })
+      .catch(() => {
+        document.getElementById("resultsCount").textContent = "";
+        document.getElementById("instGrid").innerHTML = `
+          <div class="state-box" style="grid-column:1/-1">
+            <div class="state-icon">🔧</div>
+            <h3>資料尚未建立</h3>
+            <p>請執行 <code>fetch-therapy-clinics.ps1</code> 與 <code>fetch-early-intervention-centers.ps1</code> 後重新整理。</p>
+          </div>`;
+      });
+
+    // ── 篩選邏輯 ──
+    function applyFilter() {
+      const selected = [...document.querySelectorAll('.svc-chip input:checked')].map(c => c.value);
+      const city     = document.getElementById("citySelect").value;
+      const ins      = document.getElementById("insuranceSelect").value;
+
+      const filtered = allInstitutions.filter(inst => {
+        // AND 邏輯：機構需提供所有勾選服務
+        if (selected.length > 0 && !selected.every(s => inst.services && inst.services.includes(s))) return false;
+        if (city && inst.city !== city) return false;
+        if (ins === "健保" && inst.insurance !== "健保") return false;
+        if (ins === "自費" && inst.insurance !== "自費") return false;
+        return true;
+      });
+
+      renderResults(filtered, selected);
+    }
+
+    function clearFilter() {
+      document.querySelectorAll('.svc-chip input').forEach(c => c.checked = false);
+      document.getElementById("citySelect").value = "";
+      document.getElementById("insuranceSelect").value = "";
+      applyFilter();
+    }
+
+    // ── 渲染卡片 ──
+    function renderResults(list, selectedSvcs) {
+      const countEl = document.getElementById("resultsCount");
+      const gridEl  = document.getElementById("instGrid");
+
+      countEl.innerHTML = `找到 <span>${list.length}</span> 間機構`;
+
+      if (list.length === 0) {
+        gridEl.innerHTML = `
+          <div class="state-box" style="grid-column:1/-1">
+            <div class="state-icon">🔍</div>
+            <h3>沒有符合條件的機構</h3>
+            <p>同時提供所有選擇服務的機構可能尚未收錄，或需至多間機構分別接受不同療育。<br>
+               試著取消部分條件，或直接搜尋鄰近縣市。</p>
+          </div>`;
+        return;
+      }
+
+      gridEl.innerHTML = list.map(inst => buildCard(inst, selectedSvcs)).join("");
+    }
+
+    function buildCard(inst, selectedSvcs) {
+      const meta   = TYPE_META[inst.type] || { cls: "type-ei", icon: "🏥", label: inst.type };
+      const svcs   = (inst.services || []).map(s => {
+        const highlight = selectedSvcs && selectedSvcs.includes(s) ? ' style="font-weight:800;"' : '';
+        return `<span class="svc-tag ${SVC_CLS[s] || 'st'}"${highlight}>${s}</span>`;
+      }).join("");
+
+      const locParts = [inst.city, inst.district].filter(Boolean).join(" · ");
+      const loc = locParts ? `<div class="inst-info-row"><span class="icon">📍</span><span class="val">${esc(locParts)}</span></div>` : "";
+      const addr = inst.address ? `<div class="inst-info-row"><span class="icon" style="opacity:.5">⠀</span><span class="val muted">${esc(inst.address)}</span></div>` : "";
+      const tel  = inst.phone ? `<a class="btn-phone" href="tel:${esc(inst.phone.replace(/[^0-9+]/g,""))}">${esc(inst.phone)}</a>` : "";
+
+      const metaBadges = [
+        inst.insurance === "健保" ? `<span class="meta-badge health">健保特約</span>` : `<span class="meta-badge">自費</span>`,
+        inst.referralRequired     ? `<span class="meta-badge referral">需醫師轉介</span>` : "",
+        inst.ageMax               ? `<span class="meta-badge age">${inst.ageMax} 歲以下</span>` : "",
+      ].filter(Boolean).join("");
+
+      // 主站查詢連結
+      const searchLink = `index.html?q=${encodeURIComponent(inst.name)}`;
+
+      const negRecord = (inst.penalties > 0 || inst.news > 0)
+        ? `<a class="btn-record" href="${searchLink}" style="background:var(--red);color:white;">⚠ 有負面紀錄</a>`
+        : `<a class="btn-record" href="${searchLink}">查詢安全紀錄</a>`;
+
+      return `
+        <article class="inst-card ${meta.cls}">
+          <div class="inst-card-header">
+            <div class="inst-type-icon" aria-hidden="true">${meta.icon}</div>
+            <div>
+              <div class="inst-name">${esc(inst.name)}</div>
+              <span class="inst-type-badge">${esc(meta.label)}</span>
+            </div>
+          </div>
+          <div class="svc-tags">${svcs}</div>
+          <div class="inst-info">${loc}${addr}</div>
+          <div class="inst-meta">${metaBadges}</div>
+          <div class="inst-actions">
+            ${negRecord}
+            ${tel}
+          </div>
+        </article>`;
+    }
+
+    function esc(s) {
+      return String(s || "")
+        .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;");
+    }
+  </script>
+</body>
+</html>
