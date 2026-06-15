@@ -20,7 +20,7 @@ if %errorlevel% neq 0 (
 )
 
 echo [2/2] Rebuilding site data with coordinates...
-powershell -ExecutionPolicy Bypass -File ".\scripts\update-data.ps1" -MaxImportedPerSource 9999
+powershell -ExecutionPolicy Bypass -File ".\scripts\update-data.ps1"
 if %errorlevel% neq 0 (
     echo FAILED: update-data.ps1
     cmd /k
