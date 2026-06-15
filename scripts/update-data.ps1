@@ -549,7 +549,7 @@ if (Test-Path $geocachePath) {
   foreach ($inst in $institutions) {
     $k = "$($inst.key)"
     $entry = $geoObj.PSObject.Properties[$k]
-    if ($entry) {
+    if ($entry -and $entry.Value -and $entry.Value.lat) {
       $inst["lat"] = [double]$entry.Value.lat
       $inst["lng"] = [double]$entry.Value.lng
       $geoMerged++

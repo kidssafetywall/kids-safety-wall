@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+﻿#Requires -Version 5.1
 param(
     [int]$MaxRequests = 500,
     [int]$DelayMs     = 1300,
@@ -88,13 +88,16 @@ foreach ($inst in $institutions) {
                     Write-Host "  [$queued/$MaxRequests] $name -> $lat, $lon"
                 }
             } else {
+                $cacheDict[$key] = $null
                 $failed++
                 Write-Host "  [OUT] $name ($lat,$lon)"
             }
         } else {
+            $cacheDict[$key] = $null
             $failed++
         }
     } catch {
+        $cacheDict[$key] = $null
         $failed++
         Write-Host "  [ERR] $name : $_"
     }

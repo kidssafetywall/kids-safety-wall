@@ -154,7 +154,7 @@ function saveCache() {
 
 async function main() {
   const provider = USE_OSM ? 'Nominatim/OSM (free)' : 'Mapbox';
-  const todo = institutions.filter(i => i.key && !cache[i.key]);
+  const todo = institutions.filter(i => i.key && !(i.key in cache));
   const cached = Object.keys(cache).length;
   const runCount = Math.min(MAX_REQUESTS, todo.length);
   console.log(`Provider: ${provider}`);
@@ -176,6 +176,7 @@ async function main() {
       if (geocoded % 20 === 0) saveCache();
       console.log(`[OK] ${inst.name} → ${result.lat.toFixed(5)}, ${result.lng.toFixed(5)}`);
     } else {
+      cache[inst.key] = null;
       failed++;
       process.stdout.write('.');
     }
