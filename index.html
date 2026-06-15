@@ -502,16 +502,6 @@
     .abuse-badge  { font-size: 11px; color: #7b1515; background: #fde8e8; border: 1px solid #f5a3a3; border-radius: 999px; padding: 2px 8px; white-space: nowrap; display: inline-block; font-weight: 600; }
     .risk-sub     { font-size: 10px; color: var(--muted); text-align: right; max-width: 130px; line-height: 1.3; margin-top: 2px; }
 
-    .recent-event-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; max-height: 420px; overflow-y: auto; }
-    .recent-event-item { padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: #fbfcfd; cursor: pointer; transition: background .12s; }
-    .recent-event-item:hover { background: var(--teal-soft); border-color: #a8cfcc; }
-    .rei-name { font-size: 13px; font-weight: 700; color: var(--ink); overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; }
-    .rei-meta { font-size: 11px; color: var(--muted); margin-top: 3px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-    .rei-badge { font-size: 10px; padding: 1px 6px; border-radius: 999px; font-weight: 600; }
-    .rei-badge.high { background: #fdecea; color: #b42318; border: 1px solid #f5c6c6; }
-    .rei-badge.mid  { background: #fff0c7; color: #b7791f; border: 1px solid #f0d090; }
-    .rei-badge.low  { background: #dcefed; color: #0d6b68; border: 1px solid #a8cfcc; }
-    .rei-date { font-size: 11px; color: var(--muted); }
 
     .card-actions {
       display: flex;
@@ -867,14 +857,9 @@
           </ul>
         </section>
 
-        <section class="panel" id="recentPanel">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-            <h2 style="margin:0;">最近裁罰</h2>
-            <a href="stats.html" style="font-size:12px;color:var(--teal);text-decoration:none;">統計總覽 →</a>
-          </div>
-          <ul class="recent-event-list" id="recentEventList">
-            <li style="color:var(--muted);font-size:13px;">載入中…</li>
-          </ul>
+        <section class="panel" style="display:flex;gap:8px;">
+          <button onclick="openRecentModal()" class="ghost-btn" style="flex:1;font-size:13px;">最近裁罰</button>
+          <a href="stats.html" class="ghost-btn" style="flex:1;font-size:13px;text-decoration:none;text-align:center;display:flex;align-items:center;justify-content:center;">統計總覽</a>
         </section>
       </aside>
 
@@ -938,6 +923,16 @@
     </div>
     <div style="margin-top:8px;font-size:12px;color:#aab4c0;">© 兒少防火牆 · 資料來源：政府公開資料 · 本平台不儲存個人識別資訊</div>
   </footer>
+
+  <!-- 最近裁罰 Modal -->
+  <div class="modal-overlay" id="recentModal" role="dialog" aria-modal="true" aria-labelledby="recentModalTitle" onclick="if(event.target===this)closeRecentModal()">
+    <div class="modal" style="width:min(680px,100%);">
+      <button class="modal-close" type="button" onclick="closeRecentModal()" aria-label="關閉">✕</button>
+      <h2 id="recentModalTitle" style="margin:0 0 4px;">最近 10 筆裁罰</h2>
+      <p style="margin:0 0 20px;font-size:13px;color:var(--muted);">依處分日期排序，點選機構名稱可查看完整紀錄。<a href="stats.html" style="color:var(--teal);margin-left:8px;">查看統計總覽 →</a></p>
+      <div id="recentModalContent" style="font-size:14px;color:var(--muted);">載入中…</div>
+    </div>
+  </div>
 
   <!-- 機構詳細紀錄 Modal -->
   <div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
@@ -2138,46 +2133,75 @@
         `<table style="border-collapse:collapse;">${rows}</table>`;
     })();
 
-    // Recent 10 penalties panel
+    // Recent penalties modal
     (() => {
-      const data = window.SAFETY_WALL_DATA;
-      if (!data) return;
-      const items = [];
       const reDate = /處分日期[：:]\s*(\d{4}\/\d{2}\/\d{2})/;
-      (data.institutions || []).forEach(inst => {
-        if (!inst.name || inst.name === '待人工分類') return;
-        (inst.events || []).forEach(ev => {
-          if (ev.category !== 'penalty') return;
-          let date = ev.date && ev.date !== 'unknown' ? ev.date.replace(/\//g, '-') : '';
-          if (!date && ev.summary) {
-            const m = ev.summary.match(reDate);
-            if (m) date = m[1].replace(/\//g, '-');
-          }
-          if (!date) return;
-          items.push({ date, inst, ev });
-        });
-      });
-      items.sort((a, b) => b.date.localeCompare(a.date));
-      const seen = new Set();
-      const top10 = items.filter(x => {
-        const k = x.inst.key + x.ev.id;
-        if (seen.has(k)) return false;
-        seen.add(k);
-        return true;
-      }).slice(0, 6);
-
       const riskLabel = { high: '高風險', mid: '中風險', low: '查證中' };
-      const ul = document.getElementById('recentEventList');
-      if (!top10.length) { ul.innerHTML = '<li style="color:var(--muted);font-size:13px;">暫無資料</li>'; return; }
-      ul.innerHTML = top10.map(({ date, inst, ev }) => {
-        const badge = `<span class="rei-badge ${inst.risk}">${riskLabel[inst.risk] || ''}</span>`;
-        const city = inst.city || '';
-        const violation = (ev.penaltyViolation || '').replace(/^第\S+\s*/, '').substring(0, 20);
-        return `<li class="recent-event-item" onclick="showDetail('${inst.key}')">
-          <div class="rei-name">${inst.name}</div>
-          <div class="rei-meta">${badge}<span>${city}</span><span>·</span><span class="rei-date">${date}</span>${violation ? `<span>· ${violation}</span>` : ''}</div>
-        </li>`;
-      }).join('');
+      const riskColor = { high: '#b42318', mid: '#b7791f', low: '#0d6b68' };
+      const riskBg   = { high: '#fdecea', mid: '#fff0c7', low: '#dcefed' };
+
+      let built = false;
+      function buildRecentModal() {
+        if (built) return;
+        built = true;
+        const data = window.SAFETY_WALL_DATA;
+        if (!data) return;
+        const items = [];
+        (data.institutions || []).forEach(inst => {
+          if (!inst.name || inst.name === '待人工分類') return;
+          (inst.events || []).forEach(ev => {
+            if (ev.category !== 'penalty') return;
+            let date = ev.date && ev.date !== 'unknown' ? ev.date.replace(/\//g, '-') : '';
+            if (!date && ev.summary) {
+              const m = ev.summary.match(reDate);
+              if (m) date = m[1].replace(/\//g, '-');
+            }
+            if (!date) return;
+            items.push({ date, inst, ev });
+          });
+        });
+        items.sort((a, b) => b.date.localeCompare(a.date));
+        const seen = new Set();
+        const top10 = items.filter(x => {
+          const k = x.inst.key + x.ev.id;
+          if (seen.has(k)) return false;
+          seen.add(k);
+          return true;
+        }).slice(0, 10);
+
+        const rows = top10.map(({ date, inst, ev }) => {
+          const violation = (ev.penaltyViolation || '').replace(/^第\S+\s*/, '') || (ev.title || '').replace(/^主管機關裁罰[：:]\s*/, '');
+          const amount = (ev.penaltyContent || '').replace(/罰鍰[：:]?\s*/, '');
+          const risk = inst.risk || 'low';
+          const badge = `<span style="display:inline-block;font-size:11px;padding:2px 7px;border-radius:999px;font-weight:700;background:${riskBg[risk]};color:${riskColor[risk]};border:1px solid ${riskColor[risk]}40;">${riskLabel[risk]}</span>`;
+          return `<tr style="cursor:pointer;" onclick="closeRecentModal();showDetail('${inst.key}')">
+            <td style="padding:10px 12px;border-bottom:1px solid var(--line);">
+              <div style="font-weight:700;color:var(--ink);margin-bottom:3px;">${inst.name}</div>
+              <div style="font-size:12px;color:var(--muted);">${badge} ${inst.city || ''} · ${inst.type || ''}</div>
+            </td>
+            <td style="padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;color:var(--muted);font-size:13px;">${date}</td>
+            <td style="padding:10px 12px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);max-width:200px;">${violation.substring(0,40)}${amount ? `<br><strong style="color:var(--ink);">${amount}</strong>` : ''}</td>
+          </tr>`;
+        }).join('');
+
+        document.getElementById('recentModalContent').innerHTML = top10.length
+          ? `<table style="width:100%;border-collapse:collapse;"><thead><tr>
+              <th style="text-align:left;padding:6px 12px;font-size:12px;color:var(--muted);border-bottom:2px solid var(--line);">機構</th>
+              <th style="text-align:left;padding:6px 12px;font-size:12px;color:var(--muted);border-bottom:2px solid var(--line);white-space:nowrap;">裁罰日期</th>
+              <th style="text-align:left;padding:6px 12px;font-size:12px;color:var(--muted);border-bottom:2px solid var(--line);">違規內容</th>
+            </tr></thead><tbody>${rows}</tbody></table>`
+          : '<p>暫無資料</p>';
+      }
+
+      window.openRecentModal = function() {
+        buildRecentModal();
+        document.getElementById('recentModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      };
+      window.closeRecentModal = function() {
+        document.getElementById('recentModal').classList.remove('open');
+        document.body.style.overflow = '';
+      };
     })();
   </script>
 </body>
