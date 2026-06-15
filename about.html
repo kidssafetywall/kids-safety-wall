@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>關於我們 | 兒少防火牆</title>
+  <meta name="description" content="兒少防火牆是一個公益網站，整合台灣教育機構的官方裁罰紀錄、司法判決與新聞資料，讓家長更容易掌握孩子就讀機構的安全資訊。">
+  <link rel="canonical" href="https://kidssafetywall.github.io/kids-safety-wall/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kidssafetywall.github.io/kids-safety-wall/about.html">
+  <meta property="og:title" content="關於我們 | 兒少防火牆">
+  <meta property="og:description" content="兒少防火牆是一個公益網站，整合台灣教育機構的官方裁罰紀錄、司法判決與新聞資料，讓家長更容易掌握孩子就讀機構的安全資訊。">
+  <meta property="og:image" content="https://kidssafetywall.github.io/kids-safety-wall/assets/school-safety-hero.png">
+  <meta property="og:locale" content="zh_TW">
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --teal: #0d6b68;
+      --teal-soft: #dcefed;
+      --amber: #b7791f;
+      --amber-soft: #fff0c7;
+      --red: #b42318;
+      --shadow: 0 18px 55px rgba(23, 32, 42, .14);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+
+    .site-nav {
+      background: #12222f;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 18px; color: white; text-decoration: none;
+    }
+    .mark {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: #f4c542; color: #12222f; font-weight: 900;
+      box-shadow: 0 4px 12px rgba(0,0,0,.22); flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: rgba(255,255,255,.8); font-size: 14px;
+      padding: 8px 10px; border-radius: 6px;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.1); }
+    .nav-links a.active { color: white; font-weight: 600; }
+    .nav-links a.donate-link {
+      background: rgba(244,197,66,.18); color: #f4c542; font-weight: 700;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #12222f 0%, #1a3347 100%);
+      color: white; padding: 52px 28px 48px;
+    }
+    .page-header .shell { max-width: 860px; margin: 0 auto; }
+    .page-header h1 { margin: 0 0 10px; font-size: 32px; font-weight: 800; }
+    .page-header p  { margin: 0; font-size: 16px; line-height: 1.7; opacity: .88; max-width: 600px; }
+
+    .shell { width: min(860px, 100%); margin: 0 auto; padding: 0 24px; }
+    main { padding: 48px 0 64px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-size: 20px; font-weight: 800; margin: 0 0 18px;
+      padding-bottom: 12px; border-bottom: 2px solid var(--line);
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    .card {
+      background: white; border-radius: 12px; padding: 24px 28px;
+      border: 1px solid var(--line); margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+    }
+    .card p { margin: 0 0 12px; line-height: 1.8; color: var(--ink); }
+    .card p:last-child { margin: 0; }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .source-card {
+      background: white; border-radius: 10px; padding: 18px;
+      border: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px;
+    }
+    .source-card .source-name { font-weight: 700; font-size: 15px; }
+    .source-card .source-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .donate-box {
+      background: linear-gradient(135deg, #0d6b68 0%, #0a4f4d 100%);
+      border-radius: 16px; padding: 36px 32px; text-align: center; color: white;
+    }
+    .donate-box h3 { margin: 0 0 12px; font-size: 22px; font-weight: 800; }
+    .donate-box p  { margin: 0 0 24px; opacity: .88; line-height: 1.7; font-size: 15px; }
+    .donate-btn {
+      display: inline-block;
+      background: #f4c542; color: #12222f;
+      font-weight: 800; font-size: 16px;
+      padding: 14px 32px; border-radius: 8px;
+      text-decoration: none;
+      transition: opacity .15s;
+    }
+    .donate-btn:hover { opacity: .88; }
+
+    .contact-card {
+      background: white; border-radius: 12px; padding: 24px 28px;
+      border: 1px solid var(--line);
+      display: flex; align-items: center; gap: 18px;
+    }
+    .contact-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: var(--teal-soft); display: grid; place-items: center;
+      font-size: 24px; flex-shrink: 0;
+    }
+    .contact-label { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+    .contact-value { font-weight: 700; font-size: 16px; }
+    .contact-value a { color: var(--teal); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    footer {
+      background: #12222f; color: rgba(255,255,255,.55);
+      text-align: center; padding: 24px 28px; font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,.7); text-decoration: underline; text-underline-offset: 3px; }
+    footer .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 10px; flex-wrap: wrap; }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 14px 16px; }
+      .page-header { padding: 40px 18px 36px; }
+      .shell { padding: 0 16px; }
+      main { padding: 32px 0 48px; }
+      .nav-links a { font-size: 12px; padding: 6px 8px; }
+      .donate-box { padding: 28px 20px; }
+      .contact-card { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="主導覽">
+    <a href="index.html" class="brand">
+      <div class="mark" aria-hidden="true">防</div>
+      <span>兒少防火牆</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">機構查詢</a>
+      <a href="early-intervention.html">早療資源</a>
+      <a href="resources.html">家長資源</a>
+      <a href="about.html" class="active">關於我們</a>
+      <a href="https://portaly.cc/kidssafetywall/support" target="_blank" rel="noopener" class="donate-link">支持我們</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="shell">
+      <h1>關於兒少防火牆</h1>
+      <p>一個由志願者維護的公益網站，讓台灣的教育機構風險資訊更容易被家長看見。</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="shell">
+
+      <section class="section">
+        <h2>🛡️ 我們是誰</h2>
+        <div class="card">
+          <p>兒少防火牆是一個獨立的公益網站，由關心兒童安全的志願者自發維護，不隸屬於任何政府機關或商業組織。</p>
+          <p>我們相信，家長在為孩子選擇學校、幼兒園或補習班時，應該有權利方便地查閱機構的公開安全紀錄。然而台灣的相關資料散落在各政府網站，往往難以搜尋整合。兒少防火牆的目標，就是把這些已公開的資料彙整在一起，讓資訊查詢更容易。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>📋 資料來源</h2>
+        <div class="source-grid">
+          <div class="source-card">
+            <div class="source-name">教育部幼兒園裁罰</div>
+            <div class="source-desc">教育部公告的幼兒園違規裁罰紀錄</div>
+          </div>
+          <div class="source-card">
+            <div class="source-name">國小、國中、高中資料</div>
+            <div class="source-desc">教育部各級學校基本資料與相關紀錄</div>
+          </div>
+          <div class="source-card">
+            <div class="source-name">補習班裁罰紀錄</div>
+            <div class="source-desc">教育部公告的短期補習班違規裁罰</div>
+          </div>
+          <div class="source-card">
+            <div class="source-name">司法判決</div>
+            <div class="source-desc">司法院公開裁判書中涉及教育機構的判決</div>
+          </div>
+          <div class="source-card">
+            <div class="source-name">新聞紀錄</div>
+            <div class="source-desc">公開新聞報導中與教育機構安全相關的事件</div>
+          </div>
+          <div class="source-card">
+            <div class="source-name">家長回饋</div>
+            <div class="source-desc">由本站審核後收錄的問題機構回報</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>⚠️ 使用說明與免責聲明</h2>
+        <div class="card">
+          <p>本站所有資料均來自政府公開資料或公開新聞，我們盡力保持資料的正確性與即時性，但無法保證資料的完整性。</p>
+          <p>查詢結果僅供參考，不代表對任何機構的最終評價。裁罰紀錄代表該機構曾受到主管機關處分，但不等同於目前仍有問題。家長在做決定時，建議同時參考其他資訊來源及實地了解。</p>
+          <p>若發現資料有誤或需要更新，歡迎透過下方聯絡方式告知我們。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>☕ 支持我們</h2>
+        <div class="donate-box">
+          <h3>讓這個網站繼續運作</h3>
+          <p>兒少防火牆由志願者維護，所有功能完全免費。若這個網站對您有幫助，歡迎小額贊助支持伺服器維運與資料更新的持續投入。</p>
+          <a href="https://portaly.cc/kidssafetywall/support" target="_blank" rel="noopener" class="donate-btn">贊助支持 →</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>✉️ 聯絡我們</h2>
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">電子郵件</div>
+            <div class="contact-value"><a href="mailto:kidssafetywall@proton.me">kidssafetywall@proton.me</a></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">機構查詢</a>
+      <a href="about.html">關於我們</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="https://portaly.cc/kidssafetywall/support" target="_blank" rel="noopener">支持我們</a>
+    </div>
+    <div>© 兒少防火牆 · 資料來源：政府公開資料 · 本站不代表任何政府機關立場</div>
+  </footer>
+
+</body>
+</html>
