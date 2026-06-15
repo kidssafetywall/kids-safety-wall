@@ -1391,7 +1391,7 @@
 
     function populateFilterOptions() {
       addOptions(document.querySelector("#city"),  [...new Set(institutions.map(i => normCity(i.city)))]);
-      addOptions(document.querySelector("#type"),  [...new Set(institutions.map(i => i.type))]);
+      addOptions(document.querySelector("#type"),  [...new Set(institutions.map(i => i.type))].filter(t => t !== "司法文書"));
     }
 
     function matchesFilters(item) {
@@ -1668,9 +1668,24 @@
           leafletMarkers.push(m);
         });
       } else {
-        // Cluster view: group by city + district
-        const byArea = {};
+        // Cluster view: group by city + district; items with coords get individual markers
         items.forEach(item => {
+          if (item.lat && item.lng) {
+            const hasHigh = item.risk === "high";
+            const hasMid  = item.risk === "mid";
+            const color   = hasHigh ? "#b42318" : hasMid ? "#b7791f" : "#0d6b68";
+            const idx = institutions.indexOf(item);
+            const m = L.circleMarker([item.lat, item.lng], {
+              radius: 7, fillColor: color, color: "white",
+              weight: 2, opacity: 1, fillOpacity: 0.85
+            }).bindPopup(
+              `<div style="min-width:180px;"><strong>${h(item.name)}</strong><div style="font-size:12px;color:#667085;margin:2px 0;">${item.address ? h(item.address) : h(item.city) + (item.district ? " " + h(item.district) : "")}</div><a href="#" onclick="showDetail(${idx});return false;" style="font-size:12px;color:var(--teal);">查看紀錄 →</a></div>`
+            ).addTo(leafletMap);
+            leafletMarkers.push(m);
+          }
+        });
+        const byArea = {};
+        items.filter(item => !item.lat || !item.lng).forEach(item => {
           const city = normCity(item.city) || "全國";
           const dist = item.district || "";
           const key  = city + "|" + dist;
