@@ -92,13 +92,10 @@
       width: 36px;
       height: 36px;
       border-radius: 8px;
-      display: grid;
-      place-items: center;
-      background: #f4c542;
-      color: #12222f;
-      font-weight: 900;
+      overflow: hidden;
       box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
     }
+    .mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .nav-links {
       display: flex;
@@ -752,7 +749,7 @@
 <body>
   <header class="nav" aria-label="主導覽">
     <div class="brand">
-      <div class="mark" aria-hidden="true">防</div>
+      <div class="mark"><img src="assets/logo.jpg" alt="兒少防火牆"></div>
       <span>兒少防火牆</span>
     </div>
     <nav class="nav-links">
