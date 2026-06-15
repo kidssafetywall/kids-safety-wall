@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>統計總覽 | 兒少防火牆</title>
+  <meta name="description" content="台灣教育機構安全紀錄統計：各縣市裁罰分佈、機構類型、風險等級與最近裁罰案件。">
+  <link rel="canonical" href="https://kidssafetywall.github.io/kids-safety-wall/stats.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="統計總覽 | 兒少防火牆">
+  <meta property="og:description" content="台灣教育機構安全紀錄統計：各縣市裁罰分佈、機構類型、風險等級與最近裁罰案件。">
+  <meta property="og:locale" content="zh_TW">
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f7f8f5;
+      --panel: #ffffff;
+      --teal: #0d6b68;
+      --teal-soft: #dcefed;
+      --amber: #b7791f;
+      --amber-soft: #fff0c7;
+      --red: #b42318;
+      --red-soft: #fdecea;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+
+    .site-nav {
+      background: #12222f;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; color: white; text-decoration: none; }
+    .mark { width: 36px; height: 36px; border-radius: 8px; overflow: hidden; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,.22); }
+    .mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,.8); font-size: 14px; padding: 8px 10px; border-radius: 6px; }
+    .nav-links a:hover { background: rgba(255,255,255,.1); }
+    .nav-links a.active { color: white; font-weight: 600; }
+    .nav-links a.donate-link { background: rgba(244,197,66,.18); color: #f4c542; font-weight: 700; }
+
+    .page-header {
+      background: linear-gradient(135deg, #12222f 0%, #1a3347 100%);
+      color: white; padding: 52px 28px 48px;
+    }
+    .page-header .shell { max-width: 1000px; margin: 0 auto; }
+    .page-header h1 { margin: 0 0 10px; font-size: 32px; font-weight: 800; }
+    .page-header p  { margin: 0; font-size: 16px; line-height: 1.7; opacity: .88; max-width: 600px; }
+
+    .shell { width: min(1000px, 100%); margin: 0 auto; padding: 0 24px; }
+    main { padding: 48px 0 64px; }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+    .summary-card {
+      background: white; border-radius: 12px; padding: 22px 20px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .summary-num { font-size: 36px; font-weight: 800; line-height: 1.1; }
+    .summary-num.teal { color: var(--teal); }
+    .summary-num.red  { color: var(--red); }
+    .summary-num.amber{ color: var(--amber); }
+    .summary-num.ink  { color: var(--ink); }
+    .summary-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-size: 20px; font-weight: 800; margin: 0 0 20px;
+      padding-bottom: 12px; border-bottom: 2px solid var(--line);
+    }
+
+    .chart-panel {
+      background: white; border-radius: 12px; padding: 24px 28px;
+      border: 1px solid var(--line);
+    }
+
+    .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .bar-label { width: 90px; font-size: 13px; color: var(--ink); text-align: right; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .bar-label.wide { width: 120px; }
+    .bar-track { flex: 1; background: #eef2f6; border-radius: 4px; height: 22px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; }
+    .bar-fill.teal  { background: var(--teal); }
+    .bar-fill.amber { background: #e8a020; }
+    .bar-fill.red   { background: var(--red); }
+    .bar-fill.blue  { background: #2563eb; }
+    .bar-fill.purple{ background: #7c3aed; }
+    .bar-fill.slate { background: #64748b; }
+    .bar-value { width: 44px; font-size: 13px; font-weight: 700; color: var(--ink); text-align: left; flex-shrink: 0; }
+
+    .risk-row { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; padding: 14px 18px; border-radius: 8px; }
+    .risk-row.high  { background: var(--red-soft); border: 1px solid #f5c6c6; }
+    .risk-row.mid   { background: var(--amber-soft); border: 1px solid #f0d090; }
+    .risk-row.low   { background: var(--teal-soft); border: 1px solid #a8cfcc; }
+    .risk-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .risk-dot.high  { background: var(--red); }
+    .risk-dot.mid   { background: #e8a020; }
+    .risk-dot.low   { background: var(--teal); }
+    .risk-name { font-weight: 700; font-size: 15px; flex: 1; }
+    .risk-count { font-size: 28px; font-weight: 800; }
+    .risk-sub { font-size: 12px; color: var(--muted); }
+
+    .recent-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .recent-table th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 2px solid var(--line); }
+    .recent-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .recent-table tr:last-child td { border-bottom: none; }
+    .recent-table tr:hover td { background: var(--teal-soft); }
+    .inst-link { color: var(--teal); text-decoration: none; font-weight: 600; cursor: pointer; }
+    .inst-link:hover { text-decoration: underline; }
+    .r-badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 999px; font-weight: 700; }
+    .r-badge.high { background: var(--red-soft); color: var(--red); border: 1px solid #f5c6c6; }
+    .r-badge.mid  { background: var(--amber-soft); color: var(--amber); border: 1px solid #f0d090; }
+    .r-badge.low  { background: var(--teal-soft); color: var(--teal); border: 1px solid #a8cfcc; }
+
+    .cta-box {
+      background: linear-gradient(135deg, #0d6b68 0%, #0a4f4d 100%);
+      border-radius: 16px; padding: 36px 32px; text-align: center; color: white;
+    }
+    .cta-box h3 { margin: 0 0 10px; font-size: 20px; font-weight: 800; }
+    .cta-box p  { margin: 0 0 20px; opacity: .88; font-size: 15px; }
+    .cta-btn { display: inline-block; background: white; color: var(--teal); font-weight: 800; font-size: 15px; padding: 12px 28px; border-radius: 8px; text-decoration: none; }
+    .cta-btn:hover { opacity: .88; }
+
+    .loading { color: var(--muted); font-size: 14px; text-align: center; padding: 40px; }
+
+    footer {
+      background: #12222f; color: rgba(255,255,255,.55);
+      text-align: center; padding: 24px 28px; font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,.7); text-decoration: underline; text-underline-offset: 3px; }
+    footer .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 10px; flex-wrap: wrap; }
+
+    @media (max-width: 640px) {
+      .site-nav { padding: 14px 16px; }
+      .page-header { padding: 40px 18px 36px; }
+      .shell { padding: 0 16px; }
+      main { padding: 32px 0 48px; }
+      .nav-links a { font-size: 12px; padding: 6px 8px; }
+      .summary-grid { grid-template-columns: repeat(2, 1fr); }
+      .bar-label { width: 70px; }
+      .bar-label.wide { width: 85px; }
+      .recent-table th:nth-child(3), .recent-table td:nth-child(3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="主導覽">
+    <a href="index.html" class="brand">
+      <div class="mark"><img src="assets/logo.jpg" alt="兒少防火牆"></div>
+      <span>兒少防火牆</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">機構查詢</a>
+      <a href="early-intervention.html">早療資源</a>
+      <a href="resources.html">家長資源</a>
+      <a href="about.html">關於我們</a>
+      <a href="stats.html" class="active">統計總覽</a>
+      <a href="https://portaly.cc/kidssafetywall/support" target="_blank" rel="noopener" class="donate-link">支持我們</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="shell">
+      <h1>統計總覽</h1>
+      <p>根據收錄的政府公開資料，呈現台灣教育機構安全紀錄的整體樣貌。</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="shell" id="statsRoot">
+      <div class="loading">資料載入中…</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">機構查詢</a>
+      <a href="stats.html">統計總覽</a>
+      <a href="about.html">關於我們</a>
+      <a href="privacy.html">隱私權政策</a>
+      <a href="https://portaly.cc/kidssafetywall/support" target="_blank" rel="noopener">支持我們</a>
+    </div>
+    <div>© 兒少防火牆 · 資料來源：政府公開資料 · 本站不代表任何政府機關立場</div>
+  </footer>
+
+  <script src="data/site-data.js"></script>
+  <script>
+  (() => {
+    const data = window.SAFETY_WALL_DATA;
+    const root = document.getElementById('statsRoot');
+    if (!data || !data.institutions) {
+      root.innerHTML = '<div class="loading">資料載入失敗，請重新整理頁面。</div>';
+      return;
+    }
+
+    const institutions = data.institutions;
+    const reDate = /處分日期[：:]\s*(\d{4}\/\d{2}\/\d{2})/;
+
+    // --- Aggregate stats ---
+    let totalPenalties = 0, totalNews = 0;
+    let highRisk = 0, midRisk = 0, lowRisk = 0;
+    const cityPenalties = {};
+    const typePenalties = {};
+    const recentItems = [];
+
+    institutions.forEach(inst => {
+      if (inst.risk === 'high') highRisk++;
+      else if (inst.risk === 'mid') midRisk++;
+      else if ((inst.penalties || 0) > 0 || (inst.news || 0) > 0) lowRisk++;
+
+      const pen = inst.penalties || 0;
+      const city = inst.city || '其他';
+      const type = inst.type || '其他';
+
+      if (pen > 0) {
+        cityPenalties[city] = (cityPenalties[city] || 0) + pen;
+        typePenalties[type] = (typePenalties[type] || 0) + pen;
+      }
+
+      (inst.events || []).forEach(ev => {
+        if (ev.category === 'penalty') totalPenalties++;
+        else if (ev.category === 'news') totalNews++;
+
+        if (ev.category === 'penalty' && inst.name !== '待人工分類') {
+          let date = ev.date && ev.date !== 'unknown' ? ev.date.replace(/\//g, '-') : '';
+          if (!date && ev.summary) {
+            const m = ev.summary.match(reDate);
+            if (m) date = m[1].replace(/\//g, '-');
+          }
+          if (date) recentItems.push({ date, inst, ev });
+        }
+      });
+    });
+
+    const totalWithEvents = institutions.filter(i => (i.penalties || 0) > 0 || (i.news || 0) > 0).length;
+
+    // Sort recent
+    recentItems.sort((a, b) => b.date.localeCompare(a.date));
+    const seen = new Set();
+    const recent10 = recentItems.filter(x => {
+      const k = x.inst.key + x.ev.id;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    }).slice(0, 10);
+
+    // Top 10 cities
+    const topCities = Object.entries(cityPenalties)
+      .filter(([c]) => c && c !== '其他')
+      .sort((a, b) => b[1] - a[1]).slice(0, 10);
+    const maxCity = topCities[0]?.[1] || 1;
+
+    // Type chart (excluding 司法文書)
+    const typeOrder = ['補習班', '幼兒園', '國小', '國中', '高中職'];
+    const typeColors = { '補習班': 'teal', '幼兒園': 'amber', '國小': 'blue', '國中': 'purple', '高中職': 'slate' };
+    const topTypes = typeOrder.filter(t => typePenalties[t]).map(t => [t, typePenalties[t]]);
+    const maxType = topTypes[0]?.[1] || 1;
+
+    // --- Render ---
+    const fmt = n => n.toLocaleString('zh-TW');
+
+    const summaryHTML = `
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-num ink">${fmt(institutions.length)}</div>
+          <div class="summary-label">收錄機構總數</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num teal">${fmt(totalWithEvents)}</div>
+          <div class="summary-label">有事件紀錄的機構</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num amber">${fmt(totalPenalties)}</div>
+          <div class="summary-label">官方裁罰事件</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-num red">${fmt(highRisk)}</div>
+          <div class="summary-label">高風險機構</div>
+        </div>
+      </div>`;
+
+    const cityBars = topCities.map(([city, count]) => `
+      <div class="bar-row">
+        <div class="bar-label">${city}</div>
+        <div class="bar-track"><div class="bar-fill teal" style="width:${Math.round(count/maxCity*100)}%"></div></div>
+        <div class="bar-value">${fmt(count)}</div>
+      </div>`).join('');
+
+    const typeBars = topTypes.map(([type, count]) => `
+      <div class="bar-row">
+        <div class="bar-label wide">${type}</div>
+        <div class="bar-track"><div class="bar-fill ${typeColors[type] || 'teal'}" style="width:${Math.round(count/maxType*100)}%"></div></div>
+        <div class="bar-value">${fmt(count)}</div>
+      </div>`).join('');
+
+    const riskLabel = { high: '高風險', mid: '中風險', low: '查證中' };
+    const recentRows = recent10.map(({ date, inst, ev }) => {
+      const violation = (ev.penaltyViolation || '').replace(/^第\S+\s*/, '').substring(0, 28);
+      const amount = (ev.penaltyContent || '').replace(/罰鍰[：:]?\s*/, '').substring(0, 12);
+      return `<tr>
+        <td><a class="inst-link" href="index.html?q=${encodeURIComponent(inst.name)}">${inst.name}</a><br>
+          <span class="r-badge ${inst.risk}">${riskLabel[inst.risk] || ''}</span>
+          <span style="font-size:11px;color:var(--muted);margin-left:4px;">${inst.city || ''} · ${inst.type || ''}</span>
+        </td>
+        <td style="color:var(--muted);white-space:nowrap;">${date}</td>
+        <td style="color:var(--muted);font-size:12px;">${violation}${amount ? '　' + amount : ''}</td>
+      </tr>`;
+    }).join('');
+
+    root.innerHTML = summaryHTML + `
+
+      <section class="section">
+        <h2>各縣市裁罰案件分佈</h2>
+        <div class="chart-panel">${cityBars || '<p style="color:var(--muted)">暫無資料</p>'}</div>
+      </section>
+
+      <section class="section">
+        <h2>機構類型裁罰分佈</h2>
+        <div class="chart-panel">${typeBars || '<p style="color:var(--muted)">暫無資料</p>'}</div>
+      </section>
+
+      <section class="section">
+        <h2>風險等級分佈</h2>
+        <div class="risk-row high">
+          <div class="risk-dot high"></div>
+          <div class="risk-name">高風險<div class="risk-sub">多筆裁罰、重大違規或司法紀錄</div></div>
+          <div class="risk-count">${fmt(highRisk)}</div>
+        </div>
+        <div class="risk-row mid">
+          <div class="risk-dot mid"></div>
+          <div class="risk-name">中風險<div class="risk-sub">單筆裁罰或新聞事件</div></div>
+          <div class="risk-count">${fmt(midRisk)}</div>
+        </div>
+        <div class="risk-row low">
+          <div class="risk-dot low"></div>
+          <div class="risk-name">查證中<div class="risk-sub">資料正在核實或新聞待分類</div></div>
+          <div class="risk-count">${fmt(lowRisk)}</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>最近 10 筆裁罰紀錄</h2>
+        <div class="chart-panel" style="padding:0;overflow:hidden;">
+          <table class="recent-table">
+            <thead><tr>
+              <th>機構</th>
+              <th>裁罰日期</th>
+              <th>違規內容</th>
+            </tr></thead>
+            <tbody>${recentRows || '<tr><td colspan="3" style="color:var(--muted)">暫無資料</td></tr>'}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="cta-box">
+        <h3>查詢特定機構</h3>
+        <p>輸入學校、幼兒園或補習班的名稱，查看完整的裁罰與新聞紀錄。</p>
+        <a href="index.html" class="cta-btn">前往查詢 →</a>
+      </div>
+    `;
+  })();
+  </script>
+
+</body>
+</html>
