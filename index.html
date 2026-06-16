@@ -7,6 +7,7 @@
   <meta name="description" content="查詢台灣幼兒園、國小、國中、高中職、補習班的裁罰紀錄、負面新聞與司法判決，幫助家長掌握孩子就讀機構的安全資訊。">
   <meta name="keywords" content="兒少安全,學校裁罰,教育機構,幼兒園違規,補習班違規,兒童保護,台灣學校查詢">
   <link rel="canonical" href="https://kidssafetywall.github.io/kids-safety-wall/">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kidssafetywall.github.io/kids-safety-wall/">
   <meta property="og:title" content="兒少防火牆 | 教育機構風險資訊查詢">
@@ -18,6 +19,22 @@
   <meta name="twitter:description" content="查詢台灣幼兒園、國小、國中、高中職、補習班的裁罰紀錄、負面新聞與司法判決，幫助家長掌握孩子就讀機構的安全資訊。">
   <meta name="twitter:image" content="https://kidssafetywall.github.io/kids-safety-wall/assets/school-safety-hero.png">
   <meta name="google-site-verification" content="XarMW6rvkJ77LjE-1d9YBwwUZqaffoPm7buPrku_bgM">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "兒少防火牆",
+    "url": "https://kidssafetywall.github.io/kids-safety-wall/",
+    "description": "查詢台灣幼兒園、國小、國中、高中職、補習班的裁罰紀錄、負面新聞與司法判決，幫助家長掌握孩子就讀機構的安全資訊。",
+    "inLanguage": "zh-TW",
+    "publisher": {
+      "@type": "Organization",
+      "name": "兒少防火牆",
+      "url": "https://kidssafetywall.github.io/kids-safety-wall/",
+      "logo": "https://kidssafetywall.github.io/kids-safety-wall/assets/logo.jpg"
+    }
+  }
+  </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <style>
     :root {
@@ -2084,6 +2101,8 @@
 
     window.showDetail = showDetail;
     populateFilterOptions();
+    const initialQuery = new URLSearchParams(location.search).get("q");
+    if (initialQuery) document.querySelector("#query").value = initialQuery;
     render();
 
     // --- 資料更新紀錄 ---
