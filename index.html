@@ -12,12 +12,13 @@
   <meta property="og:url" content="https://kidssafetywall.github.io/kids-safety-wall/">
   <meta property="og:title" content="兒少防火牆 | 教育機構風險資訊查詢">
   <meta property="og:description" content="查詢台灣幼兒園、國小、國中、高中職、補習班的裁罰紀錄、負面新聞與司法判決，幫助家長掌握孩子就讀機構的安全資訊。">
-  <meta property="og:image" content="https://kidssafetywall.github.io/kids-safety-wall/assets/school-safety-hero.png">
+  <meta property="og:image" content="https://kidssafetywall.github.io/kids-safety-wall/assets/school-safety-hero.jpg">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="兒少防火牆 | 教育機構風險資訊查詢">
   <meta name="twitter:description" content="查詢台灣幼兒園、國小、國中、高中職、補習班的裁罰紀錄、負面新聞與司法判決，幫助家長掌握孩子就讀機構的安全資訊。">
-  <meta name="twitter:image" content="https://kidssafetywall.github.io/kids-safety-wall/assets/school-safety-hero.png">
+  <meta name="twitter:image" content="https://kidssafetywall.github.io/kids-safety-wall/assets/school-safety-hero.jpg">
+  <link rel="preload" as="image" href="assets/school-safety-hero.jpg" fetchpriority="high">
   <meta name="google-site-verification" content="XarMW6rvkJ77LjE-1d9YBwwUZqaffoPm7buPrku_bgM">
   <script type="application/ld+json">
   {
@@ -35,7 +36,6 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <style>
     :root {
       --ink: #17202a;
@@ -74,7 +74,7 @@
       min-height: 82vh;
       background:
         linear-gradient(90deg, rgba(15, 25, 33, .86) 0%, rgba(15, 25, 33, .74) 42%, rgba(15, 25, 33, .22) 76%),
-        url("assets/school-safety-hero.png") center right / cover no-repeat;
+        url("assets/school-safety-hero.jpg") center right / cover no-repeat;
       color: white;
       display: grid;
       align-items: center;
@@ -1168,7 +1168,6 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="data/site-data.js"></script>
   <script>
     const fallbackInstitutions = [
@@ -1393,6 +1392,23 @@
 
     let leafletMap = null;
     let leafletMarkers = [];
+    let leafletLoadPromise = null;
+
+    function loadLeaflet() {
+      if (window.L) return Promise.resolve();
+      if (leafletLoadPromise) return leafletLoadPromise;
+      leafletLoadPromise = new Promise(resolve => {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css";
+        document.head.appendChild(link);
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js";
+        script.onload = resolve;
+        document.head.appendChild(script);
+      });
+      return leafletLoadPromise;
+    }
 
     // Pre-compute city→district map
     const cityDistrictMap = {};
@@ -1961,10 +1977,12 @@
     });
 
     document.querySelector("#mapBtn").addEventListener("click", () => {
-      state.mode = "map";
       document.querySelector("#mapBtn").classList.add("active");
       document.querySelector("#listBtn").classList.remove("active");
-      render();
+      loadLeaflet().then(() => {
+        state.mode = "map";
+        render();
+      });
     });
 
     // --- Modal 邏輯 ---

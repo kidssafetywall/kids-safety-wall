@@ -565,10 +565,10 @@ $payload = [ordered]@{
   institutions = $institutions
 }
 
-$json = $payload | ConvertTo-Json -Depth 18
+$json = $payload | ConvertTo-Json -Depth 18 -Compress
 $js = "window.SAFETY_WALL_DATA = $json;"
 [System.IO.File]::WriteAllText($siteDataPath, $js, [System.Text.Encoding]::UTF8)
-[System.IO.File]::WriteAllText($institutionsPath, ($institutions | ConvertTo-Json -Depth 18), [System.Text.Encoding]::UTF8)
+[System.IO.File]::WriteAllText($institutionsPath, ($institutions | ConvertTo-Json -Depth 18 -Compress), [System.Text.Encoding]::UTF8)
 
 Write-Host "Updated $siteDataPath"
 Write-Host "Updated $institutionsPath"
