@@ -2102,7 +2102,10 @@
     window.showDetail = showDetail;
     populateFilterOptions();
     const initialQuery = new URLSearchParams(location.search).get("q");
-    if (initialQuery) document.querySelector("#query").value = initialQuery;
+    if (initialQuery) {
+      document.querySelector("#query").value = initialQuery;
+      history.replaceState(null, "", location.pathname);
+    }
     render();
 
     // --- 資料更新紀錄 ---
