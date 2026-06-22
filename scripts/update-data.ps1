@@ -192,9 +192,8 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
     $resourceId   = ConvertTo-Slug $resourceUrl
     $resourcePath = Join-Path $DatasetDir "$($Source.id)-$resourceId.json"
     try {
-      $client = New-Object System.Net.WebClient
-      $bytes  = $client.DownloadData($resourceUrl)
-      [System.IO.File]::WriteAllBytes($resourcePath, $bytes)
+      $resp  = Invoke-WebRequest -Uri $resourceUrl -UseBasicParsing -TimeoutSec 20
+      [System.IO.File]::WriteAllBytes($resourcePath, $resp.Content)
     } catch {
       if (-not (Test-Path -LiteralPath $resourcePath)) {
         Write-Warning "Cannot download resource $resourceUrl for $($Source.id): $($_.Exception.Message)"
