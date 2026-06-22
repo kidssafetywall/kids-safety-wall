@@ -17,9 +17,10 @@
   powershell -ExecutionPolicy Bypass -File .\scripts\fetch-news.ps1 -MaxNewPerRun 20
 #>
 param(
-  [string]$Root        = (Split-Path -Parent $PSScriptRoot),
-  [int]$MaxNewPerRun   = 50,
-  [int]$DelayMs        = 2000
+  [string]$Root             = (Split-Path -Parent $PSScriptRoot),
+  [int]$MaxNewPerRun        = 50,
+  [int]$DelayMs             = 2000,
+  [int]$MaxSpecificQueries  = 100
 )
 
 $ErrorActionPreference = "Stop"
@@ -51,7 +52,12 @@ function Read-JsonArrayFile([string]$Path) {
   if ([string]::IsNullOrWhiteSpace($raw)) { return @() }
   $serializer = New-Object System.Web.Script.Serialization.JavaScriptSerializer
   $serializer.MaxJsonLength = 67108864
-  $items = $serializer.DeserializeObject($raw)
+  try {
+    $items = $serializer.DeserializeObject($raw)
+  } catch {
+    Write-Warning "Read-JsonArrayFile: invalid JSON in '$Path' — $($_.Exception.Message)"
+    return @()
+  }
   if ($null -eq $items) { return @() }
   return @($items)
 }
@@ -64,10 +70,20 @@ function Strip-Html([string]$Html) {
   return $text.Trim()
 }
 
-function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix) {
+function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix, [switch]$Force) {
   $id          = ConvertTo-Slug $Url
   $file        = Join-Path $ArchiveDir "$Prefix-$id.html"
   $capturedAt  = (Get-Date).ToUniversalTime().ToString("o")
+
+  if (-not $Force -and (Test-Path -LiteralPath $file)) {
+    return @{
+      capturedAt    = $capturedAt
+      snapshotPath  = ($file.Replace($Root, "").TrimStart("\") -replace "\\", "/")
+      httpStatus    = $null
+      captureStatus = "cached"
+    }
+  }
+
   try {
     $headers  = @{ "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" }
     $resp     = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 30 -Headers $headers
@@ -204,8 +220,10 @@ $queries = [System.Collections.ArrayList]::new()
   @{ q = "兒童福利機構 OR 身心障礙福利機構 ($neg)";                              type = "兒童福利機構"; name = "待人工分類" }
 ) | ForEach-Object { [void]$queries.Add($_) }
 
-# 專項查詢：已追蹤機構（持續監控已知問題機構）
+# 專項查詢：已追蹤機構（持續監控已知問題機構，每次上限 $MaxSpecificQueries 筆）
+$specificAdded = 0
 foreach ($inst in $knownInstitutions.Values) {
+  if ($specificAdded -ge $MaxSpecificQueries) { break }
   [void]$queries.Add([ordered]@{
     q        = "`"$($inst.name)`""
     type     = $inst.type
@@ -213,6 +231,7 @@ foreach ($inst in $knownInstitutions.Values) {
     city     = $inst.city
     specific = $true
   })
+  $specificAdded++
 }
 
 # 機構名稱快查表（用於從新聞標題自動辨識機構，減少「待人工分類」數量）
@@ -244,7 +263,7 @@ if (Test-Path -LiteralPath $therapyPath) {
 Write-Host "機構名稱快查表：$($instNameLookup.Count) 筆（含早療機構）"
 
 Write-Host "=== 兒少防火牆：新聞抓取 ==="
-Write-Host "通用查詢：6 筆  專項查詢：$($knownInstitutions.Count) 筆  上限：$MaxNewPerRun 筆新事件"
+Write-Host "通用查詢：$($queries.Count - $specificAdded) 筆  專項查詢：$specificAdded/$($knownInstitutions.Count) 筆  上限：$MaxNewPerRun 筆新事件"
 
 # ---------------------------------------------------------------------------
 # 逐一查詢 Google News RSS

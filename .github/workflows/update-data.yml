@@ -35,7 +35,7 @@ jobs:
       # ── Step 2：Google News RSS 新聞抓取 ─────────────────────────────────
       - name: 抓取 Google News RSS 教育機構相關新聞
         shell: powershell
-        run: .\scripts\fetch-news.ps1 -MaxNewPerRun 50 -DelayMs 2000
+        run: .\scripts\fetch-news.ps1 -MaxNewPerRun 50 -DelayMs 2000 -MaxSpecificQueries 100
 
       # ── Step 3：司法院裁判書 API ──────────────────────────────────────────
       - name: 抓取司法院裁判書

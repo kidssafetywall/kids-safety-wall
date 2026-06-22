@@ -67,7 +67,12 @@ function Read-JsonArrayFile([string]$Path) {
   if ([string]::IsNullOrWhiteSpace($raw)) { return @() }
   $ser = New-Object System.Web.Script.Serialization.JavaScriptSerializer
   $ser.MaxJsonLength = 268435456
-  $items = $ser.DeserializeObject($raw)
+  try {
+    $items = $ser.DeserializeObject($raw)
+  } catch {
+    Write-Warning "Read-JsonArrayFile: invalid JSON in '$Path' — $($_.Exception.Message)"
+    return @()
+  }
   if ($null -eq $items) { return @() }
   return @($items | ForEach-Object { ConvertTo-CleanDict $_ })
 }

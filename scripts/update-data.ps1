@@ -49,7 +49,12 @@ function Read-JsonArrayFile([string]$Path) {
   Add-Type -AssemblyName System.Web.Extensions
   $serializer = New-Object System.Web.Script.Serialization.JavaScriptSerializer
   $serializer.MaxJsonLength = 67108864
-  $items = $serializer.DeserializeObject($raw)
+  try {
+    $items = $serializer.DeserializeObject($raw)
+  } catch {
+    Write-Warning "Read-JsonArrayFile: invalid JSON in '$Path' — $($_.Exception.Message)"
+    return @()
+  }
   if ($null -eq $items) {
     return @()
   }
@@ -57,10 +62,19 @@ function Read-JsonArrayFile([string]$Path) {
   return @($items)
 }
 
-function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix) {
+function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix, [switch]$Force) {
   $id = ConvertTo-Slug $Url
   $file = Join-Path $ArchiveDir "$Prefix-$id.html"
   $capturedAt = (Get-Date).ToUniversalTime().ToString("o")
+
+  if (-not $Force -and (Test-Path -LiteralPath $file)) {
+    return @{
+      capturedAt    = $capturedAt
+      snapshotPath  = ($file.Replace($Root, "").TrimStart("\") -replace "\\", "/")
+      httpStatus    = $null
+      captureStatus = "cached"
+    }
+  }
 
   try {
     $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 30
@@ -332,7 +346,7 @@ $institutionsPath = Join-Path $dataDir "institutions.json"
 $sources = @()
 $importedInstitutions = @()
 foreach ($source in @($registry.sources)) {
-  $capture = Get-PageSnapshot -Url $source.datasetUrl -ArchiveDir $rawDir -Prefix $source.id
+  $capture = Get-PageSnapshot -Url $source.datasetUrl -ArchiveDir $rawDir -Prefix $source.id -Force
   $datasetHtml = ""
   if ($capture.snapshotPath) {
     $snapshotFullPath = Join-Path $Root $capture.snapshotPath
