@@ -361,7 +361,10 @@ if ($MaxImportedPerSource -eq 0 -and (Test-Path -LiteralPath $institutionsPath))
   $ageH = ((Get-Date).ToUniversalTime() - (Get-Item -LiteralPath $institutionsPath).LastWriteTimeUtc).TotalHours
   if ($ageH -lt 168) {
     Write-Host "Reusing institution base from institutions.json ($([Math]::Round($ageH,1))h old — full re-import every 7 days)"
-    foreach ($inst in (Read-JsonArrayFile $institutionsPath)) {
+    $t0 = [DateTime]::UtcNow
+    $rawInsts = Read-JsonArrayFile $institutionsPath
+    Write-Host "  [t+$([Math]::Round(([DateTime]::UtcNow-$t0).TotalSeconds,1))s] Read-JsonArrayFile done ($($rawInsts.Count) items)"
+    foreach ($inst in $rawInsts) {
       $inst["events"]    = @()
       $inst["penalties"] = 0
       $inst["news"]      = 0
@@ -371,6 +374,7 @@ if ($MaxImportedPerSource -eq 0 -and (Test-Path -LiteralPath $institutionsPath))
       $inst["risk"]      = "low"
       [void]$importedInstitutions.Add($inst)
     }
+    Write-Host "  [t+$([Math]::Round(([DateTime]::UtcNow-$t0).TotalSeconds,1))s] field-reset loop done"
     $useCachedBase = $importedInstitutions.Count -gt 0
     if (-not $useCachedBase) {
       Write-Warning "institutions.json was empty or unreadable — falling back to full government import"
