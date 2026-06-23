@@ -212,16 +212,66 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
   $codeField = (U @(0x4ee3,0x78bc))          # 代碼
   $firstItem = if ($taggedItems.Count -gt 0) { $taggedItems[0]["item"] } else { $null }
   if ($firstItem -and $firstItem.ContainsKey($yearField)) {
-    $sorted    = @($taggedItems) | Sort-Object { [int]"0$($_['item'][$yearField])" } -Descending
-    $seenCodes = [System.Collections.Generic.HashSet[string]]::new()
-    $deduped   = [System.Collections.ArrayList]::new()
-    foreach ($ti in $sorted) {
+    $bestYear = [System.Collections.Generic.Dictionary[string,int]]::new()
+    $bestItem = [System.Collections.Generic.Dictionary[string,object]]::new()
+    $noCode   = [System.Collections.ArrayList]::new()
+    foreach ($ti in $taggedItems) {
       $c = if ($ti["item"].ContainsKey($codeField)) { "$($ti['item'][$codeField])" } else { "" }
-      if (-not $c -or $seenCodes.Add($c)) { [void]$deduped.Add($ti) }
+      if (-not $c) { [void]$noCode.Add($ti); continue }
+      $y = [int]"0$($ti['item'][$yearField])"
+      if (-not $bestYear.ContainsKey($c) -or $y -gt $bestYear[$c]) {
+        $bestYear[$c] = $y
+        $bestItem[$c] = $ti
+      }
     }
+    $deduped = [System.Collections.ArrayList]::new()
+    foreach ($ti in $noCode) { [void]$deduped.Add($ti) }
+    foreach ($ti in $bestItem.Values) { [void]$deduped.Add($ti) }
     $taggedItems = $deduped
     Write-Host "  [$($Source.id)] 多學年去重後：$($taggedItems.Count) 筆唯一機構"
   }
+
+  $nameKeys = @(
+    (U @(0x5b78,0x6821,0x540d,0x7a31)),
+    (U @(0x77ed,0x671f,0x88dc,0x7fd2,0x73ed,0x540d,0x7a31)),
+    (U @(0x6a5f,0x69cb,0x540d,0x7a31)),
+    (U @(0x540d,0x7a31)),
+    "name"
+  )
+  $cityKeys = @(
+    (U @(0x7e23,0x5e02,0x540d,0x7a31)),
+    (U @(0x5730,0x5340,0x7e23,0x5e02)),
+    (U @(0x7e23,0x5e02)),
+    "CountyName",
+    "city"
+  )
+  $districtKeys = @(
+    (U @(0x9109,0x93ae,0x5e02,0x5340,0x540d,0x7a31)),
+    (U @(0x884c,0x653f,0x5340)),
+    "district"
+  )
+  $addressKeys = @(
+    (U @(0x5730,0x5740)),
+    (U @(0x73ed,0x5740)),
+    "address"
+  )
+  $codeKeys = @(
+    (U @(0x4ee3,0x78bc)),
+    (U @(0x5b78,0x6821,0x4ee3,0x78bc)),
+    (U @(0x88dc,0x7fd2,0x73ed,0x4ee3,0x78bc)),
+    "code"
+  )
+  $phoneKeys = @(
+    (U @(0x96fb,0x8a71)),
+    (U @(0x96fb,0x8a71,0x865f,0x78bc)),
+    "phone"
+  )
+  $websiteKeys = @(
+    (U @(0x7db2,0x5740)),
+    "website"
+  )
+  $catKey = U @(0x516c, 0x002f, 0x79c1, 0x7acb)
+  $nonProfit = U @(0x975e, 0x71df, 0x5229)
 
   $rows = [System.Collections.ArrayList]::new()
   $count = 0
@@ -231,46 +281,6 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
     if ($Limit -gt 0 -and $count -ge $Limit) {
       break
     }
-
-    $nameKeys = @(
-      (U @(0x5b78,0x6821,0x540d,0x7a31)),
-      (U @(0x77ed,0x671f,0x88dc,0x7fd2,0x73ed,0x540d,0x7a31)),
-      (U @(0x6a5f,0x69cb,0x540d,0x7a31)),
-      (U @(0x540d,0x7a31)),
-      "name"
-    )
-    $cityKeys = @(
-      (U @(0x7e23,0x5e02,0x540d,0x7a31)),
-      (U @(0x5730,0x5340,0x7e23,0x5e02)),
-      (U @(0x7e23,0x5e02)),
-      "CountyName",
-      "city"
-    )
-    $districtKeys = @(
-      (U @(0x9109,0x93ae,0x5e02,0x5340,0x540d,0x7a31)),
-      (U @(0x884c,0x653f,0x5340)),
-      "district"
-    )
-    $addressKeys = @(
-      (U @(0x5730,0x5740)),
-      (U @(0x73ed,0x5740)),
-      "address"
-    )
-    $codeKeys = @(
-      (U @(0x4ee3,0x78bc)),
-      (U @(0x5b78,0x6821,0x4ee3,0x78bc)),
-      (U @(0x88dc,0x7fd2,0x73ed,0x4ee3,0x78bc)),
-      "code"
-    )
-    $phoneKeys = @(
-      (U @(0x96fb,0x8a71)),
-      (U @(0x96fb,0x8a71,0x865f,0x78bc)),
-      "phone"
-    )
-    $websiteKeys = @(
-      (U @(0x7db2,0x5740)),
-      "website"
-    )
 
     $name = Get-Prop $item $nameKeys
     if (-not $name) {
@@ -287,8 +297,7 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
     $key = if ($code) { "$($Source.id)-$code" } else { ConvertTo-Slug "$($Source.id)|$city|$name|$address" }
 
     # Extract 公/私立 category; detect 非營利 from name
-    $catRaw = Get-Prop $item @((U @(0x516c, 0x002f, 0x79c1, 0x7acb)))
-    $nonProfit = U @(0x975e, 0x71df, 0x5229)
+    $catRaw = Get-Prop $item @($catKey)
     $instCategory = if ($name -match [regex]::Escape($nonProfit)) { $nonProfit } elseif ($catRaw) { $catRaw } else { "" }
 
     $count++
