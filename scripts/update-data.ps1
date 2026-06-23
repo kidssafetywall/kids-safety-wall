@@ -223,7 +223,7 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
     Write-Host "  [$($Source.id)] 多學年去重後：$($taggedItems.Count) 筆唯一機構"
   }
 
-  $rows = @()
+  $rows = [System.Collections.ArrayList]::new()
   $count = 0
   foreach ($tagged in $taggedItems) {
     $item        = $tagged["item"]
@@ -293,7 +293,7 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
 
     $count++
 
-    $rows += [ordered]@{
+    [void]$rows.Add([ordered]@{
       key = $key
       name = $name
       city = $city
@@ -318,10 +318,10 @@ function Get-ImportedInstitutions($Source, [string]$DatasetHtml, [string]$Datase
       dataResourceUrl = $resourceUrl
       xy = @((20 + (Get-Random -Minimum 0 -Maximum 60)), (30 + (Get-Random -Minimum 0 -Maximum 42)))
       events = @()
-    }
+    })
   }
 
-  return $rows
+  return @($rows)
 }
 
 $dataDir = Join-Path $Root "data"
