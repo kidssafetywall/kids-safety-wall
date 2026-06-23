@@ -351,39 +351,60 @@ $reviewQueue = Read-JsonArrayFile (Join-Path $dataDir "review-queue.json")
 $siteDataPath = Join-Path $dataDir "site-data.js"
 $institutionsPath = Join-Path $dataDir "institutions.json"
 
-$sources = @()
-$importedInstitutions = @()
+# Try to reuse yesterday's institution base. Government directory data changes slowly
+# (new schools don't open daily). A full re-import runs at most once per week.
+# Pass -MaxImportedPerSource > 0 to force a fresh import (e.g. for testing).
+$importedInstitutions = [System.Collections.ArrayList]::new()
+$useCachedBase = $false
+
+if ($MaxImportedPerSource -eq 0 -and (Test-Path -LiteralPath $institutionsPath)) {
+  $ageH = ((Get-Date).ToUniversalTime() - (Get-Item -LiteralPath $institutionsPath).LastWriteTimeUtc).TotalHours
+  if ($ageH -lt 168) {
+    Write-Host "Reusing institution base from institutions.json ($([Math]::Round($ageH,1))h old — full re-import every 7 days)"
+    foreach ($inst in (Read-JsonArrayFile $institutionsPath)) {
+      $inst["events"]    = @()
+      $inst["penalties"] = 0
+      $inst["news"]      = 0
+      $inst["reviews"]   = 0
+      $inst["pending"]   = 0
+      $inst["disputed"]  = 0
+      $inst["risk"]      = "low"
+      [void]$importedInstitutions.Add($inst)
+    }
+    $useCachedBase = $true
+  }
+}
+
+$sources = [System.Collections.ArrayList]::new()
 foreach ($source in @($registry.sources)) {
   $capture = Get-PageSnapshot -Url $source.datasetUrl -ArchiveDir $rawDir -Prefix $source.id -Force
-  $datasetHtml = ""
-  if ($capture.snapshotPath) {
-    $snapshotFullPath = Join-Path $Root $capture.snapshotPath
-    if (Test-Path -LiteralPath $snapshotFullPath) {
-      $datasetHtml = Get-Content -LiteralPath $snapshotFullPath -Raw -Encoding UTF8
+  [void]$sources.Add([ordered]@{
+    id              = $source.id
+    title           = $source.title
+    publisher       = $source.publisher
+    url             = $source.datasetUrl
+    updateFrequency = $source.updateFrequency
+    capturedAt      = $capture.capturedAt
+    snapshotPath    = $capture.snapshotPath
+    status          = $capture.captureStatus
+  })
+
+  if (-not $useCachedBase -and $source.type -eq "government_dataset") {
+    $datasetHtml = ""
+    if ($capture.snapshotPath) {
+      $snapshotFullPath = Join-Path $Root $capture.snapshotPath
+      if (Test-Path -LiteralPath $snapshotFullPath) {
+        $datasetHtml = Get-Content -LiteralPath $snapshotFullPath -Raw -Encoding UTF8
+      }
+    }
+    if ($datasetHtml) {
+      $rows = Get-ImportedInstitutions -Source $source -DatasetHtml $datasetHtml -DatasetDir $datasetDir -Limit $MaxImportedPerSource
+      $importedInstitutions.AddRange($rows)
     }
   }
-
-  $sources += [ordered]@{
-    id = $source.id
-    title = $source.title
-    publisher = $source.publisher
-    url = $source.datasetUrl
-    updateFrequency = $source.updateFrequency
-    capturedAt = $capture.capturedAt
-    snapshotPath = $capture.snapshotPath
-    status = $capture.captureStatus
-  }
-
-  if ($source.type -eq "government_dataset" -and $datasetHtml) {
-    $importedInstitutions += Get-ImportedInstitutions -Source $source -DatasetHtml $datasetHtml -DatasetDir $datasetDir -Limit $MaxImportedPerSource
-  }
 }
 
-$allEvents = @()
-$allEvents += $events
-if ($IncludePending) {
-  $allEvents += $reviewQueue
-}
+$allEvents = if ($IncludePending) { @($events) + @($reviewQueue) } else { @($events) }
 
 $institutionMap = @{}
 foreach ($institution in $importedInstitutions) {
