@@ -803,7 +803,7 @@
         <div class="stat-strip" aria-label="平台摘要">
           <div class="stat"><strong id="statCount">0</strong><span>收錄機構</span></div>
           <div class="stat"><strong id="statPenalty">0</strong><span>已查證裁罰</span></div>
-          <div class="stat"><strong id="statSources">6</strong><span>資料來源</span></div>
+          <div class="stat"><strong id="statSources">11</strong><span>資料來源</span></div>
         </div>
         <div class="search-row">
           <input id="query" class="search-input" type="search" placeholder="輸入機構名稱、地址或關鍵字" autocomplete="off">
@@ -1548,8 +1548,7 @@
       grid.className = state.mode === "map" ? "results map-mode" : "results";
 
       const totalPenalties = institutions.reduce((sum, item) => sum + (item.penalties || 0), 0);
-      const sourceCount = window.SAFETY_WALL_DATA && window.SAFETY_WALL_DATA.sources
-        ? window.SAFETY_WALL_DATA.sources.length : 6;
+      const sourceCount = 11;
       document.querySelector("#statCount").textContent = institutions.length;
       document.querySelector("#statPenalty").textContent = totalPenalties;
       document.querySelector("#statSources").textContent = sourceCount;
