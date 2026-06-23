@@ -371,7 +371,10 @@ if ($MaxImportedPerSource -eq 0 -and (Test-Path -LiteralPath $institutionsPath))
       $inst["risk"]      = "low"
       [void]$importedInstitutions.Add($inst)
     }
-    $useCachedBase = $true
+    $useCachedBase = $importedInstitutions.Count -gt 0
+    if (-not $useCachedBase) {
+      Write-Warning "institutions.json was empty or unreadable — falling back to full government import"
+    }
   }
 }
 
