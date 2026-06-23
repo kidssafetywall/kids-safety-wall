@@ -25,7 +25,7 @@ jobs:
       - name: 匯入政府名錄並重建 site-data.js
         shell: powershell
         run: |
-          $maxImport = [int]"${{ github.event.inputs.max_imported || '500' }}"
+          $maxImport = [int]"${{ github.event.inputs.max_imported || '0' }}"
           if ($maxImport -gt 0) {
             .\scripts\update-data.ps1 -MaxImportedPerSource $maxImport
           } else {
@@ -76,7 +76,7 @@ jobs:
       - name: 重新產生前台資料（整合新增事件）
         shell: powershell
         run: |
-          $maxImport = [int]"${{ github.event.inputs.max_imported || '500' }}"
+          $maxImport = [int]"${{ github.event.inputs.max_imported || '0' }}"
           if ($maxImport -gt 0) {
             .\scripts\update-data.ps1 -MaxImportedPerSource $maxImport
           } else {
