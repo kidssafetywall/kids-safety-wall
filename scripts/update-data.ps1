@@ -380,7 +380,7 @@ if ($MaxImportedPerSource -eq 0 -and (Test-Path -LiteralPath $institutionsPath))
 
 $sources = [System.Collections.ArrayList]::new()
 foreach ($source in @($registry.sources)) {
-  $capture = Get-PageSnapshot -Url $source.datasetUrl -ArchiveDir $rawDir -Prefix $source.id -Force
+  $capture = Get-PageSnapshot -Url $source.datasetUrl -ArchiveDir $rawDir -Prefix $source.id -Force:(-not $useCachedBase)
   [void]$sources.Add([ordered]@{
     id              = $source.id
     title           = $source.title
