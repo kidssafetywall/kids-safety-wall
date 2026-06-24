@@ -88,16 +88,12 @@ foreach ($inst in $institutions) {
                     Write-Host "  [$queued/$MaxRequests] $name -> $lat, $lon"
                 }
             } else {
-                $cacheDict[$key] = $null
                 $failed++
-                Write-Host "  [OUT] $name ($lat,$lon)"
             }
         } else {
-            $cacheDict[$key] = $null
             $failed++
         }
     } catch {
-        $cacheDict[$key] = $null
         $failed++
         Write-Host "  [ERR] $name : $_"
     }

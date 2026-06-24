@@ -1,0 +1,42 @@
+name: 批次地址轉座標（手動觸發）
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: "本次查詢筆數（每筆約 1.1 秒，8000 筆 ≈ 3.5 小時）"
+        required: false
+        default: "8000"
+
+permissions:
+  contents: write
+
+jobs:
+  bulk-geocode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340   # 5h40m，低於 GitHub 6 小時限制
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 執行批次 Geocoding（Nominatim OSM）
+        run: |
+          node scripts/geocode-institutions.js --osm ${{ github.event.inputs.batch_size || '8000' }} 1100
+
+      - name: 提交 geocache 更新
+        run: |
+          git config user.name  "education-safety-bot"
+          git config user.email "education-safety-bot@example.invalid"
+          git add data/geocache.json
+          if git diff --cached --quiet; then
+            echo "No new coordinates found."
+          else
+            COUNT=$(git diff --cached --stat | tail -1)
+            git commit -m "data: bulk geocode batch — $COUNT"
+            git push
+          fi

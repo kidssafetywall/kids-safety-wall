@@ -32,11 +32,14 @@ if (fs.existsSync(CACHE_PATH)) {
   cache = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf8'));
 }
 
-// Prioritize institutions with events
+// Prioritize: 1) institutions with events, 2) institutions with address (higher geocode success)
 institutions.sort((a, b) => {
   const sa = (a.penalties || 0) + (a.news || 0) + (a.pending || 0);
   const sb = (b.penalties || 0) + (b.news || 0) + (b.pending || 0);
-  return sb - sa;
+  if (sb !== sa) return sb - sa;
+  const ha = (a.address && a.address.length > 4) ? 1 : 0;
+  const hb = (b.address && b.address.length > 4) ? 1 : 0;
+  return hb - ha;
 });
 
 function convertChineseNumerals(str) {
@@ -154,7 +157,8 @@ function saveCache() {
 
 async function main() {
   const provider = USE_OSM ? 'Nominatim/OSM (free)' : 'Mapbox';
-  const todo = institutions.filter(i => i.key && !(i.key in cache));
+  // Skip only entries with a valid coordinate object; null/missing entries are retried
+  const todo = institutions.filter(i => i.key && !cache[i.key]);
   const cached = Object.keys(cache).length;
   const runCount = Math.min(MAX_REQUESTS, todo.length);
   console.log(`Provider: ${provider}`);
