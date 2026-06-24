@@ -617,13 +617,12 @@ $payload = [ordered]@{
 }
 
 Write-Host "Serializing $($institutions.Count) institutions... [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
-Add-Type -AssemblyName System.Web.Extensions
-$jss = New-Object System.Web.Script.Serialization.JavaScriptSerializer
-$jss.MaxJsonLength = [int]::MaxValue
-$json = $jss.Serialize($payload)
+# ConvertTo-Json handles PowerShell-native types (OrderedDictionary, PSParameterizedProperty, etc.)
+# Use Depth 6 (institution→events→event→evidence→item = 5 levels) with -Compress for speed.
+$json = ConvertTo-Json -InputObject $payload -Depth 6 -Compress
 $js = "window.SAFETY_WALL_DATA = $json;"
 [System.IO.File]::WriteAllText($siteDataPath, $js, [System.Text.Encoding]::UTF8)
-[System.IO.File]::WriteAllText($institutionsPath, $jss.Serialize($institutions), [System.Text.Encoding]::UTF8)
+[System.IO.File]::WriteAllText($institutionsPath, (ConvertTo-Json -InputObject $institutions -Depth 6 -Compress), [System.Text.Encoding]::UTF8)
 
 Write-Host "Updated $siteDataPath"
 Write-Host "Updated $institutionsPath"
