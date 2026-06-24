@@ -37,18 +37,15 @@ function Read-JsonArrayFile([string]$Path) {
     return @()
   }
 
-  $raw = Get-Content -LiteralPath $Path -Raw -Encoding UTF8
-  $raw = $raw.TrimStart([char]0xFEFF)
-  if ($raw.StartsWith("ï»¿")) {
-    $raw = $raw.Substring(3)
-  }
+  $raw = [System.IO.File]::ReadAllText($Path, [System.Text.Encoding]::UTF8)
+  if ($raw.Length -gt 0 -and [char]$raw[0] -eq [char]0xFEFF) { $raw = $raw.Substring(1) }
   if ([string]::IsNullOrWhiteSpace($raw)) {
     return @()
   }
 
   Add-Type -AssemblyName System.Web.Extensions
   $serializer = New-Object System.Web.Script.Serialization.JavaScriptSerializer
-  $serializer.MaxJsonLength = 67108864
+  $serializer.MaxJsonLength = [int]::MaxValue
   try {
     $items = $serializer.DeserializeObject($raw)
   } catch {
@@ -351,40 +348,18 @@ $reviewQueue = Read-JsonArrayFile (Join-Path $dataDir "review-queue.json")
 $siteDataPath = Join-Path $dataDir "site-data.js"
 $institutionsPath = Join-Path $dataDir "institutions.json"
 
-# Try to reuse yesterday's institution base. Government directory data changes slowly
-# (new schools don't open daily). A full re-import runs at most once per week.
-# Pass -MaxImportedPerSource > 0 to force a fresh import (e.g. for testing).
+# Always rebuild institution base from government dataset snapshots cached in archive/datasets/.
+# Source page snapshots are read from archive/raw/ (committed to git) — no HTTP needed.
+# Dataset JSON files are downloaded once and cached; subsequent runs read from disk.
 $importedInstitutions = [System.Collections.ArrayList]::new()
-$useCachedBase = $false
 
-if ($MaxImportedPerSource -eq 0 -and (Test-Path -LiteralPath $institutionsPath)) {
-  $ageH = ((Get-Date).ToUniversalTime() - (Get-Item -LiteralPath $institutionsPath).LastWriteTimeUtc).TotalHours
-  if ($ageH -lt 168) {
-    Write-Host "Reusing institution base from institutions.json ($([Math]::Round($ageH,1))h old — full re-import every 7 days)"
-    $t0 = [DateTime]::UtcNow
-    $rawInsts = Read-JsonArrayFile $institutionsPath
-    Write-Host "  [t+$([Math]::Round(([DateTime]::UtcNow-$t0).TotalSeconds,1))s] Read-JsonArrayFile done ($($rawInsts.Count) items)"
-    foreach ($inst in $rawInsts) {
-      $inst["events"]    = @()
-      $inst["penalties"] = 0
-      $inst["news"]      = 0
-      $inst["reviews"]   = 0
-      $inst["pending"]   = 0
-      $inst["disputed"]  = 0
-      $inst["risk"]      = "low"
-      [void]$importedInstitutions.Add($inst)
-    }
-    Write-Host "  [t+$([Math]::Round(([DateTime]::UtcNow-$t0).TotalSeconds,1))s] field-reset loop done"
-    $useCachedBase = $importedInstitutions.Count -gt 0
-    if (-not $useCachedBase) {
-      Write-Warning "institutions.json was empty or unreadable — falling back to full government import"
-    }
-  }
-}
+$t_start = [DateTime]::UtcNow
+Write-Host "Importing institution base from cached government datasets..."
 
 $sources = [System.Collections.ArrayList]::new()
 foreach ($source in @($registry.sources)) {
-  $capture = Get-PageSnapshot -Url $source.datasetUrl -ArchiveDir $rawDir -Prefix $source.id -Force:(-not $useCachedBase)
+  # Use cached source page snapshot (no force download — archive/raw/ files are committed to git)
+  $capture = Get-PageSnapshot -Url $source.datasetUrl -ArchiveDir $rawDir -Prefix $source.id
   [void]$sources.Add([ordered]@{
     id              = $source.id
     title           = $source.title
@@ -396,20 +371,23 @@ foreach ($source in @($registry.sources)) {
     status          = $capture.captureStatus
   })
 
-  if (-not $useCachedBase -and $source.type -eq "government_dataset") {
+  if ($source.type -eq "government_dataset") {
     $datasetHtml = ""
     if ($capture.snapshotPath) {
       $snapshotFullPath = Join-Path $Root $capture.snapshotPath
       if (Test-Path -LiteralPath $snapshotFullPath) {
-        $datasetHtml = Get-Content -LiteralPath $snapshotFullPath -Raw -Encoding UTF8
+        $datasetHtml = [System.IO.File]::ReadAllText($snapshotFullPath, [System.Text.Encoding]::UTF8)
       }
     }
     if ($datasetHtml) {
       $rows = Get-ImportedInstitutions -Source $source -DatasetHtml $datasetHtml -DatasetDir $datasetDir -Limit $MaxImportedPerSource
+      Write-Host "  [$($source.id)] $($rows.Count) institutions [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
       $importedInstitutions.AddRange($rows)
     }
   }
 }
+
+Write-Host "Institution base: $($importedInstitutions.Count) total [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
 
 $allEvents = if ($IncludePending) { @($events) + @($reviewQueue) } else { @($events) }
 
