@@ -9,7 +9,15 @@ on:
       max_imported:
         description: "每個政府名錄來源最多匯入幾筆（0 = 全量）"
         required: false
-        default: "500"
+        default: "0"
+      refresh_datasets:
+        description: "強制重新下載政府名錄原始資料（每月執行一次即可）"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
@@ -25,6 +33,10 @@ jobs:
       - name: 匯入政府名錄並重建 site-data.js
         shell: powershell
         run: |
+          if ("${{ github.event.inputs.refresh_datasets }}" -eq "true") {
+            Write-Host "強制刷新：清除 archive/datasets/ 快取，重新下載政府名錄資料"
+            Remove-Item -Path archive\datasets\* -Force -ErrorAction SilentlyContinue
+          }
           $maxImport = [int]"${{ github.event.inputs.max_imported || '0' }}"
           if ($maxImport -gt 0) {
             .\scripts\update-data.ps1 -MaxImportedPerSource $maxImport
