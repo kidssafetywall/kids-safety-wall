@@ -395,6 +395,7 @@ $institutionMap = @{}
 foreach ($institution in $importedInstitutions) {
   $institutionMap[$institution.key] = $institution
 }
+Write-Host "institutionMap built: $($institutionMap.Count) entries [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
 
 # Build name+city reverse-lookup so events can find existing directory institutions
 # (prevents creating duplicate entries when key formats differ)
@@ -403,6 +404,7 @@ foreach ($inst in $institutionMap.Values) {
   $nk = "$(Format-City $inst.city)|$("$($inst.name)".Replace('臺','台').Trim())"
   if (-not $nameCityLookup.ContainsKey($nk)) { $nameCityLookup[$nk] = $inst.key }
 }
+Write-Host "nameCityLookup built: $($nameCityLookup.Count) entries [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
 
 foreach ($event in $allEvents) {
   if ($event["verificationStatus"] -eq "removed") {
@@ -522,10 +524,21 @@ foreach ($event in $allEvents) {
   }
 }
 
-$institutions = @($institutionMap.Values | ForEach-Object {
-  $_.Remove("riskRank")
-  $_
-} | Sort-Object name)
+Write-Host "Sorting $($institutionMap.Count) institutions... [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
+# Use Array.Sort (pure C#) — Sort-Object on Dictionary<string,object> requires
+# 924k+ ETS property lookups via PowerShell's reflection layer and is very slow.
+$_sortNames = [string[]]::new($institutionMap.Count)
+$_sortInsts = [object[]]::new($institutionMap.Count)
+$_si = 0
+foreach ($inst in $institutionMap.Values) {
+  $inst.Remove("riskRank")
+  $_sortNames[$_si] = [string]$inst["name"]
+  $_sortInsts[$_si] = $inst
+  $_si++
+}
+[System.Array]::Sort($_sortNames, $_sortInsts)
+$institutions = $_sortInsts
+Write-Host "Sort done. [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
 
 # Apply quasi-public.json — tag matching 私立 institutions as 準公共
 $quasiPath = Join-Path $dataDir "quasi-public.json"
@@ -593,6 +606,7 @@ $payload = [ordered]@{
   institutions = $institutions
 }
 
+Write-Host "Serializing $($institutions.Count) institutions... [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
 Add-Type -AssemblyName System.Web.Extensions
 $jss = New-Object System.Web.Script.Serialization.JavaScriptSerializer
 $jss.MaxJsonLength = [int]::MaxValue
@@ -603,4 +617,4 @@ $js = "window.SAFETY_WALL_DATA = $json;"
 
 Write-Host "Updated $siteDataPath"
 Write-Host "Updated $institutionsPath"
-Write-Host "Captured $($sources.Count) registered sources and built $($institutions.Count) institutions from $($allEvents.Count) events."
+Write-Host "Done: $($sources.Count) sources, $($institutions.Count) institutions, $($allEvents.Count) events. [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
