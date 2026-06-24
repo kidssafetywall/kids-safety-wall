@@ -59,17 +59,26 @@ function Read-JsonArrayFile([string]$Path) {
   return @($items)
 }
 
-function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix, [switch]$Force) {
+function Get-PageSnapshot([string]$Url, [string]$ArchiveDir, [string]$Prefix, [switch]$Force, [switch]$CacheOnly) {
   $id = ConvertTo-Slug $Url
   $file = Join-Path $ArchiveDir "$Prefix-$id.html"
   $capturedAt = (Get-Date).ToUniversalTime().ToString("o")
 
-  if (-not $Force -and (Test-Path -LiteralPath $file)) {
+  if (Test-Path -LiteralPath $file) {
+    if (-not $Force) {
+      return @{
+        capturedAt    = $capturedAt
+        snapshotPath  = ($file.Replace($Root, "").TrimStart("\") -replace "\\", "/")
+        httpStatus    = $null
+        captureStatus = "cached"
+      }
+    }
+  } elseif ($CacheOnly) {
     return @{
       capturedAt    = $capturedAt
-      snapshotPath  = ($file.Replace($Root, "").TrimStart("\") -replace "\\", "/")
+      snapshotPath  = $null
       httpStatus    = $null
-      captureStatus = "cached"
+      captureStatus = "not_captured"
     }
   }
 
@@ -405,6 +414,7 @@ foreach ($inst in $institutionMap.Values) {
   if (-not $nameCityLookup.ContainsKey($nk)) { $nameCityLookup[$nk] = $inst.key }
 }
 Write-Host "nameCityLookup built: $($nameCityLookup.Count) entries [t+$([Math]::Round(([DateTime]::UtcNow-$t_start).TotalSeconds,1))s]"
+Write-Host "Processing $($allEvents.Count) events (cache-only evidence snapshots)..."
 
 foreach ($event in $allEvents) {
   if ($event["verificationStatus"] -eq "removed") {
@@ -435,7 +445,7 @@ foreach ($event in $allEvents) {
 
   $capturedEvidence = @()
   foreach ($evidence in $validEvidence) {
-    $capture = Get-PageSnapshot -Url $evidence["url"] -ArchiveDir $rawDir -Prefix $event["id"]
+    $capture = Get-PageSnapshot -Url $evidence["url"] -ArchiveDir $rawDir -Prefix $event["id"] -CacheOnly
     $capturedEvidence += [ordered]@{
       title = $evidence["title"]
       publisher = $evidence["publisher"]
