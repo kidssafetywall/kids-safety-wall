@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       batch_size:
-        description: "本次查詢筆數（每筆約 1.1 秒，8000 筆 ≈ 3.5 小時）"
+        description: "本次查詢筆數（每筆實際約 2-4 秒含 fallback，5500 筆 ≈ 5 小時）"
         required: false
-        default: "8000"
+        default: "5500"
 
 permissions:
   contents: write
@@ -14,7 +14,7 @@ permissions:
 jobs:
   bulk-geocode:
     runs-on: ubuntu-latest
-    timeout-minutes: 340   # 5h40m，低於 GitHub 6 小時限制
+    timeout-minutes: 355   # 5h55m，低於 GitHub 6 小時限制
     steps:
       - name: Checkout
         uses: actions/checkout@v4
