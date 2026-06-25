@@ -80,14 +80,18 @@ function sleep(ms) {
 
 function httpGet(url, headers) {
   return new Promise(resolve => {
+    let settled = false;
+    const done = (val) => { if (!settled) { settled = true; resolve(val); } };
+    // Wall-clock timeout: fires even if TCP connect itself hangs (socket timeout
+    // only starts after the socket connects, so it won't catch pre-connect hangs).
+    const timer = setTimeout(() => { req.destroy(); done(null); }, 20000);
     const opts = { headers: headers || {} };
     const req = https.get(url, opts, res => {
       let data = '';
       res.on('data', d => data += d);
-      res.on('end', () => resolve(data));
+      res.on('end', () => { clearTimeout(timer); done(data); });
     });
-    req.on('error', () => resolve(null));
-    req.setTimeout(15000, () => { req.destroy(); resolve(null); });
+    req.on('error', () => { clearTimeout(timer); done(null); });
   });
 }
 
