@@ -593,17 +593,26 @@ if (Test-Path $overridesPath) {
 }
 
 # Merge geocache coordinates
+# Use JavaScriptSerializer (not ConvertFrom-Json) to avoid crash on duplicate
+# case-variant keys (e.g. "031x9B" vs "031X9B") that geocache.json may contain.
 $geocachePath = Join-Path $dataDir "geocache.json"
 if (Test-Path $geocachePath) {
-  $geoObj = ([IO.File]::ReadAllText($geocachePath, [Text.Encoding]::UTF8)) | ConvertFrom-Json
+  Add-Type -AssemblyName System.Web.Extensions
+  $geoJss = New-Object System.Web.Script.Serialization.JavaScriptSerializer
+  $geoJss.MaxJsonLength = [int]::MaxValue
+  $geoData = $geoJss.DeserializeObject([IO.File]::ReadAllText($geocachePath, [Text.Encoding]::UTF8))
   $geoMerged = 0
-  foreach ($inst in $institutions) {
-    $k = "$($inst.key)"
-    $entry = $geoObj.PSObject.Properties[$k]
-    if ($entry -and $entry.Value -and $entry.Value.lat) {
-      $inst["lat"] = [double]$entry.Value.lat
-      $inst["lng"] = [double]$entry.Value.lng
-      $geoMerged++
+  if ($null -ne $geoData) {
+    foreach ($inst in $institutions) {
+      $k = "$($inst.key)"
+      if ($geoData.ContainsKey($k)) {
+        $geoEntry = $geoData[$k]
+        if ($null -ne $geoEntry -and $geoEntry.ContainsKey("lat")) {
+          $inst["lat"] = [double]$geoEntry["lat"]
+          $inst["lng"] = [double]$geoEntry["lng"]
+          $geoMerged++
+        }
+      }
     }
   }
   if ($geoMerged -gt 0) { Write-Host "  Merged $geoMerged geocache coordinates" }
