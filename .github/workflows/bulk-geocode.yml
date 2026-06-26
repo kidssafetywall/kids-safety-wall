@@ -38,5 +38,6 @@ jobs:
           else
             COUNT=$(git diff --cached --stat | tail -1)
             git commit -m "data: bulk geocode batch — $COUNT"
+            git pull --rebase origin main
             git push
           fi
