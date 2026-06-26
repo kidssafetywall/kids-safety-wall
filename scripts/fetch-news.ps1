@@ -138,13 +138,16 @@ $eventsPath = Join-Path $dataDir "events.json"
 # 載入已知資料
 # ---------------------------------------------------------------------------
 
-# 已抓取的 RSS guid（去重用）
+# 已抓取的 RSS guid 與文章 URL（去重用）
+# 同時追蹤 URL 是因為 Google News 對同一篇文章可能在不同查詢時給出不同的 guid，
+# 但原始文章 URL 較穩定，能防止同一篇文章被重複送審。
 $seenRaw = if (Test-Path -LiteralPath $seenPath) {
   Get-Content -LiteralPath $seenPath -Raw -Encoding UTF8 | ConvertFrom-Json
 } else {
-  [pscustomobject]@{ updatedAt = ""; seen = @() }
+  [pscustomobject]@{ updatedAt = ""; seen = @(); seenUrls = @() }
 }
-$seenSet = [System.Collections.Generic.HashSet[string]]::new([string[]]@($seenRaw.seen))
+$seenSet    = [System.Collections.Generic.HashSet[string]]::new([string[]]@($seenRaw.seen))
+$seenUrls   = [System.Collections.Generic.HashSet[string]]::new([string[]]@($seenRaw.seenUrls))
 
 # 現有待審佇列（用於最後合併）
 $existingQueue  = Read-JsonArrayFile $queuePath
@@ -301,10 +304,12 @@ foreach ($entry in $queries) {
   foreach ($item in $items) {
     if ($totalNew -ge $MaxNewPerRun) { break }
 
-    # 取得 guid 作為去重鍵
+    # 取得 guid 作為去重鍵，同時取得原始文章 URL 作為輔助去重鍵
     $guid = if ($item.guid -is [System.Xml.XmlElement]) { $item.guid.InnerText } else { "$($item.guid)" }
     if (-not $guid) { $guid = "$($item.link)" }
+    $articleUrlRaw = "$($item.link)"
     if ($seenSet.Contains($guid)) { continue }
+    if ($articleUrlRaw -and $seenUrls.Contains($articleUrlRaw)) { continue }
 
     # 解析日期
     $eventDate = "unknown"
@@ -398,6 +403,7 @@ foreach ($entry in $queries) {
 
     [void]$newEvents.Add($newEvent)
     [void]$seenSet.Add($guid)
+    if ($articleUrlRaw) { [void]$seenUrls.Add($articleUrlRaw) }
     $totalNew++
   }
 
@@ -422,6 +428,7 @@ if ($newEvents.Count -gt 0) {
 $seenOutput = [ordered]@{
   updatedAt = (Get-Date).ToUniversalTime().ToString("o")
   seen      = @($seenSet)
+  seenUrls  = @($seenUrls)
 }
 [System.IO.File]::WriteAllText($seenPath, ($seenOutput | ConvertTo-Json -Depth 4), [System.Text.Encoding]::UTF8)
-Write-Host "已更新 $seenPath（已知 guid：$($seenSet.Count) 筆）"
+Write-Host "已更新 $seenPath（已知 guid：$($seenSet.Count) 筆，URL：$($seenUrls.Count) 筆）"
