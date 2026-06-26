@@ -96,13 +96,17 @@ for ($p = 2; $p -le $totalPages; $p++) {
     }
 }
 
-# ── Step 4: Save ───────────────────────────────────────────────────────────
-$arr = @($allSchools)
-[IO.File]::WriteAllText($OutPath, ($arr | ConvertTo-Json -Depth 3), $enc)
-
+# ── Step 4: Save (only if we actually got data) ───────────────────────────
 Write-Host ""
 Write-Host "============================="
 Write-Host "  抓取完成：$($allSchools.Count) 筆"
+if ($allSchools.Count -eq 0) {
+    Write-Host "  [WARN] 沒有抓到任何資料，保留原始檔案以免清空現有 2000+ 筆"
+    Write-Host "============================="
+    exit 0
+}
+$arr = @($allSchools)
+[IO.File]::WriteAllText($OutPath, ($arr | ConvertTo-Json -Depth 3 -Compress), $enc)
 Write-Host "  儲存至：$OutPath"
 Write-Host "============================="
 Write-Host "執行 publish-news.bat 套用至網站。"
