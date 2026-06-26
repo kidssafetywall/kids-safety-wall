@@ -124,6 +124,7 @@ jobs:
             Write-Host "No data changes on $date."
           } else {
             git commit -m "chore: daily data update $date"
+            git pull --rebase origin main
             git push
             Write-Host "Pushed data update for $date."
           }
